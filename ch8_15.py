@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 
 
 MAX_POINTS = 10000
-DEPTH = 3
+DEPTH = 5
 XMAX = 100
 YMAX = 100
 
@@ -24,7 +24,7 @@ YMAX = 100
 # opt: 2 - Square
 ###############################################################################
 def genValidPoints( pointList, opt ):
-	if ( opt == 1 ):
+	if ( opt == 0 ):
 		y = 0
 		x = 0
 
@@ -44,7 +44,7 @@ def genValidPoints( pointList, opt ):
 			pointList.append( point )
 			y += -1
 		
-	if ( opt == 2 ):
+	if ( opt == 1 ):
 		y = 0
 		x = 0
 		
@@ -70,7 +70,7 @@ def genValidPoints( pointList, opt ):
 # Using the probability per transformation, selects which transformation is 
 #	done. Returns index number
 ###############################################################################
-def selectTransformation( codes, code_num, image ):
+def selectTransformation( codes, code_num ):
 	sum = 0
 	function = 0
 	max = 3
@@ -78,7 +78,7 @@ def selectTransformation( codes, code_num, image ):
 	#print prob
 	
 	# NOTE: must change to (0,3) for gasket! otherwise (0,4)
-	if ( image == 0 ):
+	if ( code_num == 0 ):
 		max = 4
 	
 	else:
@@ -109,6 +109,7 @@ def selectPoint( pointList ):
 #	w(X) = [ a b, c d] * [ x1, x2] + [ e, f ]
 ###############################################################################
 def runTransformation( pointList, index, function ):
+	#print "pointList: ", pointList
 	x, y = pointList[ index-1 ]
 	xnew, ynew = 0, 0
 	a, b, c, d, e, f, p = function
@@ -169,21 +170,21 @@ def plotImage( pointList, title ):
 	length = len( pointList )
 	for i in range( 0, length ):
 		x, y = pointList[i]
-		#print "X: ", x, " Y: ", y
-		plt.scatter( x, y )
+		plt.scatter( x, y, marker="." )
 		
 	plt.grid( True )
 	#plt.show()
 	plt.savefig( title + '.png' )
+	plt.clf()
 
 ###############################################################################
 #									Main
 ###############################################################################
 codes = []
 titles = []
-list = []
-listnew = []
-pointlists = []
+plist = []
+plistnew = []
+#pointlists = []
 fractal_count = 0
 i = 0
 
@@ -194,30 +195,33 @@ fractal_count = readCodes( codes, titles, fractal_count )
 for i in range( 0, fractal_count+1 ):
 	# gasket and square - need initial list seeded
 	if ( i < 2 ):
-		genValidPoints( list, i+1 )
+		genValidPoints( plist, i )
 		for j in range( MAX_POINTS ):
-			index = selectPoint( list )
+			index = selectPoint( plist )
+			#print "index: ", index
 			for iterations in range( DEPTH ):
-				code_num = i
-				trans_num = selectTransformation( codes, code_num, i )
-				new_point = runTransformation( list, index, codes[code_num][trans_num] )
-				listnew.append(new_point)
-			list = listnew
-		plotImage( list, titles[i] )
-		pointlists.append( list )
-		pointlists.append( [] )
-		list = []
+				trans_num = selectTransformation( codes, i )
+				new_point = runTransformation( plist, index, codes[i][trans_num] )
+				plistnew.append( new_point )
+			plist = plistnew
+			
+		plotImage( plist, titles[i] )
+		#pointlists.append( plist )
+		#pointlists.append( [] )
+		#del plist[:]
+		#del plistnew[:]
 	
 	# fern and tree - need inital point seeded
 	else:
-		list = [ (0,0) ]
+		plist = [ (0,0) ]
 		for j in range( MAX_POINTS ):
-			index = selectPoint( list )
+			index = selectPoint( plist )
 			for iterations in range( DEPTH ):
-				code_num = i
-				trans_num = selectTransformation( codes, code_num, i )
-				new_point = runTransformation( list, index, codes[code_num][trans_num] )
-				list.append(new_point)
-		plotImage( list, titles[i] )
-		pointlists.append( list )
-		pointlists.append( [] )
+				trans_num = selectTransformation( codes, i )
+				new_point = runTransformation( plist, index, codes[i][trans_num] )
+				plist.append(new_point)
+		plotImage( plist, titles[i] )
+		#pointlists.append( plist )
+		#pointlists.append( [] )
+	del plist[:]
+	del plistnew[:]
