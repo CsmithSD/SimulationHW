@@ -1,5 +1,5 @@
 ###############################################################################
-# Problem: 8.15, "Fundamentals of Natural Computing"
+# Problem: 7.15, "Fundamentals of Natural Computing"
 # Author: Stephanie Athow
 # Date: 9 April 2015
 # Problem Statement:
@@ -20,8 +20,8 @@ YMAX = 100
 ###############################################################################
 #							Generate Valid Points
 # Creates starting point list for Sierpinski Gasket and Square
-# opt: 1 - Sierpinski Gasket
-# opt: 2 - Square
+# opt: 0 - Sierpinski Gasket
+# opt: 1 - Square
 ###############################################################################
 def genValidPoints( pointList, opt ):
 	if ( opt == 0 ):
