@@ -1,0 +1,1131 @@
+<html><head><title>Command List</title><link rel="STYLESHEET" href="style.css"></head><body><h3 style="color: green">Command List</h3>
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div class="catdescription">
+      <p align = "center">
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b><font color="#0033CC">State
+      Variables</font></b></font></h4>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"> 
+      State variables are built in characteristics of turtles and patches. </font> </p>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"> 
+      Turtles have 7 state variables: <br> <br>
+      <font face="Courier New, Courier, mono">xcor <br>
+      ycor <br>
+      color <br>
+      heading <br>
+      breed <br>
+      shown? <br>
+      pendown? <br> </font></font ></p>
+      
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"> 
+      Patches have 3 state variables: <br> <br>
+      <font face="Courier New, Courier, mono">xcor <br>
+      ycor <br>
+      patch-color (pc) <br> </font></font> </p>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+      The observer has no state variables. </font> </p> 
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+      You can have access to a state variable by using its name in an expression.  For example: <br> <br>
+      <font face="Courier New, Courier, mono"> 
+      xcor + 5 <br> heading - 90 <br> if pendown? [fd 1] </font> </font ></p>
+     
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+      All state variables, with the exception of the <font face="Courier New, Courier, mono">xcor</font>
+       and <font face="Courier New, Courier, mono">ycor</font> of a patch, can be changed using
+      the <font face="Courier New, Courier, mono">set</font> command.  For example:
+      <br> <br>
+      <font face="Courier New, Courier, mono">
+      set color red <br>
+      set pc pc + 1
+      <br> </font> </font> </p>
+      
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+      Note that the <font face="Courier New, Courier, mono">set</font> command performs the same
+      function whether it is separated by a space from the variable or not. </font> </p> 
+	  
+      
+      
+      <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b><font color="#0033CC">
+      Creating New 
+        Variables</font></b> </font>
+      <div align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">You 
+        can create new state variables for turtles, patches, and the observer. 
+        Whenever you create a new variable, StarLogo automatically creates a collection 
+        of new procedures to facilitate the use of the variable. For example, 
+        if you create the variable <font face="Courier New, Courier, mono">age</font> for the turtles, then the 
+        turtles can use the procedure <font face="Courier New, Courier, mono">setage</font> 
+        to change the value of the variable, and they can use the procedure <font face="Courier New, Courier, mono">age</font> 
+        to access the value of the variable. </font></div>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"> 
+        You create new variables with the commands <font face="Courier New, Courier, mono">turtles-own</font>,<font face="Courier New, Courier, mono"> 
+        patches-own, </font>and <font face="Courier New, Courier, mono">globals</font>. 
+        You can type these commands in either the turtle procedures window or 
+        the observer procedures window (but not both), like this: </font>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><font face="Courier New, Courier, mono">turtles-own 
+        [age speed]</font> <br>
+        Creates turtle variables <font face="Courier New, Courier, mono">age</font> and <font face="Courier New, Courier, mono">speed</font><br>
+        <br>
+        <font face="Courier New, Courier, mono">patches-own [food]</font><br>
+        Creates patch variable <font face="Courier New, Courier, mono">food</font><br>
+        <br>
+        <font face="Courier New, Courier, mono">globals [clock]</font><br>
+        Creates global variable <font face="Courier New, Courier, mono">clock</font></font></p>
+      <p align="left"><font size="3" face="Verdana, Arial, Helvetica, sans-serif">For 
+        turtle variables, the example age is used.&nbsp; For patch variables, 
+        the example food is used.&nbsp; And, for global variables, the example 
+        time is used.&nbsp; In order to use the commands listed below, you must 
+        first create the variables you want.</font></p>
+      <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b><font color="#0033CC">Variable 
+        Suffixes</font></b> </font>
+      
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+      You can access or set the state variable of another turtle or patch by using 
+      <font face="Courier New, Courier, mono">-at</font>, <font face="Courier New, Courier, mono">-to</font>
+      , or <font face="Courier New, Courier, mono">-towards</font> suffixes. For example:
+      <br> <br>
+      <font face="Courier New, Courier, mono">
+      seth towards xcor-of 23 ycor-of 23 <br> <br> </font>
+      This command will set the heading of the caller toward turtle #23. <br> <br>
+      <font face="Courier New, Courier, mono">
+      set heading-at 2 3 90 <br> <br>
+      </font>
+      This command will set the heading of all the turtles +2 patches away in the x direction and
+      +3 units away in the y direction from the caller to 90 degrees. <br> <br> 
+      <font face="Courier New, Courier, mono">
+      set pc-towards 270 4 green <br> <br> </font>
+      This command will set the patch color of the patch 270 degrees from the current heading and 4 patches
+      away from the caller to green. </font> </p>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+      <font face="Courier New, Courier, mono">
+      -of</font> takes a turtle ID number as its argument. <br> <br>
+      <font face="Courier New, Courier, mono">
+      -at</font> takes a dx and a dy as its arguments, which are relative to the position of the caller.  The
+      observer is considered living on patch (0,0). <br> <br>
+      <font face="Courier New, Courier, mono">
+      -towards</font> takes an angle in degrees and a distance in turtle steps.  The angle is
+      relative to the heading of the caller.<br>
+      </font> </p>
+      <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b><font color="#0033CC">Local 
+        Variables</font></b> </font>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Like 
+        <code>globals</code>, local variables are not associated with any specific 
+        patch or turtle. However, the exist only within the procedure within which 
+        they are declared. </font>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">For example:<br><br>
+        <font face="Courier New, Courier, mono">to check<br>
+        let [:num who + color]<br>
+        if :num > who * 2 [setc red]<br>
+        end</font> <br> <br>
+        or <br> <br> <font face="Courier New, Courier, mono">
+        to check <br>
+         let [:num who + color] <br>
+ifelse :num > who * 2 <br>
+   [setc red] <br>
+   [set :num who * color <br>
+    if :num > who * 2 [setc red]] <br>
+end </font> </font>
+      <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b><font color="#0033CC">Parameters</font></b> 
+        </font>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Parameters 
+        are like local variables, in that they only exist during the procedure 
+        they are associated with. They are &quot;declared&quot; when the caller 
+        of procedure gives them a value.  You can pass more than one parameter to a procedure 
+        by separating the variable names with a space.</font>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">For example:<br><br>
+        <font face="Courier New, Courier, mono">to move :number<br>
+        fd :number<br>
+        lt random 360<br>
+        bk :number<br>
+        rt random 360<br>
+        end</font><br>
+        <br>
+        <font face="Courier New, Courier, mono">to go<br>
+        move 30<br>
+        end </font></font>
+        <p align="left"><font size="3" face="Verdana, Arial, Helvetica, sans-serif">Here 
+        are a list of commands that affect variables: </font></p> </div>
+<p>
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoto">Turtle, Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">globals</span>
+	
+	<span class="argument">
+	[variable-list] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[variable-list]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Creates global variables.  The variable-list contains one or more names.  The globals declaration should be placed at the top of the observer procedures window or the turtle procedures window. <br></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>globals [variable1 variable2 variable3]</code></nobr> Creates globals variable1, variable2, and variable3.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=311.html" class="related">patches-own</a>
+			<a href="command_doc_include.php@com_id=49.html" class="related">turtles-own</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">let</span>
+	
+	<span class="argument">
+	[:variable value] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[:variable</nobr></td>
+		<td class="argtype" valign="top">String</td>
+		<td class="argdesc" valign="top">the variable name that you will use</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>value]</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">the value that you are setting the variable to</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Declares <nobr><code>variable</code></nobr> as a local variable and assigns <nobr><code>value</code></nobr> to it. All local variables must have names which begin with a colon. You may declare more than one variable in a let statement (ie. <nobr><code>let [:variable1 value1 :variable2 value2]</code></nobr>. Variables are declared in the order they appear in the let statement. See the Variables page for more information on local variables. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>let [:myvar 6]</code></nobr> declares a local variable <nobr><code>:myvar</code></nobr> and assigns its value to 6.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=243.html" class="related">set</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">patches-own</span>
+	
+	<span class="argument">
+	[variable-list] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[variable-list]</nobr></td>
+		<td class="argtype" valign="top">Variable</td>
+		<td class="argdesc" valign="top">a list of patch variables separated by spaces</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Defines a set of variables to be properties of patches. The <span class="argument">[variable-list]</span> contains one or more names separated by spaces</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>patches-own [size value]</code></nobr> declares two patch variables - size and value.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		<nobr><code>patches-own</code></nobr> must only be used once in any program, and remain outside of any procedures.  Typically <nobr><code>patches-own</code></nobr> is defined once at the top of the Observer Procedures window.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=441.html" class="related">breeds</a>
+			<a href="command_doc_include.php@com_id=75.html" class="related">globals</a>
+				<a href="command_doc_include.php@com_id=49.html" class="related">turtles-own</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">set</span>
+	
+	<span class="argument">
+	set value 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>set</nobr></td>
+		<td class="argtype" valign="top">Variable</td>
+		<td class="argdesc" valign="top">variable that gets redefined</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>value</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">value to be assigned to variable</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Assigns <span class="argument">value</span> to <span class="argument">set</span>, where <span class="argument">set</span> is any variable which has already been declared. For more information on local variables, see the Variables page.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>set energy 5</code></nobr> makes the variable <nobr><code>energy</code></nobr> have value <nobr><code>5</code></nobr> for every turtle, assuming <nobr><code>energy</code></nobr> has been declared as a turtle variable.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=63.html" class="related">let</a>
+			<a href="command_doc_include.php@com_id=349.html" class="related">setslidervar</a>
+				<a href="command_doc_include.php@com_id=434.html" class="related">setvariable</a>
+				<a href="command_doc_include.php@com_id=436.html" class="related">setvariable-at</a>
+				<a href="command_doc_include.php@com_id=435.html" class="related">setvariable-of</a>
+				<a href="command_doc_include.php@com_id=437.html" class="related">setvariable-towards</a>
+				<a href="command_doc_include.php@com_id=430.html" class="related">variable</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setslidervar</span>
+	
+	<span class="argument">
+	value 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>value</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">The value you want to set the slider to</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the value of a slider variable (named in the command name) to <span class="argument">value</span> from within code. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setnumber-of-turtles 100</code></nobr> would set the value of the slider <nobr><code>number-of-turtles</code></nobr> to <nobr><code>100</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=243.html" class="related">set</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setvariable</span>
+	
+	<span class="argument">
+	value 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>value</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">the value to set the variable to</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the <nobr><code>variable</code></nobr> to the value specified</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setheight 5</code></nobr> Sets the height of the caller to 5.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=243.html" class="related">set</a>
+			<a href="command_doc_include.php@com_id=436.html" class="related">setvariable-at</a>
+				<a href="command_doc_include.php@com_id=435.html" class="related">setvariable-of</a>
+				<a href="command_doc_include.php@com_id=437.html" class="related">setvariable-towards</a>
+				<a href="command_doc_include.php@com_id=430.html" class="related">variable</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setvariable-at</span>
+	
+	<span class="argument">
+	xcor ycor value 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the x-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the y-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>value</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">value to set the variable to</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the value of the <nobr><code>variable</code></nobr> of the turtle <span class="argument">xcor</span> units away in the x direction and <span class="argument">ycor</span> units away in the y direction to the value <span class="argument">value</span></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setheight-at 1 1 5</code></nobr> sets the height of the turtle one unit away in the x direction and one unit away in the y direction to 5		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=243.html" class="related">set</a>
+			<a href="command_doc_include.php@com_id=434.html" class="related">setvariable</a>
+				<a href="command_doc_include.php@com_id=435.html" class="related">setvariable-of</a>
+				<a href="command_doc_include.php@com_id=437.html" class="related">setvariable-towards</a>
+				<a href="command_doc_include.php@com_id=432.html" class="related">variable-at</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setvariable-of</span>
+	
+	<span class="argument">
+	number value 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">who of a turtle</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>value</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">value to set the variable to</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the <nobr><code>variable</code></nobr> specified of the turtle <span class="argument">number</span> to the value <span class="argument">value</span></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setspots-of 5 10</code></nobr> sets the number of spots of turtle number 5 to 10		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=243.html" class="related">set</a>
+			<a href="command_doc_include.php@com_id=434.html" class="related">setvariable</a>
+				<a href="command_doc_include.php@com_id=436.html" class="related">setvariable-at</a>
+				<a href="command_doc_include.php@com_id=437.html" class="related">setvariable-towards</a>
+				<a href="command_doc_include.php@com_id=431.html" class="related">variable-of</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setvariable-towards</span>
+	
+	<span class="argument">
+	angle distance value 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>value</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">value to set the variable to</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the value of the <nobr><code>variable</code></nobr> specified at distance <span class="argument">distance</span> and angle <span class="argument">angle</span> from the caller to <span class="argument">value</span></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>sethappiness-towards 0 1 5</code></nobr> sets the happiness of the turtle directly in front of and one space beyond the caller to 5		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=243.html" class="related">set</a>
+			<a href="command_doc_include.php@com_id=434.html" class="related">setvariable</a>
+				<a href="command_doc_include.php@com_id=436.html" class="related">setvariable-at</a>
+				<a href="command_doc_include.php@com_id=435.html" class="related">setvariable-of</a>
+				<a href="command_doc_include.php@com_id=433.html" class="related">variable-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoto">Turtle, Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">to</span>
+	
+	<span class="argument">
+	procedure-name 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>procedure-name</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">A single word which is the name of the procedure you wish to define</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+When you create a procedure, the first line of it must be <nobr><code>to <span class="argument">procedure-name</span></code></nobr> where <span class="argument">procedure-name</span> is a one-word title for your procedure. <span class="argument">procedure-name</span> cannot be any command already recognized by StarLogo (this includes both built-in commands and the procedure names of other procedures you may already have written). <p>To add parameters to a procedure, write them after the <span class="argument">procedure-name</span> with a colon in front of them, like this:<br><nobr><code>to my-procedure :x :y :z</code></nobr><p>Inside the procedure body, you may use <nobr><code>:x</code></nobr>, <nobr><code>:y</code></nobr> and <nobr><code>:z</code></nobr> to refer to the values of the arguments passed in by the caller of the procedure.<p>All procedures must be ended with the word <nobr><code>end</code></nobr> on a line by itself (no comments may be on that line).<p>Procedures defined in the turtle procedures pane are only callable by turtles. Procedures defined in the observer procedures pane are only callable by the observer. Patches may not have procedures.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>to go <br>fd 1<br>rt 90<br>end</code></nobr><br>Now you may use <nobr><code>go</code></nobr> as a command in other parts of your program.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=159.html" class="related">end</a>
+			<a href="command_doc_include.php@com_id=233.html" class="related">output</a>
+				<a href="command_doc_include.php@com_id=396.html" class="related">startup</a>
+				<a href="command_doc_include.php@com_id=398.html" class="related">stop</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">turtles-own</span>
+	
+	<span class="argument">
+	[list of variables] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of variables]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">A list of variable names to define as turtle variables</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Defines a set of variables to be properties of turtles. The <span class="argument">[list of variables]</span> contains one or more names. This line of code should be placed at the top of the Turtle Command Center. It does not go inside procedures.<p><br>A variable name may be followed by a list of <nobr><code>state values</code></nobr>. This variable may only have the values listed in the state value list. This can be used to assign named constants to a variable instead of using numbers.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>turtles-own [size energy]</code></nobr>		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>turtles-own [weather [sunny cloudy rainy]]</code></nobr><p><nobr><code>set weather rainy</code></nobr><br><nobr><code>set weather cloudy</code></nobr><br><nobr><code>if weather = sunny [ setcolor yellow ]</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		<nobr><code>turtles-own</code></nobr> declarations should appear outside of any procedure, usually at the top of the turtle procedures pane.		</div>
+		<p>
+				<div class="notes">
+		<nobr><code>turtles-own</code></nobr> declarations can contain more than one variable. If you have more than one <nobr><code>turtles-own</code></nobr>, consider consolidating them into a single <nobr><code>turtles-own</code></nobr>.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=441.html" class="related">breeds</a>
+			<a href="command_doc_include.php@com_id=75.html" class="related">globals</a>
+				<a href="command_doc_include.php@com_id=311.html" class="related">patches-own</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variable</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the value of the <nobr><code>variable</code></nobr> specified</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>height</code></nobr> returns the value of the variable named height		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=243.html" class="related">set</a>
+			<a href="command_doc_include.php@com_id=434.html" class="related">setvariable</a>
+				<a href="command_doc_include.php@com_id=432.html" class="related">variable-at</a>
+				<a href="command_doc_include.php@com_id=431.html" class="related">variable-of</a>
+				<a href="command_doc_include.php@com_id=433.html" class="related">variable-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variable-at</span>
+	
+	<span class="argument">
+	xcor ycor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the x-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the y-direction from the caller</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the value of the <nobr><code>variable</code></nobr> specified at a distance of <span class="argument">xcor</span> in the x direction and <span class="argument">ycor</span> in the y direction from the caller</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>size-at 1 1</code></nobr> returns the size of the turtle one patch away in the x direction and y patch away in the y direction		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=436.html" class="related">setvariable-at</a>
+			<a href="command_doc_include.php@com_id=430.html" class="related">variable</a>
+				<a href="command_doc_include.php@com_id=431.html" class="related">variable-of</a>
+				<a href="command_doc_include.php@com_id=433.html" class="related">variable-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variable-of</span>
+	
+	<span class="argument">
+	number1 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number1</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">turtle who number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the value of the <nobr><code>variable</code></nobr> specified for the turtle with who number <span class="argument">number1</span></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>height-of 0</code></nobr> returns the height of turtle number 0		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=435.html" class="related">setvariable-of</a>
+			<a href="command_doc_include.php@com_id=430.html" class="related">variable</a>
+				<a href="command_doc_include.php@com_id=432.html" class="related">variable-at</a>
+				<a href="command_doc_include.php@com_id=433.html" class="related">variable-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variable-towards</span>
+	
+	<span class="argument">
+	angle distance 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance from caller</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the value of the <nobr><code>variable</code></nobr> specified at an angle of <span class="argument">angle</span> and distance of <span class="argument">distance</span> away from the caller</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>happiness-towards 0 1</code></nobr> returns the happiness of the turtle directly in front of and one space beyond the caller		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=437.html" class="related">setvariable-towards</a>
+			<a href="command_doc_include.php@com_id=430.html" class="related">variable</a>
+				<a href="command_doc_include.php@com_id=432.html" class="related">variable-at</a>
+				<a href="command_doc_include.php@com_id=431.html" class="related">variable-of</a>
+			<hr></html>

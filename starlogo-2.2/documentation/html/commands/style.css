@@ -1,0 +1,60 @@
+a:link, a:link:visited { color: green; }
+
+body, input, th, td { font-family: verdana, helvetica, arial, sans-serif; font-size: 10pt; }
+
+th { text-align: left; }
+
+ul { margin-left: 0px; }
+
+li { margin-left: 10px; }
+
+.argname {
+  font-weight: bold;
+}
+
+.commandname {
+  font-family: arial, sans-serif;
+  font-size: 12pt;
+  color: green;
+  font-weight: bold;
+}
+
+.argument {
+  font-weight: bold;
+}
+
+.argtype {
+  font-style: italic;
+}
+
+.heading {
+  font-family: arial, sans-serif;
+  font-size: 12pt;
+  color: black;
+  font-weight:bold;
+}
+
+.whotop { color: white; background-color: #0066CC }
+.whop   { color: white; background-color: #e60000 }
+.whoo   { color: white; background-color: #996600 }
+.whot   { color: white; background-color: green;  }
+.whotp  { color: white; background-color: #6000a0 }
+.whoop  { color: white; background-color: #0073b2 }
+.whoto  { color: white; background-color: #e64c00 }
+
+.letterrow { background-color: #FFFFCC; font-size: 12pt; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; height: 30; }
+
+.commandrow { background-color: #CCFFCC; font-size: 12pt; font-family: Verdana, Arial, Helvetica, sans-serif; } 
+
+a:link.related {
+  font-family: arial, sans-serif;
+  color: green;
+}
+
+a:link:visited.related {
+  font-family: arial, sans-serif;
+  color: purple;
+  font-size: 10pt;
+}
+
+code, tt { color: green; }

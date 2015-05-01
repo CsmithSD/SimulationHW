@@ -1,0 +1,3088 @@
+<html><head><title>Command List</title><link rel="STYLESHEET" href="style.css"></head><body><h3 style="color: green">Command List</h3>
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div class="catdescription">
+These are all the commands that affect properties of a patch. A patch has several built-in properties: <code>xcor</code>, <code>ycor</code>, and patch color. Additional properties may be declared by you, with the <code>patches-own</code> command. </div>
+<p>
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ask-patch-at</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of patch commands</td>
+		<td class="argdesc" valign="top">A list of commands for the patch to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This command asks the patch which is xcor units in the x direction and ycor units in the y direction away from the caller to run the <nobr><code>[list of commands]</code></nobr>. The caller of this command will wait for the patch to finish before moving on. The observer is considered to be located at (0, 0).</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-patch-at 5 6 [setpc red]</code></nobr> makes the patch 5 units to the right and 6 units up from the caller turn red.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>ask-patch-at -3 -8 [setpc blue]</code></nobr> makes the patch 3 units to the left and 8 units down from the caller turn blue.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=13.html" class="related">ask-breed</a>
+			<a href="command_doc_include.php@com_id=14.html" class="related">ask-list-of-turtles</a>
+				<a href="command_doc_include.php@com_id=15.html" class="related">ask-patches</a>
+				<a href="command_doc_include.php@com_id=425.html" class="related">ask-patches-with</a>
+				<a href="command_doc_include.php@com_id=17.html" class="related">ask-turtle</a>
+				<a href="command_doc_include.php@com_id=18.html" class="related">ask-turtles</a>
+				<a href="command_doc_include.php@com_id=19.html" class="related">ask-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ask-patches</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of patch commands</td>
+		<td class="argdesc" valign="top">A list of commands for the patches to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This observer command asks all of the patches to run the <nobr><code>[list of commands]</code></nobr>. The observer will wait for the patches to finish before moving on. <p>Asking the patches to do something is a moderately expensive operation since StarLogo creates a thread for each patch. Try to group commands that you would have put into separate <nobr><code>ask-patches</code></nobr> into the same one to minimize thread creation overhead.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-patches [setpc red]</code></nobr> colors all of the patches red.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=13.html" class="related">ask-breed</a>
+			<a href="command_doc_include.php@com_id=14.html" class="related">ask-list-of-turtles</a>
+				<a href="command_doc_include.php@com_id=16.html" class="related">ask-patch-at</a>
+				<a href="command_doc_include.php@com_id=17.html" class="related">ask-turtle</a>
+				<a href="command_doc_include.php@com_id=18.html" class="related">ask-turtles</a>
+				<a href="command_doc_include.php@com_id=19.html" class="related">ask-turtles-with</a>
+				<a href="command_doc_include.php@com_id=247.html" class="related">setbg</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ask-patches-with</span>
+	
+	<span class="argument">
+	[condition] [list-of-commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of patch commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to either true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list-of-commands]</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">list of commands to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This observer command asks all of the patches that satisfy <span class="argument">[condition]</span> to run the <span class="argument">[list-of-commands]</span>. The observer will wait for the patches to finish before moving on.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-patches-with [pc = red] [setpc blue]</code></nobr> colors all of the red patches blue		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=16.html" class="related">ask-patch-at</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">average-of-patches</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of patch commands</td>
+		<td class="argdesc" valign="top">A list of commands for the patches to run which returns a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the numerical average of the <span class="argument">[list of commands]</span> when evaluated across all the patches.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>average-of-patches [pc]</code></nobr> returns the average of the patch color of all of the patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=20.html" class="related">average-of-breed</a>
+			<a href="command_doc_include.php@com_id=220.html" class="related">median-of-patches</a>
+				<a href="command_doc_include.php@com_id=266.html" class="related">min-of-patches</a>
+				<a href="command_doc_include.php@com_id=280.html" class="related">mode-of-patches</a>
+				<a href="command_doc_include.php@com_id=402.html" class="related">sum-of-patches</a>
+				<a href="command_doc_include.php@com_id=99.html" class="related">variance-of-patches</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">average-of-patches-with</span>
+	
+	<span class="argument">
+	[condition] [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of patch commands</td>
+		<td class="argdesc" valign="top">An expression that returns a true or false value</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of patch commands</td>
+		<td class="argdesc" valign="top">A list of commands for the patches to run which returns a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the numerical average of the <span class="argument">[list of commands]</span> when evaluated across all the patches that satisfy the condition (must return a boolean of true or false) specified by the <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>average-of-patches-with [color = red] [food]</code></nobr> returns the average food of all the red patches		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=21.html" class="related">average-of-breed-with</a>
+			<a href="command_doc_include.php@com_id=221.html" class="related">median-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=268.html" class="related">min-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=284.html" class="related">mode-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=403.html" class="related">sum-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=101.html" class="related">variance-of-patches-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">clear-graphics (cg)</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets all patches to black.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">clear-patches</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets all patches to black and resets all patch variables to 0.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">clearall (ca) (clear-all)</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Kills all turtles, sets all patches to black, and resets all variables to 0.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-patches</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of patches.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=86.html" class="related">count-patches-with</a>
+			<a href="command_doc_include.php@com_id=95.html" class="related">count-turtles</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-patches-with</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">condition to determine whether to count a turtle</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of patches whose <span class="argument">[list of commands]</span> is true.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>count-patches-with [(distance 0 0) < 5]</code></nobr> returns the number of patches inside a circle of radius 5 centered at the origin.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=83.html" class="related">count-patches</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-pc</span>
+	
+	<span class="argument">
+	color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">color to determine whether to count a patch</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of patches that are the color <span class="argument">color</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>count-pc blue</code></nobr> returns the number of blue patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This command can also be executed by patches, for example within an ask-patches statement.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=67.html" class="related">count-color</a>
+			<a href="command_doc_include.php@com_id=68.html" class="related">count-color-range</a>
+				<a href="command_doc_include.php@com_id=92.html" class="related">count-pc-range</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-pc-range</span>
+	
+	<span class="argument">
+	mincolor maxcolor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>mincolor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">low end of range of colors to determine whether to count a patch</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>maxcolor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">high end of range of colors to determine whether to count a patch</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of patches that have colors between <span class="argument">mincolor</span> and <span class="argument">maxcolor</span>, inclusive.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>count-pc-range 64 66.5</code></nobr> returns the number of patches that are lime (65) or very close to it.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=67.html" class="related">count-color</a>
+			<a href="command_doc_include.php@com_id=68.html" class="related">count-color-range</a>
+				<a href="command_doc_include.php@com_id=88.html" class="related">count-pc</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">diffuse</span>
+	
+	<span class="argument">
+	variable percentage 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>variable</nobr></td>
+		<td class="argtype" valign="top">String</td>
+		<td class="argdesc" valign="top">patch variable to diffuse</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>percentage</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">percentage of patch variable's value to diffuse</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Makes each patch give 1/8 of <span class="argument">percentage</span> of <span class="argument">variable</span> to each neighboring patch. <br><span class="argument">percentage</span> should be expressed as a number between 0 and 1. <span class="argument">variable</span> should be a patch variable.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>diffuse food 20</code></nobr> causes each patch to give 1/8 of 20 percent of the variable food to each of its eight neighboring patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		<nobr><code>diffuse</code></nobr> must be run by the observer, even though it affects patches.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=125.html" class="related">diffuse4</a>
+			<a href="command_doc_include.php@com_id=136.html" class="related">nsum</a>
+				<a href="command_doc_include.php@com_id=141.html" class="related">nsum4</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">diffuse4</span>
+	
+	<span class="argument">
+	variable percentage 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>variable</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">patch variable to diffuse</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>percentage</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">percentage of variable's value to diffuse</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Makes each patch give 1/4 of <span class="argument">percentage</span> of <span class="argument">variable</span> to each non-diagonal (N,E,S,W) neighboring patch. <br><span class="argument">percentage</span> should be expressed as a number between 0 and 1. <span class="argument">variable</span> should be a patch variable.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>diffuse food 20</code></nobr> causes each patch to give 1/4 of 20 percent of the variable food to each of its four directly-neighboring patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		<nobr><code>diffuse4</code></nobr> must be run by the observer, even though it affects patches.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=122.html" class="related">diffuse</a>
+			<a href="command_doc_include.php@com_id=136.html" class="related">nsum</a>
+				<a href="command_doc_include.php@com_id=141.html" class="related">nsum4</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">inspect-patch</span>
+	
+	<span class="argument">
+	xcor ycor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Brings up the patch monitor of the patch whose coordinates are (<span class="argument">xcor</span>, <span class="argument">ycor</span>). A patch monitor allows the user to see all of the information about a patch in real time.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>inspect-patch 1 1</code></nobr> brings up the patch monitor for the patch at coordinates (1,1).		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=131.html" class="related">inspect-turtle</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">max-of-patches</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluate to a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Evaluates the <span class="argument">[list of commands]</span> given for every patch. Returns the coordinates of the patch whose <span class="argument">[list of commands]</span> value is greatest, or returns a list of coordinates if there is more than one patch with that minimum value.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>max-of-patches [food]</code></nobr> returns the coordinates of the patch whose <nobr><code>food</code></nobr> variable is the largest.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, the smallest possible number is returned. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=215.html" class="related">max-of-turtles</a>
+			<a href="command_doc_include.php@com_id=220.html" class="related">median-of-patches</a>
+				<a href="command_doc_include.php@com_id=266.html" class="related">min-of-patches</a>
+				<a href="command_doc_include.php@com_id=280.html" class="related">mode-of-patches</a>
+				<a href="command_doc_include.php@com_id=206.html" class="related">sdev-of-patches</a>
+				<a href="command_doc_include.php@com_id=402.html" class="related">sum-of-patches</a>
+				<a href="command_doc_include.php@com_id=99.html" class="related">variance-of-patches</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">max-of-patches-with</span>
+	
+	<span class="argument">
+	[condition] [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluate to a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the highest value of <span class="argument">[list of commands]</span> when run over the turtles that satisfy <span class="argument">[condition]</span>. If there are no patches in which <span class="argument">[condition]</span> is true, reports <nobr><code>minnum</code></nobr>, the smallest number possible without going into negative infinity.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>max-of-patches-with [color = 0] [food]</code></nobr> reports the largest food value of the black colored patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This command can also be executed by patches, for example within an <nobr><code>ask-patches</code></nobr> statement.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=216.html" class="related">max-of-turtles-with</a>
+			<a href="command_doc_include.php@com_id=221.html" class="related">median-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=268.html" class="related">min-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=284.html" class="related">mode-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=209.html" class="related">sdev-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=403.html" class="related">sum-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=101.html" class="related">variance-of-patches-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">median-of-patches</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">list of commands that evaluate to a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the median of the <span class="argument">[list of commands]</span> when <span class="argument">[list of commands]</span> is evaluated by all patches.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>median-of-patches [color]</code></nobr> returns a number corresponding to the median of the colors of all patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=24.html" class="related">average-of-patches</a>
+			<a href="command_doc_include.php@com_id=208.html" class="related">max-of-patches</a>
+				<a href="command_doc_include.php@com_id=221.html" class="related">median-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=266.html" class="related">min-of-patches</a>
+				<a href="command_doc_include.php@com_id=280.html" class="related">mode-of-patches</a>
+				<a href="command_doc_include.php@com_id=206.html" class="related">sdev-of-patches</a>
+				<a href="command_doc_include.php@com_id=402.html" class="related">sum-of-patches</a>
+				<a href="command_doc_include.php@com_id=99.html" class="related">variance-of-patches</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">median-of-patches-with</span>
+	
+	<span class="argument">
+	[1st list of commands] [2nd list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[1st list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[2nd list of commands]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">list of commands that evaluate to a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the median of the <span class="argument">[2nd list of commands]</span> when evaluated across all the patches that satisfy the conditions specified by the <span class="argument">[1st list of commands]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>median-of-patches-with [color = red] [food]</code></nobr> returns the median food of all the red patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[2nd list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[2nd list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=25.html" class="related">average-of-patches-with</a>
+			<a href="command_doc_include.php@com_id=213.html" class="related">max-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=220.html" class="related">median-of-patches</a>
+				<a href="command_doc_include.php@com_id=268.html" class="related">min-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=284.html" class="related">mode-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=209.html" class="related">sdev-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=403.html" class="related">sum-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=99.html" class="related">variance-of-patches</a>
+				<a href="command_doc_include.php@com_id=101.html" class="related">variance-of-patches-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">min-of-patches</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of patch commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluate to a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the lowest value of <span class="argument">[list of commands]</span> when run over all of the patches. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>min-of-patches [food]</code></nobr> reports the smallest value of the patch variable <nobr><code>food</code></nobr> for all patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: If <span class="argument">[list of commands]</span> contains no numbers, the greatest possible number is returned. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=24.html" class="related">average-of-patches</a>
+			<a href="command_doc_include.php@com_id=208.html" class="related">max-of-patches</a>
+				<a href="command_doc_include.php@com_id=220.html" class="related">median-of-patches</a>
+				<a href="command_doc_include.php@com_id=268.html" class="related">min-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=280.html" class="related">mode-of-patches</a>
+				<a href="command_doc_include.php@com_id=202.html" class="related">sdev-of-list</a>
+				<a href="command_doc_include.php@com_id=206.html" class="related">sdev-of-patches</a>
+				<a href="command_doc_include.php@com_id=402.html" class="related">sum-of-patches</a>
+				<a href="command_doc_include.php@com_id=99.html" class="related">variance-of-patches</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">min-of-patches-with</span>
+	
+	<span class="argument">
+	[condition] [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluate to true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands to that evaluate to a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the lowest value of <span class="argument">[list of commands]</span> when run over the turtles that satisfy <span class="argument">[condition]</span>. If there are no patches in which <span class="argument">[condition]</span> is true, reports maxnum, the largest number possible without going into positive infinity. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>min-of-patches-with [color = red] [food]</code></nobr> reports the smallest value of the patch variable food for red patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: If <span class="argument">[list of commands]</span> contains no numbers, the greatest possible number is returned. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=25.html" class="related">average-of-patches-with</a>
+			<a href="command_doc_include.php@com_id=213.html" class="related">max-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=221.html" class="related">median-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=266.html" class="related">min-of-patches</a>
+				<a href="command_doc_include.php@com_id=268.html" class="related">min-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=284.html" class="related">mode-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=209.html" class="related">sdev-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=403.html" class="related">sum-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=101.html" class="related">variance-of-patches-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">mode-of-patches</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of patch commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluate to a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the mode of the given <span class="argument">[list of commands]</span> when evaluated across all the patches. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>mode-of-patches [food]</code></nobr> returns the mode of the food value for all patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=24.html" class="related">average-of-patches</a>
+			<a href="command_doc_include.php@com_id=208.html" class="related">max-of-patches</a>
+				<a href="command_doc_include.php@com_id=220.html" class="related">median-of-patches</a>
+				<a href="command_doc_include.php@com_id=266.html" class="related">min-of-patches</a>
+				<a href="command_doc_include.php@com_id=284.html" class="related">mode-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=202.html" class="related">sdev-of-list</a>
+				<a href="command_doc_include.php@com_id=206.html" class="related">sdev-of-patches</a>
+				<a href="command_doc_include.php@com_id=402.html" class="related">sum-of-patches</a>
+				<a href="command_doc_include.php@com_id=99.html" class="related">variance-of-patches</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">mode-of-patches-with</span>
+	
+	<span class="argument">
+	[condition] [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of patch commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluate to true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of patch commands</td>
+		<td class="argdesc" valign="top">list of commands to that evaluate to a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the mode of the <span class="argument">[list of commands]</span> when evaluated across all the patches that satisfy the <span class="argument">[condition]</span></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>mode-of-patches-with [color = red] [food]</code></nobr> returns the mode of the food of all the red patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=25.html" class="related">average-of-patches-with</a>
+			<a href="command_doc_include.php@com_id=213.html" class="related">max-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=221.html" class="related">median-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=268.html" class="related">min-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=280.html" class="related">mode-of-patches</a>
+				<a href="command_doc_include.php@com_id=209.html" class="related">sdev-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=403.html" class="related">sum-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=101.html" class="related">variance-of-patches-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">nsum</span>
+	
+	<span class="argument">
+	neighbor-variable patch-sum-variable 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>neighbor-variable</nobr></td>
+		<td class="argtype" valign="top">Variable</td>
+		<td class="argdesc" valign="top">the variable of the neighbor you would like to sum up</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>patch-sum-variable</nobr></td>
+		<td class="argtype" valign="top">Variable</td>
+		<td class="argdesc" valign="top">the variable that should be set to the sum of the neighbors' variables</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+For each patch, takes the sum of <span class="argument">neighbor-variable</span> from all neighboring patches and places it in <span class="argument">patch-sum-variable</span>. Both <span class="argument">neighbor-variable</span> and <span class="argument">patch-sum-variable</span> should be patch variables.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>nsum food surrounding-food</code></nobr> takes the <nobr><code>food</code></nobr> variable of all the surrounding patches and stores the value of their sum in the patch-variable <nobr><code>surrounding-food</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		<nobr><code>nsum</code></nobr> must be run by the observer even though it affects patches.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=122.html" class="related">diffuse</a>
+			<a href="command_doc_include.php@com_id=125.html" class="related">diffuse4</a>
+				<a href="command_doc_include.php@com_id=141.html" class="related">nsum4</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">nsum4</span>
+	
+	<span class="argument">
+	neighbor-variable patch-sum-variable 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>neighbor-variable</nobr></td>
+		<td class="argtype" valign="top">Variable</td>
+		<td class="argdesc" valign="top">the variable of the neighbor you would like to sum up</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>patch-sum-variable</nobr></td>
+		<td class="argtype" valign="top">Variable</td>
+		<td class="argdesc" valign="top">the variable that should be set to the sum of the neighbors' variables</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+For each patch, takes the sum of <span class="argument">neighbor-variable</span> from the non-diagonal (N,E,S,W) neighboring patches and places it in <span class="argument">patch-sum-variable</span>. Variable should be a patch variable.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>nsum4 grass totalgrass</code></nobr> adds up the value of <nobr><code>grass</code></nobr> in the non-diagonal patches and places it in <nobr><code>totalgrass</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		<nobr><code>nsum4</code></nobr> must be run by the observer even though it affects patches.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=122.html" class="related">diffuse</a>
+			<a href="command_doc_include.php@com_id=125.html" class="related">diffuse4</a>
+				<a href="command_doc_include.php@com_id=136.html" class="related">nsum</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">patchcolor (pc)</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the color of the patch the turtle is on.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		if <nobr><code>pc = red [fd 1]</code></nobr> commands the turtle to move forward one unit if the color of the patch the turtle is on is red.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This command can also be executed by patches, for example within an <nobr><code>ask-patches</code></nobr> statement.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=313.html" class="related">pc-ahead</a>
+			<a href="command_doc_include.php@com_id=427.html" class="related">pc-ahead-one-patch</a>
+				<a href="command_doc_include.php@com_id=315.html" class="related">pc-at</a>
+				<a href="command_doc_include.php@com_id=318.html" class="related">pc-towards</a>
+				<a href="command_doc_include.php@com_id=247.html" class="related">setbg</a>
+				<a href="command_doc_include.php@com_id=269.html" class="related">setpc</a>
+				<a href="command_doc_include.php@com_id=393.html" class="related">stamp</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">patches-own</span>
+	
+	<span class="argument">
+	[variable-list] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[variable-list]</nobr></td>
+		<td class="argtype" valign="top">Variable</td>
+		<td class="argdesc" valign="top">a list of patch variables separated by spaces</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Defines a set of variables to be properties of patches. The <span class="argument">[variable-list]</span> contains one or more names separated by spaces</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>patches-own [size value]</code></nobr> declares two patch variables - size and value.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		<nobr><code>patches-own</code></nobr> must only be used once in any program, and remain outside of any procedures.  Typically <nobr><code>patches-own</code></nobr> is defined once at the top of the Observer Procedures window.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=441.html" class="related">breeds</a>
+			<a href="command_doc_include.php@com_id=75.html" class="related">globals</a>
+				<a href="command_doc_include.php@com_id=49.html" class="related">turtles-own</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">pc-ahead (pc-ahead-one-step)</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the color of the patch one space ahead in the direction that the turtle is facing. If called by the observer, it will assume coordinates of (0,0).</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		<nobr><code>if pc-ahead = blue [fd 1]</code></nobr> commands the caller to move forward 1 if the patch ahead of it is blue.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=312.html" class="related">patchcolor</a>
+			<a href="command_doc_include.php@com_id=427.html" class="related">pc-ahead-one-patch</a>
+				<a href="command_doc_include.php@com_id=315.html" class="related">pc-at</a>
+				<a href="command_doc_include.php@com_id=318.html" class="related">pc-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">pc-ahead-one-patch</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the color of the patch one patch ahead.  This is equivalent to <nobr><code>pc-at round dx round dy</code></nobr></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>pc-ahead-one-patch</code></nobr> will return the color of the next patch in front of the turtle		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		The patch returned may or may not be the same as pc-ahead.  In this version the patch returned is never the same as the patch that the caller is on.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=312.html" class="related">patchcolor</a>
+			<a href="command_doc_include.php@com_id=313.html" class="related">pc-ahead</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">pc-at</span>
+	
+	<span class="argument">
+	xcor ycor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the color of the patch <span class="argument">xcor</span> units in the x direction and <span class="argument">ycor</span> units in the y direction away from the caller. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>pc-at 1 1</code></nobr> reports the color of the patch one unit to the right and one unit above the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This command can also be executed by patches, for example within an ask-patches statement.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=312.html" class="related">patchcolor</a>
+			<a href="command_doc_include.php@com_id=313.html" class="related">pc-ahead</a>
+				<a href="command_doc_include.php@com_id=318.html" class="related">pc-towards</a>
+				<a href="command_doc_include.php@com_id=394.html" class="related">stamp-at</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">pc-towards</span>
+	
+	<span class="argument">
+	angle distance 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the color of the patch <span class="argument">angle</span> away at an angle <span class="argument">distance</span> from the caller.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>pc-towards 0 1</code></nobr> returns the color of the patch which is one unit directly in front of the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This command can also be executed by patches, for example within an ask-patches statement.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=312.html" class="related">patchcolor</a>
+			<a href="command_doc_include.php@com_id=313.html" class="related">pc-ahead</a>
+				<a href="command_doc_include.php@com_id=315.html" class="related">pc-at</a>
+				<a href="command_doc_include.php@com_id=395.html" class="related">stamp-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">scale-pc</span>
+	
+	<span class="argument">
+	color variable limit1 limit2 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Color</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>variable</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>limit1</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Lower limit</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>limit2</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Upper limit</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Patches set their color to a shade of <span class="argument">color</span> based on their value of <span class="argument">variable</span>. <span class="argument">limit1</span> and <span class="argument">limit2</span> determine the amount of gradation. If a turtle calls this, the patch underneath the turtle scale its patch color.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>scale-color green density 0 20</code></nobr><br>Patches turn one of twenty shades of green. Patches with lower density turn darker green.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>scale-color blue energy 20 0</code></nobr><br>Patches turn one of twenty shades of green. Patches with lower density turn lighter green.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This is a patch command. It must be called from within an <nobr><code>ask-patches</code></nobr> or <nobr><code>ask-patch-at</code></nobr> statement.		</div>
+		<p>
+				<div class="notes">
+		If the patch exceeds the limits, it turns black on the dark end of the specturm and turns white on the bright end of the spectrum.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=184.html" class="related">scale-color</a>
+			<a href="command_doc_include.php@com_id=269.html" class="related">setpc</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">sdev-of-patches</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the standard deviation of the given <span class="argument">[list of commands]</span> when evaluated across all the patches.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>sdev-of-patches [food]</code></nobr> returns the stadard deviation of the food amongst all the patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=208.html" class="related">max-of-patches</a>
+			<a href="command_doc_include.php@com_id=220.html" class="related">median-of-patches</a>
+				<a href="command_doc_include.php@com_id=266.html" class="related">min-of-patches</a>
+				<a href="command_doc_include.php@com_id=280.html" class="related">mode-of-patches</a>
+				<a href="command_doc_include.php@com_id=209.html" class="related">sdev-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=402.html" class="related">sum-of-patches</a>
+				<a href="command_doc_include.php@com_id=99.html" class="related">variance-of-patches</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">sdev-of-patches-with</span>
+	
+	<span class="argument">
+	[first list of commands] [second list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[first list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[second list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the standard deviation of the <span class="argument">[second list of commands]</span> when evaluated across all the patches that satisfy the conditions (must return a boolean of true or false) specified by the <span class="argument">[first list of commands]</span>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>sdev-of-patches-with [color = red] [food]</code></nobr> returns the standard deviation of the food of all the red patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[second list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[second list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=213.html" class="related">max-of-patches-with</a>
+			<a href="command_doc_include.php@com_id=221.html" class="related">median-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=268.html" class="related">min-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=284.html" class="related">mode-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=206.html" class="related">sdev-of-patches</a>
+				<a href="command_doc_include.php@com_id=403.html" class="related">sum-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=101.html" class="related">variance-of-patches-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whop">Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setpc (setpatchcolor)</span>
+	
+	<span class="argument">
+	color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Color</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This command is run as a patch command inside an <nobr><code>ask-patches</code></nobr> statement. The patches being asked will set their color to <span class="argument">color</span>. Use stamp if you want to have a turtle change the color of a patch.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-patches [setpc blue]</code></nobr> commands the patches to set their color to <nobr><code>blue</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=312.html" class="related">patchcolor</a>
+			<a href="command_doc_include.php@com_id=188.html" class="related">scale-pc</a>
+				<a href="command_doc_include.php@com_id=247.html" class="related">setbg</a>
+				<a href="command_doc_include.php@com_id=393.html" class="related">stamp</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setvariable</span>
+	
+	<span class="argument">
+	value 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>value</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">the value to set the variable to</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the <nobr><code>variable</code></nobr> to the value specified</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setheight 5</code></nobr> Sets the height of the caller to 5.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=243.html" class="related">set</a>
+			<a href="command_doc_include.php@com_id=436.html" class="related">setvariable-at</a>
+				<a href="command_doc_include.php@com_id=435.html" class="related">setvariable-of</a>
+				<a href="command_doc_include.php@com_id=437.html" class="related">setvariable-towards</a>
+				<a href="command_doc_include.php@com_id=430.html" class="related">variable</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">stamp</span>
+	
+	<span class="argument">
+	color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets color of patch under turtle to <span class="argument">color</span></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>stamp red</code></nobr> sets the patch under the turtle to red		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>stamp 0</code></nobr> sets the patch under the turtle to color 0 (black)		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>stamp color</code></nobr> sets the patch under the turtle to the color of the turtle		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=312.html" class="related">patchcolor</a>
+			<a href="command_doc_include.php@com_id=363.html" class="related">pstamp</a>
+				<a href="command_doc_include.php@com_id=269.html" class="related">setpc</a>
+				<a href="command_doc_include.php@com_id=394.html" class="related">stamp-at</a>
+				<a href="command_doc_include.php@com_id=395.html" class="related">stamp-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">stamp-at</span>
+	
+	<span class="argument">
+	xcor ycor color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of patches away in the x direction</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of patches away in the y direction</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">color to set</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the color of the patch at <span class="argument">xcor</span> <span class="argument">ycor</span> relative to the caller to <span class="argument">color</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>stamp-at 1 1 0</code></nobr> sets the color of the patch one unit to the right and one unit above the caller to black (color 0).		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=315.html" class="related">pc-at</a>
+			<a href="command_doc_include.php@com_id=364.html" class="related">pstamp-at</a>
+				<a href="command_doc_include.php@com_id=393.html" class="related">stamp</a>
+				<a href="command_doc_include.php@com_id=395.html" class="related">stamp-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">stamp-towards</span>
+	
+	<span class="argument">
+	angle distance color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">color to set</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the color of the patch <span class="argument">distance</span> away at an angle <span class="argument">angle</span> from the caller to <span class="argument">color</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>stamp-towards 0 1 0</code></nobr> sets the color of the patch one unit directly in front of the caller to black (color 0).		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=318.html" class="related">pc-towards</a>
+			<a href="command_doc_include.php@com_id=365.html" class="related">pstamp-towards</a>
+				<a href="command_doc_include.php@com_id=393.html" class="related">stamp</a>
+				<a href="command_doc_include.php@com_id=394.html" class="related">stamp-at</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">sum-of-patches</span>
+	
+	<span class="argument">
+	[list-of-commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list-of-commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that return a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the sum of <span class="argument">[list-of-commands]</span> for every patch.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>show sum-of-patches [food]</code></nobr> prints the total amount of food in the world.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=24.html" class="related">average-of-patches</a>
+			<a href="command_doc_include.php@com_id=208.html" class="related">max-of-patches</a>
+				<a href="command_doc_include.php@com_id=220.html" class="related">median-of-patches</a>
+				<a href="command_doc_include.php@com_id=266.html" class="related">min-of-patches</a>
+				<a href="command_doc_include.php@com_id=280.html" class="related">mode-of-patches</a>
+				<a href="command_doc_include.php@com_id=206.html" class="related">sdev-of-patches</a>
+				<a href="command_doc_include.php@com_id=403.html" class="related">sum-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=99.html" class="related">variance-of-patches</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">sum-of-patches-with</span>
+	
+	<span class="argument">
+	[condition] [list-of-commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to either true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list-of-commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that returns a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the total value of <span class="argument">[list-of-commands]</span> when run over the turtles that satisfy <span class="argument">[condition]</span>. If there are no patches in which <span class="argument">[condition]</span> is true, it reports <nobr><code>0</code></nobr>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>sum-of-patches-with [pc = green or pc = blue] [density]</code></nobr> returns the sum of the densities of all patches which are blue or green.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This command can also be executed by patches, for example within an ask-patches statement.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=25.html" class="related">average-of-patches-with</a>
+			<a href="command_doc_include.php@com_id=213.html" class="related">max-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=221.html" class="related">median-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=268.html" class="related">min-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=284.html" class="related">mode-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=209.html" class="related">sdev-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=402.html" class="related">sum-of-patches</a>
+				<a href="command_doc_include.php@com_id=101.html" class="related">variance-of-patches-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variable</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the value of the <nobr><code>variable</code></nobr> specified</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>height</code></nobr> returns the value of the variable named height		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=243.html" class="related">set</a>
+			<a href="command_doc_include.php@com_id=434.html" class="related">setvariable</a>
+				<a href="command_doc_include.php@com_id=432.html" class="related">variable-at</a>
+				<a href="command_doc_include.php@com_id=431.html" class="related">variable-of</a>
+				<a href="command_doc_include.php@com_id=433.html" class="related">variable-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variable-at</span>
+	
+	<span class="argument">
+	xcor ycor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the x-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the y-direction from the caller</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the value of the <nobr><code>variable</code></nobr> specified at a distance of <span class="argument">xcor</span> in the x direction and <span class="argument">ycor</span> in the y direction from the caller</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>size-at 1 1</code></nobr> returns the size of the turtle one patch away in the x direction and y patch away in the y direction		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=436.html" class="related">setvariable-at</a>
+			<a href="command_doc_include.php@com_id=430.html" class="related">variable</a>
+				<a href="command_doc_include.php@com_id=431.html" class="related">variable-of</a>
+				<a href="command_doc_include.php@com_id=433.html" class="related">variable-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variable-of</span>
+	
+	<span class="argument">
+	number1 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number1</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">turtle who number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the value of the <nobr><code>variable</code></nobr> specified for the turtle with who number <span class="argument">number1</span></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>height-of 0</code></nobr> returns the height of turtle number 0		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=435.html" class="related">setvariable-of</a>
+			<a href="command_doc_include.php@com_id=430.html" class="related">variable</a>
+				<a href="command_doc_include.php@com_id=432.html" class="related">variable-at</a>
+				<a href="command_doc_include.php@com_id=433.html" class="related">variable-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variable-towards</span>
+	
+	<span class="argument">
+	angle distance 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance from caller</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the value of the <nobr><code>variable</code></nobr> specified at an angle of <span class="argument">angle</span> and distance of <span class="argument">distance</span> away from the caller</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>happiness-towards 0 1</code></nobr> returns the happiness of the turtle directly in front of and one space beyond the caller		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=437.html" class="related">setvariable-towards</a>
+			<a href="command_doc_include.php@com_id=430.html" class="related">variable</a>
+				<a href="command_doc_include.php@com_id=432.html" class="related">variable-at</a>
+				<a href="command_doc_include.php@com_id=431.html" class="related">variable-of</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variance-of-patches</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of patch commands</td>
+		<td class="argdesc" valign="top">A list of commands for the patches to run which returns a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the numerical variance of the <span class="argument">[list of commands]</span> when evaluated across all the patches.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>variance-of-patches [pc]</code></nobr> returns the variance of the patch color of all of the patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=24.html" class="related">average-of-patches</a>
+			<a href="command_doc_include.php@com_id=208.html" class="related">max-of-patches</a>
+				<a href="command_doc_include.php@com_id=220.html" class="related">median-of-patches</a>
+				<a href="command_doc_include.php@com_id=221.html" class="related">median-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=266.html" class="related">min-of-patches</a>
+				<a href="command_doc_include.php@com_id=280.html" class="related">mode-of-patches</a>
+				<a href="command_doc_include.php@com_id=206.html" class="related">sdev-of-patches</a>
+				<a href="command_doc_include.php@com_id=402.html" class="related">sum-of-patches</a>
+				<a href="command_doc_include.php@com_id=101.html" class="related">variance-of-patches-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variance-of-patches-with</span>
+	
+	<span class="argument">
+	[condition] [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of patch commands</td>
+		<td class="argdesc" valign="top">An expression that returns a true or false value</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of patch commands</td>
+		<td class="argdesc" valign="top">A list of commands for the patches to run which returns a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the numerical variance of the <span class="argument">[list of commands]</span> when evaluated across all the patches that satisfy the condition (must return a boolean of true or false) specified by the <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>variance-of-patches-with [color = red] [food]</code></nobr> returns the variance of food of all the red patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=25.html" class="related">average-of-patches-with</a>
+			<a href="command_doc_include.php@com_id=213.html" class="related">max-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=221.html" class="related">median-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=268.html" class="related">min-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=284.html" class="related">mode-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=209.html" class="related">sdev-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=403.html" class="related">sum-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=99.html" class="related">variance-of-patches</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">xcor</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the x-coordinate of the turtle or patch.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if xcor = 2 [setc red]</code></nobr> commands the turtle to set its color to red of its x-coordinate is equal to 2.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=369.html" class="related">setxcor</a>
+			<a href="command_doc_include.php@com_id=307.html" class="related">who</a>
+				<a href="command_doc_include.php@com_id=238.html" class="related">xcor-at</a>
+				<a href="command_doc_include.php@com_id=239.html" class="related">xcor-of</a>
+				<a href="command_doc_include.php@com_id=244.html" class="related">xcor-towards</a>
+				<a href="command_doc_include.php@com_id=246.html" class="related">ycor</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ycor</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the y-coordinate of the turtle or patch.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if ycor = 2 [setc red]</code></nobr> commands the turtle to set its color to red of its y-coordinate is equal to 2.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=376.html" class="related">setycor</a>
+			<a href="command_doc_include.php@com_id=307.html" class="related">who</a>
+				<a href="command_doc_include.php@com_id=236.html" class="related">xcor</a>
+				<a href="command_doc_include.php@com_id=249.html" class="related">ycor-at</a>
+				<a href="command_doc_include.php@com_id=455.html" class="related">ycor-of</a>
+				<a href="command_doc_include.php@com_id=251.html" class="related">ycor-towards</a>
+			<hr></html>

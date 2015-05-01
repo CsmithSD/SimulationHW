@@ -1,0 +1,2476 @@
+<html><head><title>Command List</title><link rel="STYLESHEET" href="style.css"></head><body><h3 style="color: green">Command List</h3>
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div class="catdescription">
+      <p><font size="3" face="Verdana, Arial, Helvetica, sans-serif"> </font><font size="3" face="Verdana, Arial, Helvetica, sans-serif"></font><font size="3" face="Verdana, Arial, Helvetica, sans-serif">StarLogo 
+        has 14 &quot;major&quot; colors, with many shades of each. Different shades 
+        are associated with different numbers. For example, the shades of red 
+        are associated with the numbers between 10 and 20 (not including 20). 
+        Number 10 is a very &quot;dark&quot; red (close to black), number 15 is 
+        the &quot;purest&quot; red, and number 19 is a &quot;light&quot; red (close 
+        to white). Similarly, number 20 is a dark orange, number 25 is the purest 
+        orange, and number 29 is a light orange. (Note: Fractional numbers can 
+        also represent different shades, if your computer supports enough colors.) 
+        </font></p>
+      <font size="3" face="Verdana, Arial, Helvetica, sans-serif">
+<p><font size="3" face="Verdana, Arial, Helvetica, sans-serif">These numbers 
+        are used as inputs to the commands <font face="Courier New, Courier, mono">setc</font> 
+        (which sets the color of turtles) and <font face="Courier New, Courier, mono">setpc</font> 
+        (which sets the color of patches). So the command <font face="Courier New, Courier, mono"> 
+        ask-patches[setpc 15]</font> will turn all of the patches red, while <font face="Courier New, Courier, mono">ask-patches[setpc 
+        19]</font> will turn the patches a much lighter shade of red. Type <font face="Courier New, Courier, mono">ask-patches[setpc 
+        xcor + ycor]</font> to see the full range of colors. Color numbers greater 
+        than 140 &quot;wrap&quot; (using modulo 140).</font> </p>
+      <p><font size="3" face="Verdana, Arial, Helvetica, sans-serif">The organization 
+        of colors by shades is very useful for achieving smooth shading effects 
+        using the commands <font face="Courier New, Courier, mono">scale-color</font> 
+        and <font face="Courier New, Courier, mono">scale-pc</font>.</font> </p>
+      <p><font size="3" face="Verdana, Arial, Helvetica, sans-serif">There are 
+        commands (e.g., <font face="Courier New, Courier, mono">black</font>, 
+        <font face="Courier New, Courier, mono">red</font>, <font face="Courier New, Courier, mono">green</font>) 
+        that report color values. These commands report the number for the &quot;purest&quot; 
+        shade of the color. For example, <font face="Courier New, Courier, mono">red</font> 
+        reports 15 and <font face="Courier New, Courier, mono">orange</font> reports 
+        25. Color names report numbers in the color listing:</font> </p>
+      <div align="center"> 
+        <center>
+          <table border="1" cellpadding="2" cellspacing="1" width="50%">
+            <tr> 
+              <td><font color="#000000" face="Verdana, Arial, Helvetica, sans-serif"><b>black</b></font></td>
+              <td><font face="Verdana, Arial, Helvetica, sans-serif">0</font></td>
+              <td><font color="#8D8D8D" face="Verdana, Arial, Helvetica, sans-serif"><b>gray, 
+                grey</b></font></td>
+              <td><font face="Verdana, Arial, Helvetica, sans-serif">5</font></td>
+            </tr>
+            <tr> 
+              <td><font color="#000000" face="Verdana, Arial, Helvetica, sans-serif"><b>white</b></font></td>
+              <td><font face="Verdana, Arial, Helvetica, sans-serif">9</font></td>
+              <td><font color="#FF0000" face="Verdana, Arial, Helvetica, sans-serif"><b>red</b></font></td>
+              <td><font face="Verdana, Arial, Helvetica, sans-serif">15</font></td>
+            </tr>
+            <tr> 
+              <td><font color="#FF5500" face="Verdana, Arial, Helvetica, sans-serif"><b>orange</b></font></td>
+              <td><font face="Verdana, Arial, Helvetica, sans-serif">25</font></td>
+              <td><font color="#A07050" face="Verdana, Arial, Helvetica, sans-serif"><b>brown</b></font></td>
+              <td><font face="Verdana, Arial, Helvetica, sans-serif">35</font></td>
+            </tr>
+            <tr> 
+              <td><font color="#FFFF00" face="Verdana, Arial, Helvetica, sans-serif"><b>yellow</b></font></td>
+              <td><font face="Verdana, Arial, Helvetica, sans-serif">45</font></td>
+              <td><font color="#51C500" face="Verdana, Arial, Helvetica, sans-serif"><b>green</b></font></td>
+              <td><font face="Verdana, Arial, Helvetica, sans-serif">55</font></td>
+            </tr>
+            <tr> 
+              <td><font color="#00FF00" face="Verdana, Arial, Helvetica, sans-serif"><b>lime</b></font></td>
+              <td><font face="Verdana, Arial, Helvetica, sans-serif">65</font></td>
+              <td><font color="#00FFC6" face="Verdana, Arial, Helvetica, sans-serif"><b>turquoise</b></font></td>
+              <td><font face="Verdana, Arial, Helvetica, sans-serif">75</font></td>
+            </tr>
+            <tr> 
+              <td><font color="#00FFFF" face="Verdana, Arial, Helvetica, sans-serif"><b>cyan</b></font></td>
+              <td><font face="Verdana, Arial, Helvetica, sans-serif">85</font></td>
+              <td><font color="#007FFF" face="Verdana, Arial, Helvetica, sans-serif"><b>sky</b></font></td>
+              <td><font face="Verdana, Arial, Helvetica, sans-serif">95</font></td>
+            </tr>
+            <tr> 
+              <td><font color="#0000FF" face="Verdana, Arial, Helvetica, sans-serif"><b>blue</b></font></td>
+              <td><font face="Verdana, Arial, Helvetica, sans-serif">105</font></td>
+              <td><font color="#7F00FF" face="Verdana, Arial, Helvetica, sans-serif"><b>violet, 
+                purple</b></font></td>
+              <td><font face="Verdana, Arial, Helvetica, sans-serif">115</font></td>
+            </tr>
+            <tr> 
+              <td><font color="#FF00FF" face="Verdana, Arial, Helvetica, sans-serif"><b>magenta</b></font></td>
+              <td><font face="Verdana, Arial, Helvetica, sans-serif">125</font></td>
+              <td><font color="#FF007F" face="Verdana, Arial, Helvetica, sans-serif"><b>pink</b></font></td>
+              <td><font face="Verdana, Arial, Helvetica, sans-serif">135</font></td>
+            </tr>
+          </table>
+        </center>
+      </div>
+      <br>
+      </font></div>
+<p>
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">black</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports 0, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+			<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">blue</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports 105, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">brown</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports 35, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">color</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the color of the turtle, or if a patch is calling it, the color of one of the turtles on the patch.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if color = black <br>[fd 3]</code></nobr><br>has all turtles check if they are black, and if so, move themselves forward by 3 turtle steps.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=58.html" class="related">color-at</a>
+			<a href="command_doc_include.php@com_id=59.html" class="related">color-of</a>
+				<a href="command_doc_include.php@com_id=61.html" class="related">color-towards</a>
+				<a href="command_doc_include.php@com_id=255.html" class="related">setcolor</a>
+				<a href="command_doc_include.php@com_id=307.html" class="related">who</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">color-at</span>
+	
+	<span class="argument">
+	xcor ycor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">units in the x direction away from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">units in the y direction away from the caller</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the color of the turtle <span class="argument">xcor</span> units in the x direction and <span class="argument">ycor</span> units in the y direction away from the caller .</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>color-at 1 1</code></nobr> reports the color of the turtle one unit to the right and one unit above the patch or turtle given the command.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=55.html" class="related">color</a>
+			<a href="command_doc_include.php@com_id=59.html" class="related">color-of</a>
+				<a href="command_doc_include.php@com_id=61.html" class="related">color-towards</a>
+				<a href="command_doc_include.php@com_id=256.html" class="related">setc-at</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">color-of</span>
+	
+	<span class="argument">
+	number 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">who-number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the color of the turtle with who number <span class="argument">number</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>color-of 2</code></nobr> returns the color number of the turtle with who-number 2		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=55.html" class="related">color</a>
+			<a href="command_doc_include.php@com_id=58.html" class="related">color-at</a>
+				<a href="command_doc_include.php@com_id=61.html" class="related">color-towards</a>
+				<a href="command_doc_include.php@com_id=257.html" class="related">setc-of</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">color-towards</span>
+	
+	<span class="argument">
+	angle distance 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance away from the caller</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the color of the turtle <span class="argument">distance</span> away at an angle of <span class="argument">angle</span> from the caller. Note that the angle is measured from the direction the caller is facing.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>color-towards 0 1</code></nobr> reports the color of the turtle one patch directly ahead of the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=55.html" class="related">color</a>
+			<a href="command_doc_include.php@com_id=58.html" class="related">color-at</a>
+				<a href="command_doc_include.php@com_id=59.html" class="related">color-of</a>
+				<a href="command_doc_include.php@com_id=259.html" class="related">setc-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-color</span>
+	
+	<span class="argument">
+	color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">color of turtles to be counted</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles that are the color <span class="argument">color</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>count-color black</code></nobr> returns the number of black turtles.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=68.html" class="related">count-color-range</a>
+			<a href="command_doc_include.php@com_id=88.html" class="related">count-pc</a>
+				<a href="command_doc_include.php@com_id=92.html" class="related">count-pc-range</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-color-range</span>
+	
+	<span class="argument">
+	mincolor maxcolor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>mincolor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">low end of range of color of turtles to be counted</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>maxcolor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">high end of range of color of turtles to be counted</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles that have colors between <span class="argument">mincolor</span> and <span class="argument">maxcolor</span>, inclusive.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>count-color-range 13.5 16.5</code></nobr> returns the number of turtles who are red (15) or within 1.5 shades of red. This command is useful if you have scaled your turtle's colors to shades of a particular color using scale-color.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=67.html" class="related">count-color</a>
+			<a href="command_doc_include.php@com_id=88.html" class="related">count-pc</a>
+				<a href="command_doc_include.php@com_id=92.html" class="related">count-pc-range</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-pc</span>
+	
+	<span class="argument">
+	color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">color to determine whether to count a patch</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of patches that are the color <span class="argument">color</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>count-pc blue</code></nobr> returns the number of blue patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This command can also be executed by patches, for example within an ask-patches statement.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=67.html" class="related">count-color</a>
+			<a href="command_doc_include.php@com_id=68.html" class="related">count-color-range</a>
+				<a href="command_doc_include.php@com_id=92.html" class="related">count-pc-range</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-pc-range</span>
+	
+	<span class="argument">
+	mincolor maxcolor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>mincolor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">low end of range of colors to determine whether to count a patch</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>maxcolor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">high end of range of colors to determine whether to count a patch</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of patches that have colors between <span class="argument">mincolor</span> and <span class="argument">maxcolor</span>, inclusive.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>count-pc-range 64 66.5</code></nobr> returns the number of patches that are lime (65) or very close to it.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=67.html" class="related">count-color</a>
+			<a href="command_doc_include.php@com_id=68.html" class="related">count-color-range</a>
+				<a href="command_doc_include.php@com_id=88.html" class="related">count-pc</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">cyan</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<img src="http://education.mit.edu/starlogodoc/images/cyan.jpg"><p>cyan reports 85, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">gray (grey)</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<nobr><code>gray</code></nobr> reports 5, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">green</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<nobr><code>green</code></nobr> reports 55, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">lime</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<nobr><code>lime</code></nobr> reports 65, the number of its particular hue in the color table. </div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">magenta</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<nobr><code>magenta</code></nobr> reports 125, the number of its particular hue in the color table. </div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">orange</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports 25, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">patchcolor (pc)</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the color of the patch the turtle is on.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		if <nobr><code>pc = red [fd 1]</code></nobr> commands the turtle to move forward one unit if the color of the patch the turtle is on is red.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This command can also be executed by patches, for example within an <nobr><code>ask-patches</code></nobr> statement.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=313.html" class="related">pc-ahead</a>
+			<a href="command_doc_include.php@com_id=427.html" class="related">pc-ahead-one-patch</a>
+				<a href="command_doc_include.php@com_id=315.html" class="related">pc-at</a>
+				<a href="command_doc_include.php@com_id=318.html" class="related">pc-towards</a>
+				<a href="command_doc_include.php@com_id=247.html" class="related">setbg</a>
+				<a href="command_doc_include.php@com_id=269.html" class="related">setpc</a>
+				<a href="command_doc_include.php@com_id=393.html" class="related">stamp</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">pc-ahead (pc-ahead-one-step)</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the color of the patch one space ahead in the direction that the turtle is facing. If called by the observer, it will assume coordinates of (0,0).</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		<nobr><code>if pc-ahead = blue [fd 1]</code></nobr> commands the caller to move forward 1 if the patch ahead of it is blue.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=312.html" class="related">patchcolor</a>
+			<a href="command_doc_include.php@com_id=427.html" class="related">pc-ahead-one-patch</a>
+				<a href="command_doc_include.php@com_id=315.html" class="related">pc-at</a>
+				<a href="command_doc_include.php@com_id=318.html" class="related">pc-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">pc-at</span>
+	
+	<span class="argument">
+	xcor ycor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the color of the patch <span class="argument">xcor</span> units in the x direction and <span class="argument">ycor</span> units in the y direction away from the caller. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>pc-at 1 1</code></nobr> reports the color of the patch one unit to the right and one unit above the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This command can also be executed by patches, for example within an ask-patches statement.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=312.html" class="related">patchcolor</a>
+			<a href="command_doc_include.php@com_id=313.html" class="related">pc-ahead</a>
+				<a href="command_doc_include.php@com_id=318.html" class="related">pc-towards</a>
+				<a href="command_doc_include.php@com_id=394.html" class="related">stamp-at</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">pc-towards</span>
+	
+	<span class="argument">
+	angle distance 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the color of the patch <span class="argument">angle</span> away at an angle <span class="argument">distance</span> from the caller.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>pc-towards 0 1</code></nobr> returns the color of the patch which is one unit directly in front of the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This command can also be executed by patches, for example within an ask-patches statement.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=312.html" class="related">patchcolor</a>
+			<a href="command_doc_include.php@com_id=313.html" class="related">pc-ahead</a>
+				<a href="command_doc_include.php@com_id=315.html" class="related">pc-at</a>
+				<a href="command_doc_include.php@com_id=395.html" class="related">stamp-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">pink</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<nobr><code>pink</code></nobr> reports 135, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ppc</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the current plot pen color.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=353.html" class="related">pp</a>
+			<a href="command_doc_include.php@com_id=355.html" class="related">ppd</a>
+				<a href="command_doc_include.php@com_id=356.html" class="related">ppreset</a>
+				<a href="command_doc_include.php@com_id=357.html" class="related">ppu</a>
+				<a href="command_doc_include.php@com_id=358.html" class="related">ppxcor</a>
+				<a href="command_doc_include.php@com_id=359.html" class="related">ppycor</a>
+				<a href="command_doc_include.php@com_id=295.html" class="related">setppc</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whop">Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">pstamp</span>
+	
+	<span class="argument">
+	color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Color</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Allows patches to set the color of the turtle that is on it to <span class="argument">color</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>pstamp blue</code></nobr> sets the color of the turtles on top of the called patch to blue.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=364.html" class="related">pstamp-at</a>
+			<a href="command_doc_include.php@com_id=365.html" class="related">pstamp-towards</a>
+				<a href="command_doc_include.php@com_id=393.html" class="related">stamp</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whop">Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">pstamp-at</span>
+	
+	<span class="argument">
+	xcor ycor color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Color</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Allows patches to set the color of the turtle <span class="argument">xcor</span> patches in the x-direction and <span class="argument">ycor</span> patches in the y-direction away to <span class="argument">color</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>pstamp-at 1 1 blue</code></nobr> commands the patch to set the color of the turtles one unit to the right and one unit above the called patch to the color blue.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=363.html" class="related">pstamp</a>
+			<a href="command_doc_include.php@com_id=365.html" class="related">pstamp-towards</a>
+				<a href="command_doc_include.php@com_id=394.html" class="related">stamp-at</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whop">Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">pstamp-towards</span>
+	
+	<span class="argument">
+	angle distance color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Color</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Allows patches to set the color of the turtle <span class="argument">distance</span> units away at an angle of <span class="argument">angle</span> to <span class="argument">color</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>pstamp-towards 0 1 blue</code></nobr> sets the color of the turtles one unit directly ahead of the called patch to the color blue.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=363.html" class="related">pstamp</a>
+			<a href="command_doc_include.php@com_id=364.html" class="related">pstamp-at</a>
+				<a href="command_doc_include.php@com_id=395.html" class="related">stamp-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">purple</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<nobr><code>violet</code></nobr> reports 115, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">red</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+red reports 15, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">scale-color</span>
+	
+	<span class="argument">
+	color variable limit1 limit2 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Color</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>variable</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Variable color</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>limit1</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Lower limit</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>limit2</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Upper limit</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles set their color to a shade of <span class="argument">color</span> based on their value of <span class="argument">variable</span>. <span class="argument">limit1</span> and <span class="argument">limit2</span> determine the amount of gradation. If a patch calls this, all turtles on that patch scale their color.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>scale-color blue energy 0 20</code></nobr> Turtles turn one of twenty shades of blue. Turtles with lower energy turn darker blue.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>scale-color blue energy 20 0</code></nobr> <br>Turtles turn one of twenty shades of blue. Turtles with lower energy turn lighter blue.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If the turtle exceeds the limits, it turns black on the dark end of the specturm and turns white on the bright end of the spectrum.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=188.html" class="related">scale-pc</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">scale-pc</span>
+	
+	<span class="argument">
+	color variable limit1 limit2 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Color</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>variable</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>limit1</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Lower limit</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>limit2</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Upper limit</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Patches set their color to a shade of <span class="argument">color</span> based on their value of <span class="argument">variable</span>. <span class="argument">limit1</span> and <span class="argument">limit2</span> determine the amount of gradation. If a turtle calls this, the patch underneath the turtle scale its patch color.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>scale-color green density 0 20</code></nobr><br>Patches turn one of twenty shades of green. Patches with lower density turn darker green.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>scale-color blue energy 20 0</code></nobr><br>Patches turn one of twenty shades of green. Patches with lower density turn lighter green.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This is a patch command. It must be called from within an <nobr><code>ask-patches</code></nobr> or <nobr><code>ask-patch-at</code></nobr> statement.		</div>
+		<p>
+				<div class="notes">
+		If the patch exceeds the limits, it turns black on the dark end of the specturm and turns white on the bright end of the spectrum.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=184.html" class="related">scale-color</a>
+			<a href="command_doc_include.php@com_id=269.html" class="related">setpc</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setbg</span>
+	
+	<span class="argument">
+	color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Color</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the color of all the patches to <span class="argument">color</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setbg blue</code></nobr> sets the color of all the patches to blue.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=15.html" class="related">ask-patches</a>
+			<a href="command_doc_include.php@com_id=312.html" class="related">patchcolor</a>
+				<a href="command_doc_include.php@com_id=269.html" class="related">setpc</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setc-at</span>
+	
+	<span class="argument">
+	xcor ycor color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Color</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the color of the turtle at (<span class="argument">xcor</span>, <span class="argument">ycor</span>) to <span class="argument">color</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setc-at 1 1 0</code></nobr> sets the color of the turtle at <nobr><code>(1,1)</code></nobr> to <nobr><code>black</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=58.html" class="related">color-at</a>
+			<a href="command_doc_include.php@com_id=257.html" class="related">setc-of</a>
+				<a href="command_doc_include.php@com_id=259.html" class="related">setc-towards</a>
+				<a href="command_doc_include.php@com_id=255.html" class="related">setcolor</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setc-of</span>
+	
+	<span class="argument">
+	turtleid color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>turtleid</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">who number of the turtle whose color should be changed</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Color</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the color of the turtle with ID <span class="argument">turtleid</span>$ to color <span class="argument">color</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setc-of 2 0</code></nobr> sets the color of the turtle with who number <nobr><code>2</code></nobr> to <nobr><code>black</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=59.html" class="related">color-of</a>
+			<a href="command_doc_include.php@com_id=256.html" class="related">setc-at</a>
+				<a href="command_doc_include.php@com_id=259.html" class="related">setc-towards</a>
+				<a href="command_doc_include.php@com_id=255.html" class="related">setcolor</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setc-towards</span>
+	
+	<span class="argument">
+	angle distance color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Color</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the color of the turtle <span class="argument">angle</span> away at angle <span class="argument">distance</span> from the caller to <span class="argument">color</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setc-towards 0 1 0</code></nobr> sets the color of the turtle one unit directly in front of the caller to <nobr><code>black</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=61.html" class="related">color-towards</a>
+			<a href="command_doc_include.php@com_id=256.html" class="related">setc-at</a>
+				<a href="command_doc_include.php@com_id=257.html" class="related">setc-of</a>
+				<a href="command_doc_include.php@com_id=255.html" class="related">setcolor</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setcolor (setc)</span>
+	
+	<span class="argument">
+	colorname 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>colorname</nobr></td>
+		<td class="argtype" valign="top">Color</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles set their color to <span class="argument">colorname</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setc brown</code></nobr>		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>setc 45</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=55.html" class="related">color</a>
+			<a href="command_doc_include.php@com_id=256.html" class="related">setc-at</a>
+				<a href="command_doc_include.php@com_id=257.html" class="related">setc-of</a>
+				<a href="command_doc_include.php@com_id=259.html" class="related">setc-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whop">Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setpc (setpatchcolor)</span>
+	
+	<span class="argument">
+	color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Color</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This command is run as a patch command inside an <nobr><code>ask-patches</code></nobr> statement. The patches being asked will set their color to <span class="argument">color</span>. Use stamp if you want to have a turtle change the color of a patch.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-patches [setpc blue]</code></nobr> commands the patches to set their color to <nobr><code>blue</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=312.html" class="related">patchcolor</a>
+			<a href="command_doc_include.php@com_id=188.html" class="related">scale-pc</a>
+				<a href="command_doc_include.php@com_id=247.html" class="related">setbg</a>
+				<a href="command_doc_include.php@com_id=393.html" class="related">stamp</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setppc</span>
+	
+	<span class="argument">
+	color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Color</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the color of the current plot pen to be <span class="argument">color</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setppc black</code></nobr> sets the current plot pen to <nobr><code>black</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=353.html" class="related">pp</a>
+			<a href="command_doc_include.php@com_id=354.html" class="related">ppc</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">sky</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+sky reports 95, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">turquoise</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<nobr><code>turquoise</code></nobr> reports <nobr><code>75</code></nobr>, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">white</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<nobr><code>white</code></nobr> reports 9, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">yellow</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<nobr><code>yellow</code></nobr> reports <nobr><code>45</code></nobr>, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+			<hr></html>

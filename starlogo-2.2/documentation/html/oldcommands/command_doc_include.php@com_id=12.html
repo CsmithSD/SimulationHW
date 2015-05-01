@@ -1,0 +1,68 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+<!-- begin sample documentation page -->
+
+
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+
+<span class="commandname">alive?-of</span>
+
+<span class="argument">
+who number </span>
+
+
+<!-- show arguments -->
+
+<p>
+<div class="heading">Parameters:</div>
+<table cellpadding="2" cellspacing="2" border="0"> 
+
+
+<tr>
+<td class="argname" valign="top"><nobr>who number</nobr></td>
+<td class="argtype" valign="top">Integer</td>
+<td class="argdesc" valign="top">The who id of a turtle</td>
+</tr>
+
+
+</table>
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a boolean. If the turtle with the given who number is alive, it returns true. If the turtle with the given who number is not alive it returns false.<p>This command is useful when looping over a set of turtle who-numbers. Since each turtle may die between the time you get the who numbers and the time you ask it about itself, you should check <nobr><code>alive?-of</code></nobr> before using it. A better way to loop over a set of turtles is to use <nobr><code>grab</code></nobr> because grabbed turtles that try to die will not be allowed to completely die until they are let go.</div>
+
+<!-- show examples if there are examples -->
+
+<p>
+<div class="heading">Examples:</div>
+<div class="examples">
+<nobr><code>alive?-of 2</code></nobr> returns true when the turtle with who number 2 is alive.</div>
+<p>
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<p>
+<div class="heading">Related Commands:</div>
+<a href="command_doc_include.php@com_id=11.html" class="related">alive?</a>
+
+</body></html>

@@ -1,0 +1,93 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+<!-- begin sample documentation page -->
+
+
+<!-- if (!($com_id)) { $com_id = 1; } -->
+
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+
+<span class="commandname">variance-of-breed-with</span>
+
+<span class="argument">
+[condition] [list of commands] </span>
+
+
+<!-- show arguments -->
+
+<p>
+<div class="heading">Parameters:</div>
+<table cellpadding="2" cellspacing="2" border="0"> 
+
+
+<tr>
+<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+<td class="argtype" valign="top">List of turtle commands</td>
+<td class="argdesc" valign="top">An expression that returns a true or false value</td> 
+</tr>
+
+
+<tr>
+<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+<td class="argtype" valign="top">List of turtle commands</td>
+<td class="argdesc" valign="top">A list of commands for the turtles to run which returns a number</td> 
+</tr>
+
+
+</table>
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the numerical variance of the <span class="argument">[list of commands]</span> when evaluated across all the turtles of breed <nobr><code>frogs</code></nobr> that satisfy the condition (must return a boolean of true or false) specified by the <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+<p>
+<div class="heading">Examples:</div>
+<div class="examples">
+<nobr><code>variance-of-frogs-with [color = red] [speed]</code></nobr> returns the variance of the speeds of all the red turtles of breed frogs.</div>
+<p>
+ 
+
+<!-- show notes if there are notes -->
+
+<p>
+<div class="heading">Notes:</div>
+<div class="notes">
+If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.</div>
+<p>
+<div class="notes">
+When a turtle calls the command, it, itself, is not included as part of the calculation.</div>
+<p>
+
+<!-- show related commands if there are related commands -->
+
+<p>
+<div class="heading">Related Commands:</div>
+<a href="command_doc_include.php@com_id=21.html" class="related">average-of-breed-with</a>
+<a href="command_doc_include.php@com_id=203.html" class="related">max-of-breed-with</a>
+<a href="command_doc_include.php@com_id=218.html" class="related">median-of-breed-with</a>
+<a href="command_doc_include.php@com_id=261.html" class="related">min-of-breed-with</a>
+<a href="command_doc_include.php@com_id=278.html" class="related">mode-of-breed-with</a>
+<a href="command_doc_include.php@com_id=201.html" class="related">sdev-of-breed-with</a>
+<a href="command_doc_include.php@com_id=401.html" class="related">sum-of-breed-with</a>
+<a href="command_doc_include.php@com_id=85.html" class="related">variance-of-breed</a>
+<a href="command_doc_include.php@com_id=140.html" class="related">variance-of-turtles-with</a>
+
+</body></html>

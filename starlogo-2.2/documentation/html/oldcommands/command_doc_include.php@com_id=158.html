@@ -1,0 +1,65 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+<!-- begin sample documentation page -->
+
+
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+
+<span class="commandname">ignore</span>
+
+<span class="argument">
+expression </span>
+
+
+<!-- show arguments -->
+
+<p>
+<div class="heading">Parameters:</div>
+<table cellpadding="2" cellspacing="2" border="0"> 
+
+
+<tr>
+<td class="argname" valign="top"><nobr>expression</nobr></td>
+<td class="argtype" valign="top">Anything</td>
+<td class="argdesc" valign="top">Expression to evalute for side effects</td>
+</tr>
+
+
+</table>
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Ignores the return value of the expression immediately following it. More useful than it looks, <nobr><code>ignore</code></nobr> can be used to execute a procedure for its side effects.</div>
+
+<!-- show examples if there are examples -->
+
+<p>
+<div class="heading">Examples:</div>
+<div class="examples">
+<nobr><code>to compute-and-print-square :x</code></nobr><br><nobr><code>  let [:ans :x * :x]</code></nobr><br><nobr><code>  show :x</code></nobr><br><nobr><code>  output :x</code></nobr><p><nobr><code>ignore compute-and-print-square 4</code></nobr> shows 16 in the command center, but does nothing with the return value from <nobr><code>compute-and-print-square</code></nobr>.</div>
+<p>
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+
+</body></html>

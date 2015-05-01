@@ -1,0 +1,716 @@
+Changes Since 2.2:
+
+Bugs Fixed
+--------------
+1. Fixed deadlock problem when closing turtle monitors
+
+2. Fixed problems with legends running in applets
+
+3. Updated about box and splash screen to reflect 2.21
+
+Changes Since 2.1:
+
+Bugs Fixed
+-----------
+
+1. Rewrote tail recursion detection to actually work.
+
+2. Fixed numerous hanging bugs that plagued the MacOSX version of
+   StarLogo.
+
+3. Fixed display of error dialog boxes when running StarLogo as an
+   applet.
+
+4. StarLogo is properly ported to running on Intel-based Macintosh
+   computers when they come out.
+
+5. Eliminated ugly redraws of widgets on the Macintosh version of
+   StarLogo. Text widgets look much better now.
+
+6. Fixed a bug in scatter plots where the generated StarLogo code was
+   wrong.
+
+7. Found and fixed a bug that sometimes let the turtles escape their
+   StarLogo world and scribble on the widgets nearby.
+
+8. Resize the patch canvas back to default values when you do New
+   Project.
+
+9. Fixed numerous bugs in documentation.
+
+
+
+Changes Since 2.0.2:
+
+New Features 
+------------
+
+* Added count-turtles-here-with, one-of-turtles-here-with,
+* list-of-turtles-here-with, count-turtles-at-with,
+* count-turtles-towards-with, one-of-turtles-at-with,
+* one-of-turtles-towards-with, list-of-turtles-at-with,
+* list-of-turtles-towards-with
+
+* Added export-picture-patches, export-picture-turtles-and-patches,
+* export-picture-interface, export-picture-patches-name,
+* export-picture-turtles-and-patches-name,
+* export-picture-interface-name
+
+* Added pc-ahead-one-step, pc-ahead-one-patch. pc-ahead is the same as
+* pc-ahead-one-step. pc-ahead-one-patch is a new command that looks
+* ahead at least one patch to make sure that even if 'fd 1' wouldn't
+* bring the turtle to a new patch (remember that patches are 1.414
+* steps long on their diagonal) pc-ahead-one-patch will look one patch
+* ahead.
+
+  pc-ahead = pc-towards 0 1
+  pc-ahead-one-step = pc-towards 0 1
+  pc-ahead-one-patch = pc-at round dx round dy
+
+* Added sum-of-list command
+
+* Added splash screen when StarLogo starts up to mask the fact that
+* Java applications take a while to load.
+
+* Added Calibrate Graphics to automatically choose the fastest drawing
+* on your platform. Requires write access to your disk to save the
+* calibration data. Won't work for applets (there, we'll just make our
+* best guess).
+
+* Updated StarLogo applet HTML template to the latest code to get the
+* Sun JVM on all browsers.
+
+* On Windows, press the Escape key to stop everything from running. On
+* Macs, use Command-.
+
+* If a turtle's stack overflows, don't just silently stop running. Now
+* we show a dialog box that tells you where the stack overflow
+* happened.  This error occurs when you call a non-tail recursive
+* function (or many nested function calls) too often.
+
+* Added support to plot wizard for plotting median, mode and standard
+* deviation of a variable (we used to only have number, average, min,
+* max, and average)
+
+* Added support to plot wizard for plotting slider values.
+
+* Plot line connectedness is now associated with each plot pen, not
+* just each plot.
+
+* When using the Template feature, the initial dialog box should open
+* in the Templates directory.
+
+* Internalization support all throughout StarLogo. Initial support for
+* Spanish (will be announced when ready). Projects are now saved in
+* UTF-8 encoding to support proper translation of code pages between
+* different languages. (Old projects will be read in using the
+* platform's native code page and saved out with the new UTF-8
+* encoding).
+
+
+Removed Features
+----------------
+
+* switch-patches command (Use Calibrate Graphics instead)
+
+* Java 1.1, 1.2, 1.3 support (We require Java 1.4.x. now)
+
+* MacOS 9 support (We require Java 1.4.x now)
+
+
+
+Bugs Fixed
+-----------
+
+* Rewrote entire command reference with improved examples, related
+* commands, and descriptions.
+
+* Check if the user writes code with output where not all code paths
+* through the function exit via output. That is illegal. If one code
+* path uses output, all code paths must use output.
+
+* Made the Help menu on non-MacOSX prettier.
+
+* Properly detect and reject the use of stop and output from the
+* command center.
+
+* If you cancel a polygon draw operation by clicking outside the
+* StarLogo patches, StarLogo will continue to run properly and not
+* freeze up.
+
+* Plot widgets are now the proper size when you drag out a rectangle
+* on the interface to create it.
+
+* Histogram plots save more accurately in the project file. In the old
+* way, they used to load incorrectly.
+
+* When you add or remove variables from turtles-own, patches-own or
+* globals, make sure that the plot dialog box knows about it.
+
+* Fixed the math functions that determine what patch a turtle steps
+* onto when moving. Now a turtle can't get 'lost' where he's not
+* really on any patch.
+
+* Fixed painting with turtles. Now turtles are only created when the
+* painting is 'committed' (usually releasing the mouse button; for
+* polygon, when the polygon is closed).
+
+* Updated FAQ.
+
+* sdev-of-turtles-with now returns the standard deviation. It used to
+* return the variance.
+
+* Made it harder to move an interface widget (button, slider, monitor,
+* text box) when you click and drag on it. This should help those
+* mouse-dextrously challenged people.
+
+* Rewrote printing support to work properly on all platforms. Can
+* print the command center, interface, info and output windows.
+
+* When you edit the turtles-own, patches-own or globals lists in your
+* project, we now make sure that any values that had been assigned
+* into these variables are preserved across the re-compile.
+
+* Pause StarLogo when editing a shape.
+
+* Fixed tail recursion detection in the StarLogo compiler. Should be
+* completely accurate now for tail calls to the current
+* procedure. (StarLogo does not optimize tail calls to different
+* procedures).
+
+* Using the paint tools to erase a patch with a turtle on it now
+* redraws the patch properly.
+
+* Fixed misspellings in the Control Center's print dialog box.
+
+* StarLogo window now exports to PNG, rather than GIF. No more "too
+* many colors to export as GIF" errors.
+
+* Removed red outline on rotated shape in the Shape Editor window.
+
+* Added tooltips to the Shape Editor window.
+
+* Properly handle the case when a turtle being asked to do something
+* by another turtle is asked to die. Dead turtles no longer run code
+* after they die. For example,
+
+*  ask-turtle 0 [ask-turtle 1 ask-turtle 2 [kill 1 fd 10] fd 10] fd 10]
+*  Turtle 1 dies, and only turtle 0 moves fd 10. After turtle 1 dies,
+*  the process that is running ask-turtle 2 is stopped, therefore
+*  killing the process that turtle #2 is running so it will never
+*  proceed past the kill 1 to its own fd 10. Since turtle 1 is dead, he
+*  can't run fd 10. That leaves turtle 0 to run his own fd 10.
+
+* If you stop StarLogo from running, any grabbed turtles are released.
+
+* If you ask a dead turtle to do something, nothing should happen.
+
+* If a turtle dies while asking another turtle to do something, stop
+* the ask process.
+
+* If you pop a button, any grabbed turtles will no longer remain
+* grabbed forever.
+
+* If you try to set any variable of a dead turtle, just skip it.
+
+* Turtle monitors are better at reading and displaying variables of turtles who are in the middle of dying.
+
+* Fixed deadlock problems in the turtle and patch monitors.
+
+* Fixed off-by-1 bug when loading images into StarLogo. All pictures
+* were loaded one pixel to the left.
+
+* If you try to define a run procedure (or kind or parent), pop up an
+* error message because that's illegal.
+
+* StarLogo now accepts file paths in Windows UNC format
+* (e.g. \\server\directory)
+
+* When StarLogo starts up on Windows, the Control Center has the text
+* focus and is now on top of the StarLogo window.
+
+* All dialog boxes show OK and Cancel in the proper order depending on
+* platform.
+
+* If you had a file with a dot in the name (on PCs), StarLogo would
+* change the suffix to .slogo. Now it adds the .slogo suffix instead.
+
+* Completely rewrote the paint tools implementation. The pencil tool
+* should appear to be much smoother now. Also supports Undo.
+
+* Font menu on MacOSX scrolls properly now (requires Java 1.4.1).
+
+* Don't allow an empty text widget to be created.
+
+* random-gaussian now produces random numbers with a mean around 0. It
+* used to be below 0.
+
+* Drawing StarLogo speed on MacOS X is now much much faster than
+* before.
+
+* When listed in the Windows/Plot menu, plot widgets now have their
+* plot-id prepended to them.
+
+* The compile progress bar is much prettier now.
+
+* Sliders cannot be called run. Detect this and pop up and error
+* dialog box.
+
+* Plots can now have some pens plot 'connected points' and other pens
+* plot separate points.
+
+* StarLogo projects are now saved in the UTF-8 string format. This
+* enables projects to contain non-ASCII characters (such as those from
+* character sets outside the USA) and load properly into StarLogo
+* running in any language.
+
+* Histograms now auto-scale their axes by default now.
+
+* Plot widgets will now draw even when their associated plot windows
+* are not yet visible.
+
+* Widget drawing bugs due to clipping errors have been eliminated on
+* MacOS X.
+
+* who-min-of-turtles and who-max-of-turtles are now properly treated
+* as reporters by the compiler.
+
+* StarLogo does not compile anything until you try to run a button or
+* command center item. If compilation fails, however, if what you try
+* to run in the command center compiles successfully, it will still
+* run. If compilation fails, no buttons will run.
+
+* If a turtle leaps forward less than a single patch, he will move
+* properly as long as there is no other turtle on the
+* patch. Previously, the turtle would not move at all.
+
+
+
+
+Changes Since 2.0.1:
+
+* Fixed cut/copy/paste on MacOS 8/9 StarLogo.
+
+* Fix print/type commands to not deadlock the output window.
+
+* MacOS X version now uses Helvetica 12 point font for the Info Window
+because it looks nicer than Monaco.
+
+* Fixed double-clicking of project files on MacOS X. The application
+now waits til it has finished initializing before attempting to open
+the file.
+
+* Don't set the turtle head icon image on Macintosh window title bars.
+It's not the proper UI.
+
+* When loading a project on a Mac, make sure no windows overlap the
+menu bar.
+
+
+Changes Since 2.0:
+
+* Fixed file loading bug on Macs caused by an inadvertant leaving-out
+of a condition in one if statement. This bug caused a Null Pointer
+Exception on loading all projects.
+
+* Sliders now drag properly again.
+
+* New/Edit Monitor dialog box is now big enough to fit all the
+controls on MacOS X.
+
+* Fixed a bug re: saving a project with a wizard ptolemy plot that has
+never been edited. 
+
+* Modified Turtle and Patch monitors to be better at avoiding
+deadlock.
+
+
+Changes Since 2.0rc1:
+
+* Fixed one-of-turtles-at, one-of-turtles-towards, one-of-breeds-at, 
+one-of-breeds-towards run by a turtle asking for a turtle that is not 
+on his own patch. It used to return nobody if there was one turtle on 
+the other patch. Now it returns that turtle.
+
+* Fixed java.lang.NullPointerException on loading a project by 
+double-clicking it. Also related: fixed a bug in resizing the 
+PatchCanvas that caused the first problem.
+
+* The observer procedure startup is now always run (if it exists) when
+you load a project, even when you double-clicked to open it.
+
+* Made sure that starlogo.jar has all the required classes on Unix and
+Other distributions.
+
+* Made sure that StarLogo runs on Mac OS X 10.1 as well as 10.2.
+
+* Fixed some missing documentation.
+
+* Added three new primitives: plot-grid-on, plot-grid-off and
+plot-grid?
+
+* Fixed painting on the patches for Mac OS X with hardware accelerated
+drawing, MacOS 9, and Solaris. For some reason, on Linux it still 
+doesn't draw properly until you release the mouse button.
+
+* If you plot to a non-existent plot, you now get an error message 
+about it. Previously it just ignored you.
+
+* Fixed StarLogo on international versions of Windows. We accidentally
+omitted a file from the Java runtime.
+
+* Linux StarLogo was excessively slow. Now it's less slow. When 
+StarLogo is running really slowly, suspect the bandwidth of your X11 
+connection. Especially be suspicious of running StarLogo over an 
+SSH-encrypted X11 tunnel.
+
+* Plot window menus didn't show up on Linux. This is fixed.
+
+* Finished StarLogo 2.0 for MacOS 8/9.
+
+* Renamed set-bar-width primitive to setplot-bar-width.
+
+* Made the trash icons on Windows 2000 and Windows XP prettier.
+
+* If you made a shape non-rotatable and then made it rotatable, it 
+scribbled all over itself and made a mess. Now it behaves properly.
+
+* Make sure to compile StarLogo code after anything that could change
+a shape name.
+
+* Fixed plot widgets with wizards if you run a turtle command before 
+you edit the widget. They used to give a compile error if there was no
+instruction in the plot widget.
+
+* You can now click on the slider track for the Speed Slider and the 
+Patch Size Slider.
+
+* Fixed up how we flush text to the command center when using "show". 
+It should be more faster and more robust.
+
+
+Features Added Since 1.2.2:
+
+* Added shapes feature for turtles.  There is a shape editor that allows
+you to create new shapes, and a shape chooser that allows you to
+choose individual shapes for your turtles.  Turtle shape can also be
+set using the setshape command.  Shapes appear at patch sizes 8, 16,
+and 32.
+
+* Added templates (not compatible with Mac OS 9) that allow users to
+easily begin creating models using a "wizard".
+
+* Added many new kinds of plots (histograms, bar charts, x-y plots,
+scatter plots), all of which can be placed on the StarLogo interface
+and created with simple point and click procedures.
+
+* Added a legend widget that allows the user to define what specific
+colors or shapes represent.
+
+* Removed the MS-DOS Windows that pops up when you run StarLogo in
+Microsoft Windows.
+
+* Support more of Resnick's TT&TJ StarLogo syntax, including
+turtles-have, patches-have, added dash between "set" and the variable
+name (e.g. turtles-have [foo-bar] set-foo-bar 5) but only if the
+variable itself has a dash in it.
+
+* Increased StarLogo's maximum memory size to 256 MB. It won't take 256
+MB initially, but if need be, it will grow to that size. In Microsoft
+Windows, the maximum size will be capped at the amount of free
+physical RAM or 256 MB, whichever is smaller (with a minimum of 32 MB
+allocated to StarLogo).
+
+* Scroll-wheel mice should be supported in Java 1.4, thus being
+supported by StarLogo as we install it on Microsoft Windows. If you
+have a different platform that comes with its own Java, scroll-wheel
+mouse support must be added by your platform vender's Java, not by us.
+
+* Support for native MacOSX Java application.
+
+* In Microsoft Windows, changed the default folder that File/Open...
+and File/Save menu items go to the Users's My Documents folder.
+
+* Swing is now required (and included) on all supported StarLogo
+platforms. This should fix problems where the control center resize
+panel bar was not working on MacOS 9.
+
+* Added tooltips. Users can add their own tooltips to their buttons,
+sliders, monitors, text boxes and legends.
+
+* Added cut-copy-paste support in the Interface window for buttons,
+sliders, monitors, text boxes, legends and plot widgets.
+
+* We no longer run the compiler every time after you click out of the
+procedures page. We now run it on-demand, the first time you perform
+an action that requires compiled code after making a modification to
+the procedures pane, a button, slider or monitor.
+
+* You can now only resize the patches to sizes 1, 2, 3, 4, 5, 6, 7, 8,
+16, and 32. Shapes only show up in sizes 8, 16 and 32.
+
+* Added code template generation feature to make it easier to begin
+certain kinds of StarLogo projects without training in the StarLogo
+programming language.
+
+* Added a speed-control slider to enable you to control the speed of
+StarLogo simulations. Believe it or not, sometimes StarLogo runs too
+fast. With this slider you can slow it down and even pause it.
+
+* Can now save the patches/turtles as a GIF (without the interface part
+of the window).
+
+* Added a display in the color bar to show you what color is currently
+selected. You can also type in your own StarLogo expression (that
+evaluates to a number between 0 and 140 (larger numbers will be
+rounded)) to select the perfect color.
+
+* Added a status bar to the main Interface window to show you what patch
+your cursor is over. Also lets you see the size of a widget as you
+resize it.
+
+* StarLogo now saves a backup project every three minutes and deletes it
+when you manually save your project. Think of this as insurance in
+case StarLogo crashes on you. When StarLogo starts up and tries to
+load a project that has a backup, it will let you choose which version
+to keep, the backup or the most recently saved version of the project.
+
+* Put the StarLogo project's name on the Control Center window so you
+can tell which one is which if you have StarLogo running twice (You
+can only run StarLogo twice on Windows and Unix).
+
+* Added a trash can to the user interface to make it really obvious how
+to delete a widget. Drag it to the trash. Note: the trash deletes the
+widget immediately. There is no undo.
+
+* Removed the Stop All button from the Control Center and replaced it
+with a Stop sign button in the Interface window. When your project is
+running, you tend to look at the Interface window, not the Control
+Center. And a button with words was less obvious to click on than a
+picture of a stop sign.
+
+* Removed the Clear Graphics button from the Control Center. No one ever
+touched it. And once people started painting things on the patch
+canvas, they didn't want to casually clear their painting with one
+click.
+
+* Added a Snap to Grid feature in the Interface window.
+
+* Much of StarLogo has Spanish support. We'll release a spanish-language
+version of StarLogo soon.
+
+* You can now import pictures (JPG, GIF and PNG) without having
+Quicktime installed. If you have Quicktime installed (and StarLogo can
+tell) it'll use it instead, for loading pictures, because Quicktime
+supports more image formats than we do.
+
+* You can now save the graphing window as a GIF.
+
+* StarLogo can now print any of its windows.
+
+* Paint tools are now always visible instead of hidden behind a toolbar
+button.
+
+* Added Show Spaces menu item so you can see little squares between
+words in the procedures pane. This makes it easier for kids to copy
+code.
+
+* The command center now displays what you type in bold, and what
+StarLogo returns in plain text. It's prettier, no?
+
+* The default patch size is now 8x8, and there are 51x51 patches.
+
+* You can now turn off the gray border around text widgets.
+
+* Note: partner and partners may only be used textually within a grab
+statement. A procedure called from within grab does not have access to
+partner or partners.
+
+* If you used plot commands in your StarLogo 1.x project and load it
+into StarLogo 2.0, you'll get a new plot widget created in your
+interface. This is where the plot commands will go. You will not be
+able to delete this plot widget (unless you remove all the plot
+commands from your code).
+
+* To push a button from code, you now have to say start<buttonname>
+instead of <buttonname> in order to avoid name conflicts by users
+naming the button the same as a procedure.
+
+ 
+
+
+New Commands Added Since 1.2.2:
+
+* asin, acos 
+alive?, alive?-of 
+ask-turtles-with, ask-patches-with, ask-frogs-with 
+plotxy 
+clear-plots 
+log 
+dolist, dotimes 
+sort-num-list, average-of-list, max-of-list, median-of-list,  min-of-list,
+    mode-of-list, sdev-of-list, variance-of-list 
+average-of-patches, average-of-turtles, median-of-patches,  median-of-turtles
+    mode-of-patches, mode-of-turtles, sdev-of-patches, sdev-of-turtles,
+    variance-of-patches, variance-of-turtles 
+sum-of-patches-with, min-of-patches-with, max-of-patches-with,
+    average-of-patches-with, median-of-patches-with, mode-of-patches-with,
+    variance-of-patches-with, sdev-of-patches-with 
+sum-of-turtles-with, min-of-turtles-with, max-of-turtles-with,
+    average-of-turtles-with, median-of-turtles-with, mode-of-turtles-with,
+    variance-of-turtles-with, sdev-of-turtles-with 
+print-status 
+insert, remove, remove-element, reverse 
+save-next-version 
+shape, shape-at, shape-towards 
+setshape, setshape-of, setshape-at, setshape-towards 
+who-max-of-frogs, who-max-of-frogs-with, who-max-of-turtles,
+    who-max-of-turtles-with, who-min-of-frogs, who-min-of-frogs-with,
+    who-min-of-turtles, who-min-of-turtles-with
+
+ 
+
+
+Bugs Fixed Since 1.2.2:
+
+* Fixed parsing of statements similar to: sum-of-turtles [xcor] /
+count-turtles so that you don't need parens: (sum-of-turtles [xcor]) /
+count-turtles.
+
+* If a turtle dies while being asked to do something (inside of an
+ask-turtles), he will stop obeying the commands, but will stay alive
+(in a zombie state) long enough to respond to all queries about his
+state (e.g. xcor, ycor, etc). Once the ask-turtles is finished, the
+zombie turtle will then die.
+
+* A turtle that dies while grabbing other turtles now lets go before
+dying.
+
+* Turtles shouldn't show up outside the patch grid anymore (sometimes
+they would appear one patch outside).
+
+* Compiler now reports a bug if you forget to put a space between your
+operators (+, -, *, /, etc) inside of a parenthesized expression (e.g.
+set foo (3 +4) will now report an error that +4 isn't understood).
+Previously, the erroneous operator and whatever followed it were
+ignored and not included in the compiled code.
+
+* max-of-turtles now returns the proper answer if the answer is
+negative.
+
+* Sometimes when StarLogo saved/loaded a project, all of the buttons got
+the same id number (invisible to the user) causing all but one button
+to stop working. This is fixed.
+
+* Fixed a bug in diffuse4 that caused it to hang.
+
+* The case primitive now takes up MUCH less memory (a constant amount)  on the stack, so you can have enormous (or even small) case statements  without overflowing the turtle's stack memory.
+
+* Widgets that need to draw black actually draw in a really really dark
+gray now, so that if you drag them ontop of a black patch grid,
+they're still visible.
+
+* When an enumerated variable (e.g. turtles-own [temp [hot cold warm]])
+is the same name as some other already defined thing, the compiler now
+reports an error.
+
+* setplot-xrange and setplot-yrange arguments were interpreted in the
+wrong order.
+
+* When you drop the max or raise the min value of a slider, the current
+value, if out of range, will now peg itself to the min or max,
+whichever is closer.
+
+* Sometimes when you compiled, the cursor would remain an hourglass. We
+think this one is licked.
+
+* Sometimes after you compiled by clicking on the Interface window onto
+a button, the cursor would get stuck as a Move cursor. We think this
+one is licked, too.
+
+* Sometimes the keyboard focus would be lost from the interface window,
+making the keyboard command 'delete' to delete a widget not work
+right.  This always works now.
+
+* All the following commands now exclude the caller turtle from the
+calculation: sum-of-turtles, sum-of-breeds, list-of-turtles,
+list-of-breeds, one-of-turtles, one-of-breeds, min-of-turtles,
+max-of-turtles, min-of-breeds, max-of-breeds, average-of-turtles,
+average-of-breeds, variance-of-turtles, variance-of-breeds,
+median-of-turtles, median-of-breeds, list-of-turtles-with,
+list-of-breeds-with, min-of-turtles-with, min-of-breeds-with,
+max-of-turtles-with, max-of-breeds-with, average-of-turtles-with,
+average-of-breeds-with, variance-of-turtles-with,
+variance-of-breeds-with, median-of-turtles-with,
+median-of-breeds-with.  All the other variants of these commands were
+already correct.
+
+* Note: count-turtles, count-turtles-with, count-breeds,
+count-breeds-with will not exclude the calling turtle. That's so that
+whenever a turtle asks for this value, he gets the same value as all
+other turtles.
+
+* When we save the output window and the info window, they now save with
+Windows linefeeds, rather than always using a \n.
+
+* Fixed memory leak in count-turtles-with.
+
+* one-of-{turtles, breeds}-{here, at, towards} now returns a random
+turtle who is not yourself, rather than just the topmost turtle on
+that patch.
+
+* You can now change the size of of the patch grid while the turtles are
+moving without causing a crash.
+
+* If you ask a turtle to do something, but that turtle doesn't exist,
+StarLogo used to freeze up. That's fixed.
+
+* When you invoke New Project from the menu, it now creates 100 turtles,
+just like starting the StarLogo application.
+
+* If you load a project that causes the interface window to become
+larger than your screen, we shrink it to fit.
+
+* We now use a better oval drawing algorithm in the paint tools.
+
+
+
+
+Bugs Remaining in 2.0:
+
+Windows 2000 and XP introduced a new kind of mouse pointer feature
+called a pointer shadow. When you have this turned on (which it is by
+default) it wreaks havoc with graphical Java applications. It causes
+them to draw much more slowly and makes the cursor flicker on and off
+really fast. To get much better graphics performance in StarLogo, go
+to your Mouse control panel, and turn Pointer Shadows off.
+
+Code templates don't work on MacOS 9 or X. The code doesn't properly
+interpret the difference between Windows and Mac/Unix line feeds.
+
+Don't use the backtick (`) character in your StarLogo code or in the
+Info window. We don't deal with it well.
+
+On Windows 95, you see the Windows 2000 trash can, rather than the
+Windows 95 trash can. On Unix systems you always see the Windows 2000
+trash can, rather than the ones native to KDE or Gnome or whatever
+desktop manager you are using.
+
+The turtle in the about box has a strange smile.
+
+Many dialog boxes aren't aesthetically pleasing. We'll work on it.
+Java (AWT and Swing) sure doesn't make this easy.
+
+MacOS X does not recognize file type and creator codes any more.
+StarLogo has been changed to open any type of file, but to be safe, on
+MacOS X we save project with a .slogo ending (and no creator/type
+code). If you have saved a project in MacOS X and try to use it in
+MacOS 9/Classic it will not have a proper creator/type code. You'll
+need to add a creator code of 'StrL' and a type code of 'TEXT' to be
+able to load it.
+
+Double-clicking on a project file in MacOS X will properly launch
+StarLogo, but will not open the project. This is a bug in Java in
+MacOS X and as of MacOS X 10.2, has not been resolved.
+
+Still no 3-D holographic cerebral interface. 

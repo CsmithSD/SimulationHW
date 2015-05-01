@@ -1,0 +1,2 @@
+#!/bin/sh
+java -classpath .:./language.jar:./patch.jar:./starlogo.jar -Xmx256000000 starlogo.Toplevel compiler en "init 100" $1

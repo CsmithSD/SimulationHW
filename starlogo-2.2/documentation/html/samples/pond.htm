@@ -1,0 +1,94 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (WinNT; I) [Netscape]">
+   <title>StarLogo Sample Projects - Pond</title>
+</head>
+<body bgcolor="#FFFFFF" leftmargin="2" topmargin="2" marginwidth="0" marginheight="0">
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="100%" >
+<tr VALIGN=TOP>
+<td>
+      <table BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH="100%" >
+        <tr VALIGN=TOP BGCOLOR="#FFFFCC"> 
+          <td bgcolor="#CCFFCC"> 
+            <center>
+              <font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="4">Pond</font></b> 
+              </font> 
+            </center>
+          </td>
+        </tr>
+        <tr VALIGN=TOP> 
+          <td> 
+            <center>
+              <table cellpadding="5">
+                <tr> 
+                  <td> <img src="images/pond1.jpg" width="100" height="100"></td>
+                  <td><img src="images/pond2.jpg" width="100" height="100"></td>
+                  <td><img src="images/pond3.jpg" width="100" height="100"></td>
+                </tr>
+              </table>
+            </center>
+            <table BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH="100%" >
+              <tr VALIGN=TOP BGCOLOR="#FFFFCC"> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size=-1>What 
+                  is it?</font></b></font></td>
+              </tr>
+              <tr VALIGN=TOP> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">This project models the behavior of two types of turtles in a mythical pond. The red turtles and green turtles get along with one another. But each turtle wants to make sure that it lives near some of &quot;its own.&quot; That is, each red turtle wants to live near at least some red turtles, and each green turtle wants to live near at least some green turtles. The simulation shows how these individual preferences ripple through the pond, leading to large-scale patterns. This project was inspired by Thomas Schelling's writings about social systems (such as housing patterns in cities).</font></td>
+              </tr>
+              <tr BGCOLOR="#FFFFCC"> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size=-1>How 
+                  to Use It</font></b></font></td>
+              </tr>
+              <tr VALIGN=TOP> 
+                <td> 
+                  <table BORDER=0 CELLSPACING=5 CELLPADDING=0 WIDTH="100%" >
+                    <tr> 
+                      <td VALIGN=TOP><p><font face="Verdana, Arial, Helvetica, sans-serif">Click the setup button to set up the turtles. There are equal numbers of red and green turtles. The turtles move around until there is at most one turtle on a patch. Click go to start the simulation synchronously (or use tgo to start the turtles moving independently). If turtles don't have enough same-color neighbors, they jump to a nearby patch.</font></p>
+                        <p><font face="Verdana, Arial, Helvetica, sans-serif">The pctcover slider controls the percentage of patches covered by turtles (it takes effect the next time you click setup.) The happypct slider controls the percentage of same-color turtles that each turtle wants among its neighbors. For example, if the slider is set at 30, each green turtle wants at least 30% of its neighbors to be green turtles.</font></p>
+                        <p><font face="Verdana, Arial, Helvetica, sans-serif">The avgHappy monitor shows the average percentage of same-color neighbors for each turtle. It starts at about 0.5, since each turtle starts (on average) with an equal number of red and green turtles as neighbors. The unhappy-turtles monitor shows the number of turtles that have fewer same-color neighbors than they want (and thus they want to move).</font></p>
+                      <font face="Verdana, Arial, Helvetica, sans-serif">&nbsp;</font></td>
+                      <td><img src="images/pondi.gif" width="176" height="227"></td>
+                    </tr>
+                  </table>
+                  <p>
+                </td>
+              </tr>
+              <tr BGCOLOR="#FFFFCC"> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size=-1>Things 
+                  to Notice</font></b></font></td>
+              </tr>
+              <tr VALIGN=TOP> 
+                <td><p><font face="Verdana, Arial, Helvetica, sans-serif">When you execute setup, the red and green turtles are randomly distributed throughout the pond. But many turtles are &quot;unhappy&quot; since they don't have enough same-color neighbors. The unhappy turtles jump to new locations. But in the new locations, they might tip the balance of the local population, prompting other turtles to leave. If a few red turtles move into an area, the local green turtles might leave. But when the green turtles move to a new area, they might prompt red turtles to leave that area.</font></p>
+                  <p><font face="Verdana, Arial, Helvetica, sans-serif">Over time, the number of unhappy turtles decreases. But the pond becomes more segregated, with clusters of red turtles and clusters of green turtles.</font></p>
+                <p><font face="Verdana, Arial, Helvetica, sans-serif">In the case where each turtle wants at least 30% same-color neighbors, the turtles end up with (on average) 70% same-color neighbors. So relatively small individual preferences can lead to significant overall segregation.</font></p></td>
+              </tr>
+              <tr VALIGN=TOP BGCOLOR="#FFFFCC"> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size=-1>Explorations</font></b></font></td>
+              </tr>
+              <tr VALIGN=TOP> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; </font>
+                  <p><font face="Verdana, Arial, Helvetica, sans-serif">Try different values for happypct. How does the overall degree of segregation change?</font></p>
+                <p><font face="Verdana, Arial, Helvetica, sans-serif">If each turtle wants at least 40% same-color neighbors, what percentage (on average) do they end up with? </font></p></td>
+              </tr>
+            </table>
+            <center>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <font face="Verdana, Arial, Helvetica, sans-serif"><b><i><font size=-1>We 
+              welcome your feedback and suggestions! Please send us <a href="mailto:starlogo-request@media.mit.edu">email</a>.&nbsp;</font></i></b> 
+              &nbsp; </font> 
+            </center>
+            <p><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; <br>
+              &nbsp; <br>
+              &nbsp; </font>
+            <p>
+          </td>
+        </tr>
+      </table>
+</td>
+</tr>
+</table>
+</body>
+</html>

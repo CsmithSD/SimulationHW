@@ -1,0 +1,1358 @@
+<html><head><title>Command List</title><link rel="STYLESHEET" href="style.css"></head><body><h3 style="color: green">Command List</h3>
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div class="catdescription">
+These commands have been introduced since the previous version of StarLogo.</div>
+<p>
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-breed-at-with</span>
+	
+	<span class="argument">
+	xcor ycor [condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the x-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the y-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that returns true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles of the breed specified that are <span class="argument">xcor</span> units away in the x-direction and <span class="argument">ycor</span> units away in the y-direction from the caller, and also satisfy <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if count-cars-at-with 1 1 [color = red] > 1 [fd 1]</code></nobr> will have all of the turtles move forward who have more than one red turtle of breed cars 1 unit away in the x-direction and 1 unit away in the y-direction		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-breed-here-with</span>
+	
+	<span class="argument">
+	[condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to either true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles of the breed specified on the caller's patch that meet the condition specified in <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if count-cars-here-with [color = red] > 1 [fd 1] </code></nobr> This will cause all of the turtles on a patch with more than one red turtle of the breed cars on it to move forward one.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-breed-towards-with</span>
+	
+	<span class="argument">
+	angle distance [condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that returns true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles of the breed specified that are <span class="argument">distance</span> units away at an angle of <span class="argument">angle</span> from the caller, that also satisfy <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if count-molecules-towards 0 1 [color = blue] > 1 [fd 1]</code></nobr> will have all of the turtles with more than one blue turtle of breed molecules directly in front of them move forwards one space.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-turtles-at-with</span>
+	
+	<span class="argument">
+	xcor ycor [condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the x-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the y-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that returns true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles that are <span class="argument">xcor</span> units away in the x-direction and <span class="argument">ycor</span> units away in the y-direction from the caller, and also satisfy <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if count-turtles-at-with 1 1 [color = red] > 1<br>[fd 1]</code></nobr><br>will have all of the turtles move forward who have more than one red turtle 1 unit away in the x-direction and 1 unit away in the y-direction		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-turtles-here-with</span>
+	
+	<span class="argument">
+	[condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to either true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles on the caller's patch that meets the condition specified in <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if count-turtles-here-with [color = red] > 1<br>[fd 1]<br></code></nobr><br>This will cause all of the turtles on a patch with more than one red turtle on it to move forward one.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-turtles-towards-with</span>
+	
+	<span class="argument">
+	angle distance [condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that returns true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles that are <span class="argument">distance</span> units away at an angle of <span class="argument">angle</span> from the caller, that also satisfy <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if count-turtles-towards 0 1 [color = blue] > 1<br>[fd 1]</code></nobr><br>will have all of the turtles with more than one blue turtle directly in front of them move forwards one space.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">export-picture-interface</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Brings up the export picture dialog and saves the interface to disk as a PNG</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=424.html" class="related">export-picture-interface-name</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">export-picture-interface-name</span>
+	
+	<span class="argument">
+	name 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>name</nobr></td>
+		<td class="argtype" valign="top">String</td>
+		<td class="argdesc" valign="top">name of the file</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<nobr><code>export-picture-interface-name</code></nobr> <span class="argument">name</span> exports the interface as a PNG using the file name specified</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=423.html" class="related">export-picture-interface</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">export-picture-patches</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Brings up the export picture dialog and saves the patches to disk as a PNG</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=421.html" class="related">export-picture-patches-name</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">export-picture-patches-name</span>
+	
+	<span class="argument">
+	name 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>name</nobr></td>
+		<td class="argtype" valign="top">String</td>
+		<td class="argdesc" valign="top">name of the file</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Saves the patches to disk as a PNG with the filename <span class="argument">name</span></div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=420.html" class="related">export-picture-patches</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">export-picture-turtles-and-patches</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Brings up the export picture dialog and saves the turtles and patches to disk as a PNG</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=440.html" class="related">export-picture-turtles-and-patches-name</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">export-picture-turtles-and-patches-name</span>
+	
+	<span class="argument">
+	name 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>name</nobr></td>
+		<td class="argtype" valign="top">String</td>
+		<td class="argdesc" valign="top">name of the file</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Saves the patches and turtles to disk as a PNG with the filename <span class="argument">name</span></div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=422.html" class="related">export-picture-turtles-and-patches</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-breed-at-with</span>
+	
+	<span class="argument">
+	xcor ycor [condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the x-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the y-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that returns true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of all of the turtles of the breed specified <span class="argument">xcor</span> units away in the x-direction and <span class="argument">ycor</span> units away in the y-direction from the caller that also satisfy <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>set blue_balloons list-of-balloons-at-with 1 1 [color = blue]</code></nobr> will set the variable <nobr><code>blue_balloons</code></nobr> to a list of the who numbers of all of the blue turtles of breed balloons one unit away in the x-direction and one unit away in the y-direction from the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=449.html" class="related">list-of-breed-here-with</a>
+			<a href="command_doc_include.php@com_id=453.html" class="related">list-of-breed-towards-with</a>
+				<a href="command_doc_include.php@com_id=446.html" class="related">list-of-turtles-at-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-breed-here-with</span>
+	
+	<span class="argument">
+	[condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to either true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the a list of the turtles of the breed specified on the caller's patch that meet the condition specified in <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>set blue_balloons list-of-balloons-here-with [color = blue]</code></nobr> will set the variable <nobr><code>blue_balloons</code></nobr> to a list of all of the blue turtles' who numbers of the breed ballons that are the same patch as the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=452.html" class="related">list-of-breed-at-with</a>
+			<a href="command_doc_include.php@com_id=89.html" class="related">list-of-breed-here</a>
+				<a href="command_doc_include.php@com_id=453.html" class="related">list-of-breed-towards-with</a>
+				<a href="command_doc_include.php@com_id=443.html" class="related">list-of-turtles-here-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-breed-towards-with</span>
+	
+	<span class="argument">
+	angle distance [condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that returns true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of all of the turtles of the breed specified <span class="argument">distance</span> units away at an angle <span class="argument">angle</span> from the caller who also satisfy <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>set red_cars list-of-cars-towards-with 0 1 [color = red]</code></nobr> will set the variable <nobr><code>red_cars</code></nobr> to a list of the who numbers of all of the red turtles of breed cars one unit away and directly in front of the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=452.html" class="related">list-of-breed-at-with</a>
+			<a href="command_doc_include.php@com_id=449.html" class="related">list-of-breed-here-with</a>
+				<a href="command_doc_include.php@com_id=104.html" class="related">list-of-breed-towards</a>
+				<a href="command_doc_include.php@com_id=447.html" class="related">list-of-turtles-towards-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-turtles-at-with</span>
+	
+	<span class="argument">
+	xcor ycor [condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the x-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the y-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that returns true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of all of the turtles <span class="argument">xcor</span> units away in the x-direction and <span class="argument">ycor</span> units away in the y-direction from the caller that also satisfy <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>set blue_turtles list-of-turtles-at-with 1 1 [color = blue]</code></nobr><br>will set the variable <nobr><code>blue_turtles</code></nobr> to a list of the who numbers of all of the blue turtles one unit away in the x-direction and one unit away in the y-direction from the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=84.html" class="related">list-of-breed-at</a>
+			<a href="command_doc_include.php@com_id=452.html" class="related">list-of-breed-at-with</a>
+				<a href="command_doc_include.php@com_id=154.html" class="related">list-of-turtles-at</a>
+				<a href="command_doc_include.php@com_id=443.html" class="related">list-of-turtles-here-with</a>
+				<a href="command_doc_include.php@com_id=447.html" class="related">list-of-turtles-towards-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-turtles-here-with</span>
+	
+	<span class="argument">
+	[condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to either true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the a list of the turtles on the caller's patch that meet the condition specified in <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>set blue_turtles list-of-turtles-here-with [color = blue]</code></nobr><br>will set the variable <nobr><code>blue_turtles</code></nobr> to a list of all of the blue turtles' who numbers that are the same patch as the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=449.html" class="related">list-of-breed-here-with</a>
+			<a href="command_doc_include.php@com_id=446.html" class="related">list-of-turtles-at-with</a>
+				<a href="command_doc_include.php@com_id=447.html" class="related">list-of-turtles-towards-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-turtles-towards-with</span>
+	
+	<span class="argument">
+	angle distance [condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of all of the turtles <span class="argument">distance</span> units away at an angle <span class="argument">angle</span> from the caller who also satisfy <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>set red_turtles list-of-turtles-towards-with 0 1 [color = red]</code></nobr><br>will set the variable <nobr><code>red_turtles</code></nobr> to a list of the who numbers of all of the red turtles one unit away and directly in front of the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=453.html" class="related">list-of-breed-towards-with</a>
+			<a href="command_doc_include.php@com_id=446.html" class="related">list-of-turtles-at-with</a>
+				<a href="command_doc_include.php@com_id=443.html" class="related">list-of-turtles-here-with</a>
+				<a href="command_doc_include.php@com_id=156.html" class="related">list-of-turtles-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">one-of-turtles-at-with</span>
+	
+	<span class="argument">
+	xcor ycor [condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the x-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the y-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that returns true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a random turtle that satisfies <span class="argument">[condition]</span> that is on the patch <span class="argument">xcor</span> units away in the x direction and <span class="argument">ycor</span> units away in the y direction</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>one-of-turtles-at-with 1 1 [color = red]</code></nobr> returns a red turtle that is one unit away in the x direction and 1 unit away in the y diretion		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=415.html" class="related">one-of-breed-at-with</a>
+			<a href="command_doc_include.php@com_id=207.html" class="related">one-of-turtles-at</a>
+				<a href="command_doc_include.php@com_id=235.html" class="related">one-of-turtles-here-with</a>
+				<a href="command_doc_include.php@com_id=416.html" class="related">one-of-turtles-towards-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">one-of-turtles-here-with</span>
+	
+	<span class="argument">
+	[condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">the condition that the turtle to be returned must meet</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a random turtle on the caller's patch that meets <span class="argument">[condition]</span>. The returned turtle is different than the caller.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=413.html" class="related">one-of-breed-here-with</a>
+			<a href="command_doc_include.php@com_id=414.html" class="related">one-of-turtles-at-with</a>
+				<a href="command_doc_include.php@com_id=210.html" class="related">one-of-turtles-here</a>
+				<a href="command_doc_include.php@com_id=416.html" class="related">one-of-turtles-towards-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">one-of-turtles-towards-with</span>
+	
+	<span class="argument">
+	angle distance [condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that returns true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a random turtle that is <span class="argument">distance</span> distance away at an angle <span class="argument">angle</span> that satisfies <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>one-of-turtles-towards-with 0 1 [color = red]</code></nobr> returns a red turtle that is 1 space away and directly in front of the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=199.html" class="related">one-of-breed-towards</a>
+			<a href="command_doc_include.php@com_id=417.html" class="related">one-of-breed-towards-with</a>
+				<a href="command_doc_include.php@com_id=414.html" class="related">one-of-turtles-at-with</a>
+				<a href="command_doc_include.php@com_id=235.html" class="related">one-of-turtles-here-with</a>
+				<a href="command_doc_include.php@com_id=212.html" class="related">one-of-turtles-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">pc-ahead-one-patch</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the color of the patch one patch ahead.  This is equivalent to <nobr><code>pc-at round dx round dy</code></nobr></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>pc-ahead-one-patch</code></nobr> will return the color of the next patch in front of the turtle		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		The patch returned may or may not be the same as pc-ahead.  In this version the patch returned is never the same as the patch that the caller is on.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=312.html" class="related">patchcolor</a>
+			<a href="command_doc_include.php@com_id=313.html" class="related">pc-ahead</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">sum-of-list</span>
+	
+	<span class="argument">
+	list 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>list</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">List of numbers</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the sum of the numbers in the list.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>sum-of-list [1 2 -3 4.5 5]</code></nobr> returns <nobr><code>9.5</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: If <span class="argument">list</span> contains no numbers, an error occurs. If some of the <span class="argument">list</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=23.html" class="related">average-of-list</a>
+			<a href="command_doc_include.php@com_id=204.html" class="related">max-of-list</a>
+				<a href="command_doc_include.php@com_id=219.html" class="related">median-of-list</a>
+				<a href="command_doc_include.php@com_id=264.html" class="related">min-of-list</a>
+				<a href="command_doc_include.php@com_id=279.html" class="related">mode-of-list</a>
+				<a href="command_doc_include.php@com_id=202.html" class="related">sdev-of-list</a>
+				<a href="command_doc_include.php@com_id=438.html" class="related">sort-num-list</a>
+				<a href="command_doc_include.php@com_id=96.html" class="related">variance-of-list</a>
+			<hr></html>

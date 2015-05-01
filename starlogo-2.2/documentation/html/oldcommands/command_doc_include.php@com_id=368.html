@@ -1,0 +1,70 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+<!-- begin sample documentation page -->
+
+
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+
+<span class="commandname">set-scheduler-random-seed</span>
+
+<span class="argument">
+seed </span>
+
+
+<!-- show arguments -->
+
+<p>
+<div class="heading">Parameters:</div>
+<table cellpadding="2" cellspacing="2" border="0"> 
+
+
+<tr>
+<td class="argname" valign="top"><nobr>seed</nobr></td>
+<td class="argtype" valign="top">Integer</td>
+<td class="argdesc" valign="top">The seed for the random number generator</td>
+</tr>
+
+
+</table>
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the random seed of the thread scheduler to <span class="argument">seed</span>. Integers allowed are in the range -2^31 to 2^31-1.<p>This is not the same seed as used by the <nobr><code>random</code></nobr> command.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+<p>
+<div class="heading">Notes:</div>
+<div class="notes">
+Note: StarLogo uses the random generator provided by Java, which, as of now, is a linear congruential formula (Knuth Art of Computer Programming, Vol 2, Section 3.2.1.), which uses a 48-bit seed. StarLogo only allows you to set 32 bits of this seed.</div>
+<p>
+
+<!-- show related commands if there are related commands -->
+
+<p>
+<div class="heading">Related Commands:</div>
+<a href="command_doc_include.php@com_id=71.html" class="related">get-scheduler-random-seed</a>
+<a href="command_doc_include.php@com_id=190.html" class="related">scheduler</a>
+<a href="command_doc_include.php@com_id=406.html" class="related">switch-scheduler</a>
+
+</body></html>

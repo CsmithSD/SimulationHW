@@ -1,0 +1,71 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+<!-- begin sample documentation page -->
+
+
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoto">Turtle, Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+
+<span class="commandname">to</span>
+
+<span class="argument">
+procedure-name </span>
+
+
+<!-- show arguments -->
+
+<p>
+<div class="heading">Parameters:</div>
+<table cellpadding="2" cellspacing="2" border="0"> 
+
+
+<tr>
+<td class="argname" valign="top"><nobr>procedure-name</nobr></td>
+<td class="argtype" valign="top">Anything</td>
+<td class="argdesc" valign="top">A single word which is the name of the procedure you wish to define</td>
+</tr>
+
+
+</table>
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+When you create a procedure, the first line of it must be <nobr><code>to <span class="argument">procedure-name</span></code></nobr> where <span class="argument">procedure-name</span> is a one-word title for your procedure. <span class="argument">procedure-name</span> cannot be any command already recognized by StarLogo (this includes both built-in commands and the procedure names of other procedures you may already have written). <p>To add parameters to a procedure, write them after the <span class="argument">procedure-name</span> with a colon in front of them, like this:<br><nobr><code>to my-procedure :x :y :z</code></nobr><p>Inside the procedure body, you may use <nobr><code>:x</code></nobr>, <nobr><code>:y</code></nobr> and <nobr><code>:z</code></nobr> to refer to the values of the arguments passed in by the caller of the procedure.<p>All procedures must be ended with the word <nobr><code>end</code></nobr> on a line by itself (no comments may be on that line).<p>Procedures defined in the turtle procedures pane are only callable by turtles. Procedures defined in the observer procedures pane are only callable by the observer. Patches may not have procedures.</div>
+
+<!-- show examples if there are examples -->
+
+<p>
+<div class="heading">Examples:</div>
+<div class="examples">
+<nobr><code>to go <br>fd 1<br>rt 90<br>end</code></nobr><br>Now you may use <nobr><code>go</code></nobr> as a command in other parts of your program.</div>
+<p>
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<p>
+<div class="heading">Related Commands:</div>
+<a href="command_doc_include.php@com_id=159.html" class="related">end</a>
+<a href="command_doc_include.php@com_id=233.html" class="related">output</a>
+<a href="command_doc_include.php@com_id=396.html" class="related">startup</a>
+<a href="command_doc_include.php@com_id=398.html" class="related">stop</a>
+
+</body></html>

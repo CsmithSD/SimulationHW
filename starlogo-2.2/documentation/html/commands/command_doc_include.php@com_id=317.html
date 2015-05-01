@@ -1,0 +1,90 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+<!-- begin sample documentation page -->
+
+
+<!-- if (!($com_id)) { $com_id = 1; } -->
+
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+
+<span class="commandname">who-max-of-turtles-with</span>
+
+<span class="argument">
+[condition] [list of commands] </span>
+
+
+<!-- show arguments -->
+
+<p>
+<div class="heading">Parameters:</div>
+<table cellpadding="2" cellspacing="2" border="0"> 
+
+
+<tr>
+<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+<td class="argtype" valign="top">List of turtle commands</td>
+<td class="argdesc" valign="top">An expression that returns a true or false value</td> 
+</tr>
+
+
+<tr>
+<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+<td class="argtype" valign="top">List of turtle commands</td>
+<td class="argdesc" valign="top">A list of commands for the turtles to run which returns a number</td> 
+</tr>
+
+
+</table>
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of the turtle with the maximum value of <span class="argument">[list of commands]</span> when evaluated across all the turtles that satisfy the condition (must return a boolean of true or false) specified by the <span class="argument">[condition]</span>, and the maximum value.</div>
+
+<!-- show examples if there are examples -->
+
+<p>
+<div class="heading">Examples:</div>
+<div class="examples">
+<nobr><code>who-max-of-turtles-with [color = red] [energy]</code></nobr> returns a list with the who number of the red turtle with the most energy and the highest energy value: <nobr><code>[2 5]</code></nobr>.</div>
+<p>
+ 
+
+<!-- show notes if there are notes -->
+
+<p>
+<div class="heading">Notes:</div>
+<div class="notes">
+If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.</div>
+<p>
+<div class="notes">
+If no turtles satisfy <span class="argument">[condition]</span>, <nobr><code>who-max-of-turtles-with</code></nobr> returns <nobr><code>[nobody minnum]</code></nobr>.</div>
+<p>
+<div class="notes">
+When a turtle calls the command, it, itself, is not included as part of the calculation.</div>
+<p>
+
+<!-- show related commands if there are related commands -->
+
+<p>
+<div class="heading">Related Commands:</div>
+<a href="command_doc_include.php@com_id=314.html" class="related">who-max-of-breed-with</a>
+<a href="command_doc_include.php@com_id=316.html" class="related">who-max-of-turtles</a>
+<a href="command_doc_include.php@com_id=323.html" class="related">who-min-of-turtles-with</a>
+
+</body></html>

@@ -1,0 +1,84 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+<!-- begin sample documentation page -->
+
+
+<!-- if (!($com_id)) { $com_id = 1; } -->
+
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+
+<span class="commandname">diffuse4</span>
+
+<span class="argument">
+variable percentage </span>
+
+
+<!-- show arguments -->
+
+<p>
+<div class="heading">Parameters:</div>
+<table cellpadding="2" cellspacing="2" border="0"> 
+
+
+<tr>
+<td class="argname" valign="top"><nobr>variable</nobr></td>
+<td class="argtype" valign="top">Number</td>
+<td class="argdesc" valign="top">patch variable to diffuse</td> 
+</tr>
+
+
+<tr>
+<td class="argname" valign="top"><nobr>percentage</nobr></td>
+<td class="argtype" valign="top">Number</td>
+<td class="argdesc" valign="top">percentage of variable's value to diffuse</td> 
+</tr>
+
+
+</table>
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Makes each patch give 1/4 of <span class="argument">percentage</span> of <span class="argument">variable</span> to each non-diagonal (N,E,S,W) neighboring patch. <br><span class="argument">percentage</span> should be expressed as a number between 0 and 1. <span class="argument">variable</span> should be a patch variable.</div>
+
+<!-- show examples if there are examples -->
+
+<p>
+<div class="heading">Examples:</div>
+<div class="examples">
+<nobr><code>diffuse food 20</code></nobr> causes each patch to give 1/4 of 20 percent of the variable food to each of its four directly-neighboring patches.</div>
+<p>
+ 
+
+<!-- show notes if there are notes -->
+
+<p>
+<div class="heading">Notes:</div>
+<div class="notes">
+<nobr><code>diffuse4</code></nobr> must be run by the observer, even though it affects patches.</div>
+<p>
+
+<!-- show related commands if there are related commands -->
+
+<p>
+<div class="heading">Related Commands:</div>
+<a href="command_doc_include.php@com_id=122.html" class="related">diffuse</a>
+<a href="command_doc_include.php@com_id=136.html" class="related">nsum</a>
+<a href="command_doc_include.php@com_id=141.html" class="related">nsum4</a>
+
+</body></html>

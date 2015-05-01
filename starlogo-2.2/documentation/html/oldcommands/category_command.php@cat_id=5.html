@@ -1,0 +1,75 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+
+<h3 style="color: green">
+<a href="category_description.php@cat_id=5.html" target="CommandsPopUp">
+<nobr>Procedure Commands</nobr>
+</a>
+</h3>
+
+<center>
+<h4 style="color: green">
+<a href="print_docs.php@cid=5.html" target="_TOP">
+<nobr>Print Version of Procedure Commands</nobr>
+</a>
+</h4>
+</center>
+
+
+
+<a href="category_command.php@cat_id=5.html#A___B___C___D___E___F___G___H___I___J___K___L___M___N" class="letterindex">A / B / C / D / E / F / G / H / I / J / K / L / M / N</a> | <a href="category_command.php@cat_id=5.html#O___P___Q___R___S" class="letterindex">O / P / Q / R / S</a> | <a href="category_command.php@cat_id=5.html#O___P___Q___R___S___T___U___V___W___X___Y___Z" class="letterindex">O / P / Q / R / S / T / U / V / W / X / Y / Z</a><p>
+
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">Procedures are a way to package up instructions for individual characters in StarLogo. Procedures begin with the word <code>to</code> followed by the name you wish to give the procedure. After the name, you may enter any number of procedure parameters. Each parameter must start with a <code>:</code> (colon) to indicate that it is a local variable. After pressing return, you then enter all of the instructions you wish to run when the procedure is called. Finally, a procedure finishes with the word <code>end</code> on a line by itself. Here is an example:</font></p>
+
+					<p align="left"><code>to wiggle<br>
+						</code><code>right random 40<br>
+						</code><code>left random 40<br>
+						</code><code>forward 1<br>
+						</code><code>end</code></p>
+					<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">In this procedure, named <code>wiggle</code>, we instruct a turtle to turn right a few degrees, then left a few degrees and finally move forward one step.</font></p>
+
+					<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">Here is an example of a procedure with one parameter:</font></p>
+					<p align="left"><code>to wiggle-a-little-bit :howmuch<br>
+							
+						right random :howmuch<br>
+							
+						left random :howmuch<br>
+							
+						forward 1<br>
+							
+						end</code></p>
+
+					<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">In this procedure, named <code>wiggle-a-little-bit</code>, we take a parameter named <code>:howmuch</code>, which we use like any other variable to control by how much the turtle should turn right and left. We can run a procedure that takes a set of parameters by writing the procedure's name followed by the values that we want the parameters to have (in left-to-right order):</font></p>
+					<p align="left"><code>to go<br>
+							
+						wiggle-a-little-bit 45<br>
+							
+						look-for-gold<br>
+							
+						end</code></p>
+
+					<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">In this procedure, named <code>go</code>, we invoke the <code>wiggle-a-little-bit</code> function with the value<code> 45</code>. 45 is assigned to the procedure parameter <code>:howmuch</code>, and then the procedure is run. Finally, when <code>wiggle-a-little-bit</code> finishes, we come back to where we left off in <code>go</code>, and then execute another procedure (not described here) called <code>look-for-gold</code>.</font></p>
+
+					<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">Note the difference between Turtle Procedures and Observer Procedures. Turtle procedures are instructions for individual turtles to follow, such as moving, or reproducing. Observer procedures are procedures that may change the environment or make changes which are beyond an individual turtle's control, such as the creation of new turtles or the setting up of the Patch Canvas. Think of the Observer as an omniscient being who can make changes to the StarLogo environment. </font></p>
+					<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">Observer procedures must be defined in the Observer Procedures Pane of the Control Center. Turtle procedures are defined in the Turtle Procedures Pane of the Control Center. If you put a procedure in the wrong place (such as putting wiggle into the observer procedures pane), you might get an error like <code>observer doesn't know how to right in wiggle</code>, indicating that the observer does not understand the command <code>right</code> used in the first line of wiggle.</font></p>
+					<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">While patches can run instructions, they cannot have procedures; there is no patch procedures pane. If you want to use patch commands, you must put them in an <code>ask-patches []</code> command. Since <code>ask-patches</code> is itself an observer command, it should be written in the observer procedures pane.</font></p>
+
+					<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">One special Observer Procedure is the <code>startup</code> procedure. If you name one of your Observer Procedures <code>startup</code>, this procedure will automatically be run when you load the project.</font></p><p>
+<table class="commandtable" border="1" width="100%"><tr><td class="letterrow"><nobr><a name="A___B___C___D___E___F___G___H___I___J___K___L___M___N">A / B / C / D / E / F / G / H / I / J / K / L / M / N</a></nobr></td></tr><tr><td class="commandrow"><a href="command_doc_include.php@com_id=159.html" target="CommandsPopUp">end</a><p><a href="command_doc_include.php@com_id=71.html" target="CommandsPopUp">get-scheduler-random-seed</a></td></tr><tr><td class="letterrow"><nobr><a name="O___P___Q___R___S">O / P / Q / R / S</a></nobr></td></tr><tr><td class="commandrow"><a href="command_doc_include.php@com_id=233.html" target="CommandsPopUp">output</a><p><a href="command_doc_include.php@com_id=190.html" target="CommandsPopUp">scheduler</a><p><a href="command_doc_include.php@com_id=368.html" target="CommandsPopUp">set-scheduler-random-seed</a><p><a href="command_doc_include.php@com_id=396.html" target="CommandsPopUp">startup</a><p><a href="command_doc_include.php@com_id=398.html" target="CommandsPopUp">stop</a><p><a href="command_doc_include.php@com_id=399.html" target="CommandsPopUp">stopall</a><p><a href="command_doc_include.php@com_id=406.html" target="CommandsPopUp">switch-scheduler</a></td></tr><tr><td class="letterrow"><nobr><a name="O___P___Q___R___S___T___U___V___W___X___Y___Z">O / P / Q / R / S / T / U / V / W / X / Y / Z</a></nobr></td></tr><tr><td class="commandrow"><nobr><a href="command_doc_include.php@com_id=36.html" target="CommandsPopUp">to</nobr></a></td></tr></table>
+
+</body></html>
+
+
+
+
+
+
+
+
+

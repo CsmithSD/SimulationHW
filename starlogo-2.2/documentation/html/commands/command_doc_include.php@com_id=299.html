@@ -1,0 +1,72 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+<!-- begin sample documentation page -->
+
+
+<!-- if (!($com_id)) { $com_id = 1; } -->
+
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+
+<span class="commandname">set-random-seed</span>
+
+<span class="argument">
+num </span>
+
+
+<!-- show arguments -->
+
+<p>
+<div class="heading">Parameters:</div>
+<table cellpadding="2" cellspacing="2" border="0"> 
+
+
+<tr>
+<td class="argname" valign="top"><nobr>num</nobr></td>
+<td class="argtype" valign="top">Integer</td>
+<td class="argdesc" valign="top">The seed for the random number generator</td> 
+</tr>
+
+
+</table>
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the random seed to <span class="argument">num</span>. Integers allowed are in the range <nobr>-2<sup>31</sup> to 2<sup>31</sup>-1</nobr>.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+<p>
+<div class="heading">Notes:</div>
+<div class="notes">
+StarLogo uses the random generator provided by Java, which, as of now, is a linear congruential formula (Knuth Art of Computer Programming, Vol 2, Section 3.2.1.), which uses a 48-bit seed. StarLogo only allows you to set 32 bits of this seed.</div>
+<p>
+
+<!-- show related commands if there are related commands -->
+
+<p>
+<div class="heading">Related Commands:</div>
+<a href="command_doc_include.php@com_id=56.html" class="related">get-random-seed</a>
+<a href="command_doc_include.php@com_id=171.html" class="related">random</a>
+<a href="command_doc_include.php@com_id=175.html" class="related">random-gaussian</a>
+
+</body></html>

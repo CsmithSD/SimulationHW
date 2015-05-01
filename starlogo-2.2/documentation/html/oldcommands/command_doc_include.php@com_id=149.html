@@ -1,0 +1,75 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+<!-- begin sample documentation page -->
+
+
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+
+<span class="commandname">dotimes</span>
+
+<span class="argument">
+[:loop-variable #times] [commands to run] </span>
+
+
+<!-- show arguments -->
+
+<p>
+<div class="heading">Parameters:</div>
+<table cellpadding="2" cellspacing="2" border="0"> 
+
+
+<tr>
+<td class="argname" valign="top"><nobr>[:loop-variable #times]</nobr></td>
+<td class="argtype" valign="top">List of commands</td>
+<td class="argdesc" valign="top">On each iteration, :loop-variable is assigned to each number from 1 to #times</td>
+</tr>
+
+
+<tr>
+<td class="argname" valign="top"><nobr>[commands to run]</nobr></td>
+<td class="argtype" valign="top">List of commands</td>
+<td class="argdesc" valign="top">Commands to run once for each number from 1 to #times</td>
+</tr>
+
+
+</table>
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This command loops over each integer number from 1 to <nobr><code>#times</code></nobr>, and runs <span class="argument">[commands to run]</span> for each one. During each run of <span class="argument">[commands to run]</span>, the current number is bound to <nobr><code>:loop-variable</code></nobr>.</div>
+
+<!-- show examples if there are examples -->
+
+<p>
+<div class="heading">Examples:</div>
+<div class="examples">
+<nobr><code>dotimes [:foo 4] [show :foo]</code></nobr> loops 4 times, each time assigning :foo to 1, 2, 3, and then 4. The commands that are run print the value of :foo to the command center.</div>
+<p>
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<p>
+<div class="heading">Related Commands:</div>
+<a href="command_doc_include.php@com_id=147.html" class="related">dolist</a>
+
+</body></html>

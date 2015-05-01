@@ -1,0 +1,3752 @@
+<html><head><title>Command List</title><link rel="STYLESHEET" href="style.css"></head><body><h3 style="color: green">Command List</h3>
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div class="catdescription">
+All of these commands are created when you declare your turtles to have breeds, using the <code>breeds</code> command. For each command in this listing, replace the word 'breed' by the actual name of the breed you have created. For example,
+<br><br>
+<code>breeds [frogs toads]<br>
+<br>
+to go<br>
+create-frogs 100<br>
+create-toads-and-do 100 [if count-frogs > 50 [setc brown]]<br>
+end<br>
+</code>
+</div>
+<p>
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ask-breed</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of turtle commands to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Asks all turtles of breed <nobr><code>frogs</code></nobr> to run <nobr><code>[list of commands]</code></nobr>. The observer will wait for all of the turtles to finish before continuing.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-frogs [fd 1 rt 90]</code></nobr> will make all turtles of breed <nobr><code>frogs</code></nobr> move forward one step and then turn 90 degrees to the right.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=426.html" class="related">ask-breed-with</a>
+			<a href="command_doc_include.php@com_id=14.html" class="related">ask-list-of-turtles</a>
+				<a href="command_doc_include.php@com_id=16.html" class="related">ask-patch-at</a>
+				<a href="command_doc_include.php@com_id=15.html" class="related">ask-patches</a>
+				<a href="command_doc_include.php@com_id=17.html" class="related">ask-turtle</a>
+				<a href="command_doc_include.php@com_id=18.html" class="related">ask-turtles</a>
+				<a href="command_doc_include.php@com_id=19.html" class="related">ask-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ask-breed-with</span>
+	
+	<span class="argument">
+	[condition] [list-of-commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to either true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list-of-commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This observer command asks all of the turtles of the breed specified that satisfy <span class="argument">[condition]</span> to run the <span class="argument">[list-of-commands]</span>. The observer will wait for the turtles to finish before moving on.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-frogs-with [color = green] [fd 1]</code></nobr> has all of the turtles of color green and breed frogs move forward 1		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=13.html" class="related">ask-breed</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">average-of-breed</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of commands for the frogs to run which returns a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the numerical average of the <span class="argument">[list of commands]</span> when evaluated across all the turtles of breed <nobr><code>frogs</code></nobr>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>average-of-frogs [speed]</code></nobr> returns the average speed of all the turtles of breed frogs.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		When a turtle calls the command, it, itself, is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=21.html" class="related">average-of-breed-with</a>
+			<a href="command_doc_include.php@com_id=24.html" class="related">average-of-patches</a>
+				<a href="command_doc_include.php@com_id=26.html" class="related">average-of-turtles</a>
+				<a href="command_doc_include.php@com_id=187.html" class="related">max-of-breed</a>
+				<a href="command_doc_include.php@com_id=217.html" class="related">median-of-breed</a>
+				<a href="command_doc_include.php@com_id=248.html" class="related">min-of-breed</a>
+				<a href="command_doc_include.php@com_id=275.html" class="related">mode-of-breed</a>
+				<a href="command_doc_include.php@com_id=400.html" class="related">sum-of-breed</a>
+				<a href="command_doc_include.php@com_id=85.html" class="related">variance-of-breed</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">average-of-breed-with</span>
+	
+	<span class="argument">
+	[condition] [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">An expression that returns a true or false value</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of commands for the turtles to run which returns a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the numerical average of the <span class="argument">[list of commands]</span> when evaluated across all the turtles of breed <nobr><code>frogs</code></nobr> that satisfy the condition (must return a boolean of true or false) specified by the <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>average-of-frogs-with [color = red] [speed]</code></nobr> returns the average speed of all the red turtles of breed frogs.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		When a turtle calls the command, it, itself, is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=20.html" class="related">average-of-breed</a>
+			<a href="command_doc_include.php@com_id=25.html" class="related">average-of-patches-with</a>
+				<a href="command_doc_include.php@com_id=22.html" class="related">average-of-turtles-with</a>
+				<a href="command_doc_include.php@com_id=203.html" class="related">max-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=218.html" class="related">median-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=261.html" class="related">min-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=278.html" class="related">mode-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=401.html" class="related">sum-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=93.html" class="related">variance-of-breed-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">breed</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the turtle's breed, or if a patch is calling it, the breed of one of the turtles on the patch.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if breed = frogs [fd 5]</code></nobr> makes all turtles of breed <nobr><code>frogs</code></nobr> move forward 5 steps.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=227.html" class="related">breed-at</a>
+			<a href="command_doc_include.php@com_id=228.html" class="related">breed-of</a>
+				<a href="command_doc_include.php@com_id=229.html" class="related">breed-towards</a>
+				<a href="command_doc_include.php@com_id=250.html" class="related">setbreed</a>
+				<a href="command_doc_include.php@com_id=307.html" class="related">who</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">breed-at</span>
+	
+	<span class="argument">
+	xcor ycor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">offset in the x direction</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">offset in the y direction</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the breed of the turtle <span class="argument">xcor</span> units in the x direction and <span class="argument">ycor</span> units in the y direction away from the caller.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>breed-at 5 7</code></nobr> returns the breed of the turtle <nobr><code>5</code></nobr> units to the right and <nobr><code>7</code></nobr> units up from the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=226.html" class="related">breed</a>
+			<a href="command_doc_include.php@com_id=228.html" class="related">breed-of</a>
+				<a href="command_doc_include.php@com_id=229.html" class="related">breed-towards</a>
+				<a href="command_doc_include.php@com_id=252.html" class="related">setbreed-at</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">breed-of</span>
+	
+	<span class="argument">
+	number 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Integer</td>
+		<td class="argdesc" valign="top">id number of the turtle</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the breed of the turtle with ID <span class="argument">number</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if breed-of 4 = frog [fd 1]</code></nobr> makes all the turtles move one step forward if the turtle which who number <nobr><code>4</code></nobr> is of breed <nobr><code>frog</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=226.html" class="related">breed</a>
+			<a href="command_doc_include.php@com_id=227.html" class="related">breed-at</a>
+				<a href="command_doc_include.php@com_id=229.html" class="related">breed-towards</a>
+				<a href="command_doc_include.php@com_id=253.html" class="related">setbreed-of</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">breed-towards</span>
+	
+	<span class="argument">
+	angle distance 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the breed of the turtle <nobr><code>distance</code></nobr> away at an <nobr><code>angle</code></nobr> of angle.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>breed-towards 0 1</code></nobr> returns the breed of the turtle one patch ahead of the patch or turtle given the instruction.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=226.html" class="related">breed</a>
+			<a href="command_doc_include.php@com_id=227.html" class="related">breed-at</a>
+				<a href="command_doc_include.php@com_id=228.html" class="related">breed-of</a>
+				<a href="command_doc_include.php@com_id=254.html" class="related">setbreed-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoto">Turtle, Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">breeds</span>
+	
+	<span class="argument">
+	[breed1 breed2 ...] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[breed1 breed2 ...]</nobr></td>
+		<td class="argtype" valign="top">List or string</td>
+		<td class="argdesc" valign="top">A list of breed names (usually plural)</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+At the top of the Observer or Turtle command centers, place this command:<p><nobr><code>breeds [frogs toads]</code></nobr><p>to declare your turtles to have two different breeds, <nobr><code>frogs</code></nobr> and <nobr><code>toads</code></nobr>. Once you have done this, you may use any command in the <nobr><code>Breeds</code></nobr> category to run only on the breed of turtles that you have created.  </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>breeds [frogs toads]</code></nobr><p><nobr><code>to setup</code></nobr><br><nobr><code>create-frogs 100</code></nobr><br><nobr><code>create-toads 40</code></nobr><br><nobr><code>ask-frogs [hop]</code></nobr><br><nobr><code>ask-toads [ribbit]</code></nobr><br><nobr><code>end</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=311.html" class="related">patches-own</a>
+			<a href="command_doc_include.php@com_id=49.html" class="related">turtles-own</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-breed</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles whose breed is frogs.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=72.html" class="related">count-breed-at</a>
+			<a href="command_doc_include.php@com_id=73.html" class="related">count-breed-here</a>
+				<a href="command_doc_include.php@com_id=76.html" class="related">count-breed-towards</a>
+				<a href="command_doc_include.php@com_id=80.html" class="related">count-breed-with</a>
+				<a href="command_doc_include.php@com_id=95.html" class="related">count-turtles</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-breed-at</span>
+	
+	<span class="argument">
+	xcor ycor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">units in the x direction away from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">units in the y direction away from the caller</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles whose breed is frogs which are <span class="argument">xcor</span> units in the x direction and <span class="argument">ycor</span> units in the y direction away from the caller.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=69.html" class="related">count-breed</a>
+			<a href="command_doc_include.php@com_id=73.html" class="related">count-breed-here</a>
+				<a href="command_doc_include.php@com_id=76.html" class="related">count-breed-towards</a>
+				<a href="command_doc_include.php@com_id=80.html" class="related">count-breed-with</a>
+				<a href="command_doc_include.php@com_id=98.html" class="related">count-turtles-at</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-breed-at-with</span>
+	
+	<span class="argument">
+	xcor ycor [condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the x-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the y-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that returns true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles of the breed specified that are <span class="argument">xcor</span> units away in the x-direction and <span class="argument">ycor</span> units away in the y-direction from the caller, and also satisfy <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if count-cars-at-with 1 1 [color = red] > 1 [fd 1]</code></nobr> will have all of the turtles move forward who have more than one red turtle of breed cars 1 unit away in the x-direction and 1 unit away in the y-direction		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-breed-here</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles whose breed is frogs which are on the current patch.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if count-frogs-here > 2 [setc blue]</code></nobr> makes the turtle set its color to blue if there are more than two turtles of type frog on its current patch.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=69.html" class="related">count-breed</a>
+			<a href="command_doc_include.php@com_id=72.html" class="related">count-breed-at</a>
+				<a href="command_doc_include.php@com_id=76.html" class="related">count-breed-towards</a>
+				<a href="command_doc_include.php@com_id=80.html" class="related">count-breed-with</a>
+				<a href="command_doc_include.php@com_id=100.html" class="related">count-turtles-here</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-breed-here-with</span>
+	
+	<span class="argument">
+	[condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to either true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles of the breed specified on the caller's patch that meet the condition specified in <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if count-cars-here-with [color = red] > 1 [fd 1] </code></nobr> This will cause all of the turtles on a patch with more than one red turtle of the breed cars on it to move forward one.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-breed-towards</span>
+	
+	<span class="argument">
+	angle distance 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from the direction the caller is facing</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance away from the caller</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles whose breed is frogs which are located at the patch <span class="argument">distance</span> away at angle <span class="argument">angle</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>count-frogs-towards 0 1</code></nobr> returns the number of turthles whose breed is frogs one patch ahead of the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note the angle is measured from the direction the caller is facing.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=69.html" class="related">count-breed</a>
+			<a href="command_doc_include.php@com_id=72.html" class="related">count-breed-at</a>
+				<a href="command_doc_include.php@com_id=73.html" class="related">count-breed-here</a>
+				<a href="command_doc_include.php@com_id=80.html" class="related">count-breed-with</a>
+				<a href="command_doc_include.php@com_id=102.html" class="related">count-turtles-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-breed-towards-with</span>
+	
+	<span class="argument">
+	angle distance [condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that returns true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles of the breed specified that are <span class="argument">distance</span> units away at an angle of <span class="argument">angle</span> from the caller, that also satisfy <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if count-molecules-towards 0 1 [color = blue] > 1 [fd 1]</code></nobr> will have all of the turtles with more than one blue turtle of breed molecules directly in front of them move forwards one space.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-breed-with</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">condition to determine whether a frog is counted</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles whose breed is frogs and satisfy the conditions (must return a boolean of true or false) specified by <span class="argument">[list of commands]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>count-frogs-with [color = blue]</code></nobr> returns the number of blue frogs.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=69.html" class="related">count-breed</a>
+			<a href="command_doc_include.php@com_id=72.html" class="related">count-breed-at</a>
+				<a href="command_doc_include.php@com_id=73.html" class="related">count-breed-here</a>
+				<a href="command_doc_include.php@com_id=76.html" class="related">count-breed-towards</a>
+				<a href="command_doc_include.php@com_id=106.html" class="related">count-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">create-breed</span>
+	
+	<span class="argument">
+	number 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of turtles to create</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Creates <span class="argument">number</span> of turtles and assigns <i>breed</i> as their breed.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>create-frogs 2</code></nobr> creates two turtles of breed frogs.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>create-cars 5</code></nobr> creates five turtles of breed cars.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=115.html" class="related">create-breed-and-do</a>
+			<a href="command_doc_include.php@com_id=48.html" class="related">create-custom-turtles</a>
+				<a href="command_doc_include.php@com_id=117.html" class="related">create-turtles</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">create-breed-and-do</span>
+	
+	<span class="argument">
+	number [list-of-commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of turtles to create</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list-of-commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">commands for newly created turtles to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Creates <span class="argument">number</span> of turtles and assigns <i>breed</i> as their breed. The turtles then execute <span class="argument">[list-of-commands]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>create-frogs-and-do 5 [fd 3]</code></nobr> would create 5 turtles of breed frogs and make them all move forward 3 steps.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=112.html" class="related">create-breed</a>
+			<a href="command_doc_include.php@com_id=109.html" class="related">create-turtles-and-do</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-breed</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of the who numbers of the turtles of the breed specified by <nobr><code>breed</code></nobr>. <p></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>list-of-frogs</code></nobr> returns a list of all of the turtles of breed <nobr><code>frogs</code></nobr>		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>list-of-cars</code></nobr> returns a list of all of the turtles of breed <nobr><code>cars</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=84.html" class="related">list-of-breed-at</a>
+			<a href="command_doc_include.php@com_id=89.html" class="related">list-of-breed-here</a>
+				<a href="command_doc_include.php@com_id=104.html" class="related">list-of-breed-towards</a>
+				<a href="command_doc_include.php@com_id=113.html" class="related">list-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=138.html" class="related">list-of-turtles</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-breed-at</span>
+	
+	<span class="argument">
+	xcor ycor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of units away in the x direction</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of units away in the y direction</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of the who numbers of the turtles of the breed specified by <nobr><code>breed</code></nobr> <span class="argument">xcor</span> units in the x direction and <span class="argument">ycor</span> units in the y direction away from the caller. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>list-of-frogs-at 1 1</code></nobr> returns a list of the who numbers of the turtles of breed frogs one unit to the right and one unit above the caller.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>list-of-cars-at 3 5</code></nobr> returns a list of the who numbers of the turtles of breed cars three units to the right and five units above the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=77.html" class="related">list-of-breed</a>
+			<a href="command_doc_include.php@com_id=154.html" class="related">list-of-turtles-at</a>
+				<a href="command_doc_include.php@com_id=446.html" class="related">list-of-turtles-at-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-breed-at-with</span>
+	
+	<span class="argument">
+	xcor ycor [condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the x-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the y-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that returns true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of all of the turtles of the breed specified <span class="argument">xcor</span> units away in the x-direction and <span class="argument">ycor</span> units away in the y-direction from the caller that also satisfy <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>set blue_balloons list-of-balloons-at-with 1 1 [color = blue]</code></nobr> will set the variable <nobr><code>blue_balloons</code></nobr> to a list of the who numbers of all of the blue turtles of breed balloons one unit away in the x-direction and one unit away in the y-direction from the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=449.html" class="related">list-of-breed-here-with</a>
+			<a href="command_doc_include.php@com_id=453.html" class="related">list-of-breed-towards-with</a>
+				<a href="command_doc_include.php@com_id=446.html" class="related">list-of-turtles-at-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-breed-here</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of turtles of the breed specified by <nobr><code>breed</code></nobr> on the caller's patch. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>list-of-frogs-here</code></nobr> returns a list of turtles of breed <nobr><code>frogs</code></nobr> on the caller's patch.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>list-of-cars-here</code></nobr> returns a list of turtles of breed <nobr><code>cars</code></nobr> on the caller's patch.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=77.html" class="related">list-of-breed</a>
+			<a href="command_doc_include.php@com_id=449.html" class="related">list-of-breed-here-with</a>
+				<a href="command_doc_include.php@com_id=155.html" class="related">list-of-turtles-here</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-breed-here-with</span>
+	
+	<span class="argument">
+	[condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to either true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the a list of the turtles of the breed specified on the caller's patch that meet the condition specified in <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>set blue_balloons list-of-balloons-here-with [color = blue]</code></nobr> will set the variable <nobr><code>blue_balloons</code></nobr> to a list of all of the blue turtles' who numbers of the breed ballons that are the same patch as the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=452.html" class="related">list-of-breed-at-with</a>
+			<a href="command_doc_include.php@com_id=89.html" class="related">list-of-breed-here</a>
+				<a href="command_doc_include.php@com_id=453.html" class="related">list-of-breed-towards-with</a>
+				<a href="command_doc_include.php@com_id=443.html" class="related">list-of-turtles-here-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-breed-towards</span>
+	
+	<span class="argument">
+	angle distance 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance away from the caller</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of the who numbers of the turtles of the breed specifed by <nobr><code>breed</code></nobr> at the patch <span class="argument">angle</span> away at angle <span class="argument">distance</span> from the caller. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>list-of-frogs-towards 0 1</code></nobr> returns a list of the turtles of breed frog directly ahead and one patch away from the caller.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>list-of-cars-towards 90 5</code></nobr> returns a list of the turtles of breed cars 90 degreses to the right and five patches away from the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=77.html" class="related">list-of-breed</a>
+			<a href="command_doc_include.php@com_id=453.html" class="related">list-of-breed-towards-with</a>
+				<a href="command_doc_include.php@com_id=156.html" class="related">list-of-turtles-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-breed-towards-with</span>
+	
+	<span class="argument">
+	angle distance [condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that returns true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of all of the turtles of the breed specified <span class="argument">distance</span> units away at an angle <span class="argument">angle</span> from the caller who also satisfy <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>set red_cars list-of-cars-towards-with 0 1 [color = red]</code></nobr> will set the variable <nobr><code>red_cars</code></nobr> to a list of the who numbers of all of the red turtles of breed cars one unit away and directly in front of the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=452.html" class="related">list-of-breed-at-with</a>
+			<a href="command_doc_include.php@com_id=449.html" class="related">list-of-breed-here-with</a>
+				<a href="command_doc_include.php@com_id=104.html" class="related">list-of-breed-towards</a>
+				<a href="command_doc_include.php@com_id=447.html" class="related">list-of-turtles-towards-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-breed-with</span>
+	
+	<span class="argument">
+	[condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of turtles of breed indicated by <nobr><code>breed</code></nobr> satisfying <nobr><code>condition</code></nobr>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>list-of-frogs-with [color = green]</code></nobr> will return a list of turtles that are breed <nobr><code>frogs</code></nobr> and have color <nobr><code>green</code></nobr>.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>list-of-cars-with [color = black]</code></nobr> will return a list of turtles that are breed <nobr><code>cars</code></nobr> and have color <nobr><code>black</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note <span class="argument">[condition]</span> must be a boolean statement and return true or false.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=77.html" class="related">list-of-breed</a>
+			<a href="command_doc_include.php@com_id=160.html" class="related">list-of-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">max-of-breed</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluate to a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the highest value of <span class="argument">[list of commands]</span> when run over the turtles of the breed specified by <nobr><code>breed</code></nobr>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>max-of-frogs [speed]</code></nobr> returns the turtle of breed <nobr><code>frogs</code></nobr> with the highest value of <nobr><code>speed</code></nobr>.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>max-of-cars [size]</code></nobr> returns the turtle of breed <nobr><code>cars</code></nobr> with the highest value of <nobr><code>size</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This command can also be executed by patches, for example within an <nobr><code>ask-patches</code></nobr> statement.		</div>
+		<p>
+				<div class="notes">
+		If <nobr><code>[list of commands]</code></nobr> contains no numbers, the smallest possible number is returned. If some of the <nobr><code>[list of commands]</code></nobr>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		When a turtle calls the command, it is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=20.html" class="related">average-of-breed</a>
+			<a href="command_doc_include.php@com_id=215.html" class="related">max-of-turtles</a>
+				<a href="command_doc_include.php@com_id=217.html" class="related">median-of-breed</a>
+				<a href="command_doc_include.php@com_id=248.html" class="related">min-of-breed</a>
+				<a href="command_doc_include.php@com_id=275.html" class="related">mode-of-breed</a>
+				<a href="command_doc_include.php@com_id=200.html" class="related">sdev-of-breed</a>
+				<a href="command_doc_include.php@com_id=400.html" class="related">sum-of-breed</a>
+				<a href="command_doc_include.php@com_id=85.html" class="related">variance-of-breed</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">max-of-breed-with</span>
+	
+	<span class="argument">
+	[condition] [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluate to a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the highest value of <span class="argument">[list of commands]</span> when run over the turtles of breed specified by <nobr><code>breed</code></nobr> that satisfy <span class="argument">[condition]</span>. If there are no turtles of this breed for which <span class="argument">[condition]</span> is true, returns <nobr><code>minnum</code></nobr>, the smallest number possible without going into negative infinity.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>max-of-frogs-with [color = red] [speed]</code></nobr> returns the red turtle with the greatest speed of breed <nobr><code>frogs</code></nobr>.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>max-of-cars-with [color = blue] [size]</code></nobr> returns the blue turtle with the greatest size of breed <nobr><code>cars</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This command can also be executed by patches, for example within an <nobr><code>ask-patches</code></nobr> statement.		</div>
+		<p>
+				<div class="notes">
+		If <nobr><code>[list of commands]</code></nobr> contains no numbers, the smallest possible number is returned. If some of the <nobr><code>[list of commands]</code></nobr>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		When a turtle calls the command, it is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=21.html" class="related">average-of-breed-with</a>
+			<a href="command_doc_include.php@com_id=218.html" class="related">median-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=261.html" class="related">min-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=272.html" class="related">min-of-turtles-with</a>
+				<a href="command_doc_include.php@com_id=278.html" class="related">mode-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=201.html" class="related">sdev-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=401.html" class="related">sum-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=93.html" class="related">variance-of-breed-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">median-of-breed</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluate to a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the median of the <span class="argument">[list of commands]</span> when evaluated across all the turtles of the specified breed. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>median-of-frogs [speed]</code></nobr> returns the median speed of all the turtles of breed frogs.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>median-of-cars [size]</code></nobr> returns the median size of all the turtles of breed cars.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		When a turtle calls the command, it is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=20.html" class="related">average-of-breed</a>
+			<a href="command_doc_include.php@com_id=187.html" class="related">max-of-breed</a>
+				<a href="command_doc_include.php@com_id=222.html" class="related">median-of-turtles</a>
+				<a href="command_doc_include.php@com_id=248.html" class="related">min-of-breed</a>
+				<a href="command_doc_include.php@com_id=275.html" class="related">mode-of-breed</a>
+				<a href="command_doc_include.php@com_id=200.html" class="related">sdev-of-breed</a>
+				<a href="command_doc_include.php@com_id=400.html" class="related">sum-of-breed</a>
+				<a href="command_doc_include.php@com_id=85.html" class="related">variance-of-breed</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">median-of-breed-with</span>
+	
+	<span class="argument">
+	[1st list of commands] [2nd list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[1st list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[2nd list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluate to a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the median of the <span class="argument">[2nd list of commands]</span> when evaluated across all the turtles of the breed specified that satisfy the conditions specified by the <span class="argument">[1st list of commands]</span>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>median-of-frogs-with [color = red] [speed]</code></nobr> returns the median speed of all the red turtles of breed frogs.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>median-of-cars-with [size > 4] [speed]</code></nobr> returns the median speed of all the turtles of size greater than 4 with breed cars.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[2nd list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[2nd list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		When a turtle calls the command, it is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=21.html" class="related">average-of-breed-with</a>
+			<a href="command_doc_include.php@com_id=203.html" class="related">max-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=223.html" class="related">median-of-turtles-with</a>
+				<a href="command_doc_include.php@com_id=261.html" class="related">min-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=278.html" class="related">mode-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=201.html" class="related">sdev-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=401.html" class="related">sum-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=93.html" class="related">variance-of-breed-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">min-of-breed</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluate to a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the lowest value of <span class="argument">[list of commands]</span> when run over the turtles of the breed specified by <nobr><code>breed</code></nobr>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>min-of-frogs [speed]</code></nobr> reports the speed of the slowest turtle of breed frog.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>min-of-cars [mileage]</code></nobr> reports the mileage of the turtle of breed car with the lowest mileage.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: This command can also be executed by patches, for example within an <nobr><code>ask-patches</code></nobr> statement.		</div>
+		<p>
+				<div class="notes">
+		Note: If <span class="argument">[list of commands]</span> contains no numbers, the greatest possible number is returned. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		Note: When a turtle calls the command, it is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=20.html" class="related">average-of-breed</a>
+			<a href="command_doc_include.php@com_id=187.html" class="related">max-of-breed</a>
+				<a href="command_doc_include.php@com_id=217.html" class="related">median-of-breed</a>
+				<a href="command_doc_include.php@com_id=261.html" class="related">min-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=275.html" class="related">mode-of-breed</a>
+				<a href="command_doc_include.php@com_id=200.html" class="related">sdev-of-breed</a>
+				<a href="command_doc_include.php@com_id=400.html" class="related">sum-of-breed</a>
+				<a href="command_doc_include.php@com_id=85.html" class="related">variance-of-breed</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">min-of-breed-with</span>
+	
+	<span class="argument">
+	[condition] [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands to that evaluate to a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the lowest value of <span class="argument">[list of commands]</span> when run over the turtles of the breed specified that satisfy <span class="argument">[condition]</span>. If there are no turtles of the breed specified in which <span class="argument">[condition]</span> is true, returns maxnum, the largest number possible without going into positive infinity. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>min-of-frogs-with [habitat = tree] [height]</code></nobr> reports the height of the shortest turtle of breed frog with habitat tree.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>min-of-cars-with [color = red] [speed]</code></nobr> reports the speed of the slowest red turtle of breed car.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: This command can also be executed by patches, for example within an ask-patches statement.		</div>
+		<p>
+				<div class="notes">
+		Note: If <span class="argument">[condition]</span> contains no numbers, the greatest possible number is returned. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		Note: When a turtle calls the command, it is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=21.html" class="related">average-of-breed-with</a>
+			<a href="command_doc_include.php@com_id=203.html" class="related">max-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=218.html" class="related">median-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=248.html" class="related">min-of-breed</a>
+				<a href="command_doc_include.php@com_id=278.html" class="related">mode-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=201.html" class="related">sdev-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=401.html" class="related">sum-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=93.html" class="related">variance-of-breed-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">mode-of-breed</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluate to a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the mode of the <span class="argument">[list of commands]</span> when evaluated across all the turtles of breed specified by breed. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>mode-of-frogs [speed]</code></nobr> returns the mode of the speed of all the turtles of breed frogs.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		Note: If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		Note: When a turtle calls the command, it is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=20.html" class="related">average-of-breed</a>
+			<a href="command_doc_include.php@com_id=187.html" class="related">max-of-breed</a>
+				<a href="command_doc_include.php@com_id=217.html" class="related">median-of-breed</a>
+				<a href="command_doc_include.php@com_id=248.html" class="related">min-of-breed</a>
+				<a href="command_doc_include.php@com_id=278.html" class="related">mode-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=286.html" class="related">mode-of-turtles</a>
+				<a href="command_doc_include.php@com_id=200.html" class="related">sdev-of-breed</a>
+				<a href="command_doc_include.php@com_id=400.html" class="related">sum-of-breed</a>
+				<a href="command_doc_include.php@com_id=85.html" class="related">variance-of-breed</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">mode-of-breed-with</span>
+	
+	<span class="argument">
+	[condition] [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluate to true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands to that evaluate to a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the mode of the <span class="argument">[list of commands]</span> when evaluated across all the turtles of the breed specified by <nobr><code>breed</code></nobr> that satisfy the <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>mode-of-frogs-with [color = red] [speed]</code></nobr> returns the mode of the <nobr><code>speed</code></nobr> of all the red turtles of breed frogs.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>mode-of-cars-with [brand = honda] [mileage]</code></nobr> returns the mode of the <nobr><code>mileage</code></nobr> of all the turtles of breed car with <nobr><code>brand honda</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		Note: When a turtle calls the command, it is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=21.html" class="related">average-of-breed-with</a>
+			<a href="command_doc_include.php@com_id=203.html" class="related">max-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=218.html" class="related">median-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=261.html" class="related">min-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=275.html" class="related">mode-of-breed</a>
+				<a href="command_doc_include.php@com_id=290.html" class="related">mode-of-turtles-with</a>
+				<a href="command_doc_include.php@com_id=201.html" class="related">sdev-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=401.html" class="related">sum-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=93.html" class="related">variance-of-breed-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">one-of-breed</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a random turtle from the specified <i>breed</i>.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=95.html" class="related">count-turtles</a>
+			<a href="command_doc_include.php@com_id=138.html" class="related">list-of-turtles</a>
+				<a href="command_doc_include.php@com_id=161.html" class="related">one-of-breed-at</a>
+				<a href="command_doc_include.php@com_id=415.html" class="related">one-of-breed-at-with</a>
+				<a href="command_doc_include.php@com_id=192.html" class="related">one-of-breed-here</a>
+				<a href="command_doc_include.php@com_id=413.html" class="related">one-of-breed-here-with</a>
+				<a href="command_doc_include.php@com_id=199.html" class="related">one-of-breed-towards</a>
+				<a href="command_doc_include.php@com_id=417.html" class="related">one-of-breed-towards-with</a>
+				<a href="command_doc_include.php@com_id=412.html" class="related">one-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=205.html" class="related">one-of-turtles</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">one-of-breed-at</span>
+	
+	<span class="argument">
+	xcor ycor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">x-coordinate</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">y-coordinate</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a random turtle of breed <i>breed</i> <span class="argument">xcor</span> units in the x direction and <span class="argument">ycor</span> units in the y direction away from the caller.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>one-of-frogs-at 1 1</code></nobr> returns a random turtle of breed <nobr><code>frogs</code></nobr> one unit to the right and one unit above the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=153.html" class="related">one-of-breed</a>
+			<a href="command_doc_include.php@com_id=415.html" class="related">one-of-breed-at-with</a>
+				<a href="command_doc_include.php@com_id=192.html" class="related">one-of-breed-here</a>
+				<a href="command_doc_include.php@com_id=199.html" class="related">one-of-breed-towards</a>
+				<a href="command_doc_include.php@com_id=207.html" class="related">one-of-turtles-at</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">one-of-breed-at-with</span>
+	
+	<span class="argument">
+	xcor ycor [condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the x-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the y-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that returns true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a random turtle of the breed specified that satisfies <span class="argument">[condition]</span> that is on the patch <span class="argument">xcor</span> units away in the x direction and <span class="argument">ycor</span> units away in the y direction</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>one-of-dogs-at-with 1 1 [color = brown]</code></nobr> returns a turtle of breed dog that is 1 unit away in the x direction, 1 unit away in the y direction and is brown		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=153.html" class="related">one-of-breed</a>
+			<a href="command_doc_include.php@com_id=161.html" class="related">one-of-breed-at</a>
+				<a href="command_doc_include.php@com_id=413.html" class="related">one-of-breed-here-with</a>
+				<a href="command_doc_include.php@com_id=417.html" class="related">one-of-breed-towards-with</a>
+				<a href="command_doc_include.php@com_id=414.html" class="related">one-of-turtles-at-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">one-of-breed-here</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a random turtle of the specified breed on the caller's patch other than the caller.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>kill one-of-frogs-here</code></nobr> commands the caller to kill a random turtle of breed <nobr><code>frogs</code></nobr> that is on the caller's patch.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=100.html" class="related">count-turtles-here</a>
+			<a href="command_doc_include.php@com_id=155.html" class="related">list-of-turtles-here</a>
+				<a href="command_doc_include.php@com_id=153.html" class="related">one-of-breed</a>
+				<a href="command_doc_include.php@com_id=161.html" class="related">one-of-breed-at</a>
+				<a href="command_doc_include.php@com_id=413.html" class="related">one-of-breed-here-with</a>
+				<a href="command_doc_include.php@com_id=199.html" class="related">one-of-breed-towards</a>
+				<a href="command_doc_include.php@com_id=210.html" class="related">one-of-turtles-here</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">one-of-breed-here-with</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to either true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a random turtle of the breed specified that satisfies <span class="argument">[list of commands]</span> and is on the same patch as the caller.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>one-of-cars-here-with [color = red]</code></nobr> returns a turtle of breed car on the same patch as the color that is red.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=153.html" class="related">one-of-breed</a>
+			<a href="command_doc_include.php@com_id=415.html" class="related">one-of-breed-at-with</a>
+				<a href="command_doc_include.php@com_id=192.html" class="related">one-of-breed-here</a>
+				<a href="command_doc_include.php@com_id=417.html" class="related">one-of-breed-towards-with</a>
+				<a href="command_doc_include.php@com_id=235.html" class="related">one-of-turtles-here-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">one-of-breed-towards</span>
+	
+	<span class="argument">
+	angle distance 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a random turtle of the specified breed at the patch <span class="argument">angle</span> away at angle <span class="argument">distance</span> from the caller.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>one-of-frogs-towards 0 1</code></nobr> returns a random turtle of breed <nobr><code>frogs</code></nobr> one unit directly in front of the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=153.html" class="related">one-of-breed</a>
+			<a href="command_doc_include.php@com_id=161.html" class="related">one-of-breed-at</a>
+				<a href="command_doc_include.php@com_id=192.html" class="related">one-of-breed-here</a>
+				<a href="command_doc_include.php@com_id=417.html" class="related">one-of-breed-towards-with</a>
+				<a href="command_doc_include.php@com_id=416.html" class="related">one-of-turtles-towards-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">one-of-breed-towards-with</span>
+	
+	<span class="argument">
+	angle distance [condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that returns true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a random turtle of the breed specified that is at a distance <span class="argument">distance</span> and an angle <span class="argument">angle</span> from the caller that satisfies <span class="argument">[condition]</span></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>one-of-mice-towards-with 180 1 [color = blue]</code></nobr> returns a random turtle of breed mice and color blue that is one space behind the caller		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=153.html" class="related">one-of-breed</a>
+			<a href="command_doc_include.php@com_id=415.html" class="related">one-of-breed-at-with</a>
+				<a href="command_doc_include.php@com_id=413.html" class="related">one-of-breed-here-with</a>
+				<a href="command_doc_include.php@com_id=199.html" class="related">one-of-breed-towards</a>
+				<a href="command_doc_include.php@com_id=416.html" class="related">one-of-turtles-towards-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">one-of-breed-with</span>
+	
+	<span class="argument">
+	[condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to either true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a random turtle that satisfies <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>one-of-frogs-with [color = red]</code></nobr> returns a random turtle that is red and of breed frogs		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=153.html" class="related">one-of-breed</a>
+			<a href="command_doc_include.php@com_id=231.html" class="related">one-of-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">sdev-of-breed</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the standard deviation of the <span class="argument">[list of commands]</span> when evaluated across all the turtles of breed frogs.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		When a turtle calls the command, it is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=187.html" class="related">max-of-breed</a>
+			<a href="command_doc_include.php@com_id=217.html" class="related">median-of-breed</a>
+				<a href="command_doc_include.php@com_id=248.html" class="related">min-of-breed</a>
+				<a href="command_doc_include.php@com_id=275.html" class="related">mode-of-breed</a>
+				<a href="command_doc_include.php@com_id=201.html" class="related">sdev-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=211.html" class="related">sdev-of-turtles</a>
+				<a href="command_doc_include.php@com_id=400.html" class="related">sum-of-breed</a>
+				<a href="command_doc_include.php@com_id=85.html" class="related">variance-of-breed</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">sdev-of-breed-with</span>
+	
+	<span class="argument">
+	[first list of commands] [second list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[first list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[second list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the standard deviation of the <span class="argument">[second list of commands]</span> when evaluated across all the turtles of breed frogs that satisfy the conditions (must return a boolean of true or false) specified by the <span class="argument">[first list of commands]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>sdev-of-frogs-with [color = red] [speed]</code></nobr> returns the standard deviation of the speed of all the red turtles of breed frogs.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[second list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[second list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		When a turtle calls the command, it is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=203.html" class="related">max-of-breed-with</a>
+			<a href="command_doc_include.php@com_id=218.html" class="related">median-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=261.html" class="related">min-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=278.html" class="related">mode-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=200.html" class="related">sdev-of-breed</a>
+				<a href="command_doc_include.php@com_id=214.html" class="related">sdev-of-turtles-with</a>
+				<a href="command_doc_include.php@com_id=401.html" class="related">sum-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=93.html" class="related">variance-of-breed-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setbreed</span>
+	
+	<span class="argument">
+	breedname 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>breedname</nobr></td>
+		<td class="argtype" valign="top">Breed</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the turtle's breed to <span class="argument">breedname</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setbreed frogs</code></nobr> sets the turtle's breed to <nobr><code>frogs</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=226.html" class="related">breed</a>
+			<a href="command_doc_include.php@com_id=252.html" class="related">setbreed-at</a>
+				<a href="command_doc_include.php@com_id=253.html" class="related">setbreed-of</a>
+				<a href="command_doc_include.php@com_id=254.html" class="related">setbreed-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setbreed-at</span>
+	
+	<span class="argument">
+	xcor ycor breedname 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">x offset</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">y offset</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>breedname</nobr></td>
+		<td class="argtype" valign="top">Breed</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the breed of the turtle <span class="argument">xcor</span> units in the x direction and <span class="argument">ycor</span> units in the y direction away from the caller to <span class="argument">breedname</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setbreed-at 1 1 fish</code></nobr> sets the breed of the turtle one unit to the right and one unit above the caller to <nobr><code>fish</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=227.html" class="related">breed-at</a>
+			<a href="command_doc_include.php@com_id=250.html" class="related">setbreed</a>
+				<a href="command_doc_include.php@com_id=253.html" class="related">setbreed-of</a>
+				<a href="command_doc_include.php@com_id=254.html" class="related">setbreed-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setbreed-of</span>
+	
+	<span class="argument">
+	number breedname 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>breedname</nobr></td>
+		<td class="argtype" valign="top">Breed</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the breed of the turtle with who number <span class="argument">number</span> to the breed <span class="argument">breedname</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setbreed-of 2 fish</code></nobr> sets the breed of the turtle with who number <nobr><code>2</code></nobr> to <nobr><code>fish</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=228.html" class="related">breed-of</a>
+			<a href="command_doc_include.php@com_id=250.html" class="related">setbreed</a>
+				<a href="command_doc_include.php@com_id=252.html" class="related">setbreed-at</a>
+				<a href="command_doc_include.php@com_id=254.html" class="related">setbreed-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setbreed-towards</span>
+	
+	<span class="argument">
+	angle distance breedname 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>breedname</nobr></td>
+		<td class="argtype" valign="top">Breed</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the breed of the turtle <span class="argument">angle</span> away in the direction <nobr><code>arg2</code></nobr> to <span class="argument">breedname</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setbreed towards 0 1 fish</code></nobr> sets the breed of the turtle one unit directly in front of the caller to <nobr><code>fish</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=229.html" class="related">breed-towards</a>
+			<a href="command_doc_include.php@com_id=250.html" class="related">setbreed</a>
+				<a href="command_doc_include.php@com_id=252.html" class="related">setbreed-at</a>
+				<a href="command_doc_include.php@com_id=253.html" class="related">setbreed-of</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">sum-of-breed</span>
+	
+	<span class="argument">
+	[list-of-commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list-of-commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that return a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the sum of <span class="argument">[list-of-commands]</span> for all the turtles of the breed specified.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>sum-of-frogs [weight]</code></nobr> returns the sum of all the frogs' weights.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>sum-of-cars [speed]</code></nobr> returns the sum of all the cars' weights.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		When a turtle calls the command, it is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=20.html" class="related">average-of-breed</a>
+			<a href="command_doc_include.php@com_id=187.html" class="related">max-of-breed</a>
+				<a href="command_doc_include.php@com_id=217.html" class="related">median-of-breed</a>
+				<a href="command_doc_include.php@com_id=248.html" class="related">min-of-breed</a>
+				<a href="command_doc_include.php@com_id=275.html" class="related">mode-of-breed</a>
+				<a href="command_doc_include.php@com_id=200.html" class="related">sdev-of-breed</a>
+				<a href="command_doc_include.php@com_id=401.html" class="related">sum-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=404.html" class="related">sum-of-turtles</a>
+				<a href="command_doc_include.php@com_id=85.html" class="related">variance-of-breed</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">sum-of-breed-with</span>
+	
+	<span class="argument">
+	[condition] [list-of-commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evalutes to true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list-of-commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that return a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the total value of <span class="argument">[list-of-commands]</span> when run over the turtles of the breed specified that satisfy <span class="argument">[condition]</span>. If there are no turtles of the specified breedin which <span class="argument">[list-of-commands]</span> is true, <nobr><code>0</code></nobr> is returned. </div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: This command can<br>also be executed by patches, for example within an <nobr><code>ask-patches</code></nobr> statement.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=21.html" class="related">average-of-breed-with</a>
+			<a href="command_doc_include.php@com_id=203.html" class="related">max-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=218.html" class="related">median-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=261.html" class="related">min-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=278.html" class="related">mode-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=201.html" class="related">sdev-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=400.html" class="related">sum-of-breed</a>
+				<a href="command_doc_include.php@com_id=405.html" class="related">sum-of-turtles-with</a>
+				<a href="command_doc_include.php@com_id=93.html" class="related">variance-of-breed-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variance-of-breed</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of commands for the frogs to run which returns a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the numerical variance of the <nobr><code>[list of commands]</code></nobr> when evaluated across all the turtles of breed <nobr><code>frogs</code></nobr>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>variance-of-frogs [speed]</code></nobr> returns the variance of the speeds of all the turtles of breed frogs.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		When a turtle calls the command, it, itself, is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=20.html" class="related">average-of-breed</a>
+			<a href="command_doc_include.php@com_id=187.html" class="related">max-of-breed</a>
+				<a href="command_doc_include.php@com_id=217.html" class="related">median-of-breed</a>
+				<a href="command_doc_include.php@com_id=248.html" class="related">min-of-breed</a>
+				<a href="command_doc_include.php@com_id=275.html" class="related">mode-of-breed</a>
+				<a href="command_doc_include.php@com_id=200.html" class="related">sdev-of-breed</a>
+				<a href="command_doc_include.php@com_id=400.html" class="related">sum-of-breed</a>
+				<a href="command_doc_include.php@com_id=93.html" class="related">variance-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=132.html" class="related">variance-of-turtles</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variance-of-breed-with</span>
+	
+	<span class="argument">
+	[condition] [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">An expression that returns a true or false value</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of commands for the turtles to run which returns a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the numerical variance of the <span class="argument">[list of commands]</span> when evaluated across all the turtles of breed <nobr><code>frogs</code></nobr> that satisfy the condition (must return a boolean of true or false) specified by the <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>variance-of-frogs-with [color = red] [speed]</code></nobr> returns the variance of the speeds of all the red turtles of breed frogs.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		When a turtle calls the command, it, itself, is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=21.html" class="related">average-of-breed-with</a>
+			<a href="command_doc_include.php@com_id=203.html" class="related">max-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=218.html" class="related">median-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=261.html" class="related">min-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=278.html" class="related">mode-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=201.html" class="related">sdev-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=401.html" class="related">sum-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=85.html" class="related">variance-of-breed</a>
+				<a href="command_doc_include.php@com_id=140.html" class="related">variance-of-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">who-max-of-breed</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of commands for the frogs to run which returns a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of two elements: the turtle ID with the maximum value of the <span class="argument">[list of commands]</span> when evaluated across all the turtles of breed <nobr><code>frogs</code></nobr>, and that maximum value.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>who-max-of-frogs [energy]</code></nobr> returns a list with the who number of the frog with the most energy and the highest energy value: <nobr><code>[2 5]</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		When a turtle calls the command, it, itself, is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=314.html" class="related">who-max-of-breed-with</a>
+			<a href="command_doc_include.php@com_id=316.html" class="related">who-max-of-turtles</a>
+				<a href="command_doc_include.php@com_id=319.html" class="related">who-min-of-breed</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">who-max-of-breed-with</span>
+	
+	<span class="argument">
+	[condition] [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">An expression that returns a true or false value</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of commands for the turtles to run which returns a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of the turtle with the maximum value of <span class="argument">[list of commands]</span> when evaluated across all the turtles of breed <nobr><code>frogs</code></nobr> that satisfy the condition (must return a boolean of true or false) specified by the <span class="argument">[condition]</span>., and the maximum value. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>who-max-of-frogs-with [color = red] [energy]</code></nobr> returns a list with the who number of the red frog with the most energy and the highest energy value: <nobr><code>[2 5]</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		If no turtles satisfy <span class="argument">[condition]</span>, <nobr><code>who-max-of-frogs-with</code></nobr> returns <nobr><code>[nobody minnum]</code></nobr>.		</div>
+		<p>
+				<div class="notes">
+		When a turtle calls the command, it, itself, is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=310.html" class="related">who-max-of-breed</a>
+			<a href="command_doc_include.php@com_id=317.html" class="related">who-max-of-turtles-with</a>
+				<a href="command_doc_include.php@com_id=320.html" class="related">who-min-of-breed-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">who-min-of-breed</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of commands for the turtles to run which returns a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of two elements: the turtle ID with the minimum value of the <span class="argument">[list of commands]</span> when evaluated across all the turtles of breed <nobr><code>frogs</code></nobr>, and that minimum value</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>who-min-of-frogs [energy]</code></nobr> returns a list with the who number of the frog with the least energy and the smallest energy value: <nobr><code>[34 0.4]</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		When a turtle calls the command, it, itself, is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=310.html" class="related">who-max-of-breed</a>
+			<a href="command_doc_include.php@com_id=320.html" class="related">who-min-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=322.html" class="related">who-min-of-turtles</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">who-min-of-breed-with</span>
+	
+	<span class="argument">
+	[condition] [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">An expression that returns a true or false value</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of commands for the turtles to run which returns a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of the turtle with the minimum value of <span class="argument">[list of commands]</span> when evaluated across all the turtles of breed <nobr><code>frogs</code></nobr> that satisfy the condition (must return a boolean of true or false) specified by the <span class="argument">[condition]</span>., and the minimum value.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>who-min-of-frogs-with [color = red] [energy]</code></nobr> returns a list with the who number of the red frog with the least energy and the smallest energy value: <nobr><code>[34 0.4]</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of commands]</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+				<div class="notes">
+		If no turtles satisfy <span class="argument">[condition]</span>, <nobr><code>who-min-of-frogs-with</code></nobr> returns <nobr><code>[nobody maxnum]</code></nobr>.		</div>
+		<p>
+				<div class="notes">
+		When a turtle calls the command, it, itself, is not included as part of the calculation.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=314.html" class="related">who-max-of-breed-with</a>
+			<a href="command_doc_include.php@com_id=319.html" class="related">who-min-of-breed</a>
+			<hr></html>

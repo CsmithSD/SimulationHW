@@ -1,0 +1,4569 @@
+<html><head><title>Command List</title><link rel="STYLESHEET" href="style.css"></head><body><h3 style="color: green">Command List</h3>
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div class="catdescription">
+These are some of the most commonly used commands in Starlogo.</div>
+<p>
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+			
+			<span class="argument">condition1</span>
+			
+			<span class="commandname">and</span>
+			
+			<span class="argument">condition2</span>
+			
+			
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>condition1</nobr></td>
+		<td class="argtype" valign="top">Boolean</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>condition2</nobr></td>
+		<td class="argtype" valign="top">Boolean</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports true if <span class="argument">condition1</span> and <span class="argument">condition2</span> report true.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=9.html" class="related">not</a>
+			<a href="command_doc_include.php@com_id=10.html" class="related">or</a>
+				<a href="command_doc_include.php@com_id=245.html" class="related">xor</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ask-breed</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of turtle commands to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Asks all turtles of breed <nobr><code>frogs</code></nobr> to run <nobr><code>[list of commands]</code></nobr>. The observer will wait for all of the turtles to finish before continuing.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-frogs [fd 1 rt 90]</code></nobr> will make all turtles of breed <nobr><code>frogs</code></nobr> move forward one step and then turn 90 degrees to the right.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=426.html" class="related">ask-breed-with</a>
+			<a href="command_doc_include.php@com_id=14.html" class="related">ask-list-of-turtles</a>
+				<a href="command_doc_include.php@com_id=16.html" class="related">ask-patch-at</a>
+				<a href="command_doc_include.php@com_id=15.html" class="related">ask-patches</a>
+				<a href="command_doc_include.php@com_id=17.html" class="related">ask-turtle</a>
+				<a href="command_doc_include.php@com_id=18.html" class="related">ask-turtles</a>
+				<a href="command_doc_include.php@com_id=19.html" class="related">ask-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ask-patches</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of patch commands</td>
+		<td class="argdesc" valign="top">A list of commands for the patches to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This observer command asks all of the patches to run the <nobr><code>[list of commands]</code></nobr>. The observer will wait for the patches to finish before moving on. <p>Asking the patches to do something is a moderately expensive operation since StarLogo creates a thread for each patch. Try to group commands that you would have put into separate <nobr><code>ask-patches</code></nobr> into the same one to minimize thread creation overhead.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-patches [setpc red]</code></nobr> colors all of the patches red.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=13.html" class="related">ask-breed</a>
+			<a href="command_doc_include.php@com_id=14.html" class="related">ask-list-of-turtles</a>
+				<a href="command_doc_include.php@com_id=16.html" class="related">ask-patch-at</a>
+				<a href="command_doc_include.php@com_id=17.html" class="related">ask-turtle</a>
+				<a href="command_doc_include.php@com_id=18.html" class="related">ask-turtles</a>
+				<a href="command_doc_include.php@com_id=19.html" class="related">ask-turtles-with</a>
+				<a href="command_doc_include.php@com_id=247.html" class="related">setbg</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ask-turtles</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of commands for the turtles to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Asks all turtles to run the <nobr><code>[list of commands]</code></nobr>. The observer will wait for all of the turtles to finish before continuing. <p>Asking all of the turtles to do something is a moderately expensive operation since StarLogo creates a thread for each turtle. Try to group commands that you would have put into separate <nobr><code>ask-turtles</code></nobr> into the same one to minimize thread creation overhead.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-turtles [fd 1]</code></nobr> will make all of the turtles move forward 1 step.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=13.html" class="related">ask-breed</a>
+			<a href="command_doc_include.php@com_id=14.html" class="related">ask-list-of-turtles</a>
+				<a href="command_doc_include.php@com_id=16.html" class="related">ask-patch-at</a>
+				<a href="command_doc_include.php@com_id=15.html" class="related">ask-patches</a>
+				<a href="command_doc_include.php@com_id=17.html" class="related">ask-turtle</a>
+				<a href="command_doc_include.php@com_id=19.html" class="related">ask-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">back (bk)</span>
+	
+	<span class="argument">
+	steps 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>steps</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Number of turtle steps to move</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles move $steps$ backward.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>bk 4</code></nobr> makes the turtles move 4 steps backward.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=41.html" class="related">forward</a>
+			<a href="command_doc_include.php@com_id=168.html" class="related">left</a>
+				<a href="command_doc_include.php@com_id=196.html" class="related">right</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">black</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports 0, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+			<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">blue</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports 105, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">breed</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the turtle's breed, or if a patch is calling it, the breed of one of the turtles on the patch.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if breed = frogs [fd 5]</code></nobr> makes all turtles of breed <nobr><code>frogs</code></nobr> move forward 5 steps.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=227.html" class="related">breed-at</a>
+			<a href="command_doc_include.php@com_id=228.html" class="related">breed-of</a>
+				<a href="command_doc_include.php@com_id=229.html" class="related">breed-towards</a>
+				<a href="command_doc_include.php@com_id=250.html" class="related">setbreed</a>
+				<a href="command_doc_include.php@com_id=307.html" class="related">who</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">brown</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports 35, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">clear-graphics (cg)</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets all patches to black.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">clearall (ca) (clear-all)</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Kills all turtles, sets all patches to black, and resets all variables to 0.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">color</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the color of the turtle, or if a patch is calling it, the color of one of the turtles on the patch.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if color = black <br>[fd 3]</code></nobr><br>has all turtles check if they are black, and if so, move themselves forward by 3 turtle steps.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=58.html" class="related">color-at</a>
+			<a href="command_doc_include.php@com_id=59.html" class="related">color-of</a>
+				<a href="command_doc_include.php@com_id=61.html" class="related">color-towards</a>
+				<a href="command_doc_include.php@com_id=255.html" class="related">setcolor</a>
+				<a href="command_doc_include.php@com_id=307.html" class="related">who</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-breed-here</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the number of turtles whose breed is frogs which are on the current patch.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if count-frogs-here > 2 [setc blue]</code></nobr> makes the turtle set its color to blue if there are more than two turtles of type frog on its current patch.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=69.html" class="related">count-breed</a>
+			<a href="command_doc_include.php@com_id=72.html" class="related">count-breed-at</a>
+				<a href="command_doc_include.php@com_id=76.html" class="related">count-breed-towards</a>
+				<a href="command_doc_include.php@com_id=80.html" class="related">count-breed-with</a>
+				<a href="command_doc_include.php@com_id=100.html" class="related">count-turtles-here</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">count-turtles-here</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the number of turtles sitting on the caller's patch.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if count-turtles-here > 2 [setc blue]</code></nobr> makes the turtle set its color to blue if there are more than two turtles on its current patch.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=73.html" class="related">count-breed-here</a>
+			<a href="command_doc_include.php@com_id=95.html" class="related">count-turtles</a>
+				<a href="command_doc_include.php@com_id=98.html" class="related">count-turtles-at</a>
+				<a href="command_doc_include.php@com_id=102.html" class="related">count-turtles-towards</a>
+				<a href="command_doc_include.php@com_id=106.html" class="related">count-turtles-with</a>
+				<a href="command_doc_include.php@com_id=192.html" class="related">one-of-breed-here</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">die</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles die, meaning that they stop running all code and disappear forever.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if pc = red [die]</code></nobr> makes the turtle die if the patch it is on is red.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=137.html" class="related">kill</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">diffuse</span>
+	
+	<span class="argument">
+	variable percentage 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>variable</nobr></td>
+		<td class="argtype" valign="top">String</td>
+		<td class="argdesc" valign="top">patch variable to diffuse</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>percentage</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">percentage of patch variable's value to diffuse</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Makes each patch give 1/8 of <span class="argument">percentage</span> of <span class="argument">variable</span> to each neighboring patch. <br><span class="argument">percentage</span> should be expressed as a number between 0 and 1. <span class="argument">variable</span> should be a patch variable.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>diffuse food 20</code></nobr> causes each patch to give 1/8 of 20 percent of the variable food to each of its eight neighboring patches.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		<nobr><code>diffuse</code></nobr> must be run by the observer, even though it affects patches.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=125.html" class="related">diffuse4</a>
+			<a href="command_doc_include.php@com_id=136.html" class="related">nsum</a>
+				<a href="command_doc_include.php@com_id=141.html" class="related">nsum4</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">distance</span>
+	
+	<span class="argument">
+	xcor ycor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance in the x direction away from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance in the y direction away from the caller</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the distance from the caller to <span class="argument">xcor</span> <span class="argument">ycor</span>. The observer is assumed to be at position (0,0). If <span class="argument">xcor</span> and/or <span class="argument">ycor</span> are off the screen, they will be wrapped to fit within the screen first.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>distance 3 4</code></nobr> reports 5 when the caller is at (0, 0).<br><nobr><code>distance 101 101</code></nobr> reports 70.7107 (on a 51x51 screen)		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=139.html" class="related">distance-nowrap</a>
+			<a href="command_doc_include.php@com_id=37.html" class="related">towards</a>
+				<a href="command_doc_include.php@com_id=38.html" class="related">towards-nowrap</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">end</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This command must be placed at the end of every procedure.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note, you can't put anything (even a comment) on the same line as end.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=233.html" class="related">output</a>
+			<a href="command_doc_include.php@com_id=396.html" class="related">startup</a>
+				<a href="command_doc_include.php@com_id=398.html" class="related">stop</a>
+				<a href="command_doc_include.php@com_id=36.html" class="related">to</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">forward (fd)</span>
+	
+	<span class="argument">
+	number 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Turtle moves $arg1 steps forward.</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Moves turtle forward <span class="argument">number</span> steps.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>fd 3</code></nobr> and <nobr><code>forward 3</code></nobr> are equivalent statements which each make turtles move forward 3 steps.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=32.html" class="related">back</a>
+			<a href="command_doc_include.php@com_id=135.html" class="related">jump</a>
+				<a href="command_doc_include.php@com_id=60.html" class="related">leap</a>
+				<a href="command_doc_include.php@com_id=168.html" class="related">left</a>
+				<a href="command_doc_include.php@com_id=196.html" class="related">right</a>
+				<a href="command_doc_include.php@com_id=397.html" class="related">step</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoto">Turtle, Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">globals</span>
+	
+	<span class="argument">
+	[variable-list] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[variable-list]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Creates global variables.  The variable-list contains one or more names.  The globals declaration should be placed at the top of the observer procedures window or the turtle procedures window. <br></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>globals [variable1 variable2 variable3]</code></nobr> Creates globals variable1, variable2, and variable3.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=311.html" class="related">patches-own</a>
+			<a href="command_doc_include.php@com_id=49.html" class="related">turtles-own</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">grab</span>
+	
+	<span class="argument">
+	number [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Have turtles <span class="argument">number</span> execute <span class="argument">[list of commands]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>grab one-of-turtles-here [setc red setc-of partner blue]</code></nobr>  This turns the caller red and the grabbed turtle blue. If there are no other turtles on the caller's patch, the [list of commands] does not get executed and no turtles change color.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Caller instructs turtles with who number(s) number(s) to execute [list of commands]. The who number of the turtles being grabbed are stored in partner, if there is one, or partners, if there are many. A turtle cannot grab itself.		</div>
+		<p>
+				<div class="notes">
+		Grab is only useful for guaranteeing that a turtle you want to talk to is not being talked to by anyone else and cannot talk to anyone else while being grabbed. Note, while one turtle is grabbing another, neither may be grabbed by a third turtle.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=79.html" class="related">grabbed?</a>
+			<a href="command_doc_include.php@com_id=304.html" class="related">partner</a>
+				<a href="command_doc_include.php@com_id=308.html" class="related">partners</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">gray (grey)</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<nobr><code>gray</code></nobr> reports 5, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">green</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<nobr><code>green</code></nobr> reports 55, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">heading</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the direction that the turtle is facing, or if a patch calls it, the direction that one of the turtles on that patch is facing.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if heading = 0 [setc blue]</code></nobr>  Commands the caller to set its color to blue if it is facing straight up.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=91.html" class="related">heading-at</a>
+			<a href="command_doc_include.php@com_id=97.html" class="related">heading-of</a>
+				<a href="command_doc_include.php@com_id=103.html" class="related">heading-towards</a>
+				<a href="command_doc_include.php@com_id=260.html" class="related">setheading</a>
+				<a href="command_doc_include.php@com_id=307.html" class="related">who</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">if</span>
+	
+	<span class="argument">
+	condition [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>condition</nobr></td>
+		<td class="argtype" valign="top">Boolean</td>
+		<td class="argdesc" valign="top">Condition that evaluates to either true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">List of commands to execute of $arg1 is true</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Do <span class="argument">[list of commands]</span> if and only if <span class="argument">condition</span> reports true.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if color = black [fd 5 rt 90]</code></nobr> makes every black turtle move forward 5 steps and then turn right.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=114.html" class="related">ifelse</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ifelse</span>
+	
+	<span class="argument">
+	condition [list of commands1] [list of commands2] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>condition</nobr></td>
+		<td class="argtype" valign="top">Boolean</td>
+		<td class="argdesc" valign="top">Condition that evalutes to either true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands1]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">Runs if $arg1 is true</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands2]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">Runs of $arg2 is false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Do <span class="argument">[list of commands1]</span> if <span class="argument">condition</span> reports true, otherwise do <span class="argument">[list of commands2]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ifelse color = black [fd 2] [bk 2]</code></nobr> would make black turtles move forward 2 steps and all other turtles move back 2 steps.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=110.html" class="related">if</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">jump</span>
+	
+	<span class="argument">
+	number 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Amount for turtle to move</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles move <span class="argument">number</span> steps in the time it takes to make one normal step.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>jump 12</code></nobr> makes the caller move forward 12 in the time it normally takes to move forward one step.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		<nobr><code>jump 15</code></nobr> and <nobr><code>fd 1</code></nobr> both take the same amount of time to perform.  <nobr><code>fd 15</code></nobr>, however, would take 15 times as long as <nobr><code>jump 15</code></nobr>.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=41.html" class="related">forward</a>
+			<a href="command_doc_include.php@com_id=60.html" class="related">leap</a>
+				<a href="command_doc_include.php@com_id=397.html" class="related">step</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">kill</span>
+	
+	<span class="argument">
+	number 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Kills turtle with <nobr><code>who number</code></nobr> equal to <span class="argument">number</span>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>kill 2</code></nobr> kills the turtle with a <nobr><code>who number</code></nobr> equal to 2.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=120.html" class="related">die</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">left (lt)</span>
+	
+	<span class="argument">
+	number 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of degrees to turn</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles turn left by <span class="argument">number</span> degrees. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>lt 90</code></nobr>		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>left 90</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=32.html" class="related">back</a>
+			<a href="command_doc_include.php@com_id=41.html" class="related">forward</a>
+				<a href="command_doc_include.php@com_id=196.html" class="related">right</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">not</span>
+	
+	<span class="argument">
+	condition1 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>condition1</nobr></td>
+		<td class="argtype" valign="top">Boolean</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports true if <span class="argument">condition1</span> reports false.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=8.html" class="related">and</a>
+			<a href="command_doc_include.php@com_id=10.html" class="related">or</a>
+				<a href="command_doc_include.php@com_id=245.html" class="related">xor</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">one-of-breed-here</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a random turtle of the specified breed on the caller's patch other than the caller.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>kill one-of-frogs-here</code></nobr> commands the caller to kill a random turtle of breed <nobr><code>frogs</code></nobr> that is on the caller's patch.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=100.html" class="related">count-turtles-here</a>
+			<a href="command_doc_include.php@com_id=155.html" class="related">list-of-turtles-here</a>
+				<a href="command_doc_include.php@com_id=153.html" class="related">one-of-breed</a>
+				<a href="command_doc_include.php@com_id=161.html" class="related">one-of-breed-at</a>
+				<a href="command_doc_include.php@com_id=413.html" class="related">one-of-breed-here-with</a>
+				<a href="command_doc_include.php@com_id=199.html" class="related">one-of-breed-towards</a>
+				<a href="command_doc_include.php@com_id=210.html" class="related">one-of-turtles-here</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">one-of-breed-with</span>
+	
+	<span class="argument">
+	[condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to either true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a random turtle that satisfies <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>one-of-frogs-with [color = red]</code></nobr> returns a random turtle that is red and of breed frogs		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=153.html" class="related">one-of-breed</a>
+			<a href="command_doc_include.php@com_id=231.html" class="related">one-of-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">one-of-turtles-here</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a random turtle on the caller's patch other than the caller.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>kill one-of-turtles-here</code></nobr> commands the caller to kill a random turtle that is on the caller's patch.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=192.html" class="related">one-of-breed-here</a>
+			<a href="command_doc_include.php@com_id=205.html" class="related">one-of-turtles</a>
+				<a href="command_doc_include.php@com_id=235.html" class="related">one-of-turtles-here-with</a>
+				<a href="command_doc_include.php@com_id=212.html" class="related">one-of-turtles-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">one-of-turtles-with</span>
+	
+	<span class="argument">
+	[condition]  		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">condition the turtle must meet</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr></nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Chooses a turtle based on the following <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>one-of-turtles-with [color = red] [setc blue]</code></nobr> chooses a <nobr><code>red</code></nobr> turtle		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=106.html" class="related">count-turtles-with</a>
+			<a href="command_doc_include.php@com_id=160.html" class="related">list-of-turtles-with</a>
+				<a href="command_doc_include.php@com_id=297.html" class="related">myself</a>
+				<a href="command_doc_include.php@com_id=412.html" class="related">one-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=205.html" class="related">one-of-turtles</a>
+				<a href="command_doc_include.php@com_id=207.html" class="related">one-of-turtles-at</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+			
+			<span class="argument">condition1</span>
+			
+			<span class="commandname">or</span>
+			
+			<span class="argument">condition2</span>
+			
+			
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>condition1</nobr></td>
+		<td class="argtype" valign="top">Boolean</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>condition2</nobr></td>
+		<td class="argtype" valign="top">Boolean</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports true if either <span class="argument">condition1</span> or <span class="argument">condition2</span> reports true.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		if (color = black) or (color = red) [fd 2] makes all black or red turtles move forward 2 steps.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=8.html" class="related">and</a>
+			<a href="command_doc_include.php@com_id=9.html" class="related">not</a>
+				<a href="command_doc_include.php@com_id=245.html" class="related">xor</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">orange</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports 25, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">output</span>
+	
+	<span class="argument">
+	something 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>something</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">the value to be returned</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Exits the current procedure and returns <span class="argument">something</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>output "hello"</code></nobr> exits the current procedure and returns the string <nobr><code>"hello"</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=159.html" class="related">end</a>
+			<a href="command_doc_include.php@com_id=166.html" class="related">loop</a>
+				<a href="command_doc_include.php@com_id=398.html" class="related">stop</a>
+				<a href="command_doc_include.php@com_id=36.html" class="related">to</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">partner</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the <nobr><code>who</code></nobr> number of the turtle being <nobr><code>grab</code></nobr>bed, or nobody if no turtle is being <nobr><code>grab</code></nobr>bed.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>grab one-of-turtles-here<br>[if (color-of partner) = red [die]]</code></nobr><br>These statements will cause a turtle to partner with another turtle on the same spot and die if that partner is red.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Must be used inside of a <nobr><code>grab</code></nobr> statement.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=78.html" class="related">grab</a>
+			<a href="command_doc_include.php@com_id=79.html" class="related">grabbed?</a>
+				<a href="command_doc_include.php@com_id=308.html" class="related">partners</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">patchcolor (pc)</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the color of the patch the turtle is on.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		if <nobr><code>pc = red [fd 1]</code></nobr> commands the turtle to move forward one unit if the color of the patch the turtle is on is red.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This command can also be executed by patches, for example within an <nobr><code>ask-patches</code></nobr> statement.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=313.html" class="related">pc-ahead</a>
+			<a href="command_doc_include.php@com_id=427.html" class="related">pc-ahead-one-patch</a>
+				<a href="command_doc_include.php@com_id=315.html" class="related">pc-at</a>
+				<a href="command_doc_include.php@com_id=318.html" class="related">pc-towards</a>
+				<a href="command_doc_include.php@com_id=247.html" class="related">setbg</a>
+				<a href="command_doc_include.php@com_id=269.html" class="related">setpc</a>
+				<a href="command_doc_include.php@com_id=393.html" class="related">stamp</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">patches-own</span>
+	
+	<span class="argument">
+	[variable-list] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[variable-list]</nobr></td>
+		<td class="argtype" valign="top">Variable</td>
+		<td class="argdesc" valign="top">a list of patch variables separated by spaces</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Defines a set of variables to be properties of patches. The <span class="argument">[variable-list]</span> contains one or more names separated by spaces</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>patches-own [size value]</code></nobr> declares two patch variables - size and value.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		<nobr><code>patches-own</code></nobr> must only be used once in any program, and remain outside of any procedures.  Typically <nobr><code>patches-own</code></nobr> is defined once at the top of the Observer Procedures window.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=441.html" class="related">breeds</a>
+			<a href="command_doc_include.php@com_id=75.html" class="related">globals</a>
+				<a href="command_doc_include.php@com_id=49.html" class="related">turtles-own</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">pc-ahead-one-patch</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the color of the patch one patch ahead.  This is equivalent to <nobr><code>pc-at round dx round dy</code></nobr></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>pc-ahead-one-patch</code></nobr> will return the color of the next patch in front of the turtle		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		The patch returned may or may not be the same as pc-ahead.  In this version the patch returned is never the same as the patch that the caller is on.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=312.html" class="related">patchcolor</a>
+			<a href="command_doc_include.php@com_id=313.html" class="related">pc-ahead</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">pendown (pd)</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles put down their pens, meaning that they draw when they move, leaving a trail behind them. The color of the pen is that of the turtle.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if pc = blue [pd]</code></nobr> commands the caller to put its pen down and leave a trail behind it if the patch it is on is blue.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Only <nobr><code>fd</code></nobr> and <nobr><code>bk</code></nobr> will draw a line.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=410.html" class="related">pendown?</a>
+			<a href="command_doc_include.php@com_id=325.html" class="related">pendown?-of</a>
+				<a href="command_doc_include.php@com_id=326.html" class="related">pendown?-towards</a>
+				<a href="command_doc_include.php@com_id=366.html" class="related">penup</a>
+				<a href="command_doc_include.php@com_id=271.html" class="related">setpendown?-at</a>
+				<a href="command_doc_include.php@com_id=273.html" class="related">setpendown?-of</a>
+				<a href="command_doc_include.php@com_id=276.html" class="related">setpendown?-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">penup (pu)</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles pick up their pens, meaning that they no longer draw when they move.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if pc-ahead = red [pu]</code></nobr> commands the caller to lift its pen up and stop drawing as it moves if the patch ahead of it is red.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=321.html" class="related">pendown</a>
+			<a href="command_doc_include.php@com_id=410.html" class="related">pendown?</a>
+				<a href="command_doc_include.php@com_id=325.html" class="related">pendown?-of</a>
+				<a href="command_doc_include.php@com_id=326.html" class="related">pendown?-towards</a>
+				<a href="command_doc_include.php@com_id=271.html" class="related">setpendown?-at</a>
+				<a href="command_doc_include.php@com_id=273.html" class="related">setpendown?-of</a>
+				<a href="command_doc_include.php@com_id=276.html" class="related">setpendown?-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">plot</span>
+	
+	<span class="argument">
+	y-value 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>y-value</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+ Plots a point at <span class="argument">y-value</span>, then increments the <nobr><code>x-value</code></nobr> of the plot pen by 1. The pen will rescale itself when it reaches <nobr><code>plot-xmax</code></nobr>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>plot speed</code></nobr> plots the speed of the turtle over time.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=53.html" class="related">clear-plot</a>
+			<a href="command_doc_include.php@com_id=418.html" class="related">clearplots</a>
+				<a href="command_doc_include.php@com_id=339.html" class="related">plotid</a>
+				<a href="command_doc_include.php@com_id=346.html" class="related">plotxy</a>
+				<a href="command_doc_include.php@com_id=353.html" class="related">pp</a>
+				<a href="command_doc_include.php@com_id=356.html" class="related">ppreset</a>
+				<a href="command_doc_include.php@com_id=143.html" class="related">view-plot</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">purple</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<nobr><code>violet</code></nobr> reports 115, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">random</span>
+	
+	<span class="argument">
+	number 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">upper-limit of range of random numbers to generate</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports a random number between 0 and <span class="argument">number</span>, including 0 but not <span class="argument">number</span>, based on a uniform distribution.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>random 2</code></nobr> reports either 0 or 1, each with fifty percent probability.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		StarLogo uses the random generator provided by Java, which, as of now, is a linear congruential formula (Knuth Art of Computer Programming, Vol 2, Section 3.2.1.), which uses a 48-bit seed. StarLogo only allows you to set 32 bits of this seed.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=328.html" class="related">pick</a>
+			<a href="command_doc_include.php@com_id=175.html" class="related">random-gaussian</a>
+				<a href="command_doc_include.php@com_id=299.html" class="related">set-random-seed</a>
+				<a href="command_doc_include.php@com_id=331.html" class="related">setrandom-seed</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">red</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+red reports 15, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">repeat</span>
+	
+	<span class="argument">
+	number [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of times to iterate</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands to run on each iteration</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Do <span class="argument">[list of commands]</span> <span class="argument">number</span> times.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>repeat 4 [fd 4 lt 90]</code></nobr> makes turtles move forward 4 steps and then turn left 90 degrees 4 times.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=166.html" class="related">loop</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">right (rt)</span>
+	
+	<span class="argument">
+	angle 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of degrees to turn</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles turn right by <span class="argument">angle</span> degrees.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>rt 90</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=32.html" class="related">back</a>
+			<a href="command_doc_include.php@com_id=41.html" class="related">forward</a>
+				<a href="command_doc_include.php@com_id=168.html" class="related">left</a>
+				<a href="command_doc_include.php@com_id=260.html" class="related">setheading</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">round</span>
+	
+	<span class="argument">
+	number 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number to be rounded</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the integer closest to <span class="argument">number</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>round 4.6</code></nobr> returns 5.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=133.html" class="related">int</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">scale-color</span>
+	
+	<span class="argument">
+	color variable limit1 limit2 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Color</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>variable</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Variable color</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>limit1</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Lower limit</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>limit2</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Upper limit</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles set their color to a shade of <span class="argument">color</span> based on their value of <span class="argument">variable</span>. <span class="argument">limit1</span> and <span class="argument">limit2</span> determine the amount of gradation. If a patch calls this, all turtles on that patch scale their color.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>scale-color blue energy 0 20</code></nobr> Turtles turn one of twenty shades of blue. Turtles with lower energy turn darker blue.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>scale-color blue energy 20 0</code></nobr> <br>Turtles turn one of twenty shades of blue. Turtles with lower energy turn lighter blue.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If the turtle exceeds the limits, it turns black on the dark end of the specturm and turns white on the bright end of the spectrum.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=188.html" class="related">scale-pc</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">scale-pc</span>
+	
+	<span class="argument">
+	color variable limit1 limit2 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Color</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>variable</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>limit1</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Lower limit</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>limit2</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Upper limit</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Patches set their color to a shade of <span class="argument">color</span> based on their value of <span class="argument">variable</span>. <span class="argument">limit1</span> and <span class="argument">limit2</span> determine the amount of gradation. If a turtle calls this, the patch underneath the turtle scale its patch color.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>scale-color green density 0 20</code></nobr><br>Patches turn one of twenty shades of green. Patches with lower density turn darker green.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>scale-color blue energy 20 0</code></nobr><br>Patches turn one of twenty shades of green. Patches with lower density turn lighter green.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This is a patch command. It must be called from within an <nobr><code>ask-patches</code></nobr> or <nobr><code>ask-patch-at</code></nobr> statement.		</div>
+		<p>
+				<div class="notes">
+		If the patch exceeds the limits, it turns black on the dark end of the specturm and turns white on the bright end of the spectrum.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=184.html" class="related">scale-color</a>
+			<a href="command_doc_include.php@com_id=269.html" class="related">setpc</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">screen-height</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the height of the screen. The height is always an odd number, and the lowest possible value is 3. To change the <nobr><code>screen-height</code></nobr>, drag the mouse over the graphics canvas and use the handles to resize it.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=194.html" class="related">screen-half-height</a>
+			<a href="command_doc_include.php@com_id=195.html" class="related">screen-half-width</a>
+				<a href="command_doc_include.php@com_id=198.html" class="related">screen-width</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">screen-width</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns width of the screen. The width is always an odd number, and the lowest possible value is 3. To change the <nobr><code>screen-width</code></nobr>, drag the mouse over the graphics canvas and use the handles to resize it.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=194.html" class="related">screen-half-height</a>
+			<a href="command_doc_include.php@com_id=195.html" class="related">screen-half-width</a>
+				<a href="command_doc_include.php@com_id=197.html" class="related">screen-height</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">set</span>
+	
+	<span class="argument">
+	set value 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>set</nobr></td>
+		<td class="argtype" valign="top">Variable</td>
+		<td class="argdesc" valign="top">variable that gets redefined</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>value</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">value to be assigned to variable</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Assigns <span class="argument">value</span> to <span class="argument">set</span>, where <span class="argument">set</span> is any variable which has already been declared. For more information on local variables, see the Variables page.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>set energy 5</code></nobr> makes the variable <nobr><code>energy</code></nobr> have value <nobr><code>5</code></nobr> for every turtle, assuming <nobr><code>energy</code></nobr> has been declared as a turtle variable.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=63.html" class="related">let</a>
+			<a href="command_doc_include.php@com_id=349.html" class="related">setslidervar</a>
+				<a href="command_doc_include.php@com_id=434.html" class="related">setvariable</a>
+				<a href="command_doc_include.php@com_id=436.html" class="related">setvariable-at</a>
+				<a href="command_doc_include.php@com_id=435.html" class="related">setvariable-of</a>
+				<a href="command_doc_include.php@com_id=437.html" class="related">setvariable-towards</a>
+				<a href="command_doc_include.php@com_id=430.html" class="related">variable</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setcolor (setc)</span>
+	
+	<span class="argument">
+	colorname 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>colorname</nobr></td>
+		<td class="argtype" valign="top">Color</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles set their color to <span class="argument">colorname</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setc brown</code></nobr>		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>setc 45</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=55.html" class="related">color</a>
+			<a href="command_doc_include.php@com_id=256.html" class="related">setc-at</a>
+				<a href="command_doc_include.php@com_id=257.html" class="related">setc-of</a>
+				<a href="command_doc_include.php@com_id=259.html" class="related">setc-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setheading (seth)</span>
+	
+	<span class="argument">
+	angle 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles set their heading to <span class="argument">angle</span>.<br><span class="argument">angle</span> should be from 0 to 360 degrees, inclusive.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>seth 0</code></nobr> sets the turtle's heading to the top of the screen.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>seth 90</code></nobr> sets the turtle's heading to the right of the screen.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=90.html" class="related">heading</a>
+			<a href="command_doc_include.php@com_id=196.html" class="related">right</a>
+				<a href="command_doc_include.php@com_id=262.html" class="related">seth-at</a>
+				<a href="command_doc_include.php@com_id=263.html" class="related">seth-of</a>
+				<a href="command_doc_include.php@com_id=265.html" class="related">seth-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whop">Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setpc (setpatchcolor)</span>
+	
+	<span class="argument">
+	color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Color</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This command is run as a patch command inside an <nobr><code>ask-patches</code></nobr> statement. The patches being asked will set their color to <span class="argument">color</span>. Use stamp if you want to have a turtle change the color of a patch.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-patches [setpc blue]</code></nobr> commands the patches to set their color to <nobr><code>blue</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=312.html" class="related">patchcolor</a>
+			<a href="command_doc_include.php@com_id=188.html" class="related">scale-pc</a>
+				<a href="command_doc_include.php@com_id=247.html" class="related">setbg</a>
+				<a href="command_doc_include.php@com_id=393.html" class="related">stamp</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setshape</span>
+	
+	<span class="argument">
+	shape-name-or-number 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>shape-name-or-number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">The name or number of the shape</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles set their shape to <span class="argument">shape-name-or-number</span>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setshape turtle-shape</code></nobr> sets the shape of all of the turtles to the <nobr><code>turtle-shape</code></nobr>.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>if i-got-sick? [setshape sick-shape]</code></nobr>. If the turtle has gotten sick, update his visible shape to the sick person shape.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Names for shapes can be found and edited in the Shape Chooser window.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=334.html" class="related">setshape-at</a>
+			<a href="command_doc_include.php@com_id=335.html" class="related">setshape-of</a>
+				<a href="command_doc_include.php@com_id=336.html" class="related">setshape-towards</a>
+				<a href="command_doc_include.php@com_id=380.html" class="related">shape</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setvariable</span>
+	
+	<span class="argument">
+	value 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>value</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">the value to set the variable to</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the <nobr><code>variable</code></nobr> to the value specified</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setheight 5</code></nobr> Sets the height of the caller to 5.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=243.html" class="related">set</a>
+			<a href="command_doc_include.php@com_id=436.html" class="related">setvariable-at</a>
+				<a href="command_doc_include.php@com_id=435.html" class="related">setvariable-of</a>
+				<a href="command_doc_include.php@com_id=437.html" class="related">setvariable-towards</a>
+				<a href="command_doc_include.php@com_id=430.html" class="related">variable</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setxcor (setx)</span>
+	
+	<span class="argument">
+	coordinate 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>coordinate</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">A coordinate on the x-axis</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles set their x-coordinate to <span class="argument">coordinate</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setxcor 2</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=370.html" class="related">setxcor-at</a>
+			<a href="command_doc_include.php@com_id=371.html" class="related">setxcor-of</a>
+				<a href="command_doc_include.php@com_id=372.html" class="related">setxcor-towards</a>
+				<a href="command_doc_include.php@com_id=373.html" class="related">setxy</a>
+				<a href="command_doc_include.php@com_id=376.html" class="related">setycor</a>
+				<a href="command_doc_include.php@com_id=397.html" class="related">step</a>
+				<a href="command_doc_include.php@com_id=236.html" class="related">xcor</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setxy</span>
+	
+	<span class="argument">
+	xcor ycor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">A coordinate on the x-axis</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">A coordinate on the y-axis</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles set their x-coordinate to <span class="argument">xcor</span> and their y-coordinate to <span class="argument">ycor</span>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setxy 1 2</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=105.html" class="related">home</a>
+			<a href="command_doc_include.php@com_id=369.html" class="related">setxcor</a>
+				<a href="command_doc_include.php@com_id=374.html" class="related">setxy-at</a>
+				<a href="command_doc_include.php@com_id=375.html" class="related">setxy-of</a>
+				<a href="command_doc_include.php@com_id=411.html" class="related">setxy-towards</a>
+				<a href="command_doc_include.php@com_id=376.html" class="related">setycor</a>
+				<a href="command_doc_include.php@com_id=397.html" class="related">step</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setycor (sety)</span>
+	
+	<span class="argument">
+	number 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">A coordinate on the y-axis</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles set their y-coordinate to <span class="argument">number</span></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>sety 2</code></nobr> will move the turtle so that its y-coordinate is 2 (and leaves the x-coordinate the same)		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=369.html" class="related">setxcor</a>
+			<a href="command_doc_include.php@com_id=373.html" class="related">setxy</a>
+				<a href="command_doc_include.php@com_id=377.html" class="related">setycor-at</a>
+				<a href="command_doc_include.php@com_id=378.html" class="related">setycor-of</a>
+				<a href="command_doc_include.php@com_id=379.html" class="related">setycor-towards</a>
+				<a href="command_doc_include.php@com_id=397.html" class="related">step</a>
+				<a href="command_doc_include.php@com_id=246.html" class="related">ycor</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">shape</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the shape number a turtle is set to. If a patch calls this, it returns the shape number of a turtle on that patch.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setshape turtle-shape</code></nobr> sets the turtles shape to the one named <nobr><code>turtle-shape</code></nobr>		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>if shape = turtle-shape [fd 1]</code></nobr> has all of the turtles with shape <nobr><code>turtle-shape</code></nobr> move forward one step		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Default shape is turtle-shape.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=333.html" class="related">setshape</a>
+			<a href="command_doc_include.php@com_id=381.html" class="related">shape-at</a>
+				<a href="command_doc_include.php@com_id=456.html" class="related">shape-of</a>
+				<a href="command_doc_include.php@com_id=382.html" class="related">shape-towards</a>
+				<a href="command_doc_include.php@com_id=307.html" class="related">who</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">show</span>
+	
+	<span class="argument">
+	anything 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>anything</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Prints <span class="argument">anything</span> in the command center that calls show.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=360.html" class="related">print</a>
+			<a href="command_doc_include.php@com_id=361.html" class="related">print-status</a>
+				<a href="command_doc_include.php@com_id=70.html" class="related">type</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">stamp</span>
+	
+	<span class="argument">
+	color 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>color</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets color of patch under turtle to <span class="argument">color</span></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>stamp red</code></nobr> sets the patch under the turtle to red		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>stamp 0</code></nobr> sets the patch under the turtle to color 0 (black)		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>stamp color</code></nobr> sets the patch under the turtle to the color of the turtle		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=312.html" class="related">patchcolor</a>
+			<a href="command_doc_include.php@com_id=363.html" class="related">pstamp</a>
+				<a href="command_doc_include.php@com_id=269.html" class="related">setpc</a>
+				<a href="command_doc_include.php@com_id=394.html" class="related">stamp-at</a>
+				<a href="command_doc_include.php@com_id=395.html" class="related">stamp-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">startbuttonname</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Starts the button of name <nobr><code>buttonname</code></nobr></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>startgo</code></nobr> will start the button named <nobr><code>go</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=429.html" class="related">stopbuttonname</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">stop</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Exits the current procedure immediately. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>to check-patch-color<br>if pc-ahead = red [rt 90 stop]<br>if pc-ahead = green [lt 90 stop]<br>fd 1<br>end </code></nobr><p>This procedure will cause turtles to turn right and then exit the procedure if the the patch ahead is red, turn left and exit the procedure if the patch ahead is green, and only move forward one if the patch ahead was not green or red.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: stop does not stop any callers of the procedure, only the procedure itself.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=159.html" class="related">end</a>
+			<a href="command_doc_include.php@com_id=166.html" class="related">loop</a>
+				<a href="command_doc_include.php@com_id=233.html" class="related">output</a>
+				<a href="command_doc_include.php@com_id=36.html" class="related">to</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">stopbuttonname</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Stops the button of name <nobr><code>buttonname</code></nobr></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>stopgo</code></nobr> will stop the button named <nobr><code>go</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=428.html" class="related">startbuttonname</a>
+			<a href="command_doc_include.php@com_id=399.html" class="related">stopall</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">sum-of-turtles-with</span>
+	
+	<span class="argument">
+	[condition] [list-of-commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands which returns either true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list-of-commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands which returns a number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the total value of <span class="argument">[list-of-commands]</span> when run over the turtles that satisfy <span class="argument">[condition]</span>. If there are no turtles in which the <span class="argument">[condition]</span> is true, returns <nobr><code>0</code></nobr>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>sum-of-turtles-with [color = red] [age]</code></nobr> returns the sum of the ages of all the red turtles.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This command can also be executed by patches, for example within an <nobr><code>ask-patches</code></nobr> statement.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=22.html" class="related">average-of-turtles-with</a>
+			<a href="command_doc_include.php@com_id=216.html" class="related">max-of-turtles-with</a>
+				<a href="command_doc_include.php@com_id=223.html" class="related">median-of-turtles-with</a>
+				<a href="command_doc_include.php@com_id=272.html" class="related">min-of-turtles-with</a>
+				<a href="command_doc_include.php@com_id=290.html" class="related">mode-of-turtles-with</a>
+				<a href="command_doc_include.php@com_id=214.html" class="related">sdev-of-turtles-with</a>
+				<a href="command_doc_include.php@com_id=401.html" class="related">sum-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=404.html" class="related">sum-of-turtles</a>
+				<a href="command_doc_include.php@com_id=140.html" class="related">variance-of-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoto">Turtle, Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">to</span>
+	
+	<span class="argument">
+	procedure-name 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>procedure-name</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">A single word which is the name of the procedure you wish to define</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+When you create a procedure, the first line of it must be <nobr><code>to <span class="argument">procedure-name</span></code></nobr> where <span class="argument">procedure-name</span> is a one-word title for your procedure. <span class="argument">procedure-name</span> cannot be any command already recognized by StarLogo (this includes both built-in commands and the procedure names of other procedures you may already have written). <p>To add parameters to a procedure, write them after the <span class="argument">procedure-name</span> with a colon in front of them, like this:<br><nobr><code>to my-procedure :x :y :z</code></nobr><p>Inside the procedure body, you may use <nobr><code>:x</code></nobr>, <nobr><code>:y</code></nobr> and <nobr><code>:z</code></nobr> to refer to the values of the arguments passed in by the caller of the procedure.<p>All procedures must be ended with the word <nobr><code>end</code></nobr> on a line by itself (no comments may be on that line).<p>Procedures defined in the turtle procedures pane are only callable by turtles. Procedures defined in the observer procedures pane are only callable by the observer. Patches may not have procedures.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>to go <br>fd 1<br>rt 90<br>end</code></nobr><br>Now you may use <nobr><code>go</code></nobr> as a command in other parts of your program.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=159.html" class="related">end</a>
+			<a href="command_doc_include.php@com_id=233.html" class="related">output</a>
+				<a href="command_doc_include.php@com_id=396.html" class="related">startup</a>
+				<a href="command_doc_include.php@com_id=398.html" class="related">stop</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">towards</span>
+	
+	<span class="argument">
+	xcor ycor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">X coordinate on the screen</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">Y coordinate on the screen</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the angle from the caller's xcor and ycor to the specified absolute position specified by <nobr><code>xcor</code></nobr> and <nobr><code>ycor</code></nobr>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>towards 1 1</code></nobr> returns <nobr><code>45</code></nobr> when run by a turtle at <nobr><code>(0, 0)</code></nobr>.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>towards 1000 1000</code></nobr> returns <nobr><code>225</code></nobr> when run by a turtle at <nobr><code>(0, 0)</code></nobr> and the screen-width and screen-height are both 101.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		The observer is considered to be located at <nobr><code>(0, 0)</code></nobr>.		</div>
+		<p>
+				<div class="notes">
+		The StarLogo world wraps, so if you want to know the angle to an <nobr><code>xcor</code></nobr> and <nobr><code>ycor</code></nobr> that are off the screen, they will be modded by <nobr><code>screen-width</code></nobr> and <nobr><code>screen-height</code></nobr> until they point to a position within the screen and that angle returned. Thus if you want to see the direction towards (1000, 1000) it might just be off to the lower left of you instead of the upper right.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=130.html" class="related">distance</a>
+			<a href="command_doc_include.php@com_id=139.html" class="related">distance-nowrap</a>
+				<a href="command_doc_include.php@com_id=38.html" class="related">towards-nowrap</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">turtles-own</span>
+	
+	<span class="argument">
+	[list of variables] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of variables]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">A list of variable names to define as turtle variables</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Defines a set of variables to be properties of turtles. The <span class="argument">[list of variables]</span> contains one or more names. This line of code should be placed at the top of the Turtle Command Center. It does not go inside procedures.<p><br>A variable name may be followed by a list of <nobr><code>state values</code></nobr>. This variable may only have the values listed in the state value list. This can be used to assign named constants to a variable instead of using numbers.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>turtles-own [size energy]</code></nobr>		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>turtles-own [weather [sunny cloudy rainy]]</code></nobr><p><nobr><code>set weather rainy</code></nobr><br><nobr><code>set weather cloudy</code></nobr><br><nobr><code>if weather = sunny [ setcolor yellow ]</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		<nobr><code>turtles-own</code></nobr> declarations should appear outside of any procedure, usually at the top of the turtle procedures pane.		</div>
+		<p>
+				<div class="notes">
+		<nobr><code>turtles-own</code></nobr> declarations can contain more than one variable. If you have more than one <nobr><code>turtles-own</code></nobr>, consider consolidating them into a single <nobr><code>turtles-own</code></nobr>.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=441.html" class="related">breeds</a>
+			<a href="command_doc_include.php@com_id=75.html" class="related">globals</a>
+				<a href="command_doc_include.php@com_id=311.html" class="related">patches-own</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variable</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the value of the <nobr><code>variable</code></nobr> specified</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>height</code></nobr> returns the value of the variable named height		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=243.html" class="related">set</a>
+			<a href="command_doc_include.php@com_id=434.html" class="related">setvariable</a>
+				<a href="command_doc_include.php@com_id=432.html" class="related">variable-at</a>
+				<a href="command_doc_include.php@com_id=431.html" class="related">variable-of</a>
+				<a href="command_doc_include.php@com_id=433.html" class="related">variable-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variable-at</span>
+	
+	<span class="argument">
+	xcor ycor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the x-direction from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of steps in the y-direction from the caller</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the value of the <nobr><code>variable</code></nobr> specified at a distance of <span class="argument">xcor</span> in the x direction and <span class="argument">ycor</span> in the y direction from the caller</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>size-at 1 1</code></nobr> returns the size of the turtle one patch away in the x direction and y patch away in the y direction		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=436.html" class="related">setvariable-at</a>
+			<a href="command_doc_include.php@com_id=430.html" class="related">variable</a>
+				<a href="command_doc_include.php@com_id=431.html" class="related">variable-of</a>
+				<a href="command_doc_include.php@com_id=433.html" class="related">variable-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variable-of</span>
+	
+	<span class="argument">
+	number1 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number1</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">turtle who number</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the value of the <nobr><code>variable</code></nobr> specified for the turtle with who number <span class="argument">number1</span></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>height-of 0</code></nobr> returns the height of turtle number 0		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=435.html" class="related">setvariable-of</a>
+			<a href="command_doc_include.php@com_id=430.html" class="related">variable</a>
+				<a href="command_doc_include.php@com_id=432.html" class="related">variable-at</a>
+				<a href="command_doc_include.php@com_id=433.html" class="related">variable-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variable-towards</span>
+	
+	<span class="argument">
+	angle distance 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance from caller</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the value of the <nobr><code>variable</code></nobr> specified at an angle of <span class="argument">angle</span> and distance of <span class="argument">distance</span> away from the caller</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>happiness-towards 0 1</code></nobr> returns the happiness of the turtle directly in front of and one space beyond the caller		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		variables must first be declared in a turtles-own, breeds-own, patches-own or globals		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=437.html" class="related">setvariable-towards</a>
+			<a href="command_doc_include.php@com_id=430.html" class="related">variable</a>
+				<a href="command_doc_include.php@com_id=432.html" class="related">variable-at</a>
+				<a href="command_doc_include.php@com_id=431.html" class="related">variable-of</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">wait</span>
+	
+	<span class="argument">
+	seconds 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>seconds</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">A number of seconds. Decimals are allowed.</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Caller waits <span class="argument">seconds</span> seconds before continuing.<p>This command is per-thread - meaning if you have two buttons that each call wait, they will not wait for one another. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>to crawl</code></nobr><br><nobr><code>fd 1</code></nobr><br><nobr><code>wait 2.1</code></nobr><br><nobr><code>end</code></nobr><p><nobr><code>crawl</code></nobr> <p>The turtles go forward 1 step and then wait for 2.1 seconds.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=305.html" class="related">wait-until</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">white</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<nobr><code>white</code></nobr> reports 9, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=148.html" class="related">yellow</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">who</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the who number (ID number) of the turtle.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if who = 1 [fd 1]</code></nobr> commands all turtles to check if they're turtle 1, and if so, move forward 1 step.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=226.html" class="related">breed</a>
+			<a href="command_doc_include.php@com_id=55.html" class="related">color</a>
+				<a href="command_doc_include.php@com_id=90.html" class="related">heading</a>
+				<a href="command_doc_include.php@com_id=380.html" class="related">shape</a>
+				<a href="command_doc_include.php@com_id=236.html" class="related">xcor</a>
+				<a href="command_doc_include.php@com_id=246.html" class="related">ycor</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">yellow</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<nobr><code>yellow</code></nobr> reports <nobr><code>45</code></nobr>, the number of its particular hue in the color table.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=224.html" class="related">black</a>
+			<a href="command_doc_include.php@com_id=225.html" class="related">blue</a>
+				<a href="command_doc_include.php@com_id=230.html" class="related">brown</a>
+				<a href="command_doc_include.php@com_id=119.html" class="related">cyan</a>
+				<a href="command_doc_include.php@com_id=81.html" class="related">gray</a>
+				<a href="command_doc_include.php@com_id=82.html" class="related">green</a>
+				<a href="command_doc_include.php@com_id=64.html" class="related">lime</a>
+				<a href="command_doc_include.php@com_id=169.html" class="related">magenta</a>
+				<a href="command_doc_include.php@com_id=232.html" class="related">orange</a>
+				<a href="command_doc_include.php@com_id=329.html" class="related">pink</a>
+				<a href="command_doc_include.php@com_id=367.html" class="related">purple</a>
+				<a href="command_doc_include.php@com_id=178.html" class="related">red</a>
+				<a href="command_doc_include.php@com_id=389.html" class="related">sky</a>
+				<a href="command_doc_include.php@com_id=44.html" class="related">turquoise</a>
+				<a href="command_doc_include.php@com_id=306.html" class="related">white</a>
+			<hr></html>

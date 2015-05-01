@@ -1,0 +1,236 @@
+<html>
+
+<head>
+
+
+
+<title>Starlogo 1.0 Documentation</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+
+
+<body bgcolor="#FFFFFF">
+
+<p><em><font size="+1">New Commands to version 2.0 (Printable)</font></em> </p>
+
+<p><span class=SpellE><span class=GramE><code><i style='mso-bidi-font-style:
+normal'><span style='font-size:10.0pt'>acos</span></i></code></span></span><code><i
+style='mso-bidi-font-style:normal'><span style='font-size:10.0pt'> </span></i></code><code><span
+style='font-size:10.0pt'>number </span></code><b>[Observer, Turtle]<o:p></o:p></b></p>
+<p><span class=GramE>Trigonometric function.</span> <span class=GramE>Returns 
+  the arccosine of the specified number.</span> All angles returned are in degrees. 
+  <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>alive</em></span><em>?</em> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p>Returns a <span class=SpellE><span class=GramE>boolean</span></span>. If the 
+  turtle is alive, it returns true. If the turtle is not alive it returns false. 
+  <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>alive</em></span><em>?-of</em> number 
+  <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns a <span class=SpellE><span class=GramE>boolean</span></span>. If the 
+  turtle with the given who number is alive, it returns true. If the turtle with 
+  the given who number is not alive it returns false. <o:p></o:p></p>
+<p class=MsoNormal><span class=SpellE><span class=GramE><em>asin</em></span></span> 
+  <code><span style='font-size:10.0pt'>number</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Trigonometric function.</span> <span class=GramE>Returns 
+  the arcsine of the <span class=SpellE>specified<code><span style='font-size:
+10.0pt'>number</span></code></span>.</span> All angles returned are in degrees. 
+  <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>average-of-list</em></span> <code><span
+style='font-size:10.0pt'>list</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Returns the numerical average of the given list.</span> <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>average-of-patches</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns the numerical average of the [list of commands] when evaluated <span
+class=SpellE>accross</span> all the patches. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>average-of-turtles</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns the numerical average of the [list of commands] when evaluated <span
+class=SpellE>accross</span> all the turtles. <o:p></o:p></p>
+<p class=MsoNormal><span class=SpellE><span class=GramE><em>cct</em></span></span><em>, 
+  create-custom-turtles</em> <code><span style='font-size:10.0pt'>breed number</span></code> 
+  <b>[Observer]</b><o:p></o:p></p>
+<p><span class=GramE>Creates <code><span style='font-size:10.0pt'>number</span></code> 
+  turtles of type breed.</span> <o:p></o:p></p>
+<p>NOTE: Most users will use create-foxes directly rather than using create-custom-turtles. 
+  <o:p></o:p></p>
+<p class=MsoNormal><span class=SpellE><span class=GramE><em>cct</em></span></span><span
+class=GramE><em>-and-do</em></span><em>, create-custom-turtles-and-do</em> <code><span
+style='font-size:10.0pt'>breed number [list of commands]</span></code> <b>[Observer]</b><o:p></o:p></p>
+<p>Creates <code><span style='font-size:10.0pt'>number</span></code> turtles of 
+  type breed and tells them to do <code><span style='font-size:10.0pt'>[list of 
+  commands]</span></code>. <o:p></o:p></p>
+<p class=MsoNormal><span class=SpellE><span class=GramE><em>clearplots</em></span></span> 
+  <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Resets the title of all of the graphs to &quot;Plot Window&quot;.</span> 
+  <span class=GramE>Resets the axis labels to each span 0 to 1000.</span> Clears 
+  everything drawn by all plot pens, and resets all pens to (0, 0) and their original 
+  colors.<o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>insert</em></span> <code><span
+style='font-size:10.0pt'>index list element</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Returns a modified [list of data] with <code><span
+style='font-size:10.0pt'>element </span></code>inserted into the <code><span
+style='font-size:10.0pt'>index</span></code> position.</span> <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>log</em></span> <code><span
+style='font-size:10.0pt'>number</span></code> base <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Math function.</span> <span class=GramE>Returns the log of 
+  number according to specified base.</span> <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>max-of-list</em></span> list <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Returns the greatest value in the given list.</span> <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>median-of-list</em></span> <code><span
+style='font-size:10.0pt'>list</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Returns the median of the given list.</span> <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>median-of-patches</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Returns the median of the [list of commands] when [list of 
+  commands] is evaluated by all patches.</span> <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>median-of-turtles</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns the median [list of commands<code><span style='font-size:10.0pt'>] 
+  when [list of commands<span class=GramE>]is</span> evaluated for all turtles</span></code>. 
+  <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>min-of-list</em></span> list <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Returns the least value in the given list.</span> <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>mode-of-list</em></span> <code><span
+style='font-size:10.0pt'>list</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Returns the mode of the given list.</span> <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>mode-of-patches</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns the mode of the given [list of commands] when evaluated <span
+class=SpellE>accross</span> all the patches. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>mode-of-turtles</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns the mode of the given [list of commands] when run over all the turtles. 
+</p>
+<p class=MsoNormal><span class=GramE><em>mouse-down</em></span><em>?</em> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p>Returns a <span class=SpellE><span class=GramE>boolean</span></span>. If the 
+  mouse button is clicked, it returns true. If the mouse buttons is not clicked, 
+  it returns false. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>one-of-turtles-with</em></span> <code><span
+style='font-size:10.0pt'>[condition] [list of commands]</span></code> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p>Chooses a turtle based on the following <code><span style='font-size:10.0pt'>[condition] 
+  </span></code>and runs the commands specified in <code><span style='font-size:
+10.0pt'>[list of commands]</span></code> <o:p></o:p></p>
+<p class=MsoNormal><span class=SpellE><span class=GramE><em>plotxy</em></span></span> 
+  <code><span style='font-size:10.0pt'>x-value y-value</span></code> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Plots a point at the location (x-value, y-value).</span> 
+  This procedure is used for X-Y plots and <span class=SpellE>scatterplots</span>. 
+  <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>print-status</em></span> <code><span
+style='font-size:10.0pt'>text or variables</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Prints the <code><span style='font-size:10.0pt'>text or variables</span></code> 
+  to the status bar.</span> <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>remove</em></span> <code><span
+style='font-size:10.0pt'>index list </span></code><b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Removes the element in the <code><span style='font-size:
+10.0pt'>index</span></code> position from the specified <code><span
+style='font-size:10.0pt'>list</span></code>.</span> <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>remove-element</em></span> <code><span
+style='font-size:10.0pt'>element list </span></code><b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Removes the specified<code><span style='font-size:10.0pt'> 
+  element </span></code>from <code><span style='font-size:10.0pt'>list</span></code>.</span> 
+  <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>repeat</em></span> <code><span
+style='font-size:10.0pt'>number [list of commands]</span></code> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p>Do <code><span style='font-size:10.0pt'>[list of commands]</span></code> <code><span
+style='font-size:10.0pt'>number</span></code> times. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>reverse</em></span> <code><span
+style='font-size:10.0pt'>list</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Reverses the order of the elements in list.</span> <o:p></o:p></p>
+<p><span class=GramE><em>save-next-version</em></span><em> </em><b>[Observer]</b><o:p></o:p></p>
+<p>Saves the current project using the same name as the previous <span
+class=GramE>version except with a number at the end, incremented by one each time</span> 
+  a new version is saved.<o:p></o:p></p>
+<p class=MsoNormal><span class=SpellE><span class=GramE><em>sdev</em></span></span><span
+class=GramE><em>-of-list</em></span> <code><span style='font-size:10.0pt'>list</span></code> 
+  <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Returns the standard deviation of the given list.</span> 
+  <o:p></o:p></p>
+<p class=MsoNormal><span class=SpellE><span class=GramE><em>sdev</em></span></span><span
+class=GramE><em>-of-patches</em></span> <code><span style='font-size:10.0pt'>[list 
+  of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns the standard deviation of the given [list of commands] when evaluated 
+  <span class=SpellE>accross</span> all the patches. <o:p></o:p></p>
+<p class=MsoNormal><span class=SpellE><span class=GramE><em>sdev</em></span></span><span
+class=GramE><em>-of-turtles</em></span> <code><span style='font-size:10.0pt'>[list 
+  of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns the standard deviation of the [list of commands] when evaluated <span
+class=SpellE>accross</span> all the turtles. <o:p></o:p></p>
+<p class=MsoNormal><span class=SpellE><span class=GramE><em>setshape</em></span></span> 
+  <code><span style='font-size:10.0pt'>shape</span></code>-name <b>[Turtle]</b><o:p></o:p></p>
+<p>Turtles set their shape to <code><span style='font-size:10.0pt'>shape-name</span></code>. 
+  <o:p></o:p></p>
+<p>Note: shape-name can be the number of the shape as well. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>variance-of-list</em></span> <code><span
+style='font-size:10.0pt'>list</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Returns the variance of the given list.</span> <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>variance-of-patches</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Returns the variance [list of commands] amongst all the patches.</span> 
+  <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>variance-of-turtles</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Returns the variance of [list of commands] amongst all the 
+  turtles.</span> <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>who-max-of-frogs</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns a list with <span class=GramE>the who</span> number of the turtle of 
+  breed frogs corresponding to the highest value of [list of commands] along with 
+  the highest value of [list of commands]. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>who-max-of-frogs-with</em></span> <code><span
+style='font-size:10.0pt'>[condition] [list of commands]</span></code> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p>Returns a list with <span class=GramE>the who</span> number of the turtle of 
+  breed frogs which <span class=SpellE>satifies</span> the [condition] and has 
+  the highest value of [list of commands] along with the highest value of [list 
+  of commands]. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>who-max-of-turtles</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns a list with <span class=GramE>the who</span> number of the turtle corresponding 
+  to the highest value of [list of commands] along with the highest value of [list 
+  of commands]. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>who-max-of-turtles-with</em></span> <code><span
+style='font-size:10.0pt'>[condition] [list of commands]</span></code> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p>Returns a list with <span class=GramE>the who</span> number of the turtle which 
+  <span class=SpellE>satifies</span> the [condition] and has the highest value 
+  of [list of commands] along with the highest value of [list of commands]. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>who-min-of-frogs</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns a list with <span class=GramE>the who</span> number of the turtle of 
+  breed frogs corresponding to the smallest value of [list of commands] along 
+  with the smallest value of [list of commands]. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>who-min-of-frogs-with</em></span> <code><span
+style='font-size:10.0pt'>[condition] [list of commands]</span></code> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p>Returns a list with <span class=GramE>the who</span> number of the turtle of 
+  breed frogs which <span class=SpellE>satifies</span> the [condition] and has 
+  the least value of [list of commands] along with the smallest value of [list 
+  of commands]. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>who-min-of-turtles</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns a list with <span class=GramE>the who</span> number of the turtle corresponding 
+  to the smallest value of [list of commands] along with the smallest value of 
+  [list of commands]. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>who-min-of-turtles-with</em></span> <code><span
+style='font-size:10.0pt'>[condition] [list of commands]</span></code> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p>Returns a list with the <span class=GramE>who</span> number of the <span
+class=SpellE>turtlewhich</span> <span class=SpellE>satifies</span> the [condition] 
+  and has the least value of [list of commands] along with the smallest value 
+  of [list of commands]. <o:p></o:p></p>
+<p><o:p>&nbsp;</o:p></p>
+
+</body>
+
+</html>
+

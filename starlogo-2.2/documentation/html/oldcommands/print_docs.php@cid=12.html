@@ -1,0 +1,2810 @@
+<html><head><title>Command List</title><link rel="STYLESHEET" href="style.css"></head><body><h3 style="color: green">Command List</h3>
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div class="catdescription">
+Here are a list of commands that affect lists. Note that these commands are only for lists of data. Lists of data are linked data lists, similar to lists in other versions of Logo. Unlike other Logos, however, StarLogo does not enable you to execute lists of data as instructions (that is, there is no run command). You can create a list of data using the list or sentence commands, or by enclosing the literal elements in <code>[]</code>'s. No elements inside the <code>[]</code>'s are evaluated.</div>
+<p>
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ask-list-of-turtles</span>
+	
+	<span class="argument">
+	[list of turtle who numbers] [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of turtle who numbers]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">A list of turtle who numbers to ask</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of commands to ask these turtles to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles whose who numbers (ID numbers) are in <span class="argument">[list of turtle who numbers]</span> run <span class="argument">[list of commands]</span>. The caller of this command waits for it to finish before continuing. If some invalid whonumbers make up <span class="argument">[list of turtle who numbers]</span>, they are ignored.<p>Asking a list of turtles to do something is a moderately expensive operation since StarLogo creates a thread for each turtle. Try to group commands that you would have put into separate <nobr><code>ask-list-of-turtles</code></nobr> into the same one to minimize thread creation overhead.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-list-of-turtles [4 6 10 14] [fd 1]</code></nobr> makes 4 turtles (those with who numbers 4, 6, 10, and 14) move forward one step.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=13.html" class="related">ask-breed</a>
+			<a href="command_doc_include.php@com_id=16.html" class="related">ask-patch-at</a>
+				<a href="command_doc_include.php@com_id=15.html" class="related">ask-patches</a>
+				<a href="command_doc_include.php@com_id=17.html" class="related">ask-turtle</a>
+				<a href="command_doc_include.php@com_id=18.html" class="related">ask-turtles</a>
+				<a href="command_doc_include.php@com_id=19.html" class="related">ask-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">average-of-list</span>
+	
+	<span class="argument">
+	[list of values] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of values]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">List of values to average</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the numerical average of values in the given list.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>average-of-list [1 2 3 4 5]</code></nobr> returns 3		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of values]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of values]</span> are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=204.html" class="related">max-of-list</a>
+			<a href="command_doc_include.php@com_id=219.html" class="related">median-of-list</a>
+				<a href="command_doc_include.php@com_id=264.html" class="related">min-of-list</a>
+				<a href="command_doc_include.php@com_id=279.html" class="related">mode-of-list</a>
+				<a href="command_doc_include.php@com_id=202.html" class="related">sdev-of-list</a>
+				<a href="command_doc_include.php@com_id=457.html" class="related">sum-of-list</a>
+				<a href="command_doc_include.php@com_id=96.html" class="related">variance-of-list</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">butfirst (bf)</span>
+	
+	<span class="argument">
+	value 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>value</nobr></td>
+		<td class="argtype" valign="top">List or string</td>
+		<td class="argdesc" valign="top">A list of data or a string</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+When passed a list, <nobr><code>butfirst</code></nobr> returns a new list <nobr><code>[list of data]</code></nobr> with the first item removed. The input list is not changed.<p>When passed a string, <nobr><code>butfirst</code></nobr> returns a new string with the first character removed. The input string is not changed.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>butfirst [4 5 6 7]</code></nobr> returns <nobr><code>[5 6 7]</code></nobr>.		</div>
+		<p>
+				<div class="examples">
+				</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=33.html" class="related">butlast</a>
+			<a href="command_doc_include.php@com_id=47.html" class="related">first</a>
+				<a href="command_doc_include.php@com_id=57.html" class="related">last</a>
+				<a href="command_doc_include.php@com_id=167.html" class="related">lput</a>
+				<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">butlast (bl)</span>
+	
+	<span class="argument">
+	value 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>value</nobr></td>
+		<td class="argtype" valign="top">List or string</td>
+		<td class="argdesc" valign="top">The list of data or string to operate on</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+When given a list of data, returns the new value of value with the last item removed. The input list is not changed.<p>When given a string, returns a new string with the last character removed. The input string is not changed.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>butlast [4 5 6 7]</code></nobr> returns <nobr><code>[4 5 6]</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=27.html" class="related">butfirst</a>
+			<a href="command_doc_include.php@com_id=47.html" class="related">first</a>
+				<a href="command_doc_include.php@com_id=57.html" class="related">last</a>
+				<a href="command_doc_include.php@com_id=167.html" class="related">lput</a>
+				<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">copy-list</span>
+	
+	<span class="argument">
+	[list] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">original list to be copied</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a copy of <span class="argument">[list]</span> such that if you edit the copy, you will not edit the original.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>copy-list [1 2 3]</code></nobr> returns the list [1 2 3].		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=65.html" class="related">list</a>
+			<a href="command_doc_include.php@com_id=176.html" class="related">make-list</a>
+				<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">dolist</span>
+	
+	<span class="argument">
+	[:loop-variable list] [commands to run] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[:loop-variable list]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">On each iteration, :loop-variable is assigned to each element of the list</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[commands to run]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">Commands to run once for each element of the list</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This command loops over each element of the list, and runs <span class="argument">[commands to run]</span> for each one. During each run of <span class="argument">[commands to run]</span>, the element of the list is bound to <nobr><code>loop-variable</code></nobr>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>dolist [:i [2 4 -1]] [fd :i]</code></nobr> loops over the list <nobr><code>[1 2 3]</code></nobr>. There are three iterations of this loop; in the first, we run <nobr><code>fd 2</code></nobr>, in the second <nobr><code>fd 4</code></nobr> and the third <nobr><code>fd -1</code></nobr>.  		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=149.html" class="related">dotimes</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">empty?</span>
+	
+	<span class="argument">
+	data 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>data</nobr></td>
+		<td class="argtype" valign="top">List or string</td>
+		<td class="argdesc" valign="top">list or string to test for emptiness</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+If <span class="argument">data</span> is a list of data, reports true if <span class="argument">data</span> is empty.<p>If <span class="argument">data</span> is a string, reports true if <span class="argument">data</span> has no characters (i.e. = "").</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>empty? [0 0]</code></nobr> returns false.		</div>
+		<p>
+				<div class="examples">
+		empty? [] returns true.		</div>
+		<p>
+				<div class="examples">
+		empty? "hello" returns false.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=47.html" class="related">first</a>
+			<a href="command_doc_include.php@com_id=57.html" class="related">last</a>
+				<a href="command_doc_include.php@com_id=176.html" class="related">make-list</a>
+				<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">first</span>
+	
+	<span class="argument">
+	[list of data] or string 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of data] or string</nobr></td>
+		<td class="argtype" valign="top">List or string</td>
+		<td class="argdesc" valign="top">List or string to return the first character/element from</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the first element of a [list of data] or the first character of a string.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>first [3 4 5 6]</code></nobr> returns 3.		</div>
+		<p>
+				<div class="examples">
+		first "hello" returns "h".		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=27.html" class="related">butfirst</a>
+			<a href="command_doc_include.php@com_id=33.html" class="related">butlast</a>
+				<a href="command_doc_include.php@com_id=157.html" class="related">empty?</a>
+				<a href="command_doc_include.php@com_id=46.html" class="related">fput</a>
+				<a href="command_doc_include.php@com_id=57.html" class="related">last</a>
+				<a href="command_doc_include.php@com_id=167.html" class="related">lput</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">fput</span>
+	
+	<span class="argument">
+	item 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>item</nobr></td>
+		<td class="argtype" valign="top">List or string</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Adds the item into the list as the first element</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>fput 1 [2 3 4]</code></nobr> returns [1 2 3 4]. <br>		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>fput "hello" "mom"</code></nobr> returns "hellomom".		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=47.html" class="related">first</a>
+			<a href="command_doc_include.php@com_id=127.html" class="related">insert</a>
+				<a href="command_doc_include.php@com_id=57.html" class="related">last</a>
+				<a href="command_doc_include.php@com_id=167.html" class="related">lput</a>
+				<a href="command_doc_include.php@com_id=191.html" class="related">reverse</a>
+				<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">item</span>
+	
+	<span class="argument">
+	number [list] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the element of <span class="argument">[list]</span> at the <span class="argument">number</span>'th position.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>item 2 [4 6 8]</code></nobr> returns 6.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Indexing starts from 1.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=352.html" class="related">position</a>
+			<a href="command_doc_include.php@com_id=182.html" class="related">remove</a>
+				<a href="command_doc_include.php@com_id=185.html" class="related">remove-element</a>
+				<a href="command_doc_include.php@com_id=267.html" class="related">setitem</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">last</span>
+	
+	<span class="argument">
+	[list of data] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of data]</nobr></td>
+		<td class="argtype" valign="top">List or string</td>
+		<td class="argdesc" valign="top">list of data of which you want the last element</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the last item of <span class="argument">[list of data]</span>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>last [4 5 6 7]</code></nobr> returns 7.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=27.html" class="related">butfirst</a>
+			<a href="command_doc_include.php@com_id=33.html" class="related">butlast</a>
+				<a href="command_doc_include.php@com_id=157.html" class="related">empty?</a>
+				<a href="command_doc_include.php@com_id=47.html" class="related">first</a>
+				<a href="command_doc_include.php@com_id=46.html" class="related">fput</a>
+				<a href="command_doc_include.php@com_id=167.html" class="related">lput</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">length</span>
+	
+	<span class="argument">
+	[list of data] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of data]</nobr></td>
+		<td class="argtype" valign="top">List or string</td>
+		<td class="argdesc" valign="top">list of data for which you want the length</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the length of <span class="argument">[list of data]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>length []</code></nobr> returns 0.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>length [4 5 6 7]</code></nobr> returns 4.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=65.html" class="related">list</a>
+			<a href="command_doc_include.php@com_id=176.html" class="related">make-list</a>
+				<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list</span>
+	
+	<span class="argument">
+	item 1 item 2 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>item 1</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">the first item in your list</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>item 2</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">the second item in your list</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a new <nobr><code>[list of data]</code></nobr> with <span class="argument">item 1</span> as its first element, and <span class="argument">item 2</span> as its second. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>list 4 5</code></nobr> returns <nobr><code>[4 5]</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=66.html" class="related">copy-list</a>
+			<a href="command_doc_include.php@com_id=62.html" class="related">length</a>
+				<a href="command_doc_include.php@com_id=176.html" class="related">make-list</a>
+				<a href="command_doc_include.php@com_id=328.html" class="related">pick</a>
+				<a href="command_doc_include.php@com_id=352.html" class="related">position</a>
+				<a href="command_doc_include.php@com_id=182.html" class="related">remove</a>
+				<a href="command_doc_include.php@com_id=185.html" class="related">remove-element</a>
+				<a href="command_doc_include.php@com_id=191.html" class="related">reverse</a>
+				<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+				<a href="command_doc_include.php@com_id=439.html" class="related">sublist</a>
+				<a href="command_doc_include.php@com_id=42.html" class="related">to-list</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-breed</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of the who numbers of the turtles of the breed specified by <nobr><code>breed</code></nobr>. <p></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>list-of-frogs</code></nobr> returns a list of all of the turtles of breed <nobr><code>frogs</code></nobr>		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>list-of-cars</code></nobr> returns a list of all of the turtles of breed <nobr><code>cars</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=84.html" class="related">list-of-breed-at</a>
+			<a href="command_doc_include.php@com_id=89.html" class="related">list-of-breed-here</a>
+				<a href="command_doc_include.php@com_id=104.html" class="related">list-of-breed-towards</a>
+				<a href="command_doc_include.php@com_id=113.html" class="related">list-of-breed-with</a>
+				<a href="command_doc_include.php@com_id=138.html" class="related">list-of-turtles</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-breed-at</span>
+	
+	<span class="argument">
+	xcor ycor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of units away in the x direction</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of units away in the y direction</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of the who numbers of the turtles of the breed specified by <nobr><code>breed</code></nobr> <span class="argument">xcor</span> units in the x direction and <span class="argument">ycor</span> units in the y direction away from the caller. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>list-of-frogs-at 1 1</code></nobr> returns a list of the who numbers of the turtles of breed frogs one unit to the right and one unit above the caller.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>list-of-cars-at 3 5</code></nobr> returns a list of the who numbers of the turtles of breed cars three units to the right and five units above the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=77.html" class="related">list-of-breed</a>
+			<a href="command_doc_include.php@com_id=154.html" class="related">list-of-turtles-at</a>
+				<a href="command_doc_include.php@com_id=446.html" class="related">list-of-turtles-at-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-breed-here</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of turtles of the breed specified by <nobr><code>breed</code></nobr> on the caller's patch. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>list-of-frogs-here</code></nobr> returns a list of turtles of breed <nobr><code>frogs</code></nobr> on the caller's patch.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>list-of-cars-here</code></nobr> returns a list of turtles of breed <nobr><code>cars</code></nobr> on the caller's patch.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=77.html" class="related">list-of-breed</a>
+			<a href="command_doc_include.php@com_id=449.html" class="related">list-of-breed-here-with</a>
+				<a href="command_doc_include.php@com_id=155.html" class="related">list-of-turtles-here</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-breed-towards</span>
+	
+	<span class="argument">
+	angle distance 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance away from the caller</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of the who numbers of the turtles of the breed specifed by <nobr><code>breed</code></nobr> at the patch <span class="argument">angle</span> away at angle <span class="argument">distance</span> from the caller. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>list-of-frogs-towards 0 1</code></nobr> returns a list of the turtles of breed frog directly ahead and one patch away from the caller.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>list-of-cars-towards 90 5</code></nobr> returns a list of the turtles of breed cars 90 degreses to the right and five patches away from the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=77.html" class="related">list-of-breed</a>
+			<a href="command_doc_include.php@com_id=453.html" class="related">list-of-breed-towards-with</a>
+				<a href="command_doc_include.php@com_id=156.html" class="related">list-of-turtles-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-breed-with</span>
+	
+	<span class="argument">
+	[condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of turtles of breed indicated by <nobr><code>breed</code></nobr> satisfying <nobr><code>condition</code></nobr>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>list-of-frogs-with [color = green]</code></nobr> will return a list of turtles that are breed <nobr><code>frogs</code></nobr> and have color <nobr><code>green</code></nobr>.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>list-of-cars-with [color = black]</code></nobr> will return a list of turtles that are breed <nobr><code>cars</code></nobr> and have color <nobr><code>black</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note <span class="argument">[condition]</span> must be a boolean statement and return true or false.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=77.html" class="related">list-of-breed</a>
+			<a href="command_doc_include.php@com_id=160.html" class="related">list-of-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-turtles</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of the who numbers of all the turtles. </div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=77.html" class="related">list-of-breed</a>
+			<a href="command_doc_include.php@com_id=160.html" class="related">list-of-turtles-with</a>
+				<a href="command_doc_include.php@com_id=153.html" class="related">one-of-breed</a>
+				<a href="command_doc_include.php@com_id=205.html" class="related">one-of-turtles</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-turtles-at</span>
+	
+	<span class="argument">
+	xcor ycor 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>xcor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of units away in the x direction</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>ycor</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of units away in the y direction</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of turtles <span class="argument">xcor</span> units in the x direction and <span class="argument">ycor</span> units in the y direction away from the caller . </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>list-of-turtles-at 1 1</code></nobr> returns a list of turtles one unit to the right and one unit above the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=84.html" class="related">list-of-breed-at</a>
+			<a href="command_doc_include.php@com_id=446.html" class="related">list-of-turtles-at-with</a>
+				<a href="command_doc_include.php@com_id=155.html" class="related">list-of-turtles-here</a>
+				<a href="command_doc_include.php@com_id=156.html" class="related">list-of-turtles-towards</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotp">Turtle, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-turtles-here</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of turtles on the caller's patch. </div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=89.html" class="related">list-of-breed-here</a>
+			<a href="command_doc_include.php@com_id=154.html" class="related">list-of-turtles-at</a>
+				<a href="command_doc_include.php@com_id=156.html" class="related">list-of-turtles-towards</a>
+				<a href="command_doc_include.php@com_id=160.html" class="related">list-of-turtles-with</a>
+				<a href="command_doc_include.php@com_id=192.html" class="related">one-of-breed-here</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-turtles-towards</span>
+	
+	<span class="argument">
+	angle distance 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>angle</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">angle from the caller</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>distance</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">distance away from the caller</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of turtles at the patch <span class="argument">angle</span> away at angle <span class="argument">distance</span> from the caller. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>list-of-turtles-towards 0 1</code></nobr> returns a list of turtles one unit directly in front of the caller.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=104.html" class="related">list-of-breed-towards</a>
+			<a href="command_doc_include.php@com_id=154.html" class="related">list-of-turtles-at</a>
+				<a href="command_doc_include.php@com_id=155.html" class="related">list-of-turtles-here</a>
+				<a href="command_doc_include.php@com_id=447.html" class="related">list-of-turtles-towards-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list-of-turtles-with</span>
+	
+	<span class="argument">
+	[condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands that evaluates to true or false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of the who numbers of the turtles satisfying <nobr><code>condition</code></nobr>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>list-of-turtles-with [color = red]</code></nobr> returns a list of the who numbers of the red turtles.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=113.html" class="related">list-of-breed-with</a>
+			<a href="command_doc_include.php@com_id=138.html" class="related">list-of-turtles</a>
+				<a href="command_doc_include.php@com_id=155.html" class="related">list-of-turtles-here</a>
+				<a href="command_doc_include.php@com_id=297.html" class="related">myself</a>
+				<a href="command_doc_include.php@com_id=231.html" class="related">one-of-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list?</span>
+	
+	<span class="argument">
+	thing 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>thing</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">the item, string, list, or variable that you are trying to determine if it is a list</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns true if <span class="argument">thing</span> is a list. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>list? 4</code></nobr> returns false.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>list? [4]</code></nobr> returns true.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=151.html" class="related">number?</a>
+			<a href="command_doc_include.php@com_id=309.html" class="related">word?</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">lput</span>
+	
+	<span class="argument">
+	item [list of data] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>item</nobr></td>
+		<td class="argtype" valign="top">Integer</td>
+		<td class="argdesc" valign="top">the item that you are placing in the list</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of data]</nobr></td>
+		<td class="argtype" valign="top">List or string</td>
+		<td class="argdesc" valign="top">list of data that you are adding to</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the new value of <span class="argument">[list of data]</span> with <span class="argument">item</span> as its last element. The input list is not changed. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>lput 4 [1 2 3]</code></nobr> returns <nobr><code>[1 2 3 4]</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=27.html" class="related">butfirst</a>
+			<a href="command_doc_include.php@com_id=33.html" class="related">butlast</a>
+				<a href="command_doc_include.php@com_id=47.html" class="related">first</a>
+				<a href="command_doc_include.php@com_id=46.html" class="related">fput</a>
+				<a href="command_doc_include.php@com_id=127.html" class="related">insert</a>
+				<a href="command_doc_include.php@com_id=57.html" class="related">last</a>
+				<a href="command_doc_include.php@com_id=191.html" class="related">reverse</a>
+				<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">make-list</span>
+	
+	<span class="argument">
+	integer element 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>integer</nobr></td>
+		<td class="argtype" valign="top">Integer</td>
+		<td class="argdesc" valign="top">number of times the item will be in the list</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>element</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">the data that will be repeated in the list</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of length <span class="argument">integer</span> filled with <span class="argument">element</span>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>make-list 5 0</code></nobr> returns <nobr><code>[0 0 0 0 0]</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=66.html" class="related">copy-list</a>
+			<a href="command_doc_include.php@com_id=157.html" class="related">empty?</a>
+				<a href="command_doc_include.php@com_id=62.html" class="related">length</a>
+				<a href="command_doc_include.php@com_id=65.html" class="related">list</a>
+				<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+				<a href="command_doc_include.php@com_id=42.html" class="related">to-list</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">max-of-list</span>
+	
+	<span class="argument">
+	list 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>list</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">list of which you want the maximum value</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the greatest value in the given <span class="argument">list</span>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>max-of-list [5 7 1]</code></nobr> returns <nobr><code>7</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=23.html" class="related">average-of-list</a>
+			<a href="command_doc_include.php@com_id=219.html" class="related">median-of-list</a>
+				<a href="command_doc_include.php@com_id=264.html" class="related">min-of-list</a>
+				<a href="command_doc_include.php@com_id=279.html" class="related">mode-of-list</a>
+				<a href="command_doc_include.php@com_id=202.html" class="related">sdev-of-list</a>
+				<a href="command_doc_include.php@com_id=438.html" class="related">sort-num-list</a>
+				<a href="command_doc_include.php@com_id=457.html" class="related">sum-of-list</a>
+				<a href="command_doc_include.php@com_id=96.html" class="related">variance-of-list</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">median-of-list</span>
+	
+	<span class="argument">
+	list 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>list</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">list of numbers for which you want the median value</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the median of the given <span class="argument">list</span>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>median-of-list [ 1 3 5 7 9]</code></nobr> returns <nobr><code>5</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If an element in <span class="argument">list</span> is not a number, an error occurs.		</div>
+		<p>
+				<div class="notes">
+		If <span class="argument">list</span> contains no numbers, an error occurs. If some of the <span class="argument">list</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=23.html" class="related">average-of-list</a>
+			<a href="command_doc_include.php@com_id=204.html" class="related">max-of-list</a>
+				<a href="command_doc_include.php@com_id=264.html" class="related">min-of-list</a>
+				<a href="command_doc_include.php@com_id=279.html" class="related">mode-of-list</a>
+				<a href="command_doc_include.php@com_id=202.html" class="related">sdev-of-list</a>
+				<a href="command_doc_include.php@com_id=457.html" class="related">sum-of-list</a>
+				<a href="command_doc_include.php@com_id=96.html" class="related">variance-of-list</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">member?</span>
+	
+	<span class="argument">
+	item [list of data] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>item</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">item which you are looking for</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of data]</nobr></td>
+		<td class="argtype" valign="top">List or string</td>
+		<td class="argdesc" valign="top">list of data to search</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns true if <span class="argument">item</span> is a member of <span class="argument">[list of data]</span>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>member? 4 [1 0 9]</code></nobr> returns <nobr><code>false</code></nobr>.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>member? 4 [1 4 9]</code></nobr> returns <nobr><code>true</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=127.html" class="related">insert</a>
+			<a href="command_doc_include.php@com_id=352.html" class="related">position</a>
+				<a href="command_doc_include.php@com_id=182.html" class="related">remove</a>
+				<a href="command_doc_include.php@com_id=185.html" class="related">remove-element</a>
+				<a href="command_doc_include.php@com_id=267.html" class="related">setitem</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">min-of-list</span>
+	
+	<span class="argument">
+	list 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>list</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">list of numbers</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the least value in the given list.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>min-of-list [1 2 3]</code></nobr> returns 1		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: If <span class="argument">list</span> contains no numbers, the greatest possibel number is returned.  If some of the <span class="argument">list</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=23.html" class="related">average-of-list</a>
+			<a href="command_doc_include.php@com_id=204.html" class="related">max-of-list</a>
+				<a href="command_doc_include.php@com_id=219.html" class="related">median-of-list</a>
+				<a href="command_doc_include.php@com_id=279.html" class="related">mode-of-list</a>
+				<a href="command_doc_include.php@com_id=202.html" class="related">sdev-of-list</a>
+				<a href="command_doc_include.php@com_id=438.html" class="related">sort-num-list</a>
+				<a href="command_doc_include.php@com_id=457.html" class="related">sum-of-list</a>
+				<a href="command_doc_include.php@com_id=96.html" class="related">variance-of-list</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">mode-of-list</span>
+	
+	<span class="argument">
+	list 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>list</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the mode of the given list. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>mode-of-list [1 1 2 2 2]</code></nobr> returns 2.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: If <span class="argument">list</span> contains no numbers, an error occurs. If some of the <span class="argument">list</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=23.html" class="related">average-of-list</a>
+			<a href="command_doc_include.php@com_id=204.html" class="related">max-of-list</a>
+				<a href="command_doc_include.php@com_id=219.html" class="related">median-of-list</a>
+				<a href="command_doc_include.php@com_id=264.html" class="related">min-of-list</a>
+				<a href="command_doc_include.php@com_id=279.html" class="related">mode-of-list</a>
+				<a href="command_doc_include.php@com_id=202.html" class="related">sdev-of-list</a>
+				<a href="command_doc_include.php@com_id=438.html" class="related">sort-num-list</a>
+				<a href="command_doc_include.php@com_id=457.html" class="related">sum-of-list</a>
+				<a href="command_doc_include.php@com_id=96.html" class="related">variance-of-list</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">pick</span>
+	
+	<span class="argument">
+	[list of data] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of data]</nobr></td>
+		<td class="argtype" valign="top">List or string</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a random element of the <span class="argument">[list of data]</span>. Returns false if the list is empty.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>pick [1 2]</code></nobr> would return 1 half of the time and would return 2 half of the time.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=65.html" class="related">list</a>
+			<a href="command_doc_include.php@com_id=171.html" class="related">random</a>
+				<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+				<a href="command_doc_include.php@com_id=42.html" class="related">to-list</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">position</span>
+	
+	<span class="argument">
+	item [list of data] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>item</nobr></td>
+		<td class="argtype" valign="top">Integer</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of data]</nobr></td>
+		<td class="argtype" valign="top">List or string</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the position of <span class="argument">item</span> in the <span class="argument">[list of data]</span></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>position 1 [6 7 1]</code></nobr> returns <nobr><code>3</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=134.html" class="related">item</a>
+			<a href="command_doc_include.php@com_id=65.html" class="related">list</a>
+				<a href="command_doc_include.php@com_id=237.html" class="related">member?</a>
+				<a href="command_doc_include.php@com_id=182.html" class="related">remove</a>
+				<a href="command_doc_include.php@com_id=185.html" class="related">remove-element</a>
+				<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+				<a href="command_doc_include.php@com_id=267.html" class="related">setitem</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">remove</span>
+	
+	<span class="argument">
+	index [list] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>index</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">position in list of element to remove</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">list with element to remove</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the new list with the element in the index position removed from the specified list. The input list is not changed.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>remove 5 [2 4 6 8 10 12]</code></nobr> reports [2 4 6 8 12].		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=127.html" class="related">insert</a>
+			<a href="command_doc_include.php@com_id=134.html" class="related">item</a>
+				<a href="command_doc_include.php@com_id=65.html" class="related">list</a>
+				<a href="command_doc_include.php@com_id=237.html" class="related">member?</a>
+				<a href="command_doc_include.php@com_id=352.html" class="related">position</a>
+				<a href="command_doc_include.php@com_id=185.html" class="related">remove-element</a>
+				<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+				<a href="command_doc_include.php@com_id=267.html" class="related">setitem</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">remove-element</span>
+	
+	<span class="argument">
+	element [list] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>element</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">element to be removed</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">list with element to be removed</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the new list when all instances of the specified element are removed from list. The input list is not changed.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>remove-element [1 2] [3 [4 5] [1 2] 6 [1 2]]</code></nobr> returns [3 [4 5] 6]		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		"=" is used as the comparison operator.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=134.html" class="related">item</a>
+			<a href="command_doc_include.php@com_id=65.html" class="related">list</a>
+				<a href="command_doc_include.php@com_id=237.html" class="related">member?</a>
+				<a href="command_doc_include.php@com_id=352.html" class="related">position</a>
+				<a href="command_doc_include.php@com_id=182.html" class="related">remove</a>
+				<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+				<a href="command_doc_include.php@com_id=267.html" class="related">setitem</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">reverse</span>
+	
+	<span class="argument">
+	[list] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">list to be reversed</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the new list with the order of the elements in <span class="argument">[list]</span> reversed. The input <span class="argument">[list]</span> is not changed.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>reverse [1 2 3]</code></nobr> reports the list [3 2 1].		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=46.html" class="related">fput</a>
+			<a href="command_doc_include.php@com_id=65.html" class="related">list</a>
+				<a href="command_doc_include.php@com_id=167.html" class="related">lput</a>
+				<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">sdev-of-list</span>
+	
+	<span class="argument">
+	list 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>list</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the standard deviation of the given list.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>sdev-of-list [2 2 2]</code></nobr> returns 0.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If list contains no numbers, an error occurs. If some elements of the list, when evaluated, are not numbers, those elements are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=23.html" class="related">average-of-list</a>
+			<a href="command_doc_include.php@com_id=204.html" class="related">max-of-list</a>
+				<a href="command_doc_include.php@com_id=219.html" class="related">median-of-list</a>
+				<a href="command_doc_include.php@com_id=264.html" class="related">min-of-list</a>
+				<a href="command_doc_include.php@com_id=266.html" class="related">min-of-patches</a>
+				<a href="command_doc_include.php@com_id=279.html" class="related">mode-of-list</a>
+				<a href="command_doc_include.php@com_id=280.html" class="related">mode-of-patches</a>
+				<a href="command_doc_include.php@com_id=438.html" class="related">sort-num-list</a>
+				<a href="command_doc_include.php@com_id=457.html" class="related">sum-of-list</a>
+				<a href="command_doc_include.php@com_id=96.html" class="related">variance-of-list</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">sentence (se)</span>
+	
+	<span class="argument">
+	anything1 anything2 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>anything1</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>anything2</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list. If <span class="argument">anything1</span> and <span class="argument">anything2</span> are lists, it concatenates the two lists (combines their items into one list). If <span class="argument">anything1</span> is a list and <span class="argument">anything2</span> is not, it puts <span class="argument">anything2</span> at the end of the first list. If <span class="argument">anything1</span> is not a list and <span class="argument">anything2</span> is a list, it puts <span class="argument">anything1</span> at the front of the second list. If both <span class="argument">anything1</span> and arg2 are not lists, it creates a new list containing both <span class="argument">anything1</span> and <span class="argument">anything2</span>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>se 1 2</code></nobr> returns <nobr><code>[1 2]</code></nobr><br><p><br><nobr><code>se [1] 2</code></nobr> returns <nobr><code>[1 2]</code></nobr><br><p><br><nobr><code>se 1 [2]</code></nobr> returns <nobr><code>[1 2]</code></nobr><br><p><br><nobr><code>se [1] [2]</code></nobr> returns <nobr><code>[1 2]</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=27.html" class="related">butfirst</a>
+			<a href="command_doc_include.php@com_id=33.html" class="related">butlast</a>
+				<a href="command_doc_include.php@com_id=66.html" class="related">copy-list</a>
+				<a href="command_doc_include.php@com_id=157.html" class="related">empty?</a>
+				<a href="command_doc_include.php@com_id=46.html" class="related">fput</a>
+				<a href="command_doc_include.php@com_id=62.html" class="related">length</a>
+				<a href="command_doc_include.php@com_id=65.html" class="related">list</a>
+				<a href="command_doc_include.php@com_id=167.html" class="related">lput</a>
+				<a href="command_doc_include.php@com_id=176.html" class="related">make-list</a>
+				<a href="command_doc_include.php@com_id=328.html" class="related">pick</a>
+				<a href="command_doc_include.php@com_id=352.html" class="related">position</a>
+				<a href="command_doc_include.php@com_id=182.html" class="related">remove</a>
+				<a href="command_doc_include.php@com_id=185.html" class="related">remove-element</a>
+				<a href="command_doc_include.php@com_id=191.html" class="related">reverse</a>
+				<a href="command_doc_include.php@com_id=439.html" class="related">sublist</a>
+				<a href="command_doc_include.php@com_id=42.html" class="related">to-list</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">setitem</span>
+	
+	<span class="argument">
+	setitem list newvalue 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>setitem</nobr></td>
+		<td class="argtype" valign="top">Integer</td>
+		<td class="argdesc" valign="top">position in the list</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>list</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">list of items</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>newvalue</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">item to be inserted into the list</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the item at position <span class="argument">setitem</span> in list <span class="argument">list</span> to <span class="argument">newvalue</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>setitem 2 [1 3 3 4] 5</code></nobr> changes the list to <nobr><code>[1 5 3 4]</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=134.html" class="related">item</a>
+			<a href="command_doc_include.php@com_id=237.html" class="related">member?</a>
+				<a href="command_doc_include.php@com_id=352.html" class="related">position</a>
+				<a href="command_doc_include.php@com_id=182.html" class="related">remove</a>
+				<a href="command_doc_include.php@com_id=185.html" class="related">remove-element</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">sort-num-list</span>
+	
+	<span class="argument">
+	list-of-data 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>list-of-data</nobr></td>
+		<td class="argtype" valign="top">List or string</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the list <span class="argument">list-of-data</span> sorted in increasing order. All elements of the list must be numbers.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>sort-num-list [3 1 2]</code></nobr> returns <nobr><code>[1 2 3]</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=204.html" class="related">max-of-list</a>
+			<a href="command_doc_include.php@com_id=264.html" class="related">min-of-list</a>
+				<a href="command_doc_include.php@com_id=279.html" class="related">mode-of-list</a>
+				<a href="command_doc_include.php@com_id=202.html" class="related">sdev-of-list</a>
+				<a href="command_doc_include.php@com_id=438.html" class="related">sort-num-list</a>
+				<a href="command_doc_include.php@com_id=457.html" class="related">sum-of-list</a>
+				<a href="command_doc_include.php@com_id=96.html" class="related">variance-of-list</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">sublist</span>
+	
+	<span class="argument">
+	list begin end 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>list</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">List that you want to subset</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>begin</nobr></td>
+		<td class="argtype" valign="top">Integer</td>
+		<td class="argdesc" valign="top">The beginning index that you want to keep</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>end</nobr></td>
+		<td class="argtype" valign="top">Integer</td>
+		<td class="argdesc" valign="top">The ending index that you want to keep</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Return a new list that is a subset of the original <span class="argument">list</span>. The new list will be <span class="argument">end</span> - <span class="argument">begin</span> + 1 elements long, and will contain the elements of <span class="argument">list</span> from and including <span class="argument">begin</span> up to <span class="argument">end</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>sublist [1 2 3 4 5] 2 4</code></nobr> returns <nobr><code>[2 3 4]</code></nobr>.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>sublist [1 2 3 4 5] 0 0</code></nobr> returns <nobr><code>[1]</code></nobr>.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>sublist [1 2 3 4 5] 4 5</code></nobr> returns <nobr><code>[4 5]</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=65.html" class="related">list</a>
+			<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+				<a href="command_doc_include.php@com_id=42.html" class="related">to-list</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">sum-of-list</span>
+	
+	<span class="argument">
+	list 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>list</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">List of numbers</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the sum of the numbers in the list.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>sum-of-list [1 2 -3 4.5 5]</code></nobr> returns <nobr><code>9.5</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: If <span class="argument">list</span> contains no numbers, an error occurs. If some of the <span class="argument">list</span>, when evaluated, are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=23.html" class="related">average-of-list</a>
+			<a href="command_doc_include.php@com_id=204.html" class="related">max-of-list</a>
+				<a href="command_doc_include.php@com_id=219.html" class="related">median-of-list</a>
+				<a href="command_doc_include.php@com_id=264.html" class="related">min-of-list</a>
+				<a href="command_doc_include.php@com_id=279.html" class="related">mode-of-list</a>
+				<a href="command_doc_include.php@com_id=202.html" class="related">sdev-of-list</a>
+				<a href="command_doc_include.php@com_id=438.html" class="related">sort-num-list</a>
+				<a href="command_doc_include.php@com_id=96.html" class="related">variance-of-list</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">to-list</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">Commands to execute whose return values will form the list</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Runs then commands in [list of commands] and makes a new list from each command's return value.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>globals [foo]</code></nobr><p><nobr><code>set foo 45</code></nobr><br><nobr><code>to-list [1 2 + 4 foo]</code></nobr> returns the list <nobr><code>[1 6 45]</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=65.html" class="related">list</a>
+			<a href="command_doc_include.php@com_id=176.html" class="related">make-list</a>
+				<a href="command_doc_include.php@com_id=328.html" class="related">pick</a>
+				<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+				<a href="command_doc_include.php@com_id=439.html" class="related">sublist</a>
+				<a href="command_doc_include.php@com_id=39.html" class="related">to-delimited-string</a>
+				<a href="command_doc_include.php@com_id=43.html" class="related">to-string</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">variance-of-list</span>
+	
+	<span class="argument">
+	[list of values] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of values]</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">List of values to average</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the numerical variance of values in the given list.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>variance-of-list [1 3 5]</code></nobr> returns <nobr><code>2.666</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		If <span class="argument">[list of values]</span> contains no numbers, an error occurs. If some of the <span class="argument">[list of values]</span> are not numbers, those values are ignored.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=23.html" class="related">average-of-list</a>
+			<a href="command_doc_include.php@com_id=204.html" class="related">max-of-list</a>
+				<a href="command_doc_include.php@com_id=219.html" class="related">median-of-list</a>
+				<a href="command_doc_include.php@com_id=264.html" class="related">min-of-list</a>
+				<a href="command_doc_include.php@com_id=279.html" class="related">mode-of-list</a>
+				<a href="command_doc_include.php@com_id=202.html" class="related">sdev-of-list</a>
+				<a href="command_doc_include.php@com_id=438.html" class="related">sort-num-list</a>
+				<a href="command_doc_include.php@com_id=457.html" class="related">sum-of-list</a>
+			<hr></html>

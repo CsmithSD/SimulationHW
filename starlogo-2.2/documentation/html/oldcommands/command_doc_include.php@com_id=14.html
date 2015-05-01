@@ -1,0 +1,80 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+<!-- begin sample documentation page -->
+
+
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+
+<span class="commandname">ask-list-of-turtles</span>
+
+<span class="argument">
+[list of turtle who numbers] [list of commands] </span>
+
+
+<!-- show arguments -->
+
+<p>
+<div class="heading">Parameters:</div>
+<table cellpadding="2" cellspacing="2" border="0"> 
+
+
+<tr>
+<td class="argname" valign="top"><nobr>[list of turtle who numbers]</nobr></td>
+<td class="argtype" valign="top">List</td>
+<td class="argdesc" valign="top">A list of turtle who numbers to ask</td>
+</tr>
+
+
+<tr>
+<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+<td class="argtype" valign="top">List of turtle commands</td>
+<td class="argdesc" valign="top">A list of commands to ask these turtles to run</td>
+</tr>
+
+
+</table>
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles whose who numbers (ID numbers) are in <span class="argument">[list of turtle who numbers]</span> run <span class="argument">[list of commands]</span>. The caller of this command waits for it to finish before continuing. If some invalid whonumbers make up <span class="argument">[list of turtle who numbers]</span>, they are ignored.<p>Asking a list of turtles to do something is a moderately expensive operation since StarLogo creates a thread for each turtle. Try to group commands that you would have put into separate <nobr><code>ask-list-of-turtles</code></nobr> into the same one to minimize thread creation overhead.</div>
+
+<!-- show examples if there are examples -->
+
+<p>
+<div class="heading">Examples:</div>
+<div class="examples">
+<nobr><code>ask-list-of-turtles [4 6 10 14] [fd 1]</code></nobr> makes 4 turtles (those with who numbers 4, 6, 10, and 14) move forward one step.</div>
+<p>
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<p>
+<div class="heading">Related Commands:</div>
+<a href="command_doc_include.php@com_id=13.html" class="related">ask-breed</a>
+<a href="command_doc_include.php@com_id=16.html" class="related">ask-patch-at</a>
+<a href="command_doc_include.php@com_id=15.html" class="related">ask-patches</a>
+<a href="command_doc_include.php@com_id=17.html" class="related">ask-turtle</a>
+<a href="command_doc_include.php@com_id=18.html" class="related">ask-turtles</a>
+<a href="command_doc_include.php@com_id=19.html" class="related">ask-turtles-with</a>
+
+</body></html>

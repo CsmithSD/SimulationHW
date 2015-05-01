@@ -1,0 +1,181 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+
+<h3 style="color: green">
+<a href="category_description.php@cat_id=10.html" target="CommandsPopUp">
+<nobr>Variables</nobr>
+</a>
+</h3>
+
+<center>
+<h4 style="color: green">
+<a href="print_docs.php@cid=10.html" target="_TOP">
+<nobr>Print Version of Variables</nobr>
+</a>
+</h4>
+</center>
+
+
+
+<a href="category_command.php@cat_id=10.html#A___B___C___D___E___F___G___H___I___J___K___L___M___N___O" class="letterindex">A / B / C / D / E / F / G / H / I / J / K / L / M / N / O</a> | <a href="category_command.php@cat_id=10.html#P___Q___R___S" class="letterindex">P / Q / R / S</a> | <a href="category_command.php@cat_id=10.html#T___U" class="letterindex">T / U</a> | <a href="category_command.php@cat_id=10.html#V___W___X___Y___Z" class="letterindex">V / W / X / Y / Z</a><p>
+
+      <p align = "center">
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b><font color="#0033CC">State
+      Variables</font></b></font></h4>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"> 
+      State variables are built in characteristics of turtles and patches. </font> </p>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"> 
+      Turtles have 7 state variables: <br> <br>
+      <font face="Courier New, Courier, mono">xcor <br>
+      ycor <br>
+      color <br>
+      heading <br>
+      breed <br>
+      shown? <br>
+      pendown? <br> </font></font ></p>
+      
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"> 
+      Patches have 3 state variables: <br> <br>
+      <font face="Courier New, Courier, mono">xcor <br>
+      ycor <br>
+      patch-color (pc) <br> </font></font> </p>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+      The observer has no state variables. </font> </p> 
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+      You can have access to a state variable by using its name in an expression.  For example: <br> <br>
+      <font face="Courier New, Courier, mono"> 
+      xcor + 5 <br> heading - 90 <br> if pendown? [fd 1] </font> </font ></p>
+     
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+      All state variables, with the exception of the <font face="Courier New, Courier, mono">xcor</font>
+       and <font face="Courier New, Courier, mono">ycor</font> of a patch, can be changed using
+      the <font face="Courier New, Courier, mono">set</font> command.  For example:
+      <br> <br>
+      <font face="Courier New, Courier, mono">
+      set color red <br>
+      set pc pc + 1
+      <br> </font> </font> </p>
+      
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+      Note that the <font face="Courier New, Courier, mono">set</font> command performs the same
+      function whether it is separated by a space from the variable or not. </font> </p> 
+	  
+      
+      
+      <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b><font color="#0033CC">
+      Creating New 
+        Variables</font></b> </font>
+      <div align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">You 
+        can create new state variables for turtles, patches, and the observer. 
+        Whenever you create a new variable, StarLogo automatically creates a collection 
+        of new procedures to facilitate the use of the variable. For example, 
+        if you create the variable <font face="Courier New, Courier, mono">age</font> for the turtles, then the 
+        turtles can use the procedure <font face="Courier New, Courier, mono">setage</font> 
+        to change the value of the variable, and they can use the procedure <font face="Courier New, Courier, mono">age</font> 
+        to access the value of the variable. </font></div>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"> 
+        You create new variables with the commands <font face="Courier New, Courier, mono">turtles-own</font>,<font face="Courier New, Courier, mono"> 
+        patches-own, </font>and <font face="Courier New, Courier, mono">globals</font>. 
+        You can type these commands in either the turtle procedures window or 
+        the observer procedures window (but not both), like this: </font>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><font face="Courier New, Courier, mono">turtles-own 
+        [age speed]</font> <br>
+        Creates turtle variables <font face="Courier New, Courier, mono">age</font> and <font face="Courier New, Courier, mono">speed</font><br>
+        <br>
+        <font face="Courier New, Courier, mono">patches-own [food]</font><br>
+        Creates patch variable <font face="Courier New, Courier, mono">food</font><br>
+        <br>
+        <font face="Courier New, Courier, mono">globals [clock]</font><br>
+        Creates global variable <font face="Courier New, Courier, mono">clock</font></font></p>
+      <p align="left"><font size="3" face="Verdana, Arial, Helvetica, sans-serif">For 
+        turtle variables, the example age is used.&nbsp; For patch variables, 
+        the example food is used.&nbsp; And, for global variables, the example 
+        time is used.&nbsp; In order to use the commands listed below, you must 
+        first create the variables you want.</font></p>
+      <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b><font color="#0033CC">Variable 
+        Suffixes</font></b> </font>
+      
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+      You can access or set the state variable of another turtle or patch by using 
+      <font face="Courier New, Courier, mono">-at</font>, <font face="Courier New, Courier, mono">-to</font>
+      , or <font face="Courier New, Courier, mono">-towards</font> suffixes. For example:
+      <br> <br>
+      <font face="Courier New, Courier, mono">
+      seth towards xcor-of 23 ycor-of 23 <br> <br> </font>
+      This command will set the heading of the caller toward turtle #23. <br> <br>
+      <font face="Courier New, Courier, mono">
+      set heading-at 2 3 90 <br> <br>
+      </font>
+      This command will set the heading of all the turtles +2 patches away in the x direction and
+      +3 units away in the y direction from the caller to 90 degrees. <br> <br> 
+      <font face="Courier New, Courier, mono">
+      set pc-towards 270 4 green <br> <br> </font>
+      This command will set the patch color of the patch 270 degrees from the current heading and 4 patches
+      away from the caller to green. </font> </p>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">
+      <font face="Courier New, Courier, mono">
+      -of</font> takes a turtle ID number as its argument. <br> <br>
+      <font face="Courier New, Courier, mono">
+      -at</font> takes a dx and a dy as its arguments, which are relative to the position of the caller.  The
+      observer is considered living on patch (0,0). <br> <br>
+      <font face="Courier New, Courier, mono">
+      -towards</font> takes an angle in degrees and a distance in turtle steps.  The angle is
+      relative to the heading of the caller.<br>
+      </font> </p>
+      <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b><font color="#0033CC">Local 
+        Variables</font></b> </font>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Like 
+        <code>globals</code>, local variables are not associated with any specific 
+        patch or turtle. However, the exist only within the procedure within which 
+        they are declared. </font>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">For example:<br><br>
+        <font face="Courier New, Courier, mono">to check<br>
+        let [:num who + color]<br>
+        if :num > who * 2 [setc red]<br>
+        end</font> <br> <br>
+        or <br> <br> <font face="Courier New, Courier, mono">
+        to check <br>
+         let [:num who + color] <br>
+ifelse :num > who * 2 <br>
+   [setc red] <br>
+   [set :num who * color <br>
+    if :num > who * 2 [setc red]] <br>
+end </font> </font>
+      <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b><font color="#0033CC">Parameters</font></b> 
+        </font>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">Parameters 
+        are like local variables, in that they only exist during the procedure 
+        they are associated with. They are &quot;declared&quot; when the caller 
+        of procedure gives them a value.  You can pass more than one parameter to a procedure 
+        by separating the variable names with a space.</font>
+      <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3">For example:<br><br>
+        <font face="Courier New, Courier, mono">to move :number<br>
+        fd :number<br>
+        lt random 360<br>
+        bk :number<br>
+        rt random 360<br>
+        end</font><br>
+        <br>
+        <font face="Courier New, Courier, mono">to go<br>
+        move 30<br>
+        end </font></font>
+        <p align="left"><font size="3" face="Verdana, Arial, Helvetica, sans-serif">Here 
+        are a list of commands that affect variables: </font></p> <p>
+<table class="commandtable" border="1" width="100%"><tr><td class="letterrow"><nobr><a name="A___B___C___D___E___F___G___H___I___J___K___L___M___N___O">A / B / C / D / E / F / G / H / I / J / K / L / M / N / O</a></nobr></td></tr><tr><td class="commandrow"><a href="command_doc_include.php@com_id=75.html" target="CommandsPopUp">globals</a><p><a href="command_doc_include.php@com_id=63.html" target="CommandsPopUp">let</a></td></tr><tr><td class="letterrow"><nobr><a name="P___Q___R___S">P / Q / R / S</a></nobr></td></tr><tr><td class="commandrow"><a href="command_doc_include.php@com_id=311.html" target="CommandsPopUp">patches-own</a><p><a href="command_doc_include.php@com_id=243.html" target="CommandsPopUp">set</a><p><a href="command_doc_include.php@com_id=349.html" target="CommandsPopUp">setslidervar</a><p><a href="command_doc_include.php@com_id=434.html" target="CommandsPopUp">setvariable</a><p><a href="command_doc_include.php@com_id=436.html" target="CommandsPopUp">setvariable-at</a><p><a href="command_doc_include.php@com_id=435.html" target="CommandsPopUp">setvariable-of</a><p><a href="command_doc_include.php@com_id=437.html" target="CommandsPopUp">setvariable-towards</a></td></tr><tr><td class="letterrow"><nobr><a name="T___U">T / U</a></nobr></td></tr><tr><td class="commandrow"><a href="command_doc_include.php@com_id=36.html" target="CommandsPopUp">to</a><p><a href="command_doc_include.php@com_id=49.html" target="CommandsPopUp">turtles-own</a></td></tr><tr><td class="letterrow"><nobr><a name="V___W___X___Y___Z">V / W / X / Y / Z</a></nobr></td></tr><tr><td class="commandrow"><nobr><a href="command_doc_include.php@com_id=430.html" target="CommandsPopUp">variable</nobr></a><p><a href="command_doc_include.php@com_id=432.html" target="CommandsPopUp">variable-at</nobr></a><p><a href="command_doc_include.php@com_id=431.html" target="CommandsPopUp">variable-of</nobr></a><p><a href="command_doc_include.php@com_id=433.html" target="CommandsPopUp">variable-towards</nobr></a></td></tr></table>
+
+</body></html>
+
+
+
+
+
+
+
+
+

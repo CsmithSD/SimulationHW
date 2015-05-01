@@ -1,0 +1,627 @@
+<html>
+
+<head>
+
+<title>Graphing</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#009933" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<table cellspacing="0" cellpadding="0" border="0" align="center" width="100%">
+
+  <tr> 
+
+    <td width="100%" height="238" valign="top"> <table cellpadding="3" cellspacing="0" border="0" align="center" width="100%" mm_noconvert="TRUE" height="168">
+
+        <tr> 
+
+          <td height="43" align="center" bgcolor="#6699CC" colspan="2"> <h1 align="center"><font face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">Graphing</font></h1></td>
+
+        </tr>
+
+        <tr bgcolor="#FFFFFF"> 
+
+          <td height="2" align="center" bgcolor="#FFFFFF" colspan="2"> <hr noshade align="center"> 
+
+          </td>
+
+        </tr>
+
+        <tr> 
+
+          <td height="166" valign="right" align="center" width="50%"><a name="Top"></a><img src="images/turtlesblind.gif" width="258" height="120"></td>
+
+          <td height="166" valign="right" align="center" width="50%"> <div align="left"> 
+
+              <p><font face="Verdana, Arial, Helvetica, sans-serif" size="4"><b><a href="#introduction">1. 
+
+                </a></b><a href="#introduction">Introduction</a><br>
+
+                <b><a href="#LineChart">2. </a></b><a href="#LineChart"> Line 
+
+                Chart</a><br>
+
+                <b><a href="#BarChart">3. </a></b><a href="#BarChart"> Bar Chart</a><br>
+
+                <b><a href="#Histogram">4. </a></b><a href="#Histogram"> Histogram</a><br>
+
+                <b><a href="#ScatterPlot">5. </a></b><a href="#ScatterPlot">Scatter 
+
+                Plot</a><br>
+
+                <b><a href="#XYPlot">6. </a></b><a href="#XYPlot">X-Y Plot </a></font></p>
+
+            </div></td>
+
+        </tr>
+
+      </table></td>
+
+    <td width="6" height="238" valign="top"></td>
+
+  </tr>
+
+  <tr> 
+
+    <td height="5383" colspan="2" valign="top"> <table width="100%" border="0" cellspacing="3" cellpadding="0" height="102" align="center" mm_noconvert="TRUE">
+
+        <tr> 
+
+          <td height="2" colspan="2" valign="top"> <hr noshade align="center"> 
+
+          </td>
+
+        </tr>
+
+        <tr> 
+
+          <td height="20" colspan="2" valign="top"> <table width="100%" border="0" cellspacing="0" cellpadding="0" height="25" bordercolor="#009900" rules="rows">
+
+              <tr bgcolor="#FFFFCC"> 
+
+                <td width="6"> <div align="left"><img src="../images/EndBar.gif" width="6" height="18"></div></td>
+
+                <td width="100%"><font face="Verdana, Arial, Helvetica, sans-serif" size="4"><b><font color="#006600"><a name="Introduction"></a>1. 
+
+                  Introduction</font></b></font></td>
+
+                <td width="6"> <div align="right"><img src="../images/EndBar.gif" width="6" height="25"></div></td>
+
+              </tr>
+
+            </table></td>
+
+        </tr>
+
+        <tr align="right"> 
+
+          <td align="center" colspan="2" valign="middle" width="100%"> <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">As of  
+
+              StarLogo version 2.0 graphing has been made easier by way of a new 
+
+              graphing wizard. Users no longer need to manually initiate their 
+
+              graphs by typing commands. Though, if you open a project with the 
+
+              traditional StarLogo commands you will have a mini-graphing window 
+
+              added to your project that displays these plots in addition to the 
+
+              regular plot window. Implementing the new graphing wizard is both 
+
+              quick and easy. First, click on the graphing icon on the StarLogo 
+
+              toolbar, and then click anywhere in the workspace. This will bring 
+
+              up the Graph Chooser dialogue box, from which you can select the 
+
+              type of graph that you wish to initialize. You can choose from a 
+
+              line chart, bar chart, histogram, scatterplot, and x-y plot. You 
+
+              will also select whether the graph is controlled by a wizard, or 
+
+              by using traditional StarLogo commands. </font></p>
+
+            <div align="center"><img src="images/graphingicon.gif"
+			 border="0"> 
+
+            </div>
+
+            <h1 align="center"><font face="Verdana, Arial, Helvetica, sans-serif" color="#006600" size="2">FIGURE 
+
+              1: Graphing Icon</font></h1>
+
+            <h1 align="center"><img src="images/graphchooser.gif"></h1>
+
+            <h1 align="center"><font face="Verdana, Arial, Helvetica, sans-serif" color="#006600" size="2">FIGURE 
+
+              2: Graph Chooser</font></h1>
+
+            <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Once 
+
+              you initialize the graph, the actual graph window will pop up. As 
+
+              of now the graph is blank since nothing has been plotted yet. If 
+
+              you are using a wizard generated plot, the next step is to set up 
+
+              the graph so that it behaves as we want it to behave. This can be 
+
+              done by opening the Plot Format Menu of the blank plot window. First 
+
+              open the Plot Properties menu item. Depending on which type of graph 
+
+              you initilialized, a different dialogue box will appear (note that 
+
+              a blue border around your plots indicates that they are controlled 
+
+              by a wizard, whereas gray bordered graphs are controlled by StarLogo 
+
+              commands).</font></p>
+
+            <p align="center"><img src="images/plotformatmenu.gif"></p>
+
+            <h1 align="center"><font face="Verdana, Arial, Helvetica, sans-serif" color="#006600" size="2">FIGURE 
+
+              3: Plot Format Menu</font></h1>
+
+            <p align="right"><a href="#Top"><img src="images/BackToTop.gif" width="28" height="29" border="0">R</a><a href="#Top">eturn 
+
+              to Top </a> </p>
+
+            <hr noshade align="center"> </td>
+
+        </tr>
+
+        <tr> 
+
+          <td height="25" colspan="2" valign="top" width="100%"> <table width="100%" border="0" cellspacing="0" cellpadding="0" height="25" bordercolor="#009900" rules="rows">
+
+              <tr bgcolor="#FFFFCC"> 
+
+                <td width="6"> <div align="left"><img src="../images/EndBar.gif" width="6" height="25"></div></td>
+
+                <td width="100%"><font face="Verdana, Arial, Helvetica, sans-serif" size="4"><b><font color="#000000"><a name="LineChart"></a><font color="#006600">2. 
+
+                  Line Chart</font></font></b></font></td>
+
+                <td width="6"> <div align="right"><img src="../images/EndBar.gif" width="6" height="25"></div></td>
+
+              </tr>
+
+            </table></td>
+
+        </tr>
+
+        <tr align="right"> 
+
+          <td height="70" colspan="2" valign="top" width="100%"> <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+
+              Line Chart is a simple graph that follows a set of data over time 
+
+              and is used for analyzing trends in a specific variable. For example, 
+
+              you could graph the average energy of all the turtles on the screen 
+
+              over time. In the Plot Properties window which was just opened, 
+
+              there are several options available. You can input the title of 
+
+              your new graph at the top of the dialogue box. You can input labels 
+
+              for your x-axis and y-axis in their respective positions. You can 
+
+              also set a specific range on the x-axis and/or y-axis which you 
+
+              specifically want to display. Note however, that most users will 
+
+              not set these inputs and will allow the computer to automatically 
+
+              scale the window for you. This is especially useful for graphs which 
+
+              have a varying x and y range. You can show the gridlines in your 
+
+              graph or you can choose to turn them off by checking or unchecking 
+
+              the box in the bottom left corner. For the Line Chart you can choose 
+
+              to connect the points that are graphed by checking the box in the 
+
+              bottom left corner as well. Select OK when you are done.</font></p>
+
+            <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><img src="images/plotpropertiesline.gif"></font></p>
+
+            <h1 align="center"><font face="Verdana, Arial, Helvetica, sans-serif" color="#006600" size="2">FIGURE 
+
+              4: Plot Properties Window (Line Chart)</font></h1>
+
+            <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Next, 
+
+              go to the Data item in the Plot Format Menu we discussed earlier. 
+
+              In the Plot Data Window you can turn on up to ten plot pens. Each 
+
+              plot pen will plot an item on your graph. Next to the number of 
+
+              the plot pen is a box to check if you want to turn that plot pen 
+
+              on. You can give a name to your plot pen, usually something representing 
+
+              what that plot pen will be graphing. Under this, is a selection 
+
+              area for either Wizard or Text. The Wizard allows you to use the 
+
+              simpler, faster method of telling the program what you want to graph. 
+
+              Power users may want to choose Text to resort to the original way 
+
+              of inputting graphing functions by command if there is a level of 
+
+              sophistication to their graphs that may be unreachable by the Wizard. 
+
+              The How-To will continue with the Wizard. Next you can choose what 
+
+              you want to plot. The first two boxes allow you to choose the value 
+
+              that you want plotted, while the third box allows you to input what 
+
+              items you want to graph for. For example, you could plot the &quot;average 
+
+              of&quot; &quot;energy&quot; for all &quot;turtles.&quot; The last 
+
+              section of the plot pen area allows you to set a limitation on what 
+
+              items to plot. For example, if you already chose to plot the &quot;average 
+
+              of&quot; &quot;energy&quot; for all &quot;turtles,&quot; perhaps 
+
+              you only want to plot the red turtles. So, check the box next to 
+
+              the word &quot;with&quot; and type &quot;color = red&quot; in the 
+
+              input box. Now you're all done with your first Line Chart!</font></p>
+
+            <p align="center"><img src="images/plotdatabar.gif" width="532" height="287"></p>
+
+            <h1 align="center"><font face="Verdana, Arial, Helvetica, sans-serif" color="#006600" size="2">FIGURE 
+
+              5: Plot Data Window (Line Chart, Bar Chart, Histogram)</font></h1>
+
+            <a href="#Top"><img src="images/BackToTop.gif" width="28" height="29" border="0"> 
+
+            Return to Top </a> <hr noshade align="center"> </td>
+
+        </tr>
+
+        <tr> 
+
+          <td height="25" colspan="2" valign="top"> <table width="100%" border="0" cellspacing="0" cellpadding="0" height="25" bordercolor="#009900" rules="rows">
+
+              <tr bgcolor="#FFFFCC"> 
+
+                <td width="6"> <div align="left"><img src="../images/EndBar.gif" width="6" height="25"></div></td>
+
+                <td width="100%"><font face="Verdana, Arial, Helvetica, sans-serif" size="4"><b><font color="#000000"><a name="BarChart"></a><font color="#006600">3. 
+
+                  Bar Chart</font></font></b></font></td>
+
+                <td width="6"> <div align="right"><img src="../images/EndBar.gif" width="6" height="25"></div></td>
+
+              </tr>
+
+            </table></td>
+
+        </tr>
+
+        <tr align="right"> 
+
+          <td height="628" colspan="2" valign="top" width="100%"> <div align="left"> 
+
+              <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
+
+                The Bar Chart is a graph that displays the real-time value of 
+
+                specific variables and is mainly used for comparisons. For example, 
+
+                you could compare the energy of rabbits with the energy of wolves. 
+
+                In the Plot Properties Window, just as in the Line Chart Plot 
+
+                Properties Window, you can set the plot title, set the x and y-axis 
+
+                labels, set the range of the y-value, and choose to show the grid. 
+
+                Click OK when you are satisfied with your choices.</font></p>
+
+              <table width="100%" border="0" cellspacing="10" cellpadding="0" height="37">
+
+                <tr> 
+
+                  <td align="center"><img src="images/plotpropertiesbar.gif"></td>
+
+                </tr>
+
+                <tr> 
+
+                  <td height="8"> <h5 align="center"><font face="Verdana, Arial, Helvetica, sans-serif" color="#006600">FIGURE 
+
+                      6: Plot Properties Window (Bar Chart)</font></h5></td>
+
+                </tr>
+
+              </table>
+
+            </div>
+
+            <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Next, 
+
+              go to the Data item in the Plot Format Menu of the blank graph. 
+
+              Similar to the Line Chart above, you can turn on plot pens, choose 
+
+              colors for your plot pens, and select the data values you wish to 
+
+              plot with your plot pens. (See Line Chart and See Figure 5)</font></p>
+
+            <div align="left"> </div>
+
+            <p align="right"><a href="#Top"><img src="images/BackToTop.gif" width="28" height="29" border="0"> 
+
+              Return to Top </a> </p>
+
+            <hr noshade align="left"> </td>
+
+        </tr>
+
+        <tr> 
+
+          <td height="25" colspan="2" valign="top"> <table width="100%" border="0" cellspacing="0" cellpadding="0" height="25" bordercolor="#009900" rules="rows">
+
+              <tr bgcolor="#FFFFCC"> 
+
+                <td width="6"> <div align="left"><img src="../images/EndBar.gif" width="6" height="25"></div></td>
+
+                <td width="100%"><font face="Verdana, Arial, Helvetica, sans-serif" size="4"><b><font color="#000000"><a name="Histogram"></a><font color="#006600">4. 
+
+                  Histogram</font></font></b></font></td>
+
+                <td width="6"> <div align="right"><img src="../images/EndBar.gif" width="6" height="25"></div></td>
+
+              </tr>
+
+            </table></td>
+
+        </tr>
+
+        <tr bgcolor="#FFFFFF" align="right"> 
+
+          <td height="671" colspan="2" valign="top" width="100%"> <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The 
+
+              Histogram is used to display how a certain variable is distributed. 
+
+              For example, you could analyze the distribution of energy in the 
+
+              turtles. Questions you could answer with the Histogram: &quot;How 
+
+              many turtles have between one and five energy?&quot; or &quot;Do 
+
+              more turtles have a lot of energy or do more turtles have less energy?&quot; 
+
+              In the Plot Properties Window, for the Histogram, you can set the 
+
+              plot title, set the x and y-axis labels, set the x and y ranges, 
+
+              and choose to show the plot grid. Select OK when you are satisfied 
+
+              with your choices.</font></p>
+
+            <p align="center"><img src="images/plotpropertieshisto.gif"></p>
+
+            <h1 align="center"><font face="Verdana, Arial, Helvetica, sans-serif" color="#006600" size="2">FIGURE 
+
+              7: Plot Properties Window (Histogram)</font></h1>
+
+            <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Next, 
+
+              go to the Data item in the Plot Format Menu of the blank graph. 
+
+              Like in the Line Chart, and Bar Chart, you can turn on plot pens, 
+
+              choose colors for your plot pens, and select the data values you 
+
+              wish to plot with your plot pens. (See Line Chart and See Figure 
+
+              5)</font></p>
+
+            <p align="left">&nbsp; </p>
+
+            <a href="#Top"><img src="images/BackToTop.gif" width="28" height="29" border="0"> 
+
+            Return to Top </a> <hr noshade align="left"> </td>
+
+        </tr>
+
+        <tr bgcolor="#FFFFFF"> 
+
+          <td height="25" colspan="2" valign="top"> <table width="100%" border="0" cellspacing="0" cellpadding="0" height="25" bordercolor="#009900" rules="rows">
+
+              <tr bgcolor="#FFFFCC"> 
+
+                <td width="6"> <div align="left"><img src="../images/EndBar.gif" width="6" height="25"></div></td>
+
+                <td width="100%"><font face="Verdana, Arial, Helvetica, sans-serif" size="4"><b><font color="#000000"><a name="ScatterPlot"></a><font color="#006600">5. 
+
+                  Scatter Plot</font></font></b></font></td>
+
+                <td width="6"> <div align="right"><img src="../images/EndBar.gif" width="6" height="25"></div></td>
+
+              </tr>
+
+            </table></td>
+
+        </tr>
+
+        <tr bgcolor="#FFFFFF" align="right"> 
+
+          <td height="262" colspan="2" valign="top" width="100%"> <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">The 
+
+              Scatter Plot is used to plot the real-time coordinate of two variables 
+
+              for each turtle/breed/etc. For example, you could plot energy versus 
+
+              speed, and every turtle would plot its point on the graph for its 
+
+              current energy versus speed coordinate. If you were to plot the 
+
+              y-coordinate of the turtle versus it's x-coordinate, you should 
+
+              get a replica of the patch canvas. In the Plot Properties Window 
+
+              you can once again set the title, set the x and y-axis labels, set 
+
+              the x and y ranges, choose to show the grid and choose to connect 
+
+              the points.</font></p>
+
+            <p align="center"><img src="images/plotpropertiesscatter.gif"></p>
+
+            <h1 align="center"><font face="Verdana, Arial, Helvetica, sans-serif" color="#006600" size="2">FIGURE 
+
+              7: Plot Properties Window (Scatter Plot)</font></h1>
+
+            <p align="left"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+
+              Next, go to the Data item in the Plot Format Menu. The Plot Data 
+
+              Window is slightly different for the Scatter Plot and X-Y Plot than 
+
+              for the Line Chart, Bar Chart, and Histogram. In this Plot Data 
+
+              Window you can still turn on plot pens, set plot pen colors, and 
+
+              name plot pens. However, this time, you have to specify which variable 
+
+              to graph for both the x-value and the y-value of each turtle on 
+
+              the graph.</font></p>
+
+            <p align="center"><img src="images/plotdataxy.gif"></p>
+
+            <h1 align="center"><font face="Verdana, Arial, Helvetica, sans-serif" color="#006600" size="2">FIGURE 
+
+              8: Plot Data Window (Scatter Plot, X-Y Plot)</font></h1>
+
+            <font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="#Top"><img src="images/BackToTop.gif" width="28" height="29" border="0"> 
+
+            Return to Top</a></font> <hr noshade align="left"> <table width="100%" border="0">
+
+              <tr> 
+
+                <td height="78" colspan="2" valign="top" bgcolor="#FFFFFF"> <table border="0" cellspacing="0" cellpadding="0" height="25" bordercolor="#009900" rules="rows" width="991">
+
+                    <tr bgcolor="#FFFFCC"> 
+
+                      <td width="7"> <div align="left"><img src="../images/EndBar.gif" width="6" height="25"></div></td>
+
+                      <td width="975"><font face="Verdana, Arial, Helvetica, sans-serif" size="4"><b><font color="#000000"><a name="XYPlot"></a><font color="#006600">6. 
+
+                        X-Y Plot</font></font></b></font></td>
+
+                      <td width="10"> <div align="right"><img src="../images/EndBar.gif" width="6" height="25"></div></td>
+
+                    </tr>
+
+                  </table>
+
+                  <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The 
+
+                    X-Y Plot tracks the relationship between two set variables 
+
+                    over time. For example, you could graph the average energy 
+
+                    of all turtles versus the average age of all turtles. In each 
+
+                    turn, a point will be plotted for the average energy versus 
+
+                    the average age. This type of plot is used to track trends 
+
+                    in the relationship between two variables. In the Plot Properties 
+
+                    Window you can again, set the plot title, set the x and y-axis 
+
+                    labels, set the x and y ranges, show the grid, and connect 
+
+                    the points. Click OK when you are satisfied with your selection.</font></p>
+
+                  <p align="center"><img src="images/plotpropertiesxy.gif"></p>
+
+                  <h1 align="center"><font face="Verdana, Arial, Helvetica, sans-serif" color="#006600" size="2">FIGURE 
+
+                    9: Plot Properties Window (X-Y Plot)</font></h1>
+
+                  <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Like 
+
+                    the Scatter Plot, the Plot Data Window for the X-Y Plot can 
+
+                    be used to turn on plot pens, set plot pen colors, name plot 
+
+                    pens, and set the values to be graphed for the x and y-values. 
+
+                    (See Scatter Plot and See Figure 8)</font></p>
+
+                  <p align="right"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="#Top"><img src="images/BackToTop.gif" width="28" height="29" border="0"> 
+
+                    Return to Top</a></font> </p></td>
+
+                <td width="2%" height="78"> <table width="100%" border="0">
+
+                    <tr> 
+
+                      <td>&nbsp;</td>
+
+                    </tr>
+
+                  </table></td>
+
+              </tr>
+
+            </table></td>
+
+        </tr>
+
+      </table></td>
+
+  </tr>
+
+  <tr> 
+
+    <td align="center" height="48" colspan="2"> <hr> </td>
+
+  </tr>
+
+  <tr bgcolor="#FFFFFF" align="right"> 
+
+    <td height="16" colspan="2" valign="top"> <p align="center"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+
+        <b><a href = "graphing.html" target="mainFrame">Getting Started</a> |<a href = "../community.html" target="mainFrame">Community</a> 
+
+        | <a href = "../tutorial/tutorial.html" target="mainFrame">Tutorial</a></b><br>
+
+        <b><a href = "../commands/commands.html">Commands</a> | <a href = "../projects.html">Projects</a> 
+
+        | <a href = "../FAQ.html">FAQ</a> | <a href = "../info.html">Info</a></b> 
+
+        </font> </td>
+
+  </tr>
+
+</table>
+
+</body>
+
+</html>
+

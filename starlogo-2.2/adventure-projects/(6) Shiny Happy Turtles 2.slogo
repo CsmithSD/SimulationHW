@@ -1,0 +1,414 @@
+Java StarLogo
+2.0
+english
+`turtle`
+turtles-own [happiness avghappy]
+
+to go 
+  check-patches 
+  scale-color 65 happiness  0 20
+  friends-meet 
+  set-avghappy
+  move
+  wiggle
+  wait .05
+end
+
+to check-patches         ;increase or decrease happiness based on slider settings and patch colors
+  if (pc = blue or pc = 109)
+       [sethappiness ((1 + (school / 100)) * happiness)]
+  if (pc = red or pc = 19)
+       [sethappiness ((1 + (cinema / 100)) * happiness)]
+  if happiness < .1 [sethappiness .1]       ;don't let happiness go below .1
+  if happiness > 20 [sethappiness 20]       ;or above 20
+end
+
+to friends-meet 
+  if count-turtles-here > 1 
+                    ;if more than one turtle on patch
+                    ;set avghappy to the average happiness of you and another turtle
+                    ;if more than one other turtle, pick one to average with
+     [setavghappy    ;set avghappy variable
+          (((happiness-of one-of-turtles-here) + happiness) / 2)
+     ]
+end
+
+to set-avghappy       ;use avghappy variable to calculate and set happiness variable
+  ifelse count-turtles-here > 1       ;if there is another turtle here
+     [ sethappiness avghappy * 1.1      ;set happiness to average plus 10%
+       if happiness > 20 [sethappiness 20]      ;but not above 20
+     ]
+     [ sethappiness (happiness * .992)         ;if not, lose a little happiness
+       if happiness < .1 [sethappiness .1]     ;not below .1
+     ]
+end
+
+to wiggle
+  lt random 10  
+  rt random 10 
+end
+
+to move  
+  rt happiness ;turn right based on happiness
+               ;happy turtles make a circle and sad turtles keep moving
+  fd happiness / 5 
+end
+
+
+`observer`
+to setup
+  ask-turtles [die]
+  crt number
+  ask-turtles [
+  sethappiness random initial-happiness       ;set initial happiness to a random number
+  scale-color 65 happiness  0 20
+  setxy random screen-width random screen-height ]
+end
+
+
+`information`
+For use with the Adventures in Modeling book,  by Vanessa Colella, Eric Klopfer, and Mitchel Resnick published by Teachers College Press, 2001.  
+
+For more information, see  
+<http://education.mit.edu/starlogo/adventures>  
+
+Challenge 6: Shiny Happy Turtles 2  
+The interface and most of the principles of Shiny Happy Turtles 2 are exactly the same as those in Shiny Happy Turtles 1. 
+
+Play with  Shiny Happy Turtles 2 for a little while. Can you tell what is different about this project based on your observations of the turtle-turtle and turtle-environment interactions? What unique  patterns can you identify in this project?  
+
+In Shiny Happy Turtles 2, when two turtles share a patch they average their two happiness values (and add 10 percent for good fortune). These turtle-turtle interactions can lead to noticeably different patterns than the kind you observed in Shiny Happy Turtles 1. Watch what happens when a really happy turtle meets a really unhappy turtle. A good place to look for this is in a patch that causes turtles to lose happiness. 
+
+What other kinds of interactions can you see in Shiny Happy Turtles 2?
+
+
+`interface`
+SLCanvas
+top-left 17 231
+
+SLButton
+turtle-or-observer? turtle
+top-left 63 9
+width-height 68 30
+name "button2"
+line-to-run "go"
+forever? true
+button-number 2
+show-name? false
+whichip 7
+
+SLSlider
+top-left 63 90
+width-height 103 25
+name "slider2"
+variable "initial-happiness"
+min-value 0
+max-value 20
+current-value 5
+slider-number 2
+show-name? false
+
+SLSlider
+top-left 143 90
+width-height 103 25
+name "slider4"
+variable "school"
+min-value -20
+max-value 20
+current-value -2
+slider-number 4
+show-name? false
+
+SLSlider
+top-left 23 90
+width-height 103 25
+name "slider2"
+variable "number"
+min-value 0
+max-value 200
+current-value 50
+slider-number 1
+show-name? false
+
+SLSlider
+top-left 103 90
+width-height 103 25
+name "slider3"
+variable "cinema"
+min-value -20
+max-value 20
+current-value 5
+slider-number 3
+show-name? false
+
+SLButton
+turtle-or-observer? observer
+top-left 23 9
+width-height 68 30
+name "button1"
+line-to-run "setup"
+forever? false
+button-number 1
+show-name? false
+whichip 8
+
+
+`turtle shapes`
+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
+qqqqqqqaoR8DO5wb3dkOFQAAFQ7Z
+
+`template`
+null
+
+`settings`
+patch-size 8
+num-shapes 256
+screen-half-width 23
+screen-half-height 22
+interface-window-xcor 195
+interface-window-ycor 102
+interface-window-size 679 415
+output-window-xcor 0
+output-window-ycor 0
+output-window-width 300
+output-window-height 219
+info-window-xcor 234
+info-window-ycor 268
+info-window-width 500
+info-window-height 419
+control-center-xcor 0
+control-center-ycor 85
+control-center-width 285
+control-center-height 415
+turtle-command-center-height 150
+observer-command-center-height 150
+
+`string table`
+H4sIAAAAAAAAAGNgYGAAABzfRCEEAAAAAAAABA==
+
+`symbol table`
+H4sIAAAAAAAAAGNgYGAAABzfRCEEAAAAAAAABA==
+
+`double table`
+H4sIAAAAAAAAAGNgYGC3XzkTBGY5RDkwgICDHphisN8JEbf/AOV/hPLf7ys7scUy
+AgC6A/1vPAAAAAAAADw=
+
+`list table`
+H4sIAAAAAAAAAG2OOw6AMAxDHbcFxMIA4j7chZX7r6TEIH6VnhLFdlIAHYDWAHPo
+wFlUK5OX8p4Rx5sZuU357Kynj7FvlJbumvTEmF97BXTTbhrdm70dNDeG55PV7ubv
+DuJPfQXP26WKO+revjwQAQAAAAABEA==
+
+`bytecodes`
+H4sIAAAAAAAAAIVU21LCMBDd9MalxZZKBYQZmZHxjR/wwXH8DV9AiIVRLiMFh3/U
+f3LTbps0hTEzzSbZy9mczRbc6dsp4fPtgu+nz/Ajxi8ANMDe8+Sww+UDFMOgqYfC
+xO/eAWCZio1x6llk06Vzlp6zILdDZchobZK0gIVNWtsk0T4KgQ2N1JcNzSxG5Ehc
+XxhjxHiL81jmWCsSpcRUyRQsQ+aBWJmfqcWxtL2j7W0NB+39JuXGoDVf8vnHZDdL
+cLFH9au07sjUWNBV9izbB3d0i3Yl3ZTqnLpAUAMFfeJ6LDAkjYJucSvfUDBqGmb9
+AmaDZFPBdDVMT8NslTCzsyuFdh9tbwgnfxYByfYZ31DxvUbfSPPtkIzKvmkJDPDe
+v1Z8s9hP1pwnqOrLCgzUCuRRfVmFATIWegX72S1BViGQD7iKbIKH/TOZHePlbLc7
+oerpH+T+2ScqeTWV1im3TJWTXNbKmZmgYdWVOA0Fq6lguYqNd6Z2raLGFSzfJDYs
+cL5XcfzJ03iSiJwD0dq3yvsX+z752mCtt0eeIeieIrPoEnOisT2K4oD7ckiS7eZx
+NEr/GA26hk2dzGTwNHWnUF4VjvkfMfcpDXH4Bw+SHjpOBQAAAAAFTg==
+
+`observer world`
+H4sIAAAAAAAAAGMQSMhPKk4tKkstUiguSSxJTXBggAMrBq6CnPyS8syU9NQSIJ+F
+gS0nNS+9JAPI5mBgB8kVpOaBlXKDNSPJQgAjCAMA+OWZc2QAAAAAAABk
+
+`patch world`
+H4sIAAAAAAAAAIXcy6oriXmGYSWYRDgENBCJBhoIIYQQQuh8PtWhq+4gg2Ri02ns
+gLEbZ0OSWV2yLyHdtqt2Uuy/ngVCh0evSktCH2INVu8ff/Xjr798/9vJf3759Zcf
+fvXpNT//0vvFf3//hz/++fIvf/zdH77813/8+29++PLTtXHvb3/8/qfzQe/vfvfD
+73/z5bc/XZ70/v7n+/z4w+9/ujLq/eJ//pL2e//w5wf+P/fr9f75p9M//fyw7z/9
+5VD1+WfYHP1vfj7Vzyb0PnwAH8JH8DF8Ap/CZ/A5fAFfwlfwNXwD38J38D38AD/C
+T/Az/AK/wm/wO/wBf8Jf8Df8I6+6PUGfoE/Rp+gz9Bn6HH2O/jv036Ev0BfoS/Rl
+d9/c3gv6HrwPH8CH8BF8DJ/Ap/AZfA5fwJfwFXwN38C38B18Dz/Aj/AT/Ay/wK/w
+G/wOf8Cf8Bf8Df/Iq25P0CfoU/Qp+gx9hj5Hn6P/Dv136Av0BfoSfdndN/ve/7Y3
+XeR9+AA+hI/gY/gEPoXP4HP4Ar6Er+Br+Aa+he/ge/gBfoSf4Gf4BX6F3+B3+AP+
+hL/gb/hHXnV7gj5Bn6JP0WfoM/Q5+hx9ve+hoy/QF+hL9GV33+z7IOh78D58AB/C
+R/AxfAKfwmfwOXwBX8JX8DV8A9/Cd/A9/AA/wk/wM/wCv8Jv8Dv8AX/CX/A3/COv
+uj1Bn6BP0afoM/QZ+hx9jr7e99DRF+gL9CX6srtv/90m3PfI+/ABfAgfwcfwCXwK
+n8Hn8AV8CV/B1/ANfAvfwfct/9fP//cD/Ag/wc/wC/wKv8Hv8Af8CX/B3/CPvOr2
+BH2CPkWfos/QZ+hz9Dn6et9DR1+0+mjfIy/Rl919s++joO/B+/ABfAgfwcfwCXwK
+n8Hn8AV8CV/B1/ANfAvfwfctj/a99n9r+RF+gp9bHu171F/hN/i95dG+R/0T/Qv9
+G/0Hfb3vkSfok1Yf7XvUp1W3Z+izVh/te9Tn6Ot9Dx190eqjfY+8RF92982+j4O+
+B+/DB/AhfAQfwyfwKXwGn8MX8CV8BV/DN/AtfAfftzza99qjfY/6E/wMv7Q82veo
+v8Hv8EfLo32P+hf6N/oP+nrfoz5Bn6BP0afoM/QZ+hx9jr7e99DRF60+2vfIS/Rl
+d9/s+yToe/A+fAAfwkfwMXwCn8Jn8Dl8AV/CV/A1fAPfwnfwfcujfa892vfIT/Bz
+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
+
+`turtle world`
+H4sIAAAAAAAAAJVWz08TQRSelv4CKqKiglatiIhY+VVQDyZMTDyYkMZojCEaQ39s
+u8Xart0F5OTBk4kno0bUxJs3T/4BzE0xqP+E8exZjTgzfe8pMSSPSdqZ3Z1vvzff
++97Miq65YKEZ1Jy0H+QDZ04Kaq9FrObUK4Grx1JEC03HKenhgOjwao1gqVqqOIG+
+nhRxc+05dX0xIqLFRq3R1MOUiCwX7SgpOu3L6W3nREJPLzWW6p6+mhBR3817jh4O
+i8i9FiYi2pbcho0j5rswMyvirpMvVesVfdGjf2HRrpFete74vp2byC9WzJ1lPQ6Z
+Gxu6WQ4dmxprLUxlWr1cTK7r9l7mVvWstw/Fvy1k8SH91xZq3elTPYAbgX5hxbQn
+Mif+b3/xAvB7ZRZwAvGDZd3yTP5dKg24QeiDd1ndRpj8GTUBuCnETxt5fsrcfd2t
+xbbAhwG/QwFODQPeN/Ktf2Dyj6kU4Ag/a/R7KnMmjq8PtsCHAD8o4RH1zW9Gv4LM
+mWU8Tm6BjwD+EK5fYf6avtFvlBl/lHhRv7uGd+MXk1/IAeAfQvwjo98akz+k+gGX
+Rnyf0e8ZU78w+Q97743Rr8jEt0mMG/PnGfmyY0z/RCTWHb6nYXAbP5j8MfTf6nfA
+17H+WPg41i3V/51t1U9iGnjJxzX0Pyv/7ersZgp5G/3L0q8D867OAH5+W/7rVOOA
+R//Oo39Y608q3HdQvyrmn6V/l0R+qAPpzhj9PjLxOyWsG/dxWTHylUvM/bNbdgMe
+psiy9d9vpv67sX4lngOO9d9zpn57cN9RCcCXrP8mmPw9mD+qv6L13zpz/fsob5j/
+gvVfmYnfT/nH/aMAPQ/fK3tbA6wjmbf+e8H07wEJ+5+CKXLO+m+SiT9I+z/m75bN
+3ysmPkXn/iT0N638X5j5O4znN/HfsF2Y6f8jxIs+nLXrn2LGn1bgf/LBdZt+l4k/
+SnGjD69Z/V4y4++n7wf0z1Wr32cm/hjph/6/0prJrL8Bqjs8Ry+jf1j8xxX4l/av
+GYyflf8ThMP1X0J+VvxDWLe0/11cgfph4U8qeETfkReg5+V/mL6b8Pw+b9f/iVn/
+p+j7B8+vKYyfpd9pfET7bwb5WesfpfXj+Z1CPIt/nL47MpupOPx/AJ3cy5xoDQAA
+AAANaA==
+

@@ -1,0 +1,290 @@
+Java StarLogo
+2.0
+english
+`turtle`
+to go   
+  check-patches  
+  fd 1 wait .2
+end
+
+to check-patches ;turn based on patch color 
+  if pc-ahead = red [rt 180] 
+  if pc-ahead = blue [rt 90] 
+  if pc-ahead = green [lt 90]
+end
+
+
+`observer`
+to setup   
+  ct  
+  clear-path 
+  crt number        ;create turtles based on number slider  
+  ask-turtles    
+    [setc yellow    
+     seth (random 4) * 90    
+     pd]
+end
+
+to clear-path       ;set patch colors black unless part of obstacles  
+  ask-patches 
+   [if not (pc = 15 or pc = 55 or pc = 105)               
+     [setpc black]]
+end
+
+
+`information`
+For use with the Adventures in Modeling book,  by Vanessa Colella, Eric Klopfer, and Mitchel Resnick published by Teachers College Press, 2001.  
+
+For more information, see  
+<http://education.mit.edu/starlogo/adventures>  
+
+Challenge 3: Big Bumper Turtles  
+In this project the turtles change direction every time they bounce off of an "obstacle". Depending on the color of the obstacle, the turtle will turn either to the right, to the left, or all the way around.  
+
+If you are having trouble visualizing the difference between turtles and patches, this project is a particularly good example to explore. In this project, the patch size (and therefore the turtle size too) is larger. All of the obstacles are only a single patch big, and the turtles only walk in the cardinal compass directions.   
+
+Click the "setup" button to set up the turtle in its initial  position. Then click the "go" button to start the simulation.  By using the "pen-down" and "pen-up" buttons you can control whether or not the turtle marks the path that it follows by drawing on the patches with its pen. To erase the turtle's path use "clear-path", which clears only the yellow path drawn by the turtle.  
+
+As you are exploring this project, try using the "clear-graphics" button and then drawing your own obstacles. You can do this by  using the Paint Tools as described in Challenge 2. Just remember that in the check-patches procedure, the turtles only look for red, green, and blue obstacles (colors 15, 55, and 105 respectively).
+
+
+`interface`
+SLCanvas
+top-left 12 235
+
+SLButton
+turtle-or-observer? observer
+top-left 141 120
+width-height 78 30
+name "clear-graphics"
+line-to-run "cg"
+forever? false
+button-number 5
+show-name? true
+whichip 4
+
+SLButton
+turtle-or-observer? turtle
+top-left 99 23
+width-height 72 30
+name "pen-down"
+line-to-run "pd"
+forever? false
+button-number 7
+show-name? true
+whichip 5
+
+SLButton
+turtle-or-observer? turtle
+top-left 99 120
+width-height 78 30
+name "pen-up"
+line-to-run "pu"
+forever? false
+button-number 2
+show-name? true
+whichip 6
+
+SLSlider
+top-left 15 123
+width-height 90 25
+name "slider1"
+variable "number"
+min-value 1
+max-value 4
+current-value 1
+slider-number 0
+show-name? false
+
+SLButton
+turtle-or-observer? observer
+top-left 141 23
+width-height 72 30
+name "button5"
+line-to-run "clear-path"
+forever? false
+button-number 6
+show-name? false
+whichip 7
+
+SLButton
+turtle-or-observer? turtle
+top-left 54 27
+width-height 61 30
+name "button1"
+line-to-run "go"
+forever? true
+button-number 4
+show-name? false
+whichip 8
+
+SLButton
+turtle-or-observer? observer
+top-left 15 19
+width-height 81 30
+name "button2"
+line-to-run "setup"
+forever? false
+button-number 1
+show-name? false
+whichip 9
+
+
+`turtle shapes`
+H4sIAAAAAAAAAO3cWY+dxRWG0YIMOAkJZJ4TQkJmJz0PmeCnkAukXHCBArmvfx6q
+bJ9SCYXgptu9W3uvJdmPyu7uU98xQkZq3vbaux/9598fvf/eGx/+658fvPfhu+88
+agfvPPn51ae///jJ789feGn8+ML48Wh9CJX1+dN/h0/2k7/2aR93V59/k6/9v77e
+bT//eb/ObZ/jAT7/60//tQAA1PPyk59v+veIh9Cb/h3tRb3ufd/jvl7/077u877+
+573Xi/4zjLrHXf053Nfrev3ar3/b1/2897jr172rezzv/T7r8x9g32jtiw0AAAAA
+AAAAyODp/0f0QL4nQQv0sz4m+n6e/36fN/v74fk9f6bnv+l97/r5o9+vas//It/L
++6jnr/XPw4t+jejni37+h/Z+RL/nnt/ze37P7/k9v+f3/NmfP/p5o9+P6Oe77+eP
+fp7o9yP6/tHPf9P3467fv9u+vudX/b99qb3yZDf08ck8WA5l16MvQDjLoQBQ1svR
+/6WiqqqqAW2WQwEAAAAAAAAgkUfh34ugqqqqqqqqqqqqqqqqqqqqt2+bg0DPlkNP
+58FyKLsefQHCWQ4FgLIsh6qqqlZssxwKAAAAAAAAAIlYDlVVVVVVVVVVVVVVVVVV
+Vc3QNndCny2Hns2D5VB2PfoChLMcCgBlWQ5VVVWt2GY5FAAAAAAAAAASsRyqqqqq
+qqqqqqqqqqqqqqqaoW0OATxbDj2fB8uh7Hr0BQhnORQAyrIcqqqqWrHNcigAAAAA
+AAAAJGI5VFVVVVVVVVVVVVVVVVVVNUOHLx2WQy/mwXIoux59AcJZDgWAsiyHqqqq
+VmyzHAoAAAAAAAAAiVgOVVVVVVVVVVVVVVVVVVVVzdDhy4fl0Mt5sBzKrkdfgHCW
+QwGgLMuhqqqqFdsshwIAAAAAAABAIpZDVVVVVVVVVVVVVVVVVVVVM3R45bAcejUP
+lkPZ9egLEM5yKACUZTlUVVW1YpvlUAAAAAAAAABIxHKoqqqqqqqqqqqqqqqqqqpq
+hrb5TQDPlkOv58FyKLsefQHCWQ4FgLIsh6qqqlZssxwKAAAAAAAAAIlYDlVVVVVV
+VVVVVVVVVVVVVc3Q4Svt0dPl0OOjeTIdyq5HX4BwpkMBoCzToaqqqhXbTIcCAAAA
+AAAAQCKmQ1VVVVVVVVVVVVVVVVVVVTN0+OqaDj2eJ9Oh7Hr0BQhnOhQAyjIdqqqq
+WrHNdCgAAAAAAAAAJGI6VFVVVVVVVVVVVVVVVVVVNUOHr63p0JN5Mh3KrkdfgHCm
+QwGgLNOhqqqqFdtMhwIAAAAAAABAIqZDVVVVVVVVVVVVVVVVVVVVM3R4dU2Hns6T
+6VB2PfoChDMdCgBlmQ5VVVWt2GY6FAAAAAAAAAASMR2qqqqqqqqqqqqqqqqqqqqa
+ocPX13To2TyZDmXXoy9AONOhAFCW6VBVVdWKbaZDAQAAAAAAACAR06Gqqqqqqqqq
+qqqqqqqqqqoZOnxjTYeez5PpUHY9+gKEMx0KAGWZDlVVVa3YZjoUAAAAAAAAABIx
+Haqqqqqqqqqqqqqqqqqqqpqhw2trOvRinkyHsuvRFyCc6VAAKMt0qKqqasU206EA
+AAAAAAAAkIjpUFVVVVVVVVVVVVVVVVVV1QxtcxfwMB16OU+mQ9n16AsQznQoAJRl
+OlRVVbVim+lQAAAAAAAAAEjEdKiqqqqqqqqqqqqqqqqqqmqGDt9c06FX82Q6lF2P
+vgDhTIcCQFmmQ1VVVSu2mQ4FAAAAAAAAgERMh6qqqqqqqqqqqqqqqqqqqmbo8K01
+HXo9T6ZD2fXoCxDOdCgAlGU6VFVVtWKb6VAAAAAAAAAASMR0qKqqqqqqqqqqqqqq
+qqqqaoYO3z5Mh54czZPpUHY9+gKEMx0KAGWZDlVVVa3YZjoUAAAAAAAAABIxHaqq
+qqqqqqqqqqqqqqqqqpqhw3fWdOjxPJkOZdejL0A406EAUJbpUFVV1YptpkMBAAAA
+AAAAIBHToaqqqqqqqqqqqqqqqqqqqhk6fHdNh57Mk+lQdj36AoQzHQoAZZkOVVVV
+rdhmOhQAAAAAAAAAEjEdqqqqqqqqqqqqqqqqqqqqmqHD99Z06Ok8mQ5l16MvQDjT
+oQBQlulQVVXVim2mQwEAAAAAAAAgEdOhqqqqqqqqqqqqqqqqqqqqGTp8f02Hns2T
+6VB2PfoChDMdCgBlmQ5VVVWt2GY6FAAAAAAAAAASMR2qqqqqqqqqqqqqqqqqqqqa
+ocMP1nTo+TyZDmXXoy9AONOhAFCW6VBVVdWKbaZDAQAAAAAAACAR06Gqqqqqqqqq
+qqqqqqqqqqoZOvxwTYdezJPpUHY9+gKEMx0KAGWZDlVVVa3YZjoUAAAAAAAAABIx
+Haqqqqqqqqqqqqqqqqqqqpqhw4/WdOjlPJkOZdejL0A406EAUJbpUFVV1YptpkMB
+AAAAAAAAIBHToaqqqqqqqqqqqqqqqqqqqhk6/HhNh17Nk+lQdj36AoQzHQoAZZkO
+VVVVrdhmOhQAAAAAAAAAEjEdqqqqqqqqqqqqqqqqqqqqmqHDT9Z06PU8mQ5l16Mv
+QDjToQBQlulQVVXVim2mQwEAAAAAAAAgEdOhqqqqqqqqqqqqqqqqqqqqGTr89DAd
+eno0T6ZD2fXoCxDOdCgAlGU6VFVVtWKb6VAAAAAAAAAASMR0qKqqqqqqqqqqqqqq
+qqqqaoYOP1vTocfzZDqUXY++AOFMhwJAWaZDVVVVK7aZDgUAAAAAAACAREyHqqqq
+qqqqqqqqqqqqqqqqZujw8zUdejJPpkPZ9egLEM50KACUZTpUVVW1YpvpUAAAAAAA
+AABIxHSoqqqqqqqqqqqqqqqqqqpqhra5BXCYDj2dJ9Oh7Hr0BQhnOhQAyjIdqqqq
+WrHNdCgAAAAAAAAAJGI6VFVVVVVVVVVVVVVVVVVVNUOHX6zp0LN5Mh3KrkdfgHCm
+QwGgLNOhqqqqFdtMhwIAAAAAAABAIqZDVVVVVVVVVVVVVVVVVVVVM3R4c02Hns+T
+6VB2PfoChDMdCgBlmQ5VVVWt2GY6FAAAAAAAAAASMR2qqqqqqqqqqqqqqqqqqqqa
+ocMv13ToxTyZDmXXoy9AONOhAFCW6VBVVdWKbaZDAQAAAAAAACAR06Gqqqqqqqqq
+qqqqqqqqqqoZOvxqTYdezpPpUHY9+gKEMx0KAGWZDlVVVa3YZjoUAAAAAAAAABIx
+Haqqqqqqqqqqqqqqqqqqqpqhw1trOvRqnkyHsuvRFyCc6VAAKMt0qKqqasU206EA
+AAAAAAAAkIjpUFVVVVVVVVVVVVVVVVVV1Qwdfr2mQ6/nyXQoux59AcKZDgWAskyH
+qqqqVmwzHQoAAAAAAAAAiZgOVVVVVVVVVVVVVVVVVVVVzdDhN4fp0LOjeTIdyq5H
+X4BwpkMBoCzToaqqqhXbTIcCAAAAAAAAQCKmQ1VVVVVVVVVVVVVVVVVVVTN0+O2a
+Dj2eJ9Oh7Hr0BQhnOhQAyjIdqqqqWrHNdCgAAAAAAAAAJGI6VFVVVVVVVVVVVVVV
+VVVVNUOH363p0JN5Mh3KrkdfgHCmQwGgLNOhqqqqFdtMhwIAAAAAAABAIqZDVVVV
+VVVVVVVVVVVVVVVVM3T4/ZoOPZ0n06HsevQFCGc6FADKMh2qqqpasc10KAAAAAAA
+AAAkYjpUVVVVVVVVVVVVVVVVVVU1Q4c/rOnQs3kyHcquR1+AcKZDAaAs06GqqqoV
+20yHAgAAAAAAAEAipkNVVVVVVVVVVVVVVVVVVVUzdPjjmg49nyfToex69AUIZzoU
+AMoyHaqqqlqxzXQoAAAAAAAAACRiOlRVVVVVVVVVVVVVVVVVVTVDh8drOvRinkyH
+suvRFyCc6VAAKMt0qKqqasU206EAAAAAAAAAkIjpUFVVVVVVVVVVVVVVVVVV1Qwd
+/rSmQy/nyXQoux59AcKZDgWAskyHqqqqVmwzHQoAAAAAAAAAiZgOVVVVVVVVVVVV
+VVVVVVVVzdDhz2s69GqeTIey69EXIJzpUAAoy3SoqqpqxTbToQAAAAAAAACQiOlQ
+VVVVVVVVVVVVVVVVVVXVDB2O1nTo9TyZDmXXoy9AONOhAFCW6VBVVdWKbaZDAQAA
+AAAAACAR06GqqqqqqqqqqqqqqqqqqqoZOhwfpkPPj+bJdCi7Hn0BwpkOBYCyTIeq
+qqpWbDMdCgAAAAAAAACJmA5VVVVVVVVVVVVVVVVVVVXN0OFkTYcez5PpUHY9+gKE
+Mx0KAGWZDlVVVa3YZjoUAAAAAAAAABIxHaqqqqqqqqqqqqqqqqqqqpqhw+maDj2Z
+J9Oh7Hr0BQhnOhQAyjIdqqqqWrHNdCgAAAAAAAAAJGI6VFVVVVVVVVVVVVVVVVVV
+NUOHszUdejpPpkPZ9egLEM50KACUZTpUVVW1YpvpUAAAAAAAAABIxHSoqqqqqqqq
+qqqqqqqqqqpqhg7nazr0bJ5Mh7Lr0RcgnOlQACjLdKiqqmrFNtOhAAAAAAAAAJCI
+6VBVVVVVVVVVVVVVVVVVVdUMHS7WdOj5PJkOZdejL0A406EAUJbpUFVV1YptpkMB
+AAAAAAAAIBHToaqqqqqqqqqqqqqqqqqqqhk6XK7p0It5Mh3KrkdfgHCmQwGgLNOh
+qqqqFdtMhwIAAAAAAABAIqZDVVVVVVVVVVVVVVVVVVVVM3S4WtOhl/NkOpRdj74A
+4UyHAkBZpkNVVVUrtpkOBQAAAAAAAIBETIeqqqqqqqqqqqqqqqqqqqpm6HC9pkOv
+5sl0KLsefQHCmQ4FgLJMh6qqqlZsMx0KAAAAAAAAAImYDlVVVVVVVVVVVVVVVVVV
+Vc3Q4S9rOvR6nkyHsuvRFyCc6VAAKMt0qKqqasU206EAAAAAAAAAkIjpUFVVVVVV
+VVVVVVVVVVVV1Qwd/nqYDr04mifToex69AUIZzoUAMoyHaqqqlqxzXQoAAAAAAAA
+ACRiOlRVVVVVVVVVVVVVVVVVVTVDh7+t6dDjeTIdyq5HX4BwpkMBoCzToaqqqhXb
+TIcCAAAAAAAAQCKmQ1VVVVVVVVVVVVVVVVVVVTN0+PuaDj2ZJ9Oh7Hr0BQhnOhQA
+yjIdqqqqWrHNdCgAAAAAAAAAJGI6VFVVVVVVVVVVVVVVVVVVNUOHf6zp0NN5Mh3K
+rkdfgHCmQwGgLNOhqqqqFdtMhwIAAAAAAABAIqZDVVVVVVVVVVVVVVVVVVVVM3R4
+e02Hns2T6VB2PfoChDMdCgBlmQ5VVVWt2GY6FAAAAAAAAAASMR2qqqqqqqqqqqqq
+qqqqqqqaoR8DO5wb3dkOFQAAFQ7Z
+
+`template`
+null
+
+`settings`
+patch-size 32
+num-shapes 256
+screen-half-width 6
+screen-half-height 6
+interface-window-xcor 342
+interface-window-ycor 92
+interface-window-size 697 442
+output-window-xcor 0
+output-window-ycor 0
+output-window-width 300
+output-window-height 219
+info-window-xcor 128
+info-window-ycor 210
+info-window-width 500
+info-window-height 419
+control-center-xcor 0
+control-center-ycor 85
+control-center-width 285
+control-center-height 415
+turtle-command-center-height 150
+observer-command-center-height 150
+
+`string table`
+H4sIAAAAAAAAAGNgYGAAABzfRCEEAAAAAAAABA==
+
+`symbol table`
+H4sIAAAAAAAAAGNgYGAAABzfRCEEAAAAAAAABA==
+
+`double table`
+H4sIAAAAAAAAAGNgYGB1cGtgAAH7kzNBYJaDHpjL4BDlAKG9IfIAC2wAbCwAAAAA
+AAAs
+
+`list table`
+H4sIAAAAAAAAAGNgYGBlYGBgYQQSTEDMCGFHQcX4gdgciDNB8iAlQJqRCayMgYcR
+oh7EB4lvQeIzg8xA4sPMZAAAxyG72nAAAAAAAABw
+
+`bytecodes`
+H4sIAAAAAAAAAG1S206DQBCdXW4WbMEItmoam+prE599Mn5JkW6K0QApNMZ/1H9y
+FobdLXQTlrmcs3MmMxBs338akZU7UW9f4VeePwDwwalFc6zQvAd11haAJw2mY2Sy
+J7wWNgCX3iXF8UoisjmwyCXbQhuByQK/RLoAj5gLwZFZP/sS6WFTpU2O3lLXat+e
+A4uZrhuZPuv86MGIcR2LlvSGrXRAbHf1Q046bNLBgO9LDEx1fY84g94hMfoNfeJz
+mGa5yD5lH2jUmH4eU3vZ8exE7khmcqtlMjPnGFz3DNc7w72g/8Tg+me4AXLvNLdt
+y4L527FpyuJltermtD+kVf6R1d2A1qQKH7lSwEoUm135XXQQOXKChCeQdt8k4EYB
+rgfFaCmc8SISIVCEdnoTaqkncA1v23IVcaaI/eb3HBgW+Qe7GCi9NgMAAAAAAzY=
+
+`observer world`
+H4sIAAAAAAAAAGMQSMhPKk4tKkstUiguSSxJTXBggAMrBq6CnPyS8syU9NQSIJ+F
+gS0nNS+9JAPI5mBgB8kVpOaBlXKDNSPJQgAjCAMA+OWZc2QAAAAAAABk
+
+`patch world`
+H4sIAAAAAAAAAIXYMWsbMRjGcbWEVLQUNGjQoEEIIYSGfoXe3r1DpwTXJIWQmPag
+7daP3I9QJ6lFXr/o/gfH3fHTI8l+z7LP5v3V4Xrd3aYf6/W6v1rM2D6bi1+7h+9P
+528Pdw/rz29fb/br8Sqa14fd8ejM5d3+/ma9PZ4n8+axzWF/f7wI5uL3c9Sad08d
+v2hnzOX/3Xz8+zzU6fhie/W4n2YzdSt9+fRHuoO8Bw/gETzB/DLkC3gFb+B928e8
+Fcv6TN2CO3AvffmySA+Qj+AJPIMX8Cpdzb9Bvm/7qI+d5I10Nb6VrvIO3IMH8Aie
+wDN4Aa/gDbxv+6iPm+QNuAV30tX64qWrfJCu7o8oXeUTeAYv0tX8q3SVb+B920d9
+Tu/T+fhGuurfgjtwDx7AI3gCz+AFvII38L7toz5hkjfgFtyBe/AAHsGT9OXDmWfp
+Kl/Aq3R1fzfpKt+3fdQnTvIG3EpXr99JV3kPHsAjeALP4AW8gjfwLv18/R71SZO8
+AbfgDtyDB/AInsCzdPX9VqSrfAVv4H3bR33yJG/ALbgD9+ABPEpX60uCfAYv4BW8
+gfdtH/Upk7wBt9LV/eekq7wHD+ARPIFn8AJewRt43/ZRnzrJG3AL7sC99Onz6Swf
+wRN4Bi/gFbxJV5/vLv08P+rTJv0bcCt99v/ONO/BA3iUrn6fJMhn8AJewRt43/ZR
+n1O72fNPn/RvwR24Bw/gETyBZ/ACXsEbeN/2f7b1/xydFQAAAAAVnQ==
+
+`turtle world`
+H4sIAAAAAAAAAGPgSygpLSrJSVUoLkksSU1wYICD+QxsOal56SUZQLYFA2tSUWpq
+CpCpwsBVkJNfUp6Zkp5aAuSbMLCD+AWpeUCOHgNrcn5OfhGQKcPAUpkMZvEwcIMN
+RzKNA6g8Jb88rwDIM2JgLc5ILEgFMrUYWCogelgYmMsz8sHuYCvOgKo0ZmDPSE1M
+ycxLB3JEYO78DwRAipEBC3AIa4DQbg2YkoyMID2MAJrxJ7ADAQAAAAABAw==
+

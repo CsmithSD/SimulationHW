@@ -1,0 +1,30 @@
+Announcing the release of StarLogo 2.2
+
+Hello StarLogo Users.
+
+We are pleased to announce the much anticipated release of StarLogo 2.2.  This is mostly a maintenance release in which we have fixed some bugs.  This is (really) likely to be the final release of StarLogo as you know it, as we expect a preview of an entirely new version in the very near future.
+
+Below you will find detailed descriptions of the new features and bug fixes since our last release.
+
+You can download StarLogo from the new StarLogo web site at http://education.mit.edu/starlogo.  
+
+Enjoy!	
+The StarLogo Team	
+-----------------------------------------------------
+
+
+Bugs Fixed (2.2)
+-----------
+1. Rewrote tail recursion detection to actually work.
+2. Fixed numerous hanging bugs that plagued the MacOSX version of StarLogo.
+3. Fixed display of error dialog boxes when running StarLogo as an applet.
+4. StarLogo is properly ported to running on Intel-based Macintosh computers when they come out.
+5. Eliminated ugly redraws of widgets on the Macintosh version of StarLogo. Text widgets look much better now.
+6. Fixed a bug in scatter plots where the generated StarLogo code was wrong.
+7. Found and fixed a bug that sometimes let the turtles escape their StarLogo world and scribble on the widgets nearby.
+8. Resize the patch canvas back to default values when you do New Project.
+
+Bugs Fixed (2.21)
+1. Fixed deadlock problem when closing turtle monitors
+2. Fixed problems with legends running in applets
+3. Updated about box and splash screen to reflect 2.21

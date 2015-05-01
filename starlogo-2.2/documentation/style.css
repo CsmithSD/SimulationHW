@@ -1,0 +1,31 @@
+h1   { font-family: Arial, Helvetica;
+       font-size: 24pt;
+       color: #006600 }
+h2   { font-family: Arial, Helvetica;
+       font-size: 18pt;
+       color: #006600 }
+h3   { font-family: Arial, Helvetica;
+       font-size: 14pt;
+       color: #006600 }
+h4   { font-family: Arial, Helvetica;
+       color: #000000;
+       font-size: 14pt }
+em   { font-family: Arial, Helvetica;
+       font-size: 14pt;
+       font-style: normal;
+       font-weight: bold;
+       color: #006600 }
+ul   { font-family: Arial, Helvetica; 
+       font-size: 11pt }
+li   { font-family: Arial, Helvetica; 
+       font-size: 11pt }
+p    { font-family: Arial, Helvetica;
+       color: #000000;
+       font-size: 11pt }
+td   { font-family: Arial, Helvetica }
+a    { font-family: Arial, Helvetica; 
+       font-size: 11pt;
+       color: #006600 }
+tt   { font-family: Courier New, Courier }
+code { font-family: Courier New, Courier }
+pre  { font-family: Courier New, Courier }

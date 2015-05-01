@@ -1,0 +1,95 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+<!-- begin sample documentation page -->
+
+
+<!-- if (!($com_id)) { $com_id = 1; } -->
+
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+
+<span class="commandname">median-of-breed-with</span>
+
+<span class="argument">
+[1st list of commands] [2nd list of commands] </span>
+
+
+<!-- show arguments -->
+
+<p>
+<div class="heading">Parameters:</div>
+<table cellpadding="2" cellspacing="2" border="0"> 
+
+
+<tr>
+<td class="argname" valign="top"><nobr>[1st list of commands]</nobr></td>
+<td class="argtype" valign="top">List of commands</td>
+<td class="argdesc" valign="top">list of commands that evaluates to true or false</td> 
+</tr>
+
+
+<tr>
+<td class="argname" valign="top"><nobr>[2nd list of commands]</nobr></td>
+<td class="argtype" valign="top">List of commands</td>
+<td class="argdesc" valign="top">list of commands that evaluate to a number</td> 
+</tr>
+
+
+</table>
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the median of the <span class="argument">[2nd list of commands]</span> when evaluated across all the turtles of the breed specified that satisfy the conditions specified by the <span class="argument">[1st list of commands]</span>. </div>
+
+<!-- show examples if there are examples -->
+
+<p>
+<div class="heading">Examples:</div>
+<div class="examples">
+<nobr><code>median-of-frogs-with [color = red] [speed]</code></nobr> returns the median speed of all the red turtles of breed frogs.</div>
+<p>
+<div class="examples">
+<nobr><code>median-of-cars-with [size > 4] [speed]</code></nobr> returns the median speed of all the turtles of size greater than 4 with breed cars.</div>
+<p>
+ 
+
+<!-- show notes if there are notes -->
+
+<p>
+<div class="heading">Notes:</div>
+<div class="notes">
+If <span class="argument">[2nd list of commands]</span> contains no numbers, an error occurs. If some of the <span class="argument">[2nd list of commands]</span>, when evaluated, are not numbers, those values are ignored.</div>
+<p>
+<div class="notes">
+When a turtle calls the command, it is not included as part of the calculation.</div>
+<p>
+
+<!-- show related commands if there are related commands -->
+
+<p>
+<div class="heading">Related Commands:</div>
+<a href="command_doc_include.php@com_id=21.html" class="related">average-of-breed-with</a>
+<a href="command_doc_include.php@com_id=203.html" class="related">max-of-breed-with</a>
+<a href="command_doc_include.php@com_id=223.html" class="related">median-of-turtles-with</a>
+<a href="command_doc_include.php@com_id=261.html" class="related">min-of-breed-with</a>
+<a href="command_doc_include.php@com_id=278.html" class="related">mode-of-breed-with</a>
+<a href="command_doc_include.php@com_id=201.html" class="related">sdev-of-breed-with</a>
+<a href="command_doc_include.php@com_id=401.html" class="related">sum-of-breed-with</a>
+<a href="command_doc_include.php@com_id=93.html" class="related">variance-of-breed-with</a>
+
+</body></html>

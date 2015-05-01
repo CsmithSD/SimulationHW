@@ -1,0 +1,980 @@
+Java StarLogo
+2.1
+English
+`turtle`
+turtles-own [ 
+   sugar-holdings	; agent's current store of sugar
+   sugar-metabolism	; rate at which agents use up their store of sugar
+   vision-level 	; how far an agent can see
+   ;; Variables used in finding best visible sugar neighbor
+   max-so-far ; best sugar value found so far
+   hd-of-max  ; heading of that best sugar value
+   r-of-max   ; radius (distance) to that best sugar value
+   r          ; dummy variable used to check at different radii
+]
+
+;; Agent Rules
+to agent-move-M
+  ;;move to-best-sugar-level...
+  move-to-max
+  ;; metabolize sugar
+  setsugar-holdings sugar-holdings - sugar-metabolism
+  if sugar-holdings <= 0 [die]
+  ;; (if still alive) eat all the sugar at new location
+  setsugar-holdings sugar-holdings + sugar-level-at 0 0
+  setsugar-level 0
+end
+
+to  reproduce
+   ;; reproduce if have enough sugar-holdings
+   if sugar-holdings > hatch-threshold 
+   [
+      setsugar-holdings (sugar-holdings / 2) 
+      hatch [relocate move-to-max]
+   ]
+end
+
+to relocate
+  seth random 360
+  leap 1 
+  if count-turtles-here > 1 [relocate]
+end
+
+to move-to-max
+   ;; initialize variables used in finding and recording max
+   setmax-so-far sugar-level
+   sethd-of-max heading
+   setr-of-max 0
+   ;; start facing random direction - to prevent biased handling of ties
+   seth (90 * random 4)
+   setr vision-level 
+   repeat vision-level [ ;; check at each distance
+     repeat 4 [          ;; and in each of the four directions
+	if  (;; unoccupied?
+             ( (count-turtles-towards 0 r) < 1 )
+		and                                
+             ;; and better than best so far
+	     ((sugar-level-towards 0 r ) > max-so-far))  [ 
+           setmax-so-far sugar-level-towards 0 r
+	   sethd-of-max heading 
+	   setr-of-max r
+	]
+        rt 90
+      ]
+      setr r - 1
+   ]
+   seth hd-of-max 
+     ;check if better off than you are now?
+   if (max-so-far > (sugar-level-at 0 0)) 
+      ;; better off? then move to the new spot  
+      [leap r-of-max]
+end
+
+;; Visualizations
+to sugar-color
+   scale-color red (sugar-holdings) 0 (hatch-threshold + 5)
+end
+
+to metab-color
+   scale-color purple (sugar-metabolism) 1 4
+end
+
+to vis-color
+    scale-color blue vision-level 1 4
+end
+
+to color-turtles
+  ifelse (colorscheme = 0) [sugar-color]
+    [ifelse (colorscheme = 1) [metab-color]  [vis-color]]     
+end
+
+
+`observer`
+patches-own [
+   sugar-level     ; amount of sugar currently at the patch
+   sugar-capacity  ; upper limit on amount of sugar that can be at the patch
+]
+
+globals [colorscheme averagesugar averagevision averagemetabolism nowshown]
+
+to setup
+   ca
+   setcolorscheme 0
+   setaveragesugar 0
+   setaveragevision 0
+   setaveragemetabolism 0
+   ;;Patches
+   makecircles
+   ;; Agents
+   crt n-agents
+   ask-turtles
+   [
+     setvision-level (1 + random 4)
+     setsugar-metabolism (1 + random 4)
+     setsugar-holdings 10
+     setxy random screen-width random screen-height
+     sugar-color
+   ]
+   ave-sugar ave-metabolism ave-vision
+   setnowshown true
+   clearplots
+end
+
+to go
+   ask-turtles [agent-move-M color-turtles]
+   ave-sugar ave-metabolism ave-vision
+   ifelse alphinity = 0  
+   [sugar-growback-Galpha]
+   [sugar-growback-Ginfinity]
+   if birth? = 1 [ask-turtles [reproduce]]
+end
+
+to growback
+   ave-sugar ave-metabolism ave-vision
+   ifelse alphinity = 0  
+   [sugar-growback-Galpha]
+   [sugar-growback-Ginfinity]
+end
+
+to makecircles  ;create the initial distribution
+  ca
+  crt 249
+  ask-patches [setsugar-capacity 0]
+  ask-turtles [ht   ;setup two groups of temporary turtles to draw the sugar   
+               ifelse (int (who / 2)) = (who / 2)
+                 [setxy screen-half-width / 2 screen-half-height / 2]
+                 [setxy (0 - screen-half-width) / 2 (0 - screen-half-height / 2)]
+               setsugar-holdings capacity-constant
+               repeat 12 ;create the two circles 
+               [setsugar-capacity (round sugar-holdings) 
+                setsugar-holdings (sugar-holdings - (capacity-constant / 12))  
+                fd 1
+               ]
+               ifelse ycor > 0   ;have the turtles create the connecting section
+                 [setsugar-holdings ( 1 - abs (225 - heading) / 45)
+                  if xcor > (screen-half-width) / 2 or ycor > (screen-half-height / 2) [die]
+                  hatch [setx xcor - .5 seth 225 repeat 16 [setsugar-capacity round (sugar-holdings) fd 1] die]
+                  seth 225 repeat 16 [setsugar-capacity round (sugar-holdings) fd 1] die
+                 ]
+                 [setsugar-holdings ( 1 - abs (45 - heading) / 45)
+                  if xcor < (0 - screen-half-width) / 2 or ycor < (0 - screen-half-height / 2) [die]
+                  hatch [setx xcor - .5 seth 45 repeat 16 [setsugar-capacity round (sugar-holdings) fd 1] die]
+                  seth 45 repeat 16 [setsugar-capacity round (sugar-holdings) fd 1] die
+                 ]
+               ]
+  ask-patches [setsugar-level sugar-capacity]
+  color-em
+end
+
+to sugar-growback-Galpha
+   ask-patches
+   [
+   ;; grow sugar by alpha up to level permitted by patch capacity
+   setsugar-level sugar-level + (milli-alpha / 1000)
+   if sugar-level > sugar-capacity [ setsugar-level sugar-capacity ]
+   ]
+   ;; color the patches appropriately 
+   color-em
+end
+
+to sugar-growback-Ginfinity
+  ask-patches
+   [
+   ;; grow sugar immediately to level permitted by patch capacity
+   setsugar-level sugar-capacity
+   ]
+   ;; color the patches appropriately 
+   color-em
+end
+
+to color-em
+   ask-patches [scale-pc yellow sugar-level (black-is) (white-is)]
+end
+
+to ave-sugar
+  setaveragesugar 0
+  ask-turtles[setaveragesugar (averagesugar + sugar-holdings)] 
+  setaveragesugar (averagesugar / count-turtles)  
+end
+
+to ave-vision
+  setaveragevision 0
+  ask-turtles[setaveragevision (averagevision + vision-level)] 
+  setaveragevision (averagevision / count-turtles)  
+end
+
+to ave-metabolism
+  setaveragemetabolism 0
+  ask-turtles[setaveragemetabolism (averagemetabolism + sugar-metabolism)] 
+  setaveragemetabolism (averagemetabolism / count-turtles)  
+end
+
+
+`information`
+WHAT IS IT? 
+----------- 
+This project explores an artificial society known as Sugarscape.  This society was conceived of by Joshua Epstein and Robert Axtell (http://www.brook.edu/SUGARSCAPE/) In this society, agents (red) wander around on a landscape consisting of two connected mounds of sugar (yellow).  As the agents move around on the landscape they metabolize some of their existing sugar.  The agents are constantly looking for new sugar, and when they find it they add it to their resources. If the agents ever eat all of their sugar, then they will die.  If they get enough sugar, then they can reproduce.  Each agent has a random value for its metabolism, initial quantity of sugar,  and vision level (that controls how far around it can look for  more sugar).  The sugar itself can grow back at different rates.  For a more thorough description of Sugarscape, check out the  Sugarscape web site (http://www.brook.edu/SUGARSCAPE/).  
+
+HOW TO USE IT 
+------------- 
+Click the SETUP button to setup the agents (red).  Click the GO button to start the simulation.  The N-AGENTS slider controls the initial number of agents. The HATCH-THRESHOLD slider sets the sugar level at which  the agents reproduce.  The CAPCITY-CONSTANT slider controls how much sugar there is initially.  The MILLI-ALPHA slider controls how fast the sugar grows back if it is not growing back instantly (controlled by the INSTANT-GROWBACK? slider).  The BLACK-IS and WHITE-IS sliders control the color coding of the sugar.  The BIRTH slider controls whether (1) or not (0) the  agents can give birth.   The SHOW SUGAR button colors the turtles based on how much sugar  they have. The SHOW VISION button colors the turtles based on how far their vision is. The SHOW METABOLISM button colors the turtles based on the value of their metabolism.  
+
+THINGS TO NOTICE 
+---------------- 
+Watch the COUNT-TURTLES monitor to see how the agent population changes over time. You can also watch the  AVERAGESUGAR, AVERAGEVISION and AVERAGEMETABOLISM monitors to see how the average values of these turtle traits change over time. The plot window graphs the total number of agents, as well as these average values, over time. The value of these traits can be influenced by the environmental conditions. Sometimes coniditions will strongly select for longer range  vision, or lower metabolism.  
+
+EXPLORATIONS 
+------------- 
+Under the current setting, the agents can survive and reproduce. Is the current Sugarscape capable of supporting an infinite number of agents, or is there a limit?  How is that limit determined? How does the growback rate affect turtle vision and metabolism? How are these two quantities related in the population of turtles and within individual turtles? There are many extensions of this model that are described in the Artificial Societies book.  Can you implement some of them?  
+
+STARLOGO FEATURES -
+------------------ 
+The turtles in Sugarscape are all called from an "ask-turtles" inside of an Observer procedure.  This keeps the turtles in sync with each other.  This also keeps them in sync with the patch  procedures that are growing back the sugar. The turtles also make use of the "leap" command. This command is like the jump command, except that turtles will not execute it unless there are no other turtles on the patch they are trying to get to. By calling leap within the recursive turtle procedure "relocate", it is ensured that no two turtles stay on the same patch.
+
+
+`interface`
+SLCanvas
+top-left 10 233
+
+SLSlider
+top-left 16 101
+width-height 121 25
+name "capacity-constant"
+variable "capacity-constant"
+min-value 1
+max-value 10
+current-value 4
+slider-number 1
+show-name? false
+
+SLSlider
+top-left 55 5
+width-height 107 25
+name "slider2"
+variable "hatch-threshold"
+min-value 0
+max-value 99
+current-value 30
+slider-number 2
+show-name? false
+
+SLSlider
+top-left 53 127
+width-height 94 25
+name "slider3"
+variable "milli-alpha"
+min-value 0
+max-value 2000
+current-value 182
+slider-number 3
+show-name? false
+
+SLSlider
+top-left 16 12
+width-height 82 25
+name "slider0"
+variable "n-agents"
+min-value 1
+max-value 400
+current-value 200
+slider-number 0
+show-name? false
+
+SLSlider
+top-left 91 20
+width-height 79 25
+name "slider4"
+variable "black-is"
+min-value 1
+max-value 10
+current-value 1
+slider-number 4
+show-name? false
+
+SLSlider
+top-left 90 129
+width-height 79 25
+name "slider5"
+variable "white-is"
+min-value 1
+max-value 10
+current-value 4
+slider-number 5
+show-name? false
+
+SLSlider
+top-left 123 56
+width-height 118 25
+name "instant growback?"
+variable "alphinity"
+min-value 0
+max-value 1
+current-value 0
+slider-number 6
+show-name? true
+
+SLSlider
+top-left 155 82
+width-height 62 25
+name "slider8"
+variable "birth?"
+min-value 0
+max-value 1
+current-value 1
+slider-number 7
+show-name? false
+
+SLMonitor
+top-left 224 16
+width-height 82 36
+name "monitor1"
+list-to-run "count-turtles"
+digits 0
+delay 0.5
+monitor-number 2
+show-name? false
+whichip 24
+onewhichip 25
+
+SLMonitor
+top-left 221 130
+width-height 77 36
+name "monitor2"
+list-to-run "averagesugar"
+digits 1
+delay 0.5
+monitor-number 3
+show-name? false
+whichip 26
+onewhichip 27
+
+SLMonitor
+top-left 267 19
+width-height 80 36
+name "monitor3"
+list-to-run "averagevision"
+digits 2
+delay 0.5
+monitor-number 4
+show-name? false
+whichip 28
+onewhichip 29
+
+SLMonitor
+top-left 264 130
+width-height 78 36
+name "monitor4"
+list-to-run "averagemetabolism"
+digits 2
+delay 0.5
+monitor-number 5
+show-name? false
+whichip 30
+onewhichip 31
+
+SLButton
+turtle-or-observer? turtle
+top-left 309 21
+width-height 77 30
+name "Show Sugar"
+line-to-run "setcolorscheme 0 sugar-color"
+forever? false
+button-number 8
+show-name? true
+whichip 18
+
+SLButton
+turtle-or-observer? turtle
+top-left 309 117
+width-height 101 30
+name "Show Vision"
+line-to-run "setcolorscheme 2 vis-color"
+forever? false
+button-number 7
+show-name? true
+whichip 19
+
+SLButton
+turtle-or-observer? turtle
+top-left 344 122
+width-height 107 30
+name "Show Metabolism"
+line-to-run "setcolorscheme 1 metab-color"
+forever? false
+button-number 6
+show-name? true
+whichip 20
+
+SLButton
+turtle-or-observer? turtle
+top-left 345 23
+width-height 81 30
+name "toggle-turtles"
+line-to-run "ifelse shown? [ht] [st]"
+forever? false
+button-number 9
+show-name? true
+whichip 21
+
+SLLineWidget
+top-left 387 17
+width-height 201 100
+id 6
+order 6
+type 1
+title "Agents, Sugar, Vision, Metabolism"
+delay-string "1.0"
+xlabel ""
+ylabel ""
+grid false
+connected true
+autoscaletrue
+location 0 0
+whichip 32
+onewhichip 33
+wizard-on true
+lineset-id 1
+lineset-name "Agents"
+lineset-order 6
+lineset-type 1
+lineset-color -16777216
+lineset-displayed? true
+lineset-instruction "( count-turtles) "
+extrainfo-extra? true
+extrainfo-instruction "number of"
+extrainfo-breed "turtles"
+extrainfo-var "Xcor"
+extrainfo-with false
+extrainfo-xy? false
+extrainfo-xval? false
+lineset-end 1
+lineset-id 2
+lineset-name "Sugar"
+lineset-order 6
+lineset-type 1
+lineset-color -65536
+lineset-displayed? true
+lineset-instruction " (average-of-turtles [ sugar-holdings ] ) "
+extrainfo-extra? true
+extrainfo-instruction "average of"
+extrainfo-breed "turtles"
+extrainfo-var "sugar-holdings"
+extrainfo-with false
+extrainfo-xy? false
+extrainfo-xval? false
+lineset-end 2
+lineset-id 3
+lineset-name "Vision"
+lineset-order 6
+lineset-type 1
+lineset-color -16776961
+lineset-displayed? true
+lineset-instruction " (average-of-turtles [ vision-level ] ) "
+extrainfo-extra? true
+extrainfo-instruction "average of"
+extrainfo-breed "turtles"
+extrainfo-var "vision-level"
+extrainfo-with false
+extrainfo-xy? false
+extrainfo-xval? false
+lineset-end 3
+lineset-id 4
+lineset-name "Metabolism"
+lineset-order 6
+lineset-type 1
+lineset-color -8453889
+lineset-displayed? true
+lineset-instruction " (average-of-turtles [ sugar-metabolism ] ) "
+extrainfo-extra? true
+extrainfo-instruction "average of"
+extrainfo-breed "turtles"
+extrainfo-var "sugar-metabolism"
+extrainfo-with false
+extrainfo-xy? false
+extrainfo-xval? false
+lineset-end 4
+lineset-id 5
+lineset-name "<name>"
+lineset-order 6
+lineset-type 1
+lineset-color -11418368
+lineset-displayed? false
+lineset-instruction "( count-turtles) "
+extrainfo-extra? true
+extrainfo-instruction "number of"
+extrainfo-breed "turtles"
+extrainfo-var "Xcor"
+extrainfo-with false
+extrainfo-xy? false
+extrainfo-xval? false
+lineset-end 5
+lineset-id 6
+lineset-name "<name>"
+lineset-order 6
+lineset-type 1
+lineset-color -16711936
+lineset-displayed? false
+lineset-instruction "( count-turtles) "
+extrainfo-extra? true
+extrainfo-instruction "number of"
+extrainfo-breed "turtles"
+extrainfo-var "Xcor"
+extrainfo-with false
+extrainfo-xy? false
+extrainfo-xval? false
+lineset-end 6
+lineset-id 7
+lineset-name "<name>"
+lineset-order 6
+lineset-type 1
+lineset-color -16711738
+lineset-displayed? false
+lineset-instruction "( count-turtles) "
+extrainfo-extra? true
+extrainfo-instruction "number of"
+extrainfo-breed "turtles"
+extrainfo-var "Xcor"
+extrainfo-with false
+extrainfo-xy? false
+extrainfo-xval? false
+lineset-end 7
+lineset-id 8
+lineset-name "<name>"
+lineset-order 6
+lineset-type 1
+lineset-color -16711681
+lineset-displayed? false
+lineset-instruction "( count-turtles) "
+extrainfo-extra? true
+extrainfo-instruction "number of"
+extrainfo-breed "turtles"
+extrainfo-var "Xcor"
+extrainfo-with false
+extrainfo-xy? false
+extrainfo-xval? false
+lineset-end 8
+lineset-id 9
+lineset-name "<name>"
+lineset-order 6
+lineset-type 1
+lineset-color -16744449
+lineset-displayed? false
+lineset-instruction "( count-turtles) "
+extrainfo-extra? true
+extrainfo-instruction "number of"
+extrainfo-breed "turtles"
+extrainfo-var "Xcor"
+extrainfo-with false
+extrainfo-xy? false
+extrainfo-xval? false
+lineset-end 9
+lineset-id 10
+lineset-name "<name>"
+lineset-order 6
+lineset-type 1
+lineset-color -7434610
+lineset-displayed? false
+lineset-instruction "( count-turtles) "
+extrainfo-extra? true
+extrainfo-instruction "number of"
+extrainfo-breed "turtles"
+extrainfo-var "Xcor"
+extrainfo-with false
+extrainfo-xy? false
+extrainfo-xval? false
+lineset-end 10
+
+SLButton
+turtle-or-observer? observer
+top-left 187 126
+width-height 42 30
+name "button2"
+line-to-run "go"
+forever? true
+button-number 3
+show-name? false
+whichip 22
+
+SLButton
+turtle-or-observer? observer
+top-left 188 58
+width-height 40 30
+name "button1"
+line-to-run "setup"
+forever? false
+button-number 2
+show-name? false
+whichip 23
+
+
+`turtle shapes`
+H4sIAAAAAAAAAO3cSY8dRhWG4UoY0kAgzPMQ5tHQfe/tiSn5KWERiQULRMK+/jlU
+2b6lUkQUO3Z8zDnPI9mvyrH7HstS5IX1tTfeef/f/3r/H++++d7f//bPd9975+2L
+dvb2w+9ff/TfHzz87/MHXhnfPjW+XayfQmV9fvef4YP94I992M97Xr/+ab72//p6
+z/rrn/TrPOvv4yX8/X/50f8WAIB6Xn34/dP+PeJl6NP+He2T+twXfceL+vwP+7pP
++vkf965P+s8w6o7n9efwoj7X59f+/Gf93I97x/P+3Od1x5Pe91G//iXsm619ugEA
+AAAAAAAAGVx89E8BAAAAAAAAAP4fvNJee7gb+uAwH5ZD2fXoAwhnORQAyno1erVM
+VVVVA9oshwIAAAAAAABAIhfh/xZBVVVVVVVVVVVVVVVVVVVVn71tDgI9Xg49zofl
+UHY9+gDCWQ4FgLIsh6qqqlZssxwKAAAAAAAAAIlYDlVVVVVVVVVVVVVVVVVVVc3Q
+NndCHy+HnubDcii7Hn0A4SyHAkBZlkNVVVUrtlkOBQAAAAAAAIBELIeqqqqqqqqq
+qqqqqqqqqqpmaJtDAI+XQ6/nw3Ioux59AOEshwJAWZZDVVVVK7ZZDgUAAAAAAACA
+RCyHqqqqqqqqqqqqqqqqqqqqZujwmfNy6M18WA5l16MPIJzlUAAoy3KoqqpqxTbL
+oQAAAAAAAACQiOVQVVVVVVVVVVVVVVVVVVXVDB0+e14OvZ0Py6HsevQBhLMcCgBl
+WQ5VVVWt2GY5FAAAAAAAAAASsRyqqqqqqqqqqqqqqqqqqqqaocNr5+XQu/mwHMqu
+Rx9AOMuhAFCW5VBVVdWKbZZDAQAAAAAAACARy6GqqqqqqqqqqqqqqqqqqqoZ2uY/
+Ani8HHo/H5ZD2fXoAwhnORQAyrIcqqqqWrHNcigAAAAAAAAAJGI5VFVVVVVVVVVV
+VVVVVVVVNUOHz7WLR8uhV5fzZTqUXY8+gHCmQwGgLNOhqqqqFdtMhwIAAAAAAABA
+IqZDVVVVVVVVVVVVVVVVVVVVM3T4/JoOvZov06HsevQBhDMdCgBlmQ5VVVWt2GY6
+FAAAAAAAAAASMR2qqqqqqqqqqqqqqqqqqqqaocMX1nToYb5Mh7Lr0QcQznQoAJRl
+OlRVVbVim+lQAAAAAAAAAEjEdKiqqqqqqqqqqqqqqqqqqmqGDq+v6dDjfJkOZdej
+DyCc6VAAKMt0qKqqasU206EAAAAAAAAAkIjpUFVVVVVVVVVVVVVVVVVV1Qwdvrim
+Q0/zZTqUXY8+gHCmQwGgLNOhqqqqFdtMhwIAAAAAAABAIqZDVVVVVVVVVVVVVVVV
+VVVVM3T40poOvZ4v06HsevQBhDMdCgBlmQ5VVVWt2GY6FAAAAAAAAAASMR2qqqqq
+qqqqqqqqqqqqqqqaocMbazr0Zr5Mh7Lr0QcQznQoAJRlOlRVVbVim+lQAAAAAAAA
+AEjEdKiqqqqqqqqqqqqqqqqqqmqGtrkLeJ4OvZ0v06HsevQBhDMdCgBlmQ5VVVWt
+2GY6FAAAAAAAAAASMR2qqqqqqqqqqqqqqqqqqqqaocNX1nTo3XyZDmXXow8gnOlQ
+ACjLdKiqqmrFNtOhAAAAAAAAAJCI6VBVVVVVVVVVVVVVVVVVVdUMHb66pkPv58t0
+KLsefQDhTIcCQFmmQ1VVVSu2mQ4FAAAAAAAAgERMh6qqqqqqqqqqqqqqqqqqqmbo
+8LXzdOjhcr5Mh7Lr0QcQznQoAJRlOlRVVbVim+lQAAAAAAAAAEjEdKiqqqqqqqqq
+qqqqqqqqqmqGDl9f06FX82U6lF2PPoBwpkMBoCzToaqqqhXbTIcCAAAAAAAAQCKm
+Q1VVVVVVVVVVVVVVVVVVVTN0+MaaDj3Ml+lQdj36AMKZDgWAskyHqqqqVmwzHQoA
+AAAAAAAAiZgOVVVVVVVVVVVVVVVVVVVVzdDhm2s69DhfpkPZ9egDCGc6FADKMh2q
+qqpasc10KAAAAAAAAAAkYjpUVVVVVVVVVVVVVVVVVVU1Q4dvrenQ03yZDmXXow8g
+nOlQACjLdKiqqmrFNtOhAAAAAAAAAJCI6VBVVVVVVVVVVVVVVVVVVdUMHb69pkOv
+58t0KLsefQDhTIcCQFmmQ1VVVSu2mQ4FAAAAAAAAgERMh6qqqqqqqqqqqqqqqqqq
+qmbo8J01HXozX6ZD2fXoAwhnOhQAyjIdqqqqWrHNdCgAAAAAAAAAJGI6VFVVVVVV
+VVVVVVVVVVVVNUOH767p0Nv5Mh3KrkcfQDjToQBQlulQVVXVim2mQwEAAAAAAAAg
+EdOhqqqqqqqqqqqqqqqqqqqqGTp8b02H3s2X6VB2PfoAwpkOBYCyTIeqqqpWbDMd
+CgAAAAAAAACJmA5VVVVVVVVVVVVVVVVVVVXN0OH7azr0fr5Mh7Lr0QcQznQoAJRl
+OlRVVbVim+lQAAAAAAAAAEjEdKiqqqqqqqqqqqqqqqqqqmqGDj84T4ceL+fLdCi7
+Hn0A4UyHAkBZpkNVVVUrtpkOBQAAAAAAAIBETIeqqqqqqqqqqqqqqqqqqqpm6PDD
+NR16NV+mQ9n16AMIZzoUAMoyHaqqqlqxzXQoAAAAAAAAACRiOlRVVVVVVVVVVVVV
+VVVVVTVDhx+t6dDDfJkOZdejDyCc6VAAKMt0qKqqasU206EAAAAAAAAAkIjpUFVV
+VVVVVVVVVVVVVVVV1QxtcwvgPB16nC/Toex69AGEMx0KAGWZDlVVVa3YZjoUAAAA
+AAAAABIxHaqqqqqqqqqqqqqqqqqqqpqhw4/XdOhpvkyHsuvRBxDOdCgAlGU6VFVV
+tWKb6VAAAAAAAAAASMR0qKqqqqqqqqqqqqqqqqqqaoYOP1nTodfzZTqUXY8+gHCm
+QwGgLNOhqqqqFdtMhwIAAAAAAABAIqZDVVVVVVVVVVVVVVVVVVVVM3T46ZoOvZkv
+06HsevQBhDMdCgBlmQ5VVVWt2GY6FAAAAAAAAAASMR2qqqqqqqqqqqqqqqqqqqqa
+ocPP1nTo7XyZDmXXow8gnOlQACjLdKiqqmrFNtOhAAAAAAAAAJCI6VBVVVVVVVVV
+VVVVVVVVVdUMHX6+pkPv5st0KLsefQDhTIcCQFmmQ1VVVSu2mQ4FAAAAAAAAgERM
+h6qqqqqqqqqqqqqqqqqqqmbo8Is1HXo/X6ZD2fXoAwhnOhQAyjIdqqqqWrHNdCgA
+AAAAAAAAJGI6VFVVVVVVVVVVVVVVVVVVNUOHX56nQ0+X82U6lF2PPoBwpkMBoCzT
+oaqqqhXbTIcCAAAAAAAAQCKmQ1VVVVVVVVVVVVVVVVVVVTN0+NWaDr2aL9Oh7Hr0
+AYQzHQoAZZkOVVVVrdhmOhQAAAAAAAAAEjEdqqqqqqqqqqqqqqqqqqqqmqHDr9d0
+6GG+TIey69EHEM50KACUZTpUVVW1YpvpUAAAAAAAAABIxHSoqqqqqqqqqqqqqqqq
+qqpqhg6/WdOhx/kyHcquRx9AONOhAFCW6VBVVdWKbaZDAQAAAAAAACAR06Gqqqqq
+qqqqqqqqqqqqqqoZOvx2TYee5st0KLsefQDhTIcCQFmmQ1VVVSu2mQ4FAAAAAAAA
+gERMh6qqqqqqqqqqqqqqqqqqqmbo8Ls1HXo9X6ZD2fXoAwhnOhQAyjIdqqqqWrHN
+dCgAAAAAAAAAJGI6VFVVVVVVVVVVVVVVVVVVNUOHB2s69Ga+TIey69EHEM50KACU
+ZTpUVVW1YpvpUAAAAAAAAABIxHSoqqqqqqqqqqqqqqqqqqpqhg6/X9Oht/NlOpRd
+jz6AcKZDAaAs06GqqqoV20yHAgAAAAAAAEAipkNVVVVVVVVVVVVVVVVVVVUzdPjD
+mg69my/Toex69AGEMx0KAGWZDlVVVa3YZjoUAAAAAAAAABIxHaqqqqqqqqqqqqqq
+qqqqqpqhw+WaDr2fL9Oh7Hr0AYQzHQoAZZkOVVVVrdhmOhQAAAAAAAAAEjEdqqqq
+qqqqqqqqqqqqqqqqmqHD1Xk69PpyvkyHsuvRBxDOdCgAlGU6VFVVtWKb6VAAAAAA
+AAAASMR0qKqqqqqqqqqqqqqqqqqqaoYOhzUdejVfpkPZ9egDCGc6FADKMh2qqqpa
+sc10KAAAAAAAAAAkYjpUVVVVVVVVVVVVVVVVVVU1Q4fjmg49zJfpUHY9+gDCmQ4F
+gLJMh6qqqlZsMx0KAAAAAAAAAImYDlVVVVVVVVVVVVVVVVVVVc3Q4bSmQ4/zZTqU
+XY8+gHCmQwGgLNOhqqqqFdtMhwIAAAAAAABAIqZDVVVVVVVVVVVVVVVVVVVVM3S4
+XtOhp/kyHcquRx9AONOhAFCW6VBVVdWKbaZDAQAAAAAAACAR06Gqqqqqqqqqqqqq
+qqqqqqoZOtys6dDr+TIdyq5HH0A406EAUJbpUFVV1YptpkMBAAAAAAAAIBHToaqq
+qqqqqqqqqqqqqqqqqhk63K7p0Jv5Mh3KrkcfQDjToQBQlulQVVXVim2mQwEAAAAA
+AAAgEdOhqqqqqqqqqqqqqqqqqqqqGTrcrenQ2/kyHcquRx9AONOhAFCW6VBVVdWK
+baZDAQAAAAAAACAR06GqqqqqqqqqqqqqqqqqqqoZOtyv6dC7+TIdyq5HH0A406EA
+UJbpUFVV1YptpkMBAAAAAAAAIBHToaqqqqqqqqqqqqqqqqqqqhk6/HFNh97Pl+lQ
+dj36AMKZDgWAskyHqqqqVmwzHQoAAAAAAAAAiZgOVVVVVVVVVVVVVVVVVVVVzdDh
+T+fp0JvL+TIdyq5HH0A406EAUJbpUFVV1YptpkMBAAAAAAAAIBHToaqqqqqqqqqq
+qqqqqqqqqhk6/HlNh17Nl+lQdj36AMKZDgWAskyHqqqqVmwzHQoAAAAAAAAAiZgO
+VVVVVVVVVVVVVVVVVVVVzdDhL2s69DBfpkPZ9egDCGc6FADKMh2qqqpasc10KAAA
+AAAAAAAkYjpUVVVVVVVVVVVVVVVVVVU1Q4e/runQ43yZDmXXow8gnOlQACjLdKiq
+qmrFNtOhAAAAAAAAAJCI6VBVVVVVVVVVVVVVVVVVVdUMHd5a06Gn+TIdyq5HH0A4
+06EAUJbpUFVV1YptpkMBAAAAAAAAIBHToaqqqqqqqqqqqqqqqqqqqhn6X+o/o6zZ
+DhUAABUO2Q==
+
+
+`settings`
+patch-size 8
+num-shapes 256
+screen-half-width 25
+screen-half-height 25
+interface-window-xcor 284
+interface-window-ycor 46
+interface-window-size 661 495
+output-window-xcor 0
+output-window-ycor 20
+output-window-width 300
+output-window-height 219
+info-window-xcor 0
+info-window-ycor 20
+info-window-width 500
+info-window-height 419
+control-center-xcor 28
+control-center-ycor 29
+control-center-width 399
+control-center-height 601
+turtle-command-center-height 150
+observer-command-center-height 151
+
+`string table`
+H4sIAAAAAAAAAGNgYGAAABzfRCEEAAAAAAAABA==
+
+`symbol table`
+H4sIAAAAAAAAAGNgYGBkYCkpKk0FAJNWxWwKAAAAAAAACg==
+
+`double table`
+H4sIAAAAAAAAAGNgYOBzUGEAAweWh+7rRKoeOjAbg4EDB1RcAELbf4DyGaD8B1C+
+WwOEFoHyJaC0HpSOOQChoyA6AWixoV90AAAAAAAAdA==
+
+`list table`
+H4sIAAAAAAAAAJVTW04DMQy0nUfpdpGQegEkvnsDTsIJeu3+9Qr84STj7mxUhKjk
+2rEzE79WRN5F5Kz+F2IiBbpCJ8TUJcMfdru7tHgad7OrrMC6HBS04fPfp+tvessm
+kUkr7JXzg38lO/TN5UJ4s5FH878Rh/7iU+CDY5cPuC5PcM98ippfgPdepjvx8h0j
+u/U2MK2fRca7zP2wbR+vVHcNTfE08ui4btsY39zLP0W2WezmJp1Xr1Gfnz/ibRv1
+NPvo+gv1tRwX4DO46pRL1W0X+5n4KvFV1LaAizGCXhaPn6b5FvR9pblk+F5pF2PH
+mVNl60HM0siOuT5ibY9k+E32MzngTgJvoh5FLBOuYIYR62fMM3oYO8F9jG8y0w6d
+/oP5AeI8vQ1ABAAAAAAEQA==
+
+`bytecodes`
+H4sIAAAAAAAAANVYWXMaRxDuXY4FlhstQgJJWEeixME5nFN5SeklL9ZLXOXk0Qht
+MGVgVbDY8Ut+YfKfMkfPTM+AUKqUKlW2apnd2e6vj+np7gHC19cf0niU3MTL1z/B
+X/z6GwCOIbeM09Ute3wF+jpmt4fPHv40fHxWY4bMZXHMkbk8joGcC5AHKG4BvFM2
+dLICFuAJzhdxLIFXz7Nb0YcATQ+fyzhWHJoqoanhWBdzXs+XtL2MGCHKo15VoxdX
+8UTNB2Y+QL2s94JjTwPHprT57IirkBNeGyfs99LQ+4gXSDtt3MZ/pA9I/+IaevVd
+lJtD+qwtx/qWs7/VMnr9DWaGYBYd/nDdBoHjo088KIwXyfvr4egtmz51LHlkS4WG
+PoSz4dt4NFmMpvGS4R4bQrpFdPjmzXZRW6WVRfORxmMfogPwoh3iQn73yFwW55QR
+bBv0lLyc/NZTMvLiXYSyNqyutx7n8+qKtiBpcYsZjBLK8wyOXu6QOLZMtlYFZXX0
+tvOaHKdrtl5LYdTFN7VFDF7TyBXvLYLPfBGVURema6TSSsToI5T9C861cdxldF2C
+10H8Jpnbk6mAQRif7iNdJOQYv3TNfP0IZfrCZB3KPvJHCquHflQp8YA9Kx8dIn2I
+70eOz/rEZ08s+7XMjvLDMcE9cXBPHdwzgvvRZlzB/xvSfIzjuePPTzb481PtT/n+
+1Im5z5CnTdZwQHz8TMeAoPnXfv7c8fMXxB9fOv74yvHHc+KPr+/x8zcE91sH9zsH
+93uC+8NmXL6vVDoUWAHSX4DXUj750c4bIknlQV8iOWUgWq7Gw8VAJdHBz8Pp7Zuh
+WCZ9+TLMdI7UIjyyDX1cAvWekeJVKtI8OfFstp9SPU9oAqM6X7atJmSh45owmf8+
+mU/SD2DVQEuabcX9jspBYZRMk8UgnoFIMRZqZa3TMehOpePPO3kjTaDnoTh8Fw+E
+HSB2OFA4AysaAit6GHzDM/AikkC7HRokUpT7eX+xR7N4XuLWZC0rcVXeTZaTZP7I
+uhSgynWZxenwOplOlrNH1qcI5eE4nqeDWcLUugKeP/QVYCA42pma5aEGJjBMncoQ
+Ol639zbnL6WlpiXtsarNrYBYWSQyFE8o84uwqATFRXy7SG5WoxhECdim/imQfds2
+TtY0GeK4rBRtdajlu92l0qXV3YVQWMTTZDRMuXZk1yntRP/dMSEQsWLTBaOZ1taX
+zZ6FXmadGV/INBnMhn+wL3+uC2iBARcVqrtx9SyTcZVMZ8VvnygaEJcVCE9RzguF
+L82qiffnZvU86UoRTfsqxVZE5VNdlO6exCg7J6+lDjsNjETekRw6y9kE3UWJccfh
+jRw/tIn+u8Sujpy3IpdFdbRnqpmY2yc8tEvoEX5FeyBpSSdkeFV56oPqfOROUAGg
+1uMYMc6dYKhAKMuISPNgVQ43t2uh5hRrcnxWbr+oicBVFmU8gWng9RyxDdgA1aDI
+svKDYepQkZUsXS1ScSKhpV7Fvc6bm45BzkHXTQc0567x1jbwqm91+5vqcvRRqgGt
+y1WaJvOLfv/lm+R9/yUWzNKaD0Ryd5UVkpqwY4O8UqVuG0rdQWlBx0a5okVqG1LN
+QdqBXY2UJuPxNCYrw85NEell2ZnPeI2/HxoPCbAIQg0m/itwz9OekS0Y85qxqhnV
+fzk56wBtNI6gfZWw/ipZXPRHyYrVQ6NwGeUVTCixcgqnGeOJWsmR3d6Cl1vHEZO7
+EGke1iMsWF1W3VNVn3fXNgbf01oVf4Mqnbthg7vhBOsesQJZdRP1EJX2t+Dep1MX
+9l1eq5l6iF69e7Dv0+0Aqi8m87j/6+RmHKcXfXYsYkcsqc+zdV6++mdn63lN0JNz
+Bs99/F+Sk3NCb4qxTR/cQa+it+jQl+6gDzf453CDfU//P3YJ8KN/AAXd6jXyFQAA
+AAAV8g==
+
+`observer world`
+H4sIAAAAAAAAAD1OXQvCMAxMNz+GU9B3H/wdPvlT1s3QFrpmNHX9+6ZlLHCQu8sl
+gftAI2NcMb446YTDB/Z6w2XxlLL7GkzCD3DyGEyy0j/hXLwFQx3ta3h3O8ER+ok8
+RZ4szlinrlruaIP8MzoKV3DblNWxo7KqgccmzZj0SN7xLHILXaDMlnKoj5SsQNVE
+hRI0rfR/7/ibL9MAAAAAAADT
+
+`patch world`
+H4sIAAAAAAAAAI3dS4tjZ37Hcc2FRCQkaKGFAloIIYQQitD9fi2pVOV1cNYxjpmZ
+YGZM4tx2ejuZ1zOrvICsA1kHx/bkeVrntNX/zwPCffn4W03rnPODpqu68hd/980X
+337569Y/ffvFt1/93amSz99WfvlvX/7uH3/89p998/Xvvv3X3/z9r7769vvvNSs/
+/+bL7/9bq/zJ11/99lff/vr7b/cqf/qD+ear337/nUbll//+x/+1WvnzH8PZtb5/
+/dX/v37+/U/+86+++Me//vqrf/nq6x8/0F/+8Qe+/OKbL778zbf//v2P/Oz433/8
+9aT/Ppyf/fD62f9/I/3SQ1dFV0NXR9dA10TXQtdG10HXRddD10c3QDdEN0I3RjdB
+N0U3QzdHt0C3RLdCt0a3QbdFt0O3R3dAd0R3Unc3d8beGXsv2HvB3gV7F+xdsXfF
+3iv2XrF3w94Ne2/Ye8PeO/besfcZ9j6zXvr500fsp3c/dFV0NXR1dA10TXQtdG10
+HXRddD10fXQDdEN0I3RjdBN0U3QzdHN0C3RLdCt0a3QbdFt0O3R7dAd0R3QndXdz
+Z+ydsfeCvRfsXbB3wd4Ve1fsvWLvFXs37N2w94a9N+y9Y+8de59h7zPr5d2vBr0K
+uiq6Gro6uga6JroWuja6Drouuh66ProBuiG6Eboxugm6KboZujm6BboluhW6NboN
+ui26Hbo9ugO6I7qTuru5M/bS7kcu7X7osJd2P3TYS7sfOuyl3Q8d9tLuhw57afdD
+h720+6HDXtr90Fkv734t6FXQVdHV0NXRNdA10bXQtdF10HXR9dD10Q3QDdGN0I3R
+TdBN0c3QzdEt0C3RrdCt0W3QbdHt0O3RHdAd0Z3U3c2di720iw/ux1fe/ci9YO8F
+exfsXbB3xd4Ve2n3Q1fsPZzi+5F2P3TYS7sfOuyl3Q8d9tLuh856effrQa+Croqu
+hq6OroGuia6Fro2ug66Lroeuj26AbohuhG6MboJuim6Gbo5ugW6JboVujW6Dbotu
+h26P7oDuiO6k7l5wz/e8gg57L9h7wd4FexfsXbF3xV7a/dBh74a9W7H3cIrXQdr9
+0GEv7X7osJd2P3TWy7vfCHoVdFV0NXR1dA10TXQtdG10HXRddD10fXQDdEN0I3Rj
+dBN0U3QzdHN0C3RLdCt0a3QbdFt0O3R7dAd0R3Snonu6C2n3I3fG3hl7L9h7wd4F
+exfsXbF3xV7a/dBh74a9G/beir2HU7yu0u5HLu1+6LCXdj901su73wx6FXRVdDV0
+dXQNdE10LXRtdB10XXQ9dH10A3RDdCN0Y3QTdFN0M3RzdAt0S3QrdGt0G3RbdDt0
+e3QHdMeie77n6u7mztg7l3qvv//97//jf/7hwf38h1fe/dBh74K9C/au2Lti7xV7
+r/h+3CrosPeGvbdi7+EUr9O0+6HDXtr90Fkv734r6FXQVdHV0NXRNdA10bXQtdF1
+0HXR9dD10Q3QDdGN0I3RTdBN0c3QzdEt0C3RrdCt0W3QbdHt0O3RHYru6XP3iO6k
+7m7uXOo9263z3dwL9l6wd8HeBXtX7F2x94q9V+zdSr1o9yOXdj902Eu736qUT/G6
+T7sfubT7obNe3v120Kugq6Kroauja6Bromuha6ProOui66HroxugG6IboRujm6Cb
+opuhm6NboFuiW6Fbo9ug26LbodujOxRduPuRO6m7F93TPa+gw94L9l6wd8HeBXtX
+7F2x94q9V+zdsHcr9aLdDx323ou9h1O87tPuRy7tfuisl3e/E/Qq6Kroaujq6Bro
+muha6NroOui66Hro+ugG6IboRujG6Cbopuhm6OboFuiW6Fbo1ug26Lboduj2Rff0
+OXlAd0R3Krlnu5B2P3Jn7J2x91LqvX3++ed/819/eHC/+OGVdz9yF+xdsHfF3hV7
+r6VetPuRu2HvVupFux867L1j773YezjF+yjtfuisl3e/G/Qq6Kroaujq6Bromuha
+6NroOui66Hro+ugG6IboRujG6Cbopuhm6OboFuiW6Fbo1ug26Lboduj2RRfufuSO
+6E4lF+1+5M7YO5d6T/e8gg57F+xdsHfF3hV7r9h7xffjVkGHvbdSL9r9yL1j773Y
+ezjF+yjtfuisl3e/F/Qq6Kroaujq6Bromuha6NroOui66Hro+ugG6IboRujG6Cbo
+puhm6OboFuiW6Fbo1ug26Lboduj2RRfufuSO6E4lF+1+5M7YO5d60e6HDnsX7F2w
+d8XeFXuv2HvF9+NWQYe9t1Iv2v3IvWPvvdh7OMX7KO1+6KyXd78f9Croquhq6Oro
+Guia6Fro2ug66Lroeuj66AbohuhG6MboJuim6Gbo5ugW6JboVujW6Dbotuh26PZF
+F+5+5I7oTiUX7X7kztg7l3rR7ocOe5dS7/2777773/88PLhf/vDKux+5a8U+7hV/
+fa/Ye8X341ZBh723Ui/a/ci9Y++92Hs4xfso7X7orJd3fxD0Kuiq6Gro6uga6Jro
+Wuja6Drouuh66ProBuiG6Eboxugm6KboZujm6BboluhW6NboNui26Hbo9kUX7n7k
+juhOJRftfuTO2DuXetHuhw57l1Iv2v3IXSv2ca/463vF3iu+H7cKOuy9lXrR7kfu
+HXvvxd7DKd5HafdDZ728+8OgV0FXRVdDV0fXQNdE10LXRtdB10XXQ9dHN0A3RDdC
+N0Y3QTdFN0M3R7dAt0S3QrdGt0G3RbdDty+6cPcjd0R3Krlo9yN3xt651It2P3TY
+u2Dvgr0r9q7Ye8XeK74ftwo67L2VetHuR+4de+/F3sMp3kdp90Nnvbz7o6BXQVdF
+V0NXR9dA10TXQtdG10HXRddD10c3QDdEN0I3RjdBN0U3QzdHt0C3RLdCt0a3QbdF
+t0O3L7pw9yN3RHcquWj3I3fG3rnUi3Y/dNi7YO+CvSv2rth7xd4rvh+3CjrsvZV6
+0e5H7h1778XewyneR2n3Q2e9vPvjoFdBV0VXQ1dH10DXRNdC10bXQddF10PXRzdA
+N0Q3QjdGN0E3RTdDN0e3QLdEt0K3RrdBt0W3Q7cvunD3I3dEd1J3L7po90OHvZdS
+L9r9yF2wd8HeFXtX7L2WetHn8UXuhr0b9t5KvWj3I/eOvfdi7+EU76O0+6GzXt79
+SdCroKuiq6Gro2uga6JroWuj66Drouuh66MboBuiG6Ebo5ugm6KboZujW6Bboluh
+W6PboNui2xXd0+faHt0B3RHdSd296KLdDx32XrD3gr0L9i7Yu2Lvir1X7L1i74a9
+W6kXff5+6LD3Xuw9nOJ9lHY/cmn3Q2e9vPvToFdBV0VXQ1dH10DXRNdC10bXQddF
+10PXRzdAN0Q3QjdGN0E3RTdDN0e3QLdEt0K3RrdBty26p8+1Hbo9ugO6I7qTuru5
+c6kX7X7kXrD3gr0L9i7Yu2Lvir1X7L1i71bqPXvfbndzb9h7w957sfdwivdb2v3I
+pd0PnfXy7s+CXgVdFV0NXR1dA10TXQtdG10HXRddD10f3QDdEN0I3RjdBN0U3Qzd
+HN0C3RLdCt0a3abonj6vtuh26PboDuiO6E7q7ubO2DuXetHuhw57F+xdsHfF3hV7
+r6Xes9+/V3w/bti7Ye8Ne2/F3sMp3m9p90OHvbT7obNe3v150Kugq6Kroauja6Br
+omuha6ProOui66HroxugG6IboRujm6Cbopuhm6NboFuiW6FbF93T59UG3RbdDt0e
+3QHdEd1J3d3cGXtn7L1g7wV7F+xdsHfF3hV7afdDh70b9m7Yeyv2Hk7xfku7H7m0
++6HDXtr90Fkv7/4i6FXQVdHV0NXRNdA10bXQtdF10HXR9dD10Q3QDdGN0I3RTdBN
+0c3QzdEt0C3RrYru6fNqjW6Dbotuh26P7oDuiO6k7m7ujL0z9l6w94K9C/Yu2Lti
+74q9tPuhw94Ne7di7+EU77e0+6HDXtr90GEv7X7orJd3fxn0Kuiq6Gro6uga6Jro
+Wuja6Drouuh66ProBuiG6Eboxugm6KboZujm6BZF9/Q5tES3QrdGt0G3RbdDt0d3
+QHdEd1J3N3fG3rnYezjF6yXtftRLux+5C/Yu2Lti74q9tPuhK/YeTvH3L+1+6LCX
+dj902Eu7Hzrspd0PnfXy7q+CXgVdFV0NXR1dA10TXQtdG10HXRddD10f3QDdEN0I
+3RjdBN0U3QzdHN0C3bLowt2P3BrdBt0W3Q7dHt0B3RHdSd3d3Bl752Lv4RSvg7T7
+ocNe2v3QYS/tfuiwl3Y/dNhLux867KXdDx320u6HDntp90Nnvbz766BXQVdFV0NX
+R9dA10TXQtdG10HXRddD10c3QDdEN0I3RjdBN0U3K7qnz/E5ugW6JboVujW6Dbot
+uh26PboDuiO6k7p7wT2c4vVyrqDDXtr90GEv7X7osJd2P3TYS7sfOuyl3Q8d9tLu
+hw57afdDh720+6GzXt79TdCroKuiq6Gro2uga6JroWuj66Drouuh66MboBuiG6Eb
+o5ugm6KboZsXXbj7kVuiW6Fbo9ug26LbodujO6A7ojupuxfcwyleB+cKOuyl3Q8d
+9tLuhw57afdDh720+6HDXtr90GEv7X7osJd2P3TYS7sfOuvl3d8GvQq6Kroaujq6
+Bromuha6NroOui66Hro+ugG6IboRujG6Cbpp0T193s/QzdEt0C3RrdCt0W3QbdHt
+0O3RHdAdi+7hFK+Dk7q7uTP20u5HLu1+6LCXdj902Eu7Hzrspd0PHfbS7ocOe2n3
+Q4e9tPuhw17a/dBZL+/+LuhV0FXR1dDV0TXQNdG10LXRddB10fXQ9dEN0A3RjdCN
+0U2K7ukuTNHN0M3RLdAt0a3QrdFt0G3R7dDt0R2K7uEUr4MjupO6u7kz9tLuRy7t
+fuiwl3Y/dNhLux867KXdDx320u6HDntp90OHvbT7ocNe2v3QWS/v/j7oVdBV0dXQ
+1dE10DXRtdC10XWK7unzr4uuh66PboBuiG6Eboxugm6KboZujm6BboluhW6NboNu
+i26Hbl90D6d4fxzQHdGd1N3NnbGXdj9yafdDh720+6HDXtr90GEv7X7osJd2P3TY
+S7sfOuyl3Q8d9tLuh856efcPQa+Croquhq6OroGuia5VdE+fa210HXRddD10fXQD
+dEN0I3RjdBN0U3QzdHN0C3RLdCt0a3QbdFt0u6J7OMX7aI/ugO6I7qTubu6MvbT7
+kUu7Hzrspd0PHfbS7ocOe2n3Q4e9tPuhw17a/dBhL+1+6LCXdj901su7fwx6FXRV
+dDV0dXQNdM2ie/pca6Fro+ug66LroeujG6AbohuhG6OboJuim6Gbo1ugW6JboVuj
+26DbFt3DKd5HO3R7dAd0R3QndXdzZ+yl3Y9c2v3QYS/tfuiwl3Y/dNhLux867KXd
+Dx320u6HDntp90OHvbT7obNe3v1T0Kugq6KroaujaxTd0+daE10LXRtdp+SefR3r
+Lroeuj66AbohuhG6MbpJyUW7H7kZujm6BboluhW6NbpN0T2c4n20RbdDt0d3QHdE
+d1J3N3fGXtr9yKXdDx320u6HDntp90OHvbT7ocNe2v3QYS/tfuiwl3Y/dNhLux86
+633Y/funexV0VXQ1dPWie/pca6Bromuha5fcs93qoOui66HroxugG6IboRujm6Cb
+lly4+4Gbo1ugW6JboVsX3cMp3kcbdFt0O3R7dAd0R3QndXdzZ+zl3Q9c3v3IYS/v
+fuSwl3c/ctjLux857OXdjxz28u5HDnt59yOHvbz7kbNe3v1zmT3Z/chV0dXQ1Ysu
+3P3INdG1Su7ZzrTRddB10fXQ9dEN0A3RjdCN0U3QTdHNSi7a/cgt0C3RrYru4RTv
+jzW6Dbotuh26PboDuiO6k7q7ufR+hQ57afdDh720+6HDXtr90GEv7X7osJd2P3TY
+S7sfOuyl3Q8d9tLuh856H3b//uleBV0VXa3onj7/6uga6JroWiUX7n7gOui6Jff2
++eef/81//eHB/eKH14fdD1wf3QDdEN0I3bjkwt0P3BTdDN285MLdD9yy6B5O8f5Y
+oVuj26Dbotuh26M7oDuiO6m7mztjL+9+4PLuRw57efcjh728+5HDXt79yGEv737k
+sJd3P3LYy7sfOezl3Y+c9fLuv5TZk92PXBVdrejC3Y9cA12z5J4971vo2ug6Jfds
+B7voeuj66AbohuhG6MboJiUX7X7kZujmJRftfuSW6FZF93CK99Ea3QbdFt0O3R7d
+Ad0R3Und3dwZe2n3I5fe/9BhL+1+6LCXdj902Eu7Hzrspd0PHfbS7ocOe2n3Q4e9
+tPuhs96H3b9/uldBV0VXK7p49wPXQNcsuXD3A9dG1ym5cPcD10PXRzdAN0Q3QjdG
+Nym5cPcDN0M3L7lw9wO3RLcquodTvI/W6Dbotuh26PboDuiO6E7q7ubO2Mu7H7i8
++5HDXt79yGEv737ksJd3P3LYy7sfOezl3Y8c9vLuRw57efcjZ728+5cye7L7kaui
+qxVduPuRa6Brlly0+5Fro+uUXLT7keuh65fc+3ffffe//3l4cL/84ZV3P3JD/Lgj
+dGN0k5KLdj9yM3Tzkot2P3JLdKuiezjF+2iNboNui26Hbo/ugO6I7qTubu6MvbT7
+kUu7HzrspespdNhLux867KXdDx320u6HDntp90OHvbT7ocNe2v3QWe/D7t8/3aug
+q6KrFV28+4FroGuWXLj7gWuj65RcuPuB66Hrl1y4+4Eb4scdoRujm5RcuPuBm6Gb
+l1y4+4FbolsV3cMp3kdrdBt0W3Q7dHt0B3RHdCd1d3Nn7OXdD1ze/chhL+9+5LCX
+dz9y2Mu7Hzns5d2PHPby7kcOe3n3I4e9vPuRs17e/WuZPdn9yFXR1You3P3INdA1
+Sy7a/ci10XVKLtr9yPXQ9dEN0A3RjdCN0U1KLtr9yM3QzUsu2v3ILdF9/O+8l11x
+9yP38b9L99Pu438X56fdx19v/6fdx1/H96fdx18f8Kfdx1936KfdSd3d3Bl7H/+9
+zp92H//9jicOex//+dETh72Pr88nDntp90OHvbT7ocNe2v3QYS/tfuiwl3Y/dNb7
+sPv3T/cq6KroakUX737gGuiaJRfufuDa6DolF+5+4Hro+ugG6IboRujG6CYlF+5+
+4Gbo5iUX7n7gluhWRfdwivfRGt0G3RbdDt0e3QHdEd1J3d3cGXt59wOXdz9y2Mu7
+Hzns5d2PHPby7kcOe3n3I4e9vPuRw17e/chhL+9+5KyXd/+1zJ7sfuSq6GpFF+5+
+5BromiUX7X7k2ug66LolF+1+5ProBuiG6EboxiUXfR5f5KboZujmJRftfuSW6FZF
+93CK99Ea3QbdFt0O3R7dAd0R3Und3dwZe/nzQgOXP48kctjLf08lctjLfw4WOezl
++yxy2Eu7Hzrspd0PHfbS7ocOe2n3Q2e9D7t//3Svgq6KroauXnTx7geuia5VcuHu
+B66Drouuh66PboBuiG6Eboxugm6KblZyz66DOboFuiW6VdE9nOL9sUa3QbdFt0O3
+R3dAd0R3Unc3d8Ze3v3A5d2PHPby7kcOe3n3I4e9vPuRw17e/chhL+9+5LCXdz9y
+2Mu7Hznr5d2/ldmT3Y9cFV0NXb3owt2PXBNdC1275KLdj1wXXQ9dH90A3RDdCN0Y
+3QTdtOSevW8zdHN0C3TLons4xet+hW6NboNui26Hbo/ugO6I7qTubu6MvbT7kUu7
+Hzrspd0PHfbS7ocOe2n3Q4e9dJ+FDntp90OHvbT7ocNe2v3QWe/D7t8/3augq6Kr
+oaujaxRdvPuBa6Fro+ug65ZcuPuB66MboBuiG6Ebo5uU3LPfvym6Gbo5ukXRPZzi
+dbpEt0K3RrdBt0W3Q7dHd0B3RHdSdzd3xl7e/cDl3Y8c9vLuRw57efcjh728+5HD
+Xt79yGEv737ksJd3P3LYy7sfOevl3X8rsye7H7kquhq6OroGumbRhbsfuTa6Drou
+uh66ProBuiG6Eboxugm6KboZunnRPZzidbVAt0S3QrdGt0G3RbdDt0d3QHdEd1J3
+N3fGXv661IFLux867OWvfxE57OXPr4kc9vLf84kc9tLuhw576TkQOuyl3Q8d9tLu
+h856H3b//uleBV0VXQ1dHV0DXRNdq+ji3Q9cB10XXQ9dH90A3RDdCN0Y3QTdFN2s
+6B5O8TqYo1ugW6JboVuj26Dbotuh26M7oDuiO6m7mztjL+9+4PLuRw57efcjh728
++5HDXt79yGEv737ksJd3P3LYy7sfOezl3Y+c9fLuv5fZk92PXBVdDV0dXQNdE10L
+XRtdp+jC3Y9cD10f3QDdEN0I3RjdpOgeTvH3eYpuhm6OboFuiW6Fbo1ug26Lbodu
+j+6A7ojupO5u7oy9tPuRS7sfOuzlr7MZOeyl3Q8d9tLuhw57afdDh720+6HDXnqe
+hQ57afdDZ70Pu3//dK+Croquhq6OroGuia6Fro2ug66Lroeuj26AbohuhG6MboJu
+im6Gbo5ugW6JboVujW6Dbotuh26P7oDuiO6k7m7ujL28+4HLux857OXdjxz28u5H
+Dnt59yOHvbz7kcNe3v3IYS/vfuSwl3c/ctbLu/9ZmT3Z/chV0dXQ1dE10DXRtdC1
+0XXQddH10PXRDdAN0Y3QjdFN0E3RzdDN0S3QLdGt0K3RbdBt0e3Q7dEd0B3RndTd
+zZ2xl3Y/cmn3Q4e9tPuhw17a/dBhL+1+6LCXdj902Eu7Hzrspd0PHfbS7ofOeh92
+//7pXgVdFV0NXR1dA10TXQtdG10HXRddD10f3QDdEN0I3RjdBN0U3QzdHN0C3RLd
+Ct0a3QbdFt0O3R7dAd0R3Und3dwZe3n3A5d3P3LYy7sfOezl3Y8c9vLuRw57efcj
+h728+5HDXt79yGEv737krPd/h80fdAqXAQAAAZcK
+
+`turtle world`
+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
+nw==
+

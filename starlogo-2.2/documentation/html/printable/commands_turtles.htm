@@ -1,0 +1,728 @@
+<html>
+
+<head>
+
+
+
+<title>Starlogo 1.0 Documentation</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+
+
+<body bgcolor="#FFFFFF">
+
+<p><em><font size="+1">Commands Affecting Turtles (Printable)</font></em> </p>
+
+<p class=MsoNormal><span class=GramE><em>alive</em></span><em>?</em> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p>Returns a <span class=SpellE><span class=GramE>boolean</span></span>. If the 
+  turtle is alive, it returns true. If the turtle is not alive it returns false. 
+  <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>alive</em></span><em>?-of</em> number 
+  <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns a <span class=SpellE><span class=GramE>boolean</span></span>. If the 
+  turtle with the given who number is alive, it returns true. If the turtle with 
+  the given who number is not alive it returns false. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>average-of-turtles</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns the numerical average of the [list of commands] when evaluated <span
+class=SpellE>accross</span> all the turtles. </p>
+<p><em>bk, back</em> <code>number</code> <b>[Turtle]</b> </p>
+
+<p> Turtles move <code>number</code> steps backward 
+
+<p><em>breed</em> <b>[Turtle]</b> 
+
+<p> Returns the turtle's breed. 
+
+<p><em>breed-at</em> <code>xcor ycor</code> <b>[Observer, Turtle]</b>
+
+<p> Reports the breed of the turtle <code>xcor</code> units in the x direction 
+
+  and <code>ycor</code> units in the y direction away from the caller. 
+
+<p><em>breed-of</em> <code>number</code> <b>[Observer, Turtle]</b> 
+
+<p> Reports the breed of the turtle with ID Number <code>number</code>. <br>
+
+<p>&nbsp; 
+
+<p><em>breed-towards</em> <code>angle distance</code> <b>[Observer, Turtle]</b></p>
+
+<p> Reports the breed of the turtle <code>distance</code> away at an angle of 
+
+  <code>angle</code>. 
+
+<p class=MsoNormal><span class=SpellE><span class=GramE><em>cct</em></span></span><span
+class=GramE><em>-and-do</em></span><em>, create-custom-turtles-and-do</em> <code><span
+style='font-size:10.0pt'>breed number [list of commands]</span></code> <b>[Observer]</b><o:p></o:p></p>
+<p>Creates <code><span style='font-size:10.0pt'>number</span></code> turtles of 
+  type breed and tells them to do <code><span style='font-size:10.0pt'>[list of 
+  commands]</span></code>. </p>
+<p><em>color</em> <b>[Turtle]</b> 
+<p> Returns the color of the turtle. 
+
+<p><em>color-at</em> <code>xcor ycor</code> <b>[Observer, Turtle]</b> 
+
+<p>Reports the color of the turtle <code>xcor</code> units in the x direction 
+
+  and <code>ycor</code> units in the y direction away from the caller . 
+
+<p><em>color-of</em> <code>number</code> <b>[Observer, Turtle]</b> 
+
+<p>Reports the color of the turtle with ID Number <code>number</code>. 
+
+<p><em>color-towards</em> <code>angle distance</code> <b>[Observer, Turtle]</b></p>
+
+<p>Reports the color of the turtle <code>distance</code> away at an angle of <code>angle</code>. 
+
+<p><em>count-color</em> <code>color</code> <b>[Observer, Turtle]</b> 
+
+<p> Returns the number of turtles that are the color <code>color</code>. 
+
+<p><em>count-turtles</em> <b>[Observer, Turtle]</b>
+
+<p> Returns the number of turtles. 
+
+<p><em>count-turtles-at</em> <code>xcor ycor</code> <b>[Observer, Turtle]</b></p>
+
+<p> Returns the number of turtles <code>xcor</code> units in the x direction and 
+
+  <code>ycor</code> units in the y direction away from the caller . 
+
+<p><em>count-turtles-here</em> <b>[Turtle]</b> 
+
+<p> Returns the number of turtles sitting on the caller's patch 
+
+<p><em>count-turtles-towards</em> <code>angle distance</code> <b>[Observer, Turtle]</b></p>
+
+<p> Returns the number of turtles <code>distance</code> away at angle <code>angle</code>. 
+
+<p><em>count-turtles-with</em> <code>[ilist]</code> <b>[Observer, Turtle]</b> 
+
+<p>Returns the number of turtles whose <code>ilist</code> is true. <br>
+
+  Sample usage: <code>show count-turtles-with [(distance 0 0) < 5]</code><br>
+
+  This gives thenumber of turtles inside a circle of radius 5 centered at the 
+
+  origin. 
+
+<p><em>create-and-do, create-turtles-and do</em> <code>number ilist</code> <b>[Observer]</b> 
+
+<p> Creates <code>number</code> turtles and tells them to do <code>ilist</code>. 
+
+<p><em>crt, create-turtles</em> <code>number</code> <b>[Observer]</b>
+
+<p> Creates <code>number</code> turtles. 
+
+<p><em>ct</em> <b>[Observer]</b> 
+
+<p>Clears (kills) all of the turtles.
+
+<p><em>die</em> <b>[Turtle]</b>
+
+<p> Turtles die, meaning that they stop running all code and disappear forever.
+
+<p><em>distance</em> <code>xcor ycor</code> <b>[Observer, Turtle]</b> 
+
+<p> Returns the distance from the caller to (<code>xcor,ycor</code>). 
+
+<p><em>distance-nowrap</em> <code>xcor ycor</code> <b>[Observer, Turtle]</b> 
+
+<p>Returns the distance from the caller to <code>xcor ycor</code> without wrapping. 
+
+<p><em>dx</em> <b>[Turtle]</b>
+
+<p> Returns the x-coordinate one step forward from the turtle's current position. 
+
+<p><em>dy</em> <b>[Turtle]</b> 
+
+<p> Returns the y-coordinate one step forward from the turtle's current position. 
+
+<p><em>fd, forward</em> <code>number</code> <b>[Turtle]</b>
+
+<p> Turtles move <code>number</code> steps forward. 
+
+<p><em>grab</em> <code>ilist</code> <b>[Observer, Turtle]</b> 
+
+<p> Allows the observer or a turtle to instruct another turtle or group of turtles 
+
+  (specified by <code>turtle_number</code> or a dlist of <code>turtle_numbers</code>) 
+
+  to perform ilist. The ID of the turtle(s) is stored in <code>partner</code> 
+
+  if there is one turtle being grabbed, in <code>partners</code> if there are 
+
+  many. <code>grab</code>s can be nested within each other. If the specified turtle 
+
+  does not exist, the caller skips <code>ilist</code> and continues. If you call 
+
+  a procedure within <code>ilist</code>, you are still <code>grab</code>bing the 
+
+  turtles. A turtle may not <code>grab</code> itself. A turtle already being grabbed 
+
+  by one turtle cannot be grabbed by another. 
+
+<p><em>hatch</em> <code>ilist</code> <b>[Turtle]</b> 
+
+<p> Turtles make exact copy of themselves, tell them to run <code>ilist</code>.<br>
+
+  Note: Turtles will not run forever buttons while running <code>ilist</code>. 
+
+<p><em>heading</em> <b>[Turtle]</b> 
+
+<p> Returns the direction that the turtle is facing. 
+
+<p><em>heading-at</em> <code>xcor ycor</code> <b>[Observer, Turtle]</b> 
+
+<p> Reports the heading of the turtle <code>xcor</code> units in the x direction 
+
+  and <code>ycor</code> units in the y direction away from the caller. 
+
+<p><em>heading-of</em> <code>number</code> <b>[Observer, Turtle]</b> 
+
+<p> Reports the heading of the turtle with ID Number <code>number</code>. 
+
+<p><em>heading-towards</em> <code>angle distance</code> <b>[Observer, Turtle]</b> 
+
+<p> Reports the heading of the turtle <code>distance</code> away at an angle of 
+
+  <code>angle</code>. 
+
+<p><em>home</em> <b>[Turtle]</b> 
+
+<p> Turtles go to coordinates (0,0). This is the same as using setxy 0 0. 
+
+<p><em>ht, hideturtle</em> <b>[Turtle]</b> 
+
+<p> Turtles make themselves invisible. 
+
+<p><em>jump</em> <code>number</code> <b>[Turtle]</b> 
+
+<p> Turtles move <code>number</code> steps in the time it takes to make one normal 
+
+  step. For example, jump 15 and fd 1 both take the same amount of time to perform. 
+
+  fd 15, however, would take 15 times as long as jump 15. 
+
+<p><em>kill</em> <code>number</code> <b>[Observer, Turtle]</b> 
+
+<p> Kills turtle with ID number <code>number</code>. 
+
+<p><em>leap</em> <code>number</code> <b>[Turtle]</b> 
+
+<p> Turtles jump <code>number</code> steps only if no other turtle is currently 
+
+  on the patch they will land on. 
+
+<p><em>list-of-turtles</em> <b>[Observer, Turtle]</b> 
+
+<p> Returns a list of turtles. 
+
+<p><em>list-of-turtles-at</em> <code>xcor ycor</code> <b>[Observer, Turtle]</b> 
+
+<p> Returns a list of turtles <code>xcor</code> units in the x direction and <code>ycor</code> 
+
+  units in the y direction away from the caller. 
+
+<p><em>list-of-turtles-here</em> <b>[Turtle]</b> 
+
+<p> Returns a list of turtles on the caller's patch. 
+
+<p><em>list-of-turtles-towards</em> <code>angle distance</code> <b>[Observer, 
+
+  Turtle]</b> 
+
+<p> Returns a list of turtles at the patch <code>distance</code> away at angle 
+
+  <code>angle</code>. 
+
+<p><em>list-of-turtles-with</em> condition <b>[Observer, Turtle]</b> 
+
+<p> Returns a list of turtles satisfying <code>condition</code>. 
+
+<p><em>lt, left</em> <code>number</code> <b>[Turtle]</b> 
+
+<p> Turtles turn left by <code>number</code> degrees. 
+
+<p><em>max-of-turtles-with</em> <code>pred-ilist ilist</code> 
+
+<p> Reports the highest value of <code>ilist</code> when run over the turtles 
+
+  that satisfy <code>pred-ilist</code>. If there are no turtles in which <code>pred-ilist</code> 
+
+  is true, returns <code>minnum</code>, the smallest number possible without going 
+
+  into negative infinity. Note: This command can also be executed by patches, 
+
+  for example within an <code>ask-patches</code> statement. 
+
+<p class=MsoNormal><span class=GramE><em>median-of-turtles</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns the median [list of commands<code><span style='font-size:10.0pt'>] 
+  when [list of commands<span class=GramE>]is</span> evaluated for all turtles</span></code>. 
+  <o:p></o:p></p>
+<p><em>min-of-turtles-with</em> <code>pred-ilist ilist</code> 
+<p> Reports the lowest value of <code>ilist</code> when run over the turtles that 
+
+  satisfy <code>pred-ilist</code>. If there are no turtles in which <code>pred-ilist</code> 
+
+  is true, returns <code>maxnum</code>, the largest number possible without going 
+
+  into positive infinity. Note: This command can also be executed by patches, 
+
+  for example within an <code>ask-patches</code> statement. 
+
+<p class=MsoNormal><span class=GramE><em>mode-of-turtles</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns the mode of the given [list of commands] when run over all the turtles. 
+</p>
+<p><em>myself</em> <b>[Turtle]</b> 
+<p>During a <code>count-turtles-with</code> command, <code>myself</code> reports 
+
+  the who number of the turtle which called it.<br>
+
+  Example: <code>count-turtles-with [(distance xcor-of myself ycor-of myself) 
+
+  &lt; 5]</code> counts all turtles within a radius of 5 units of the caller.</p>
+
+<p><em>nobody</em> <b>[Observer, Turtle]</b> </p>
+
+<p> An alias for -1 
+
+<p><em>one-of-turtles</em> <b>[Observer, Turtle]</b> 
+
+<p> Returns a random turtle. 
+
+<p><em>one-of-turtles-at</em> <code>xcor ycor</code> <b>[Observer, Turtle]</b> 
+
+<p> Returns a random turtle <code>xcor</code> units in the x direction and <code>ycor</code> 
+
+  units in the y direction away from the caller. 
+
+<p><em>one-of-turtles-here</em> <b>[Turtle]</b> 
+
+<p> Returns a random turtle on the caller's patch other than the caller. 
+
+<p><em>one-of-turtles-towards</em> <code>angle distance</code> <b>[Observer, Turtle]</b> 
+
+<p> Returns a random turtle at the patch <code>distance</code> away at angle <code>angle</code>. 
+
+<p class=MsoNormal><span class=GramE><em>one-of-turtles-with</em></span> <code><span
+style='font-size:10.0pt'>[condition] [list of commands]</span></code> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p>Chooses a turtle based on the following <code><span style='font-size:10.0pt'>[condition] 
+  </span></code>and runs the commands specified in <code><span style='font-size:
+10.0pt'>[list of commands]</span></code> <o:p></o:p></p>
+<p><em>partner</em> <b>[Observer, Turtle]</b> 
+<p> Returns the ID number of the turtle being <em>grab</em>bed, or -1 if no turtle 
+
+  is being grabbed. 
+
+<p><em>partners</em> <b>[Observer, Turtle]</b> 
+
+<p> Returns a dlist of the turtles being <em>grab</em>bed, or [ ] if no turtles 
+
+  are being grabbed. 
+
+<p><em>pendown?</em> <b>[Turtle]</b>
+
+<p> Returns true if the turtle's pen is down, otherwise false. 
+
+<p><em>pendown?-at</em> <code>xcor ycor</code> <b>[Observer, Turtle]</b> 
+
+<p>Reports whether the pen of the turtle <code>xcor</code> units in the x direction 
+
+  and <code>ycor</code> units in the y direction away from the caller is down. 
+
+<p><em>pendown?-of</em> <code>number</code> <b>[Observer, Turtle]</b> 
+
+<p>Reports whether the pen of the turtle with ID Number <code>number </code>is 
+
+  down. 
+
+<p><em>pendown?-towards</em> <code>angle distance</code> <b>[Observer, Turtle]</b> 
+
+<p>Reports whether the pen of a turtle <code>distance</code> away at an angle 
+
+  of <code>angle</code> is down. 
+
+<p><em>pu, penup</em> <b>[Turtle]</b> 
+
+<p> Turtles pick up their "pens," meaning that they no longer draw when they move. 
+
+<p class=MsoNormal><span class=GramE><em>repeat</em></span> <code><span
+style='font-size:10.0pt'>number [list of commands]</span></code> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p>Do <code><span style='font-size:10.0pt'>[list of commands]</span></code> <code><span
+style='font-size:10.0pt'>number</span></code> times. <o:p></o:p></p>
+<p><em>rt, right</em> <code>number</code> <b>[Turtle]</b> 
+<p> Turtles turn right by <code>number</code> degrees. 
+
+<p><em>scale-color</em> <code>color variable limit1 limit2</code> <b>[Turtle]</b>
+
+<p> Turtles set their color to a shade of <code>color</code> based on their value 
+
+  of <code>variable</code>. <code>limit1</code> and <code>limit2</code> determine 
+
+  the amount of gradation. <br>
+
+  Example: <br>
+
+  <code>scale-color blue energy 0 20</code> <br>
+
+  Turtles turn one of twenty shades of blue. Turtles with lower energy turn darker 
+
+  blue. <br>
+
+  <code>scale-color blue energy 20 0</code> <br>
+
+  Turtles turn one of twenty shades of blue. Turtles with lower energy turn lighter 
+
+  blue. 
+
+<p class=MsoNormal><span class=SpellE><span class=GramE><em>sdev</em></span></span><span
+class=GramE><em>-of-turtles</em></span> <code><span style='font-size:10.0pt'>[list 
+  of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns the standard deviation of the [list of commands] when evaluated <span
+class=SpellE>accross</span> all the turtles. <o:p></o:p></p>
+<p><em>setbreed</em> <code>breedname</code> <b>[Turtle]</b> 
+<p> Turtles set their breed to <code>breedname</code>. 
+
+<p><em>setbreed-at </em> <code>xcor ycor breedname</code> <b>[Observer, Turtle]</b> 
+
+<p> Sets the breed of the turtle <code>xcor</code> units in the x direction and 
+
+  <code>ycor</code> units in the y direction away from the caller to <code>breedname</code>. 
+
+  <br>
+
+  See the breeds reference for more information. 
+
+<p><em>setbreed-of</em> <code>number breedname</code> <b>[Observer, Turtle]</b> 
+
+<p> Sets the breed of the turtle with ID Number <code>number</code> to <code>breedname</code>. 
+
+  <br>
+
+  See the breeds reference for more information. 
+
+<p><em>setbreed-towards</em> <code>angle distance breedname</code> <b>[Observer, 
+
+  Turtle]</b> 
+
+<p> Sets the breed of the turtle <code>distance</code> away in the direction <code>angle</code> 
+
+  to <code>breedname</code>. <br>
+
+  See the breeds reference for more information. 
+
+<p><em>setc, setcolor</em> <code>colorname (or colornumber)</code> <b>[Turtle]</b> 
+
+<p> Turtles set their color to <code>colorname (or color number)</code>. 
+
+<p><em>setc-at</em> <code>xcor ycor number</code> <b>[Observer, Turtle]</b> 
+
+<p>Sets the color of the turtle <code>xcor</code> units in the x direction and 
+
+  <code>ycor</code> units in the y direction away from the caller to <code>number</code>. 
+
+<p><em>setc-of</em> <code>number1 number2</code> <b>[Observer, Turtle]</b> 
+
+<p>Sets the color of the turtle with ID <code>number1</code> to color <code>number2</code>. 
+
+<p><em>setc-towards </em><code>angle distance number</code> <b>[Observer, Turtle]</b> 
+
+</p>
+
+<p>Sets the color of the turtle <code>distance</code> away if the heading was 
+
+  <code>angle</code> to <code>number</code>. 
+
+<p><em>seth, setheading</em> <code>direction</code> <b>[Turtle]</b></p>
+
+<p> Turtles set their heading to a <code>direction</code> from 0 to 359 degrees. 
+
+<p><em>seth-at</em> <code>xcor ycor number</code> <b>[Observer, Turtle]</b></p>
+
+<p> Sets the heading of the turtle <code>xcor</code> units in the x direction 
+
+  and <code>ycor</code> units in the y direction away from the caller to <code>number</code>. 
+
+<p><em>seth-of</em> <code>number1 number2</code> <b>[Observer, Turtle]</b></p>
+
+<p> Sets the heading of the turtle with ID <code>number1</code> to <code>number2</code>. 
+
+<p><em>seth-towards</em> <code>angle distance number</code> <b>[Observer, Turtle]</b> 
+
+</p>
+
+<p> Sets the heading of the turtle <code>distance</code> away if the heading was 
+
+  <code>angle</code> to <code>number</code>. 
+
+<p><em>setpendown?-at</em> <code>xcor ycor boolean</code> <b>[Observer, Turtle]</b>
+
+<p>Sets the pendown state of the turtle <code>xcor</code> units in the x direction 
+
+  and <code>ycor</code> units in the y direction away from the caller to <code>boolean</code>. 
+
+<p><em>setpendown?-of</em> <code>number boolean</code> <b>[Observer, Turtle]</b></p>
+
+<p>Sets the pendown state of the turtle with ID Number <code>number</code> to 
+
+  <code>boolean</code>. 
+
+<p><em>setpendown?-towards</em> <code>angle distance boolean</code> <b>[Observer, 
+
+  Turtle]</b></p>
+
+<p>Sets the pendown state of a turtle <code>distance</code> away at an angle of 
+
+  <code>angle</code> to <code>boolean</code>. 
+
+<p class=MsoNormal><span class=SpellE><span class=GramE><em>setshape</em></span></span> 
+  <code><span style='font-size:10.0pt'>shape</span></code>-name <b>[Turtle]</b><o:p></o:p></p>
+<p>Turtles set their shape to <code><span style='font-size:10.0pt'>shape-name</span></code>. 
+  <o:p></o:p></p>
+<p>Note: shape-name can be the number of the shape as well. <o:p></o:p></p>
+<p><em>setx, setxcor</em> <code>number</code> <b>[Turtle]</b> 
+<p> Turtles set their x-coordinate to <code>number</code>. 
+
+<p><em>setxcor-at</em> <code>xcor ycor number</code> <b>[Observer, Turtle]</b></p>
+
+<p> Sets the x-coordinate of the turtle <code>xcor</code> units in the x direction 
+
+  and <code>ycor</code> units in the y direction away from the caller to <code>number</code>. 
+
+<p><em>setxcor-of</em> <code>number1 number2</code> <b>[Observer, Turtle]</b></p>
+
+<p> Sets the x-coordinate of the turtle with ID <code>number1</code> to <code>number2</code>. 
+
+<p><em>setxcor-towards</em> <code>angle distance number</code> <b>[Observer, Turtle]</b></p>
+
+<p> Sets the x-coordinate of the turtle <code>distance</code> away if the heading 
+
+  was <code>angle</code> to <code>number</code>. 
+
+<p><em>setxy</em> <code>number1 number2</code> <b>[Turtle]</b></p>
+
+<p> Turtles set their x-coordinate to <code>number1</code> and y-coordinate to 
+
+  <code>number2</code>. 
+
+<p><em>sety, setycor</em> <code>number</code> <b>[Turtle]</b></p>
+
+<p> Turtles set their y-coordinate to <code>number</code>. 
+
+<p><em>setycor-at</em> <code>xcor ycor number</code> <b>[Observer, Turtle]</b> 
+
+<p> Sets the y-coordinate of the turtle <code>xcor</code> units in the x direction 
+
+  and <code>ycor</code> units in the y direction away from the caller to <code>number</code>. 
+
+<p><em>setycor-of</em> <code>number1 number2</code> <b>[Observer, Turtle]</b></p>
+
+<p> Sets the y-coordinate of the turtle with ID Number <code>number1</code> to 
+
+  <code>number2</code>. 
+
+<p><em>setycor-towards</em> <code>angle distance number</code> <b>[Observer, Turtle]</b></p>
+
+<p> Sets the y-coordinate of the turtle <code>distance</code> away if the heading 
+
+  was <code>angle</code> to <code>number</code>. 
+
+<p><em>shown?</em> <b>[Observer, Turtle]</b>
+
+<p> Returns true if the turtle is currently visible, otherwise false. 
+
+<p><em>shown?-at</em> <code>xcor ycor</code> <b>[Observer, Turtle]</b></p>
+
+<p> Reports whether the turtle at (<code>xcor ycor</code>) is visible. 
+
+<p><em>shown?-of</em> <code>number</code> <b>[Observer, Turtle]</b></p>
+
+<p> Reports whether the turtle with ID <code>number</code> is visible. 
+
+<p><em>shown?-towards</em> <code>angle distance</code> <b>[Observer, Turtle]</b></p>
+
+<p> Reports whether the turtle <code>distance</code> away at an angle of <code>angle</code> 
+
+  is visible. 
+
+<p><em>sprout</em> <code>list to run</code> <b>[Observer, Turtle]</b> 
+
+<p>Each patch creates a turtle, which then executes <code>list to run</code>. 
+
+  <br>
+
+  NOTE: This is a patch command. It must be called from within an <code>ask-patches</code> 
+
+  or <code>ask-patch-at</code> statement. 
+
+<p><em>st, showturtle</em> <b>[Turtle]</b>
+
+<p> Hidden turtles make themselves visible.
+
+<p><em>stamp</em> <code>color</code> <b>[Observer, Turtle]</b>
+
+<p> Sets color of patch under turtle to <code>color</code> 
+
+<p><em>stamp-at </em> <code>xcor ycor color</code> <b>[Observer, Turtle]</b></p>
+
+<p> Sets the color of the patch <code>xcor</code> units in the x direction and 
+
+  <code>ycor</code> units in the y direction away from the caller to <code>color</code>. 
+
+<p><em>stamp-towards</em> <code>angle distance color</code> <b>[Turtle]</b></p>
+
+<p> Sets the color of the patch <code>distance</code> away, if the heading were 
+
+  <code>angle</code>, to <code>color</code>. 
+
+<p><em>step</em> <b>[Turtle]</b>
+
+<p>A synonym for <code>fd 1</code>.
+
+<p><em>sum-of-turtles</em> <code>ilist </code><b>[Observer, Turtle]</b> 
+
+<p>Reports the total of evaluating <code>ilist</code>in every turtle and adding 
+
+  it up. <br>
+
+  Example usage: <br>
+
+  <code>show sum-of-turtles [weight * weight]</code> <br>
+
+  This gives the sum of every turtle's (weight squared). 
+
+<p><em>sum-of-turtles-with</em> <code>pred-ilist ilist</code> 
+
+<p> Reports the total value of <code>ilist</code> when run over the turtles that 
+
+  satisfy <code>pred-ilist</code>. If there are no turtles in which <code>pred-ilist</code> 
+
+  is true, returns 0. Note: This command can also be executed by patches, for 
+
+  example within an <code>ask-patches</code> statement. <br>
+
+  Example: <code>sum-of-turtles-with (color = red) [age]</code> returns the sum 
+
+  of the ages of all the red turtles. 
+
+<p><em>towards</em> <code>xcor ycor</code> <b>[Observer, Turtle]</b>
+
+<p> Returns the angle from the callers xcor and ycor to the specified absolute 
+
+  position specified by <code>xcor </code>and<code> ycor</code>. 
+
+<p><em>towards-nowrap</em> <code>xcor ycor</code> <b>[Observer, Turtle]</b> 
+
+<p> Returns the angle from the callers xcor and ycor to the specified absolute 
+
+  position specified by <code>xcor </code>and<code> ycor</code> without wrapping.
+
+<p class=MsoNormal><span class=GramE><em>variance-of-turtles</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Returns the variance of [list of commands] amongst all the 
+  turtles.</span> <o:p></o:p></p>
+<p><em>who</em> <b>[Turtle]</b> 
+<p> Returns the ID number of the turtle
+
+<p class=MsoNormal><span class=GramE><em>who-max-of-frogs</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns a list with <span class=GramE>the who</span> number of the turtle of 
+  breed frogs corresponding to the highest value of [list of commands] along with 
+  the highest value of [list of commands]. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>who-max-of-frogs-with</em></span> <code><span
+style='font-size:10.0pt'>[condition] [list of commands]</span></code> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p>Returns a list with <span class=GramE>the who</span> number of the turtle of 
+  breed frogs which <span class=SpellE>satifies</span> the [condition] and has 
+  the highest value of [list of commands] along with the highest value of [list 
+  of commands]. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>who-max-of-turtles</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns a list with <span class=GramE>the who</span> number of the turtle corresponding 
+  to the highest value of [list of commands] along with the highest value of [list 
+  of commands]. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>who-max-of-turtles-with</em></span> <code><span
+style='font-size:10.0pt'>[condition] [list of commands]</span></code> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p>Returns a list with <span class=GramE>the who</span> number of the turtle which 
+  <span class=SpellE>satifies</span> the [condition] and has the highest value 
+  of [list of commands] along with the highest value of [list of commands]. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>who-min-of-frogs</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns a list with <span class=GramE>the who</span> number of the turtle of 
+  breed frogs corresponding to the smallest value of [list of commands] along 
+  with the smallest value of [list of commands]. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>who-min-of-frogs-with</em></span> <code><span
+style='font-size:10.0pt'>[condition] [list of commands]</span></code> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p>Returns a list with <span class=GramE>the who</span> number of the turtle of 
+  breed frogs which <span class=SpellE>satifies</span> the [condition] and has 
+  the least value of [list of commands] along with the smallest value of [list 
+  of commands]. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>who-min-of-turtles</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns a list with <span class=GramE>the who</span> number of the turtle corresponding 
+  to the smallest value of [list of commands] along with the smallest value of 
+  [list of commands]. <o:p></o:p></p>
+<p class=MsoNormal><span class=GramE><em>who-min-of-turtles-with</em></span> <code><span
+style='font-size:10.0pt'>[condition] [list of commands]</span></code> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p>Returns a list with the <span class=GramE>who</span> number of the <span
+class=SpellE>turtlewhich</span> <span class=SpellE>satifies</span> the [condition] 
+  and has the least value of [list of commands] along with the smallest value 
+  of [list of commands]. <o:p></o:p></p>
+<p><em>xcor</em> <b>[Turtle]</b> 
+<p> Returns the x-coordinate of the turtle 
+
+<p><em>xcor-at</em> <code>xcor ycor</code> <b>[Observer, Turtle]</b></p>
+
+<p> Reports the x-coordinate of the turtle <code>xcor</code> units in the x direction 
+
+  and <code>ycor</code> units in the y direction away from the caller. 
+
+<p><em>xcor-of</em> <code>number</code> <b>[Observer, Turtle]</b></p>
+
+<p> Reports the x-coordinate of the turtle with ID <code>number</code>. 
+
+<p><em>xcor-towards</em> <code>angle distance</code> <b>[Observer, Turtle]</b></p>
+
+<p> Reports the x-coordinate of the turtle <code>distance</code> away if the heading 
+
+  was <code>angle</code>. 
+
+<p><em>ycor</em> <b>[Turtle]</b>
+
+<p> Returns the y-coordinate of the turtle 
+
+<p><em>ycor-at</em> <code>xcor ycor</code> <b>[Observer, Turtle]</b></p>
+
+<p> Reports the y-coordinate of the turtle <code>xcor</code> units in the x direction 
+
+  and <code>ycor</code> units in the y direction away from the caller. 
+
+<p><em>ycor-of</em> <code>number</code> <b>[Observer, Turtle]</b></p>
+
+<p> Reports the y-coordinate of the turtle with ID <code>number</code>. 
+
+<p><em>ycor-towards</em> <code>angle distance</code> <b>[Observer, Turtle]</b></p>
+
+<p> Reports the y-coordinate of the turtle <code>distance</code> away if the heading 
+
+  was <code>angle</code>. 
+
+<p>&nbsp; </p>
+
+</body>
+
+</html>
+

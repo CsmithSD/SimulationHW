@@ -1,0 +1,1877 @@
+<html><head><title>Command List</title><link rel="STYLESHEET" href="style.css"></head><body><h3 style="color: green">Command List</h3>
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div class="catdescription">
+Here are a list of commands that affect logic structures.</div>
+<p>
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ask-breed</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of turtle commands to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Asks all turtles of breed <nobr><code>frogs</code></nobr> to run <nobr><code>[list of commands]</code></nobr>. The observer will wait for all of the turtles to finish before continuing.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-frogs [fd 1 rt 90]</code></nobr> will make all turtles of breed <nobr><code>frogs</code></nobr> move forward one step and then turn 90 degrees to the right.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=426.html" class="related">ask-breed-with</a>
+			<a href="command_doc_include.php@com_id=14.html" class="related">ask-list-of-turtles</a>
+				<a href="command_doc_include.php@com_id=16.html" class="related">ask-patch-at</a>
+				<a href="command_doc_include.php@com_id=15.html" class="related">ask-patches</a>
+				<a href="command_doc_include.php@com_id=17.html" class="related">ask-turtle</a>
+				<a href="command_doc_include.php@com_id=18.html" class="related">ask-turtles</a>
+				<a href="command_doc_include.php@com_id=19.html" class="related">ask-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ask-list-of-turtles</span>
+	
+	<span class="argument">
+	[list of turtle who numbers] [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of turtle who numbers]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">A list of turtle who numbers to ask</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of commands to ask these turtles to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles whose who numbers (ID numbers) are in <span class="argument">[list of turtle who numbers]</span> run <span class="argument">[list of commands]</span>. The caller of this command waits for it to finish before continuing. If some invalid whonumbers make up <span class="argument">[list of turtle who numbers]</span>, they are ignored.<p>Asking a list of turtles to do something is a moderately expensive operation since StarLogo creates a thread for each turtle. Try to group commands that you would have put into separate <nobr><code>ask-list-of-turtles</code></nobr> into the same one to minimize thread creation overhead.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-list-of-turtles [4 6 10 14] [fd 1]</code></nobr> makes 4 turtles (those with who numbers 4, 6, 10, and 14) move forward one step.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=13.html" class="related">ask-breed</a>
+			<a href="command_doc_include.php@com_id=16.html" class="related">ask-patch-at</a>
+				<a href="command_doc_include.php@com_id=15.html" class="related">ask-patches</a>
+				<a href="command_doc_include.php@com_id=17.html" class="related">ask-turtle</a>
+				<a href="command_doc_include.php@com_id=18.html" class="related">ask-turtles</a>
+				<a href="command_doc_include.php@com_id=19.html" class="related">ask-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ask-patch-at</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of patch commands</td>
+		<td class="argdesc" valign="top">A list of commands for the patch to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This command asks the patch which is xcor units in the x direction and ycor units in the y direction away from the caller to run the <nobr><code>[list of commands]</code></nobr>. The caller of this command will wait for the patch to finish before moving on. The observer is considered to be located at (0, 0).</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-patch-at 5 6 [setpc red]</code></nobr> makes the patch 5 units to the right and 6 units up from the caller turn red.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>ask-patch-at -3 -8 [setpc blue]</code></nobr> makes the patch 3 units to the left and 8 units down from the caller turn blue.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=13.html" class="related">ask-breed</a>
+			<a href="command_doc_include.php@com_id=14.html" class="related">ask-list-of-turtles</a>
+				<a href="command_doc_include.php@com_id=15.html" class="related">ask-patches</a>
+				<a href="command_doc_include.php@com_id=425.html" class="related">ask-patches-with</a>
+				<a href="command_doc_include.php@com_id=17.html" class="related">ask-turtle</a>
+				<a href="command_doc_include.php@com_id=18.html" class="related">ask-turtles</a>
+				<a href="command_doc_include.php@com_id=19.html" class="related">ask-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ask-patches</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of patch commands</td>
+		<td class="argdesc" valign="top">A list of commands for the patches to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This observer command asks all of the patches to run the <nobr><code>[list of commands]</code></nobr>. The observer will wait for the patches to finish before moving on. <p>Asking the patches to do something is a moderately expensive operation since StarLogo creates a thread for each patch. Try to group commands that you would have put into separate <nobr><code>ask-patches</code></nobr> into the same one to minimize thread creation overhead.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-patches [setpc red]</code></nobr> colors all of the patches red.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=13.html" class="related">ask-breed</a>
+			<a href="command_doc_include.php@com_id=14.html" class="related">ask-list-of-turtles</a>
+				<a href="command_doc_include.php@com_id=16.html" class="related">ask-patch-at</a>
+				<a href="command_doc_include.php@com_id=17.html" class="related">ask-turtle</a>
+				<a href="command_doc_include.php@com_id=18.html" class="related">ask-turtles</a>
+				<a href="command_doc_include.php@com_id=19.html" class="related">ask-turtles-with</a>
+				<a href="command_doc_include.php@com_id=247.html" class="related">setbg</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ask-turtle</span>
+	
+	<span class="argument">
+	who number [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>who number</nobr></td>
+		<td class="argtype" valign="top">Integer</td>
+		<td class="argdesc" valign="top">The who number of a turtle</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of commands for the turtle to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This command asks the turtle with who number number to run the <nobr><code>[list of commands]</code></nobr>. The caller will wait for the turtle to finish before moving on.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-turtle 5 [fd 1]</code></nobr> makes the turtle with who number 5 move forward 1 step.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=13.html" class="related">ask-breed</a>
+			<a href="command_doc_include.php@com_id=14.html" class="related">ask-list-of-turtles</a>
+				<a href="command_doc_include.php@com_id=16.html" class="related">ask-patch-at</a>
+				<a href="command_doc_include.php@com_id=15.html" class="related">ask-patches</a>
+				<a href="command_doc_include.php@com_id=18.html" class="related">ask-turtles</a>
+				<a href="command_doc_include.php@com_id=19.html" class="related">ask-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ask-turtles</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of commands for the turtles to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Asks all turtles to run the <nobr><code>[list of commands]</code></nobr>. The observer will wait for all of the turtles to finish before continuing. <p>Asking all of the turtles to do something is a moderately expensive operation since StarLogo creates a thread for each turtle. Try to group commands that you would have put into separate <nobr><code>ask-turtles</code></nobr> into the same one to minimize thread creation overhead.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-turtles [fd 1]</code></nobr> will make all of the turtles move forward 1 step.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=13.html" class="related">ask-breed</a>
+			<a href="command_doc_include.php@com_id=14.html" class="related">ask-list-of-turtles</a>
+				<a href="command_doc_include.php@com_id=16.html" class="related">ask-patch-at</a>
+				<a href="command_doc_include.php@com_id=15.html" class="related">ask-patches</a>
+				<a href="command_doc_include.php@com_id=17.html" class="related">ask-turtle</a>
+				<a href="command_doc_include.php@com_id=19.html" class="related">ask-turtles-with</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ask-turtles-with</span>
+	
+	<span class="argument">
+	[condition] [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">An expression that returns a true or false value</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of turtle commands</td>
+		<td class="argdesc" valign="top">A list of commands for the turtles to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This observer command asks turtles satisfying <nobr><code>[condition]</code></nobr> to run the <nobr><code>[list of commands]</code></nobr>.<br>Asking many turtles to do something is a moderately expensive operation since StarLogo creates a thread for each turtle. Try to group commands that you would have put into separate <nobr><code>ask-turtles-with</code></nobr> into the same one to minimize thread creation overhead.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ask-turtles-with [color = red] [fd 1]</code></nobr> tells all red turtles to move forward one step.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=13.html" class="related">ask-breed</a>
+			<a href="command_doc_include.php@com_id=14.html" class="related">ask-list-of-turtles</a>
+				<a href="command_doc_include.php@com_id=16.html" class="related">ask-patch-at</a>
+				<a href="command_doc_include.php@com_id=15.html" class="related">ask-patches</a>
+				<a href="command_doc_include.php@com_id=17.html" class="related">ask-turtle</a>
+				<a href="command_doc_include.php@com_id=18.html" class="related">ask-turtles</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">case</span>
+	
+	<span class="argument">
+	variable [ anything1 [list-of-commands1] anything2 [list-of-commands2] ] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>variable</nobr></td>
+		<td class="argtype" valign="top">Variable</td>
+		<td class="argdesc" valign="top">variable to check</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[ anything1 [list-of-commands1]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">value to match and commands to run</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>anything2 [list-of-commands2] ]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">value to match and commands to run</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Checks if the first <nobr><code>argument</code></nobr> variable is equal to any of the <nobr><code>anythings</code></nobr> in the list. If it is equal, the corresponding <nobr><code>[list of commands]</code></nobr> is executed and control skips to the end of the case statement. A case statement can often be used in place of nested <nobr><code>ifelse</code></nobr> statements. If nothing matches, no <nobr><code>[lists of commands]</code></nobr> are executed and control skips to the end of the case statement. You can use true  as one of your anythings as a default case.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>case energy <br> [<br>    1 [setc blue]<br>    2 [setc yellow]<br>    3 [setc red]<br>    true [setc white]<br> ]</code></nobr><br>This command will set the turtle's color to blue if energy is 1, yellow if energy is 2, red if energy is 3 and white in any other case.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		The first input can be an expression as well as a variable.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">die</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Turtles die, meaning that they stop running all code and disappear forever.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if pc = red [die]</code></nobr> makes the turtle die if the patch it is on is red.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=137.html" class="related">kill</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">dolist</span>
+	
+	<span class="argument">
+	[:loop-variable list] [commands to run] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[:loop-variable list]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">On each iteration, :loop-variable is assigned to each element of the list</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[commands to run]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">Commands to run once for each element of the list</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This command loops over each element of the list, and runs <span class="argument">[commands to run]</span> for each one. During each run of <span class="argument">[commands to run]</span>, the element of the list is bound to <nobr><code>loop-variable</code></nobr>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>dolist [:i [2 4 -1]] [fd :i]</code></nobr> loops over the list <nobr><code>[1 2 3]</code></nobr>. There are three iterations of this loop; in the first, we run <nobr><code>fd 2</code></nobr>, in the second <nobr><code>fd 4</code></nobr> and the third <nobr><code>fd -1</code></nobr>.  		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=149.html" class="related">dotimes</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">dotimes</span>
+	
+	<span class="argument">
+	[:loop-variable #times] [commands to run] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[:loop-variable #times]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">On each iteration, :loop-variable is assigned to each number from 1 to #times</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[commands to run]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">Commands to run once for each number from 1 to #times</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This command loops over each integer number from 1 to <nobr><code>#times</code></nobr>, and runs <span class="argument">[commands to run]</span> for each one. During each run of <span class="argument">[commands to run]</span>, the current number is bound to <nobr><code>:loop-variable</code></nobr>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>dotimes [:foo 4] [show :foo]</code></nobr> loops 4 times, each time assigning :foo to 1, 2, 3, and then 4. The commands that are run print the value of :foo to the command center.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=147.html" class="related">dolist</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">every</span>
+	
+	<span class="argument">
+	number [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">number of seconds to wait between each iteration</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">list of commands to run each iteration</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+<nobr><code>every</code></nobr> is just like loop, in that it runs its <span class="argument">[list of commands]</span> forever, but it waits <span class="argument">number</span> seconds between each iteration. Number can be a decimal as well as an integer. <br><nobr><code>every</code></nobr> is usually used in a non-forever button to run something over and over again with a pause in between.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>every 2 [fd 1 rt 90]</code></nobr> would make all the turtles move forward one step, turn right 90 degrees, and then wait 2 seconds over and over again.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">grab</span>
+	
+	<span class="argument">
+	number [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Have turtles <span class="argument">number</span> execute <span class="argument">[list of commands]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>grab one-of-turtles-here [setc red setc-of partner blue]</code></nobr>  This turns the caller red and the grabbed turtle blue. If there are no other turtles on the caller's patch, the [list of commands] does not get executed and no turtles change color.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Caller instructs turtles with who number(s) number(s) to execute [list of commands]. The who number of the turtles being grabbed are stored in partner, if there is one, or partners, if there are many. A turtle cannot grab itself.		</div>
+		<p>
+				<div class="notes">
+		Grab is only useful for guaranteeing that a turtle you want to talk to is not being talked to by anyone else and cannot talk to anyone else while being grabbed. Note, while one turtle is grabbing another, neither may be grabbed by a third turtle.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=79.html" class="related">grabbed?</a>
+			<a href="command_doc_include.php@com_id=304.html" class="related">partner</a>
+				<a href="command_doc_include.php@com_id=308.html" class="related">partners</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">grabbed?</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns true if the turtle is currently grabbed by another turtle, otherwise false.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if grabbed? [fd 1]</code></nobr>  Makes all grabbed turtles move forward 1 step.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=78.html" class="related">grab</a>
+			<a href="command_doc_include.php@com_id=304.html" class="related">partner</a>
+				<a href="command_doc_include.php@com_id=308.html" class="related">partners</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">hatch</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Make an exact copy of a turtle, including turtles-own variables and state variables.  The <span class="argument">[list of commands]</span> is then run on the cloned turtle.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>hatch [setc blue fd 1]</code></nobr> has the caller make a duplicate of itself, and then the duplicate sets its color to blue and moves foward 1.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=390.html" class="related">sprout</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">if</span>
+	
+	<span class="argument">
+	condition [list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>condition</nobr></td>
+		<td class="argtype" valign="top">Boolean</td>
+		<td class="argdesc" valign="top">Condition that evaluates to either true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">List of commands to execute of $arg1 is true</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Do <span class="argument">[list of commands]</span> if and only if <span class="argument">condition</span> reports true.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>if color = black [fd 5 rt 90]</code></nobr> makes every black turtle move forward 5 steps and then turn right.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=114.html" class="related">ifelse</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ifelse</span>
+	
+	<span class="argument">
+	condition [list of commands1] [list of commands2] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>condition</nobr></td>
+		<td class="argtype" valign="top">Boolean</td>
+		<td class="argdesc" valign="top">Condition that evalutes to either true or false</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands1]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">Runs if $arg1 is true</td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands2]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">Runs of $arg2 is false</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Do <span class="argument">[list of commands1]</span> if <span class="argument">condition</span> reports true, otherwise do <span class="argument">[list of commands2]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>ifelse color = black [fd 2] [bk 2]</code></nobr> would make black turtles move forward 2 steps and all other turtles move back 2 steps.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=110.html" class="related">if</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">ignore</span>
+	
+	<span class="argument">
+	expression 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>expression</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">Expression to evalute for side effects</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Ignores the return value of the expression immediately following it. More useful than it looks, <nobr><code>ignore</code></nobr> can be used to execute a procedure for its side effects.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>to compute-and-print-square :x</code></nobr><br><nobr><code>  let [:ans :x * :x]</code></nobr><br><nobr><code>  show :x</code></nobr><br><nobr><code>  output :x</code></nobr><p><nobr><code>ignore compute-and-print-square 4</code></nobr> shows 16 in the command center, but does nothing with the return value from <nobr><code>compute-and-print-square</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">item</span>
+	
+	<span class="argument">
+	number [list] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		<tr>
+		<td class="argname" valign="top"><nobr>[list]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the element of <span class="argument">[list]</span> at the <span class="argument">number</span>'th position.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>item 2 [4 6 8]</code></nobr> returns 6.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Indexing starts from 1.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=352.html" class="related">position</a>
+			<a href="command_doc_include.php@com_id=182.html" class="related">remove</a>
+				<a href="command_doc_include.php@com_id=185.html" class="related">remove-element</a>
+				<a href="command_doc_include.php@com_id=267.html" class="related">setitem</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">kill</span>
+	
+	<span class="argument">
+	number 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>number</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Kills turtle with <nobr><code>who number</code></nobr> equal to <span class="argument">number</span>. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>kill 2</code></nobr> kills the turtle with a <nobr><code>who number</code></nobr> equal to 2.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=120.html" class="related">die</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">loop</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">the list of commands that will be run forever</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Do <span class="argument">[list of commands]</span> forever. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>loop [fd 4 rt 45]</code></nobr> makes turtles repeatedly move forward 4 steps and turn right 45 degrees.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=233.html" class="related">output</a>
+			<a href="command_doc_include.php@com_id=186.html" class="related">repeat</a>
+				<a href="command_doc_include.php@com_id=398.html" class="related">stop</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">output</span>
+	
+	<span class="argument">
+	something 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>something</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">the value to be returned</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Exits the current procedure and returns <span class="argument">something</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>output "hello"</code></nobr> exits the current procedure and returns the string <nobr><code>"hello"</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=159.html" class="related">end</a>
+			<a href="command_doc_include.php@com_id=166.html" class="related">loop</a>
+				<a href="command_doc_include.php@com_id=398.html" class="related">stop</a>
+				<a href="command_doc_include.php@com_id=36.html" class="related">to</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">reset-timer (resett)</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Resets the timer.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		If you want to time how long a process takes, do this:<br><nobr><code>reset-timer fd 1000 show timer</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=35.html" class="related">timer</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">startup</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This is a special procedure name. Anything within the startup procedure will be executed each time the project is opened.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>to startup<br>clear-turtles ;save the patches<br>crt 100<br>ask-turtles [setc blue]<br>end</code></nobr><p>This process of clearing the turtles, and creating 100 new blue ones will occur everytime the project is opened.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=159.html" class="related">end</a>
+			<a href="command_doc_include.php@com_id=36.html" class="related">to</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">stop</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Exits the current procedure immediately. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>to check-patch-color<br>if pc-ahead = red [rt 90 stop]<br>if pc-ahead = green [lt 90 stop]<br>fd 1<br>end </code></nobr><p>This procedure will cause turtles to turn right and then exit the procedure if the the patch ahead is red, turn left and exit the procedure if the patch ahead is green, and only move forward one if the patch ahead was not green or red.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: stop does not stop any callers of the procedure, only the procedure itself.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=159.html" class="related">end</a>
+			<a href="command_doc_include.php@com_id=166.html" class="related">loop</a>
+				<a href="command_doc_include.php@com_id=233.html" class="related">output</a>
+				<a href="command_doc_include.php@com_id=36.html" class="related">to</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">stopall</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Tells everything to stop running, including procedures, buttons, monitors, and command centers.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=429.html" class="related">stopbuttonname</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">switch-scheduler</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Toggles back and forth between fixed order scheduling and randomized scheduling.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=71.html" class="related">get-scheduler-random-seed</a>
+			<a href="command_doc_include.php@com_id=190.html" class="related">scheduler</a>
+				<a href="command_doc_include.php@com_id=368.html" class="related">set-scheduler-random-seed</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">timer</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the current value of the timer in seconds (since the last call to <nobr><code>reset-timer</code></nobr>). <p>Each thread of execution has its own timer. A thread of execution is started for each turtle when a turtle button is pressed, or code is entered in the turtle command center. A thread of execution is started for the observer if an observer button is pressed, or code is entered in the observer command center. When turtles, patches or observer are asked to do something (e.g. using ask-turtles, ask-patches or ask-observer), a new timer is created and used for that list-to-run. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		If you want to time how long it takes for a turtle to move 1000 steps, do this: <nobr><code>reset-timer fd 1000 show timer</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=189.html" class="related">reset-timer</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">to-delimited-string</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Takes a list of instructions (variables, reporters, strings) and separates them with commas and then concatenates them, returning the concatenated string.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		This function is helpful in outputting to a spreadsheet program.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=42.html" class="related">to-list</a>
+			<a href="command_doc_include.php@com_id=43.html" class="related">to-string</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">to-list</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">Commands to execute whose return values will form the list</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Runs then commands in [list of commands] and makes a new list from each command's return value.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>globals [foo]</code></nobr><p><nobr><code>set foo 45</code></nobr><br><nobr><code>to-list [1 2 + 4 foo]</code></nobr> returns the list <nobr><code>[1 6 45]</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=65.html" class="related">list</a>
+			<a href="command_doc_include.php@com_id=176.html" class="related">make-list</a>
+				<a href="command_doc_include.php@com_id=328.html" class="related">pick</a>
+				<a href="command_doc_include.php@com_id=241.html" class="related">sentence</a>
+				<a href="command_doc_include.php@com_id=439.html" class="related">sublist</a>
+				<a href="command_doc_include.php@com_id=39.html" class="related">to-delimited-string</a>
+				<a href="command_doc_include.php@com_id=43.html" class="related">to-string</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">to-string</span>
+	
+	<span class="argument">
+	[list of commands] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">Commands to execute whose return values will form the string</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Takes a list of instructions (variables, reporters, strings), executes them, and concatenates their return values, returning the concatenated string.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=39.html" class="related">to-delimited-string</a>
+			<a href="command_doc_include.php@com_id=42.html" class="related">to-list</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">wait</span>
+	
+	<span class="argument">
+	seconds 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>seconds</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">A number of seconds. Decimals are allowed.</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Caller waits <span class="argument">seconds</span> seconds before continuing.<p>This command is per-thread - meaning if you have two buttons that each call wait, they will not wait for one another. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>to crawl</code></nobr><br><nobr><code>fd 1</code></nobr><br><nobr><code>wait 2.1</code></nobr><br><nobr><code>end</code></nobr><p><nobr><code>crawl</code></nobr> <p>The turtles go forward 1 step and then wait for 2.1 seconds.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=305.html" class="related">wait-until</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">wait-until</span>
+	
+	<span class="argument">
+	[condition] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+		<td class="argtype" valign="top">List of commands</td>
+		<td class="argdesc" valign="top">A predicate that is run over and over again until it is true.</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+The caller waits until the <span class="argument">[condition]</span> is true. This command is used to make a button or procedure stop until some other event in your model occurs.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>wait-until [game-over = true]</code></nobr> makes the caller wait until the game is over.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=303.html" class="related">wait</a>
+		<hr></html>

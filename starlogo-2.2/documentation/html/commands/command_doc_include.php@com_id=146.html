@@ -1,0 +1,86 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+<!-- begin sample documentation page -->
+
+
+<!-- if (!($com_id)) { $com_id = 1; } -->
+
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+
+<span class="commandname">case</span>
+
+<span class="argument">
+variable [ anything1 [list-of-commands1] anything2 [list-of-commands2] ] </span>
+
+
+<!-- show arguments -->
+
+<p>
+<div class="heading">Parameters:</div>
+<table cellpadding="2" cellspacing="2" border="0"> 
+
+
+<tr>
+<td class="argname" valign="top"><nobr>variable</nobr></td>
+<td class="argtype" valign="top">Variable</td>
+<td class="argdesc" valign="top">variable to check</td> 
+</tr>
+
+
+<tr>
+<td class="argname" valign="top"><nobr>[ anything1 [list-of-commands1]</nobr></td>
+<td class="argtype" valign="top">List of commands</td>
+<td class="argdesc" valign="top">value to match and commands to run</td> 
+</tr>
+
+
+<tr>
+<td class="argname" valign="top"><nobr>anything2 [list-of-commands2] ]</nobr></td>
+<td class="argtype" valign="top">List of commands</td>
+<td class="argdesc" valign="top">value to match and commands to run</td> 
+</tr>
+
+
+</table>
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Checks if the first <nobr><code>argument</code></nobr> variable is equal to any of the <nobr><code>anythings</code></nobr> in the list. If it is equal, the corresponding <nobr><code>[list of commands]</code></nobr> is executed and control skips to the end of the case statement. A case statement can often be used in place of nested <nobr><code>ifelse</code></nobr> statements. If nothing matches, no <nobr><code>[lists of commands]</code></nobr> are executed and control skips to the end of the case statement. You can use true  as one of your anythings as a default case.</div>
+
+<!-- show examples if there are examples -->
+
+<p>
+<div class="heading">Examples:</div>
+<div class="examples">
+<nobr><code>case energy <br> [<br>    1 [setc blue]<br>    2 [setc yellow]<br>    3 [setc red]<br>    true [setc white]<br> ]</code></nobr><br>This command will set the turtle's color to blue if energy is 1, yellow if energy is 2, red if energy is 3 and white in any other case.</div>
+<p>
+ 
+
+<!-- show notes if there are notes -->
+
+<p>
+<div class="heading">Notes:</div>
+<div class="notes">
+The first input can be an expression as well as a variable.</div>
+<p>
+
+<!-- show related commands if there are related commands -->
+
+
+</body></html>

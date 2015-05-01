@@ -1,0 +1,503 @@
+// Ecological template for starlogo
+// Written by Michael Mandel, 4/25/01
+
+
+// General format of a Function:
+// <function> [function-name]
+// <switches> [switches]
+// [buttons]
+// [argument declarations]
+// [variables]
+// <body>
+// [body]
+// </body>
+// <description>
+// [description]
+// </description>
+
+
+// Arguments:
+// Arguments are the main point of interaction between the user and
+// your functions.  Arguments let the user customize your functions to
+// suit their needs.  The "variable" field in most arguments is the text
+// that will be replaced in the body definition with the value of that
+// argument.  
+// Format of Arguments:
+// slider argument: lets user select a value, or add a new slider to model
+// format: <slider> [prompt] [variable] [min] [starting value] [max]
+// breed argument: lets user choose a breed from those currently defined
+// format: <breed> [prompt] [variable]
+// color argument: lets user pick a starlogo color
+// format: <color> [prompt] [variable]
+// choice argument: lets the user choose between two labeled options
+// format: <choice> [prompt] [choice1 label] [choice2 label]
+//   choice argument declaration must then be followed by two more
+//   arguments the next argument after the choice will be shown when the
+//   choice's first radio button is selected.  The second argument
+//   following the choice will be shown when the choice's second radio
+//   button is selected.  Either argument following the choice can be the
+//   word "null", meaning that there is no argument to be shown/hidden when
+//   that button is selected.  Currently, nested choice arguments are not 
+//   supported.
+// 
+
+
+// Format of switches:
+// Functions can have switches that define their behavior.  Possible
+// switches are "observer" "predefined" and "notinwander".  By default,
+// any function you declare without switches is a turtle procedure that
+// the user can add and remove from a breed, and that will be included in
+// the wander function.  "Observer" declares this function as an observer
+// procedure, meaning that any breeds you define will not be able to
+// define this procedure, but the observer will.  It also forces the
+// function never to be included in the wander function, so using this
+// switch with the "notinwander" switch is redundant.  "Predefined" means
+// that this function will be defined automatically at startup of the
+// template and which the user will not be able to remove.  "Notinwander"
+// means that the function will not be included in the wander function,
+// the main action loop.  Notinwander functions are useful for defining
+// helper functions and functions the user will interact with through
+// buttons other than the wander button.
+
+
+// Variables:
+// variables are any supporting variables a specific procedure will
+// need.  You can declare "turtlevars", "globalvars", and/or "patchvars".
+// When this function is defined, these variables will automatically be
+// added to the declarations of variables in the observer procedures pane
+// of the control center.
+
+
+// Buttons:
+// Any buttons defined for a function will be created if/when that
+// function is defined.  The format of a button is:
+// <button> "[starlogo instruction]" [isTurtleCommand] [isForeverButton] "[button name]"
+// 
+// "[starlogo instruction]" is the command that this button will execute
+// when pressed.  It is the same as what would be entered into the
+// "Create Button" dialog when manually creating a button.
+//
+// [isTurtleCommand] should be either the string "true" or "false".  It
+// describes whether or not the "[starlogo instruction]" should be
+// executed by the turtles, indicated by "true", or the observer,
+// indicated by "false".  
+//
+// [isForeverButton] should be either the string "true" or "false".  It
+// describes whether clicking this button will execute the specified
+// command once, indicated by "false", or continuously until the user
+// presses the button again, indicated by "true".
+// 
+// "[button name]" is an optional argument that gives the button a name
+// different than "[starlogo command]" and shows that name by default.
+
+
+// Format of Body:
+// The body is contained between the words "<body>" and "</body>"
+// The body can contain either quoted strings, or if, else, and endif
+// commands.  Quoted strings are printed as the body of the function.
+// The commands in the body are used to selectively output different
+// bodies for a function depending on the state of choice arguments.
+// "If" takes a number, n, corresponding to the nth choice argument
+// declared, starting at the top of the declarations.  If the choice
+// argument's first radio button is selected, anything following the "if"
+// will be evaluated for printing until either an "else" or "endif" is
+// reached.  "Else" will output commands only if the "if" preceding it
+// did not output.  "Endif" is used to end "if" statements.
+
+
+// Format of description:
+// the description is the text that is displayed when the user presses
+// the "What's this?" button when editing a function.  It is enclosed
+// between the "<description>" and "</description>" tags and is displayed
+// to the user exactly as it looks in this file.
+
+
+// Precompiled Java functions:
+// You can also write functions in java to have even finer control of
+// the system.  If you have any java functions you would like to load
+// into the template, use the following format: 
+// <function> java [package].[class]
+// I have provided three precompiled functions,
+// template.turtleFuncs.Custom and template.observerFuncs.Custom, both of
+// which makes a function out of any code the user types in a text field,
+// and template.observerFuncs.Setup, which lets the user set some intial
+// characteristics of the model.
+
+
+// Tips:
+// When a function is output to a procedure pane, all instances of the
+// arguments' variable fields will be replaced with the value of that
+// variable.  When these replacements occur, any appearance of the
+// variable field will be replaced, even if it is in the middle of
+// another word or another variable name, so be careful.  The order of
+// replacement is not guaranteed, so it is unadvisable to, for instance,
+// name one argument ":slider" and another ":slider2".  You should
+// instead use names like ":slider1" and ":slider2".  It is recommended
+// that you precede variable names with colons to prevent other name
+// collisions.  It also maintains the standard that in starlogo any local
+// variables declared in a function begin with a colon.  Local variables
+// may be created in functions using starlogo's "let" command.  See the
+// starlogo documentation for more information on "let".
+//
+// White space in template files is important in some circumstances.
+// Argument definitions must be contained on one line, as must switch
+// declarations, and variable definitions.  The <function> tag must also
+// begin a new line and the function's name must end that line.  The
+// description of a function will appear to the user exactly as it
+// appears in this file, line breaks included.  In the body statement,
+// "if [number]", "else", and "endif" should all be on their own lines.
+//
+// Comments begin with the string "//" and end at the next newline.
+
+
+
+// Here is the actual ecology template:
+
+<template> "flexible eco template"    // name of template
+<function> "Death"      
+<choice> "Die according to" "energy" "age"
+<slider> "Minimum energy" ":min-energy" 0 0 30
+<slider> "Maximum age" ":age-limit" 0 50 100
+<turtlevars> energy age
+
+<body>
+if 1
+"  if energy < :min-energy [die]
+end"
+else
+"  if age < :age-limit [die]
+end"
+endif
+</body>
+
+<description>
+This function tells turtles to die, either when they reach a
+predefined age, or get to/below a certain minimum energy.  It is
+called once in each wander loop.
+</description>
+
+<function> "Draw"
+<choice> "Draw with" "color scaled to energy" "one color"
+<slider> "Energy for darkest color" ":max-energy" 0 10 50
+null
+
+<body>
+if 1
+"  let [:base-color (10 * (int (color / 10)) + 5)]
+  scale-color :base-color energy 0 :max-energy
+end"
+else
+"  ;this function is empty
+end"
+endif
+</body>
+
+<description>
+This function tells the model how to draw the turtles.  You can
+either draw them as a color scaled to their energy, or as a single
+color, regardless of their energy.
+</description>
+
+<function> "Eat Patch"
+<color> "Color of patches to eat" ":color-to-eat" "green"
+<choice> "On a patch, eat" "some" "all of the color"
+<slider> "Percentage of patch color to eat" ":percentage" 0 50 100
+<color> "Color to leave behind" ":color-to-leave" "black"
+<turtlevars> energy
+
+<body>
+"  if ((int (pc / 10)) != (int (:color-to-eat / 10))) [stop]"
+if 1
+"  ifelse (:percentage / 20) > (pc mod 10)
+    [stamp black]
+    [stamp pc - :percentage / 20]
+  setenergy energy + :percentage / 100"
+else
+"  stamp :color-to-leave
+  setenergy energy + 1"
+endif
+"end"
+</body>
+
+<description>
+This function lets a turtle get energy when its current patch is a
+certain color. You can either choose to have the turtle eat all of the
+color on a patch, in which case it will stamp another color and
+increase its energy by 1, or have it eat a portion of the color on its
+current patch, in which case it will increase its energy by an amount
+proportional to the amount of color it eats.  This function is a more
+general version of Eat Grass.
+</description>
+
+<function> "Eat Grass"
+<choice> "On a patch, eat" "some" "all of the grass"
+<slider> "Percentage of grass color to eat" ":percentage" 0 50 100
+null
+<turtlevars> energy
+<globalvars> grass-color
+
+<body>
+"  if ((int (pc / 10)) != (int (grass-color / 10))) [stop]"
+if 1
+"  ifelse (:percentage / 20) > (pc mod 10)
+    [stamp black]
+    [stamp pc - :percentage / 20]
+  setenergy energy + :percentage / 100"
+else
+"  stamp black
+  setenergy energy + 1"
+endif
+"end"
+</body>
+
+<description>
+This is the function to eat the grass at a particular patch, where grass
+is defined by the variable \"grass-color\".  You can either choose to
+have the turtle eat all of the grass on a patch, in which case it will
+stamp its current patch with another color and increase its energy by
+one, or have it eat a portion of the grass on its current patch, in
+which case it will increase its energy by an amount proportional to
+the amount of grass it eats.
+</description>
+
+<function> "Eat Turtles"
+<slider> "Number of turtles to eat" ":number-of-turtles" 0 1 12
+<slider> "Percent of food-turtles' energy to take" ":energy-percent" 0 100 100
+<breed> "Breed of turtles to eat" ":breed"
+<turtlevars> energy
+
+<body>
+"  repeat :number-of-turtles
+    [if count-turtles-here <= 1 [stop]
+    grab one-of-turtles-here
+      [if ((breed-of partner) = :breed)
+        [setenergy-of partner ((energy-of partner) * (1 - :energy-percent / 100))
+        setenergy energy + (:energy-percent / 100)]
+      ]
+    ]
+end"
+</body>
+
+<description>
+This function tells the caller to eat/hurt any turtles of a certain
+breed on the same patch.  It doesn't necessarily eat the specified
+number of turtles, it only tries that many times to eat one of the
+turtles its patch.  If it tries to eat turtles of the wrong breed,
+they will be counted but not eaten.
+</description>
+
+<function> "Infect"
+<breed> "Breed to infect" ":infected"
+<breed> "Breed to change infected turtles to" ":newBreed"
+<slider> "Probability of infection (%)" ":chance" 0 50 100
+<turtlevars> energy
+
+<body>
+"  if (random 100) < :chance
+    [grab one-of-:infected-here
+      [ask-turtle partner
+        [set breed :newBreed
+        let [:temp-energy energy]
+        setup-:newBreed
+        set energy :temp-energy]
+      ]
+    ]
+end"
+</body>
+
+<description>
+If the caller is on a patch with another turtle of the specified breed
+to be infected, the caller will change the other turtle's breed to the
+specified target breed with a certain probability.  This function will
+not compile if "breed to infect" is set to <none>.
+</description>
+
+<function> "Mutate"
+<breed> "Breed to change to" ":newBreed"
+<slider> "Probability of changing breeds" ":chance" 0 50 100
+<turtlevars> energy
+
+<body>
+"  if (random 1000) < :chance
+    [set breed :newBreed
+    let [:temp-energy energy]
+    setup-:newBreed
+   set energy :temp-energy]
+end"
+</body>
+
+<description>
+This function lets a turtle of one breed change to another breed with
+a certain probability.  This function will not compile if "breed to
+change to" is set to <none>.
+</description>
+
+<function> "Reproduce"
+<slider> "Number of children to create" ":number-of-kids" 0 1 12
+<choice> "Reproduce according to" "energy" "age"
+<slider> "Energy threshold" ":max-energy" 0 8 30
+<slider> "Age of maturity" ":maturity" 0 40 100
+<choice> "Cost is" "% of energy" "an absolute number"
+<slider> "Parent's energy cost to reproduce (%)" ":cost" 0 50 100
+<slider> "Parent's energy cost to reproduce (x 0.1)" ":cost" 0 50 100
+<turtlevars> energy age
+
+<body>
+if 1
+"  if energy < :max-energy [stop]"
+if 2
+"  setenergy energy * (1 - :cost / 100)"
+else
+"  setenergy energy - :cost / 10"
+endif
+"  repeat :number-of-kids
+    [hatch [setage 0]]
+end"
+else
+"  if age < :maturity [stop]"
+if 2
+"  setenergy energy * (1 - :cost / 100)"
+else
+"  setenergy energy - :cost / 10"
+endif
+"  repeat :number-of-kids
+    [hatch [setage 0]]
+end"
+endif
+</body>
+
+<description>
+This is a function that allows turtles to reproduce.  If you want the
+turtles to reproduce according to their age, they must be above a
+certain age before reproducing.  If you want them to reproduce
+according to energy, they must be above a threshold energy to
+reproduce.  The cost to reproduce is measured either as an absolute
+value, or as a percentage of the parent turtle's current energy.  This
+cost will be subtracted once from the parent's energy after it
+reproduces, regardless of the number of offspring it produces.  You
+can also choose the number of children a turtle will produce each time
+it is able to reproduce.
+</description>
+
+<function> "Setup"
+<switches> notinwander predefined
+<slider> "Maximum starting energy" ":nrg" 0 10 30
+<color> "Color of this breed" ":color"
+<turtlevars> energy target
+
+<body>
+"  setcolor :color
+  setxy (random screen-width) (random screen-height)
+  setenergy (random :nrg)
+  settarget (random 100)
+end"
+</body>
+
+<description>
+This function sets the caller's energy to a random number less than
+the specified random starting energy, and sets its color.  This
+procedure is called for every breed by the observer procedure Setup.
+</description>
+
+<function> "Track"
+<breed> "Breed to track" ":breed"
+<turtlevars> target
+
+<body>
+"  let [:tempx xcor-of target]
+  let [:tempy ycor-of target]
+  if ((:tempx = 0 and :tempy = 0) 
+    or ((breed-of target) != :breed))
+      [settarget (one-of-turtles-with [breed = :breed])]
+  seth towards :tempx :tempy
+end"
+</body>
+
+<description>
+This function allows a turtle to track a randomly selected turtle of
+the specified breed.  Once a turtle selects a target, it will track
+that target until the target either dies or changes its breed.  Turtle
+0 cannot be a target.
+</description>
+
+<function> "Walk"
+<switches> predefined
+<slider> "Step" ":step" 0 1 10
+<slider> "Randomness" ":randomness" 0 45 360
+<choice> "when walking" "never stop" "stop on other turtles"
+null
+<breed> "Breed to stop on" ":breed"
+<slider> "Endurance" ":endurance" 0 50 100
+<turtlevars> energy age
+
+
+<body> 
+if 1
+"  fd :step
+  rt (random :randomness) - :randomness / 2
+  setenergy (energy - (1 - :endurance / 100))
+  setage age + 1
+end"
+else
+"  repeat (int :step)
+    [rt (random :randomness) - :randomness / 2
+    fd 1
+    grab one-of-turtles-here
+      [if ((breed-of partner) = :breed) [stop]]
+    ]
+  setenergy (energy - (1 - :endurance / 100))
+  setage age + 1
+end"
+endif
+</body>
+
+<description>
+This function moves the turtle a certain amount (\"step\") and changes
+its direction by a random amount spanning less than \"randomness\".
+Every time this function is called the turtle loses a certain amount
+of its energy.  The more \"endurance\" it has, the less energy it
+loses every time this procedure is called.
+</description>
+
+<function> "Grow"
+<switches> observer predefined
+<slider> "Rate for grass to grow" ":rate" 0 50 100
+<choice> "Grass grows" "randomly" "around other grass"
+null
+null
+<patchvars> neighbor-sum temp-pc
+<globalvars> grass-color
+<button> "every 1 [grow]" false true "grow grass"
+
+
+<body>
+if 1
+"  ask-patches
+    [if (random 100) < :rate [setpc grass-color]]
+end"
+else
+"  ask-patches [set temp-pc pc]
+  nsum temp-pc neighbor-sum
+  ask-patches
+    [if ((random 100) < :rate) and (neighbor-sum > 0)
+      [setpc grass-color]
+    ]
+end"
+endif
+</body>
+
+<description>
+This is an observer procedure that tells the patches to grow grass of
+a specified color at the specified rate.  Growing the grass randomly
+positioned on the convas will make your project run much faster than
+growing it only near other grass.  This function will only work after
+the user has pressed the setup button at least once, because the setup
+button sets the grass color from black to the user-selected color.
+</description>
+
+
+<function> java template.turtleFuncs.Custom
+
+<function> java template.observerFuncs.Custom
+
+<function> java template.observerFuncs.Setup

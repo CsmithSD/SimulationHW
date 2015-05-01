@@ -1,0 +1,515 @@
+<html><head><title>Command List</title><link rel="STYLESHEET" href="style.css"></head><body><h3 style="color: green">Command List</h3>
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div class="catdescription">
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">Procedures are a way to package up instructions for individual characters in StarLogo. Procedures begin with the word <code>to</code> followed by the name you wish to give the procedure. After the name, you may enter any number of procedure parameters. Each parameter must start with a <code>:</code> (colon) to indicate that it is a local variable. After pressing return, you then enter all of the instructions you wish to run when the procedure is called. Finally, a procedure finishes with the word <code>end</code> on a line by itself. Here is an example:</font></p>
+
+					<p align="left"><code>to wiggle<br>
+						</code><code>right random 40<br>
+						</code><code>left random 40<br>
+						</code><code>forward 1<br>
+						</code><code>end</code></p>
+					<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">In this procedure, named <code>wiggle</code>, we instruct a turtle to turn right a few degrees, then left a few degrees and finally move forward one step.</font></p>
+
+					<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">Here is an example of a procedure with one parameter:</font></p>
+					<p align="left"><code>to wiggle-a-little-bit :howmuch<br>
+							
+						right random :howmuch<br>
+							
+						left random :howmuch<br>
+							
+						forward 1<br>
+							
+						end</code></p>
+
+					<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">In this procedure, named <code>wiggle-a-little-bit</code>, we take a parameter named <code>:howmuch</code>, which we use like any other variable to control by how much the turtle should turn right and left. We can run a procedure that takes a set of parameters by writing the procedure's name followed by the values that we want the parameters to have (in left-to-right order):</font></p>
+					<p align="left"><code>to go<br>
+							
+						wiggle-a-little-bit 45<br>
+							
+						look-for-gold<br>
+							
+						end</code></p>
+
+					<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">In this procedure, named <code>go</code>, we invoke the <code>wiggle-a-little-bit</code> function with the value<code> 45</code>. 45 is assigned to the procedure parameter <code>:howmuch</code>, and then the procedure is run. Finally, when <code>wiggle-a-little-bit</code> finishes, we come back to where we left off in <code>go</code>, and then execute another procedure (not described here) called <code>look-for-gold</code>.</font></p>
+
+					<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">Note the difference between Turtle Procedures and Observer Procedures. Turtle procedures are instructions for individual turtles to follow, such as moving, or reproducing. Observer procedures are procedures that may change the environment or make changes which are beyond an individual turtle's control, such as the creation of new turtles or the setting up of the Patch Canvas. Think of the Observer as an omniscient being who can make changes to the StarLogo environment. </font></p>
+					<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">Observer procedures must be defined in the Observer Procedures Pane of the Control Center. Turtle procedures are defined in the Turtle Procedures Pane of the Control Center. If you put a procedure in the wrong place (such as putting wiggle into the observer procedures pane), you might get an error like <code>observer doesn't know how to right in wiggle</code>, indicating that the observer does not understand the command <code>right</code> used in the first line of wiggle.</font></p>
+					<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">While patches can run instructions, they cannot have procedures; there is no patch procedures pane. If you want to use patch commands, you must put them in an <code>ask-patches []</code> command. Since <code>ask-patches</code> is itself an observer command, it should be written in the observer procedures pane.</font></p>
+
+					<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif">One special Observer Procedure is the <code>startup</code> procedure. If you name one of your Observer Procedures <code>startup</code>, this procedure will automatically be run when you load the project.</font></p></div>
+<p>
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">end</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This command must be placed at the end of every procedure.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note, you can't put anything (even a comment) on the same line as end.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=233.html" class="related">output</a>
+			<a href="command_doc_include.php@com_id=396.html" class="related">startup</a>
+				<a href="command_doc_include.php@com_id=398.html" class="related">stop</a>
+				<a href="command_doc_include.php@com_id=36.html" class="related">to</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">get-scheduler-random-seed</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns the current value of the scheduler's random seed.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Example: One use of get-scheduler-random-seed would be to have repeatable results. If you want to repeat the results of a specific trial, get the scheduler's random seed and simply set the random seed to the same number the next time you run the project.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=190.html" class="related">scheduler</a>
+			<a href="command_doc_include.php@com_id=368.html" class="related">set-scheduler-random-seed</a>
+				<a href="command_doc_include.php@com_id=406.html" class="related">switch-scheduler</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">output</span>
+	
+	<span class="argument">
+	something 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>something</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">the value to be returned</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Exits the current procedure and returns <span class="argument">something</span>.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>output "hello"</code></nobr> exits the current procedure and returns the string <nobr><code>"hello"</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=159.html" class="related">end</a>
+			<a href="command_doc_include.php@com_id=166.html" class="related">loop</a>
+				<a href="command_doc_include.php@com_id=398.html" class="related">stop</a>
+				<a href="command_doc_include.php@com_id=36.html" class="related">to</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">scheduler</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Reports the current scheduler, either 'fixed' or 'random'.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=71.html" class="related">get-scheduler-random-seed</a>
+			<a href="command_doc_include.php@com_id=368.html" class="related">set-scheduler-random-seed</a>
+				<a href="command_doc_include.php@com_id=406.html" class="related">switch-scheduler</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">set-scheduler-random-seed</span>
+	
+	<span class="argument">
+	seed 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>seed</nobr></td>
+		<td class="argtype" valign="top">Integer</td>
+		<td class="argdesc" valign="top">The seed for the random number generator</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Sets the random seed of the thread scheduler to <span class="argument">seed</span>. Integers allowed are in the range -2^31 to 2^31-1.<p>This is not the same seed as used by the <nobr><code>random</code></nobr> command.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: StarLogo uses the random generator provided by Java, which, as of now, is a linear congruential formula (Knuth Art of Computer Programming, Vol 2, Section 3.2.1.), which uses a 48-bit seed. StarLogo only allows you to set 32 bits of this seed.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=71.html" class="related">get-scheduler-random-seed</a>
+			<a href="command_doc_include.php@com_id=190.html" class="related">scheduler</a>
+				<a href="command_doc_include.php@com_id=406.html" class="related">switch-scheduler</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">startup</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+This is a special procedure name. Anything within the startup procedure will be executed each time the project is opened.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>to startup<br>clear-turtles ;save the patches<br>crt 100<br>ask-turtles [setc blue]<br>end</code></nobr><p>This process of clearing the turtles, and creating 100 new blue ones will occur everytime the project is opened.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=159.html" class="related">end</a>
+			<a href="command_doc_include.php@com_id=36.html" class="related">to</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">stop</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Exits the current procedure immediately. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>to check-patch-color<br>if pc-ahead = red [rt 90 stop]<br>if pc-ahead = green [lt 90 stop]<br>fd 1<br>end </code></nobr><p>This procedure will cause turtles to turn right and then exit the procedure if the the patch ahead is red, turn left and exit the procedure if the patch ahead is green, and only move forward one if the patch ahead was not green or red.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		Note: stop does not stop any callers of the procedure, only the procedure itself.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=159.html" class="related">end</a>
+			<a href="command_doc_include.php@com_id=166.html" class="related">loop</a>
+				<a href="command_doc_include.php@com_id=233.html" class="related">output</a>
+				<a href="command_doc_include.php@com_id=36.html" class="related">to</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">stopall</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Tells everything to stop running, including procedures, buttons, monitors, and command centers.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=429.html" class="related">stopbuttonname</a>
+		<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">switch-scheduler</span>
+	
+	<span class="argument">
+			</span>
+		
+		
+<!-- show arguments -->
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Toggles back and forth between fixed order scheduling and randomized scheduling.</div>
+
+<!-- show examples if there are examples -->
+
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=71.html" class="related">get-scheduler-random-seed</a>
+			<a href="command_doc_include.php@com_id=190.html" class="related">scheduler</a>
+				<a href="command_doc_include.php@com_id=368.html" class="related">set-scheduler-random-seed</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoto">Turtle, Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">to</span>
+	
+	<span class="argument">
+	procedure-name 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>procedure-name</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">A single word which is the name of the procedure you wish to define</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+When you create a procedure, the first line of it must be <nobr><code>to <span class="argument">procedure-name</span></code></nobr> where <span class="argument">procedure-name</span> is a one-word title for your procedure. <span class="argument">procedure-name</span> cannot be any command already recognized by StarLogo (this includes both built-in commands and the procedure names of other procedures you may already have written). <p>To add parameters to a procedure, write them after the <span class="argument">procedure-name</span> with a colon in front of them, like this:<br><nobr><code>to my-procedure :x :y :z</code></nobr><p>Inside the procedure body, you may use <nobr><code>:x</code></nobr>, <nobr><code>:y</code></nobr> and <nobr><code>:z</code></nobr> to refer to the values of the arguments passed in by the caller of the procedure.<p>All procedures must be ended with the word <nobr><code>end</code></nobr> on a line by itself (no comments may be on that line).<p>Procedures defined in the turtle procedures pane are only callable by turtles. Procedures defined in the observer procedures pane are only callable by the observer. Patches may not have procedures.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>to go <br>fd 1<br>rt 90<br>end</code></nobr><br>Now you may use <nobr><code>go</code></nobr> as a command in other parts of your program.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=159.html" class="related">end</a>
+			<a href="command_doc_include.php@com_id=233.html" class="related">output</a>
+				<a href="command_doc_include.php@com_id=396.html" class="related">startup</a>
+				<a href="command_doc_include.php@com_id=398.html" class="related">stop</a>
+			<hr></html>

@@ -1,0 +1,168 @@
+<html>
+
+<head>
+
+<title>StarLogo Sample Projects - Rope</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+
+
+<body bgcolor="#FFFFFF" leftmargin="2" topmargin="2" marginwidth="0" marginheight="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+  <tr valign="top"> 
+
+    <td> 
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="5">
+        <tr bgcolor="#FFFFCC" valign="top"> 
+          <td bgcolor="#CCFFCC"> 
+            <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font size="4">Rope</font> 
+              </b></font></div>
+          </td>
+        </tr>
+        <tr valign="top"> 
+          <td> 
+            <center>
+              <table cellpadding="5">
+                <tr> 
+                  <td> <font face="Verdana, Arial, Helvetica, sans-serif"><img SRC="images/rope1.gif" BORDER=0 height=100 width=100></font></td>
+                  <td><font face="Verdana, Arial, Helvetica, sans-serif"><img SRC="images/rope2.gif" BORDER=0 height=100 width=100></font></td>
+                  <td><font face="Verdana, Arial, Helvetica, sans-serif"><img SRC="images/rope3.gif" BORDER=0 height=100 width=100></font></td>
+                </tr>
+              </table>
+            </center>
+            <table width="100%" border="0" cellspacing="0" cellpadding="5">
+              <tr valign="top" bgcolor="#FFFFCC"> 
+                <td> 
+                  <p><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">What 
+                    is it?</font></b> </font>
+                </td>
+              </tr>
+              <tr valign="top"> 
+                <td> 
+                  <p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">This 
+                    project simulates a wave moving along a rope. The right end 
+                    of the rope (a blue turtle) is fixed to a wall. The left end 
+                    of the rope (a green turtle) provides an input force, moving 
+                    up and down in a sinusoidal motion.<br>
+                    </font><font face="Verdana, Arial, Helvetica, sans-serif"><br>
+                    </font></p>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFCC"> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>How 
+                  to Use It</b></font></td>
+              </tr>
+              <tr valign="top"> 
+                <td> 
+                  <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                    <tr> 
+                      <td valign="top"> 
+                        <p><font size="3" face="Verdana, Arial, Helvetica, sans-serif">Click 
+                          the <code>setup</code> button to set up the rope. Click 
+                          <code>go</code> to make the left end of the rope (the 
+                          green turtle) begin moving up and down. </font></p>
+                        <p><font size="3" face="Verdana, Arial, Helvetica, sans-serif">The 
+                          <code>friction</code> slider controls the amount of 
+                          friction in the rope. </font></p>
+                        <p><font size="3" face="Verdana, Arial, Helvetica, sans-serif">The 
+                          <code>frequency</code> slider controls the speed with 
+                          which the left end of the rope moves up and down. </font></p>
+                        <p><font size="3" face="Verdana, Arial, Helvetica, sans-serif">The 
+                          <code>amplitude</code> slider controls the maximum height 
+                          of the left end of the rope.</font></p>
+                      </td>
+                      <td><font face="Verdana, Arial, Helvetica, sans-serif"><img src="images/ss_rope_interface.gif" width="188" height="128"></font></td>
+                    </tr>
+                  </table>
+                  <p>&nbsp;</p>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFCC"> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>Things 
+                  to Notice</b></font></td>
+              </tr>
+              <tr valign="top"> 
+                <td> 
+                  <p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">The 
+                    rope is made up of a line of turtles. Each turtle acts as 
+                    it were connected to its neighboring turtles with springs. 
+                    When neighboring turtles are further away, they exert a stronger 
+                    force. </font></p>
+                  <p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">When 
+                    the left end of the rope (the green turtle) moves up, it "pulls 
+                    up" the turtle to its right, which in turn pulls up the turtle 
+                    to its right, and so on. In that way, a wave moves down the 
+                    rope. When the wave reaches the right end of the rope (the 
+                    blue turtle), the wave is reflected back to the left. </font></p>
+                  <p><font face="Verdana, Arial, Helvetica, sans-serif" size="3">The 
+                    green turtle (at the left end) continues to put more energy 
+                    into the rope. If there were no friction in the rope, the 
+                    waves in the rope would keep getting bigger and bigger.<br>
+                    </font><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+                    </font></p>
+                </td>
+              </tr>
+              <tr valign="top" bgcolor="#FFFFCC"> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>Explorations</b></font></td>
+              </tr>
+              <tr valign="top"> 
+                <td> 
+                  <ul>
+                    <li><font size="3" face="Verdana, Arial, Helvetica, sans-serif"> 
+                      Change the values on the sliders and observe what happens 
+                      to the waves on the rope. </font> 
+                    <li><font size="3" face="Verdana, Arial, Helvetica, sans-serif"> 
+                      Try to create a "standing wave," in which some points on 
+                      the rope do not move at all. </font> 
+                    <li><font size="3" face="Verdana, Arial, Helvetica, sans-serif"> 
+                      Change the blue turtle to green, so that there are two driving 
+                      forces. Then change one of the red turtles in the middle 
+                      of the rope to blue, so that there is a fixed point in the 
+                      middle. What happens to the waves? </font> 
+                    <li><font size="3" face="Verdana, Arial, Helvetica, sans-serif"> 
+                      Change the right end of the rope so that it moves freely, 
+                      rather than being fixed. How does that change the behavior 
+                      of waves in the rope? </font> 
+                  </ul>
+                </td>
+              </tr>
+              <tr valign="top" bgcolor="#FFFFCC"> 
+                <td><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">StarLogo 
+                  Features</font></b></font></td>
+              </tr>
+              <tr valign="top"> 
+                <td><font size="3" face="Verdana, Arial, Helvetica, sans-serif">For 
+                  this project, it does not make sense for the turtles to "wrap" 
+                  when they get to the top or bottom of the screen. So the y-position 
+                  of the turtles is kept in a new variable (<tt>ypos</tt>), and 
+                  the turtle is hidden if its y-position moves outside the boundary 
+                  of the screen.<br>
+                  </font></td>
+              </tr>
+            </table>
+            <h3><font face="Verdana, Arial, Helvetica, sans-serif"><br>
+              </font> </h3>
+            <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"> 
+              <b><i><font size=-1>We welcome your feedback and suggestions! Please 
+              send us <a href="mailto:starlogo-request@media.mit.edu">email</a>.&nbsp;</font></i></b> 
+              </font></p>
+            <p>&nbsp; 
+          </td>
+        </tr>
+      </table>
+
+    </td>
+
+  </tr>
+
+</table>
+
+</body>
+
+</html>
+

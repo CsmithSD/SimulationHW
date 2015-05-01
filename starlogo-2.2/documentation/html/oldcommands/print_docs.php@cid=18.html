@@ -1,0 +1,409 @@
+<html><head><title>Command List</title><link rel="STYLESHEET" href="style.css"></head><body><h3 style="color: green">Command List</h3>
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div class="catdescription">
+StarLogo supports only a few data types: Booleans, Lists, Numbers, and Strings.
+
+There are two booleans, <code>true</code> and <code>false</code>. There are no numeric equivalents to true and false (such as 1 or 0). They must be referred to by name (or by executing a logical operator (<code>=, not=, <, >, <=, >=</code>).
+
+A <code>[list of data]</code> is a data list, similar to a list in other versions of
+Logo. Unlike other Logo languages, however, StarLogo does not enable you to
+execute a list of data as an instruction (that is, there is no run
+command). You can create a list of data using the list or sentence
+commands, or by enclosing the literal elements in <code>[]</code>'s. (e.g. setfamily
+[my mother is nice]). You can create an empty list using <code>[]</code>. No elements
+inside the <code>[]</code>'s are evaluated.
+Note: In this version of StarLogo turtles, patches, and the observer can
+access a list of data.
+
+In StarLogo, numbers have a range that is determined by the version of Java
+that you are using. In Sun's Java this ranges from approximately -1*10^300
+to 1*10^300, and decimals can go down to about 1*10^-300. Values smaller
+than 1*10^-300 return a value of 0, and values larger than 1*10^300 return a
+value of "Infinity".
+
+Strings are used to refer to filenames and other strings. Strings are
+written as a string with a quotation mark " at the beginning and the end
+(e.g. <code>"foo"</code> or <code>"myfile.txt"</code>).
+
+If you would like more information about how to declare variables, visit the variables page.</div>
+<p>
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoto">Turtle, Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">globals</span>
+	
+	<span class="argument">
+	[variable-list] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[variable-list]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Creates global variables.  The variable-list contains one or more names.  The globals declaration should be placed at the top of the observer procedures window or the turtle procedures window. <br></div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>globals [variable1 variable2 variable3]</code></nobr> Creates globals variable1, variable2, and variable3.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=311.html" class="related">patches-own</a>
+			<a href="command_doc_include.php@com_id=49.html" class="related">turtles-own</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">list?</span>
+	
+	<span class="argument">
+	thing 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>thing</nobr></td>
+		<td class="argtype" valign="top">Number</td>
+		<td class="argdesc" valign="top">the item, string, list, or variable that you are trying to determine if it is a list</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns true if <span class="argument">thing</span> is a list. </div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>list? 4</code></nobr> returns false.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>list? [4]</code></nobr> returns true.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=151.html" class="related">number?</a>
+			<a href="command_doc_include.php@com_id=309.html" class="related">word?</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">number?</span>
+	
+	<span class="argument">
+	thing 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>thing</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top"></td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns <nobr><code>true</code></nobr> if <span class="argument">thing</span> is a number.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>number? 5.3</code></nobr> returns <nobr><code>true</code></nobr>.		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>number?</code></nobr> [3] returns <nobr><code>false</code></nobr>.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=74.html" class="related">list?</a>
+			<a href="command_doc_include.php@com_id=309.html" class="related">word?</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">patches-own</span>
+	
+	<span class="argument">
+	[variable-list] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[variable-list]</nobr></td>
+		<td class="argtype" valign="top">Variable</td>
+		<td class="argdesc" valign="top">a list of patch variables separated by spaces</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Defines a set of variables to be properties of patches. The <span class="argument">[variable-list]</span> contains one or more names separated by spaces</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>patches-own [size value]</code></nobr> declares two patch variables - size and value.		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		<nobr><code>patches-own</code></nobr> must only be used once in any program, and remain outside of any procedures.  Typically <nobr><code>patches-own</code></nobr> is defined once at the top of the Observer Procedures window.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=441.html" class="related">breeds</a>
+			<a href="command_doc_include.php@com_id=75.html" class="related">globals</a>
+				<a href="command_doc_include.php@com_id=49.html" class="related">turtles-own</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whot">Turtle</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">turtles-own</span>
+	
+	<span class="argument">
+	[list of variables] 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>[list of variables]</nobr></td>
+		<td class="argtype" valign="top">List</td>
+		<td class="argdesc" valign="top">A list of variable names to define as turtle variables</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Defines a set of variables to be properties of turtles. The <span class="argument">[list of variables]</span> contains one or more names. This line of code should be placed at the top of the Turtle Command Center. It does not go inside procedures.<p><br>A variable name may be followed by a list of <nobr><code>state values</code></nobr>. This variable may only have the values listed in the state value list. This can be used to assign named constants to a variable instead of using numbers.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>turtles-own [size energy]</code></nobr>		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>turtles-own [weather [sunny cloudy rainy]]</code></nobr><p><nobr><code>set weather rainy</code></nobr><br><nobr><code>set weather cloudy</code></nobr><br><nobr><code>if weather = sunny [ setcolor yellow ]</code></nobr>		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		<nobr><code>turtles-own</code></nobr> declarations should appear outside of any procedure, usually at the top of the turtle procedures pane.		</div>
+		<p>
+				<div class="notes">
+		<nobr><code>turtles-own</code></nobr> declarations can contain more than one variable. If you have more than one <nobr><code>turtles-own</code></nobr>, consider consolidating them into a single <nobr><code>turtles-own</code></nobr>.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=441.html" class="related">breeds</a>
+			<a href="command_doc_include.php@com_id=75.html" class="related">globals</a>
+				<a href="command_doc_include.php@com_id=311.html" class="related">patches-own</a>
+			<hr>
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+	
+	<span class="commandname">word?</span>
+	
+	<span class="argument">
+	thing 		</span>
+		
+		
+<!-- show arguments -->
+
+	<p>
+	<div class="heading">Parameters:</div>
+	<table cellpadding="2" cellspacing="2" border="0"> 
+	
+			
+		<tr>
+		<td class="argname" valign="top"><nobr>thing</nobr></td>
+		<td class="argtype" valign="top">Anything</td>
+		<td class="argdesc" valign="top">Any value</td>
+		</tr>
+		
+				
+		</table>
+		
+		
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns true if <span class="argument">thing</span> is a word or string.</div>
+
+<!-- show examples if there are examples -->
+
+	<p>
+	<div class="heading">Examples:</div>
+			<div class="examples">
+		<nobr><code>word? 2</code></nobr> returns true		</div>
+		<p>
+				<div class="examples">
+		<nobr><code>word? [1 2 3]</code></nobr> returns false		</div>
+		<p>
+			 
+
+<!-- show notes if there are notes -->
+
+	<p>
+	<div class="heading">Notes:</div>
+			<div class="notes">
+		See the Data Types documentation for what constitutes a word or string.		</div>
+		<p>
+			
+<!-- show related commands if there are related commands -->
+
+	<p>
+	<div class="heading">Related Commands:</div>
+	<a href="command_doc_include.php@com_id=74.html" class="related">list?</a>
+			<a href="command_doc_include.php@com_id=151.html" class="related">number?</a>
+			<hr></html>

@@ -1,0 +1,84 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+<!-- begin sample documentation page -->
+
+
+<!-- if (!($com_id)) { $com_id = 1; } -->
+
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whoo">Observer</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+
+<span class="commandname">nsum4</span>
+
+<span class="argument">
+neighbor-variable patch-sum-variable </span>
+
+
+<!-- show arguments -->
+
+<p>
+<div class="heading">Parameters:</div>
+<table cellpadding="2" cellspacing="2" border="0"> 
+
+
+<tr>
+<td class="argname" valign="top"><nobr>neighbor-variable</nobr></td>
+<td class="argtype" valign="top">Variable</td>
+<td class="argdesc" valign="top">the variable of the neighbor you would like to sum up</td> 
+</tr>
+
+
+<tr>
+<td class="argname" valign="top"><nobr>patch-sum-variable</nobr></td>
+<td class="argtype" valign="top">Variable</td>
+<td class="argdesc" valign="top">the variable that should be set to the sum of the neighbors' variables</td> 
+</tr>
+
+
+</table>
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+For each patch, takes the sum of <span class="argument">neighbor-variable</span> from the non-diagonal (N,E,S,W) neighboring patches and places it in <span class="argument">patch-sum-variable</span>. Variable should be a patch variable.</div>
+
+<!-- show examples if there are examples -->
+
+<p>
+<div class="heading">Examples:</div>
+<div class="examples">
+<nobr><code>nsum4 grass totalgrass</code></nobr> adds up the value of <nobr><code>grass</code></nobr> in the non-diagonal patches and places it in <nobr><code>totalgrass</code></nobr>.</div>
+<p>
+ 
+
+<!-- show notes if there are notes -->
+
+<p>
+<div class="heading">Notes:</div>
+<div class="notes">
+<nobr><code>nsum4</code></nobr> must be run by the observer even though it affects patches.</div>
+<p>
+
+<!-- show related commands if there are related commands -->
+
+<p>
+<div class="heading">Related Commands:</div>
+<a href="command_doc_include.php@com_id=122.html" class="related">diffuse</a>
+<a href="command_doc_include.php@com_id=125.html" class="related">diffuse4</a>
+<a href="command_doc_include.php@com_id=136.html" class="related">nsum</a>
+
+</body></html>

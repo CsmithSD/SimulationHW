@@ -1,0 +1,1396 @@
+Java StarLogo
+2.1
+English
+`turtle`
+
+
+`observer`
+globals [pattern pwrap gen numalive live0 live1 live2 live3 live4 live5 live6 live7 live8 empty0 empty1 empty2 empty3 empty4 empty5 empty6 empty7 empty8]
+patches-own [alive pan]
+
+to startup
+  set gen 0
+  set pwrap true
+  slife
+  clearplot
+  pp1
+  ppd
+  setppc green
+  setplot-title "Cellular Automata"
+  setplot-ylabel "cells alive"
+  setplot-xlabel "time"
+  setplot-yrange 0 (screen-height * screen-width / 2)
+  setplot-xrange 0 200
+end
+  
+to disp
+   no-display
+   ask-patches [
+      ifelse alive [setpc red] [setpc black]
+   ]
+   if (not pwrap) 
+      [ask-patches 
+         [if (((abs ycor) = screen-half-height) or 
+              ((abs xcor) = screen-half-width))
+             [setpc black]
+         ]
+      ]
+   display
+   set numalive (count-patches-with [pc != black])
+   plot numalive
+end
+
+to tep
+   ask-patches [
+     let [:count 0]
+     if (pc-at 1 1) != black [set :count :count + 1]
+     if (pc-at 1 0) != black [set :count :count + 1]
+     if (pc-at 1 -1) != black [set :count :count + 1]
+     if (pc-at 0 1) != black [set :count :count + 1]
+     if (pc-at 0 -1) != black [set :count :count + 1]
+     if (pc-at -1 1) != black [set :count :count + 1]
+     if (pc-at -1 0) != black [set :count :count + 1]
+     if (pc-at -1 -1) != black [set :count :count + 1]
+     ifelse pc = black
+        [case :count
+            [0 [set alive empty0]
+             1 [set alive empty1]
+             2 [set alive empty2]
+	     3 [set alive empty3]
+             4 [set alive empty4]
+             5 [set alive empty5]
+             6 [set alive empty6]
+             7 [set alive empty7]
+             8 [set alive empty8]
+            ]
+        ]
+        [case :count
+            [0 [set alive live0]
+             1 [set alive live1]
+             2 [set alive live2]
+             3 [set alive live3]
+             4 [set alive live4]
+             5 [set alive live5]
+             6 [set alive live6]
+             7 [set alive live7]
+             8 [set alive live8]
+            ]
+        ]
+   ]
+end
+
+to pup
+  ask-patches [set pan (pc-at 0 -1)]
+  ask-patches [setpc pan]
+end
+
+to pdown
+  ask-patches [set pan (pc-at 0 1)]
+  ask-patches [setpc pan]
+end
+
+to pright
+  ask-patches [set pan (pc-at -1 0)]
+  ask-patches [setpc pan]
+end
+
+to pleft 
+  ask-patches [set pan (pc-at 1 0)]
+  ask-patches [setpc pan]
+end
+
+to prand
+  ask-patches [ifelse (random 100) < density 
+                 [setpc red]
+                 [setpc black]
+              ]
+end
+
+to pplive
+   let [:out 111111111]
+   if live0 [set :out :out + 1]
+   if live1 [set :out :out + 10]
+   if live2 [set :out :out + 100]
+   if live3 [set :out :out + 1000]
+   if live4 [set :out :out + 10000]
+   if live5 [set :out :out + 100000]
+   if live6 [set :out :out + 1000000]
+   if live7 [set :out :out + 10000000]
+   if live8 [set :out :out + 100000000]
+   output :out
+end
+
+to ppempty
+   let [:out 111111111]
+   if empty0 [set :out :out + 1]
+   if empty1 [set :out :out + 10]
+   if empty2 [set :out :out + 100]
+   if empty3 [set :out :out + 1000]
+   if empty4 [set :out :out + 10000]
+   if empty5 [set :out :out + 100000]
+   if empty6 [set :out :out + 1000000]
+   if empty7 [set :out :out + 10000000]
+   if empty8 [set :out :out + 100000000]
+   output :out
+end
+
+to crules
+   set empty0 false
+   set empty1 false
+   set empty2 false
+   set empty3 false
+   set empty4 false
+   set empty5 false
+   set empty6 false
+   set empty7 false
+   set empty8 false
+   set live0 false
+   set live1 false
+   set live2 false
+   set live3 false
+   set live4 false
+   set live5 false
+   set live6 false
+   set live7 false
+   set live8 false
+end
+
+to slife
+   set empty0 false
+   set empty1 false
+   set empty2 false
+   set empty3 true
+   set empty4 false
+   set empty5 false
+   set empty6 false
+   set empty7 false
+   set empty8 false
+   set live0 false
+   set live1 false
+   set live2 true
+   set live3 true
+   set live4 false
+   set live5 false
+   set live6 false
+   set live7 false
+   set live8 false
+end
+
+to patternt
+  let [:patternt "none"]
+  case pattern
+    [1 [set :patternt "glider"]
+     2 [set :patternt "LWSS"]
+     3 [set :patternt "MWSS"]
+     4 [set :patternt "HWSS"]
+     5 [set :patternt "spaceship"]
+     6 [set :patternt "Mobius"]
+     7 [set :patternt "10 line"]
+     8 [set :patternt "cross"]
+     9 [set :patternt "pi"]
+     10 [set :patternt "beehive"]
+     11 [set :patternt "puffer"]
+     12 [set :patternt "long life"]
+    ]
+    output :patternt
+end
+
+to pplace
+  case pattern
+    [1 [cg ct
+        stamp-at 0 0 red 
+        stamp-at 0 1 red
+        stamp-at 1 2 red
+        stamp-at 1 0 red
+        stamp-at 2 0 red]
+     2 [cg ct
+        stamp-at 0 0 red
+        stamp-at 0 1 red
+        stamp-at 0 2 red
+        stamp-at 1 3 red
+        stamp-at 1 0 red
+        stamp-at 2 0 red
+        stamp-at 3 0 red
+        stamp-at 4 1 red
+        stamp-at 4 3 red]
+     3 [cg ct
+        stamp-at 0 0 red
+        stamp-at 0 1 red
+        stamp-at 0 2 red
+        stamp-at 1 3 red
+        stamp-at 1 0 red
+        stamp-at 2 0 red
+        stamp-at 3 0 red
+        stamp-at 3 4 red
+        stamp-at 4 0 red
+        stamp-at 5 1 red
+        stamp-at 5 3 red]
+     4 [cg ct
+        stamp-at 0 0 red
+        stamp-at 0 1 red
+        stamp-at 0 2 red
+        stamp-at 1 0 red
+        stamp-at 1 3 red
+        stamp-at 2 0 red
+        stamp-at 3 0 red
+        stamp-at 3 4 red
+        stamp-at 4 0 red
+        stamp-at 4 4 red
+        stamp-at 5 0 red
+        stamp-at 6 1 red
+        stamp-at 6 3 red]
+     5 [cg ct
+        stamp-at -2 1 red
+        stamp-at -1 0 red
+        stamp-at -1 2 red
+        stamp-at 0 0 red
+        stamp-at 0 2 red
+        stamp-at 1 0 red
+        stamp-at 1 2 red
+        stamp-at 2 1 red]
+     6 [cg ct
+        stamp-at -3 -3 red
+        stamp-at -3 -2 red
+        stamp-at -3 -1 red
+        stamp-at -2 -3 red
+        stamp-at -2 -2 red
+        stamp-at -2 -1 red
+        stamp-at -1 -3 red
+        stamp-at -1 -2 red
+        stamp-at -1 -1 red
+        stamp-at 0 0 red
+        stamp-at 0 1 red
+        stamp-at 0 2 red
+        stamp-at 1 0 red
+        stamp-at 1 1 red
+        stamp-at 1 2 red
+        stamp-at 2 0 red
+        stamp-at 2 1 red
+        stamp-at 2 2 red]
+     7 [cg ct
+        stamp-at -4 0 red
+        stamp-at -3 0 red
+        stamp-at -2 0 red
+        stamp-at -1 0 red
+        stamp-at 0 0 red
+        stamp-at 1 0 red
+        stamp-at 2 0 red
+        stamp-at 3 0 red
+        stamp-at 4 0 red
+        stamp-at 5 0 red]
+     8 [cg ct
+        stamp-at 0 0 red
+        stamp-at 1 1 red
+        stamp-at -1 1 red
+        stamp-at 1 -1 red
+        stamp-at -1 -1 red
+        stamp-at 2 2 red
+        stamp-at -2 2 red
+        stamp-at 2 -2 red
+        stamp-at -2 -2 red]
+     9 [cg ct
+        stamp-at -1 -1 red
+        stamp-at -1 0 red
+        stamp-at -1 1 red
+        stamp-at 0 1 red
+        stamp-at 1 1 red
+        stamp-at 1 0 red
+        stamp-at 1 -1 red]
+     10 [cg ct
+         stamp-at 0 0 red
+         stamp-at 0 2 red
+         stamp-at 0 3 red
+         stamp-at -1 0 red
+         stamp-at 1 0 red
+         stamp-at -1 -1 red
+         stamp-at 1 -1 red
+         stamp-at 0 -2 red]
+     11 [cg ct
+         stamp-at -2 0 red
+         stamp-at 2 0 red
+         stamp-at -1 -1 red
+         stamp-at 0 -1 red
+         stamp-at 1 -1 red
+         stamp-at 0 -2 red
+         stamp-at -1 1 red
+         stamp-at 0 1 red
+         stamp-at 1 1 red
+         stamp-at -2 2 red
+         stamp-at -1 2 red
+         stamp-at 0 2 red
+         stamp-at 1 2 red
+         stamp-at 2 2 red]
+     12 [cg ct
+         stamp-at -1 0 red
+         stamp-at -1 1 red
+         stamp-at 0 1 red
+         stamp-at 1 0 red
+         stamp-at 1 -1 red
+         stamp-at 2 -1 red]
+    ]
+end
+
+
+`information`
+This model allows the user to explore cellular automata models.
+
+A (very) quick overview:
+
+What are cellular automata?
+Cellular automata treat the world as a checkerboard of squares (patches!)
+where each square can be either on/alive (red) or off/dead (black). At 
+each turn every square counts how many of its eight neighbors are on 
+and then based on this number consults a rule that tells it to turn on
+or off.  They're are actually two rules, on for if the square is 
+currently off and on for if its currently on.
+
+About Neighbors :
+
+***
+*X*
+***
+
+(in the above if X is the square in question then the *'s are its eight
+neighbors)
+
+About Rules :
+See setting the rules section of the How to use the model below.  Try 
+setting up a checkerboard and performing the rules yourself.  You should
+be able to match the behavior of the patchs (at least slowly with simple
+patterns).
+
+How to use the model :
+
+	The control buttons and monitors :
+          The step button runs the model through one gerneration, while
+              the go button runs the model continuosly.
+          The clear button clears all patches to off/dead (black)
+          The random-place button randomly turns on a number of patches
+              determined by the density slider.
+          The generations monitor counts the number of generations
+              the model has gone throug, it is resettable with the 
+              clear-gen button
+          The alive monitor shows how many patches are on/alive
+              (this number is also plotted in the plot window)
+	
+	Setting the rules :
+          The clear-rules button sets the value of all rules to off
+          The life-rule button sets the rules to play Life, the most
+              famous cellular automata model.
+          The live rule and empty rule monitors show the rules currently
+              in effect for the model.  The live rule displays the rule 
+              for a patch that is on (red).  The empty rule displays the
+              rule for a patch the is off (black).  The format is as 
+              follows, they show the neighbor count from 8 neighbors down
+              to zero neighbors (ignore the E8 on the end) where 1 
+              sigfnifies that the patch should turn off/die (turn black)
+              and 2 signifies that the patch should turn off/die (turn
+              red).  Thus if a patch is alive(red) and the live rule is
+                                    1 1 1 1 1 2 2 1 1 
+              which corresponds to  8,7,6,5,4,3,2,1,0 neighbors, then if
+              it has either 2 or 3 neighbors alive it will stay alive, if
+              it has any other number of neighbors then it will die.
+              Similarly if a patch is empty(black) and the empty rule is
+                                    1 1 1 1 1 2 1 1 1
+              which corresponds to  8,7,6,5,4,3,2,1,0 neighbors, then if
+              it has 3 neighbors it will turn alive(red) and if it has 
+              any other number of neighbors it will remain empty.
+           The rules are changed with the Set Live Rule and Set Empty
+              Rule buttons. Click the button for the appropriate number 
+              of neighbors (under Set Empty Rule to change the empty
+              rule and Set Live Rule to change the live rule) to switch
+              the behavior for that number of neighbors.  Thus if the 
+              live rule is originally 2 1 1 1 1 1 1 1 1 then clicking on
+              the 8 and 4 buttons under Set Live Rule will change it to
+              1 1 1 1 2 1 1 1 1.
+               
+        Drawing your own pattern :
+          You can draw new on patches (or kill of already living 
+          patches) at any time.  The model treats pure black (0) patches
+          as off/dead and any other color as an on/live patch. 
+
+	Picking a pre-defined patter :
+          To chose a pre-defined patters, click the pattern select 
+          button till the name of the desired pattern appears in the 
+          pattern monitor.  When the name of the desired patter appears 
+          push the pattern place button to put that pattern on the patch-
+          canvas.  Note, the patterns are chosen mostly for the behavior
+          under the Life rules.
+
+	Paning :
+          Quite often the center of activity of the cellular automata
+          will move off to the corner of the screen and you may wish
+          to recenter it. To do so stop the simulation by pressing the
+          stop all button on the control window or deslecting the go 
+          button if it is selected and then using the up, down, left,
+          and right buttons to center the screen as desired. Once the 
+          screen is in the desired posistion press go to start the 
+          simulation back up.
+
+	The wrap button :
+          The wrap button can be used to select whether or not things 
+          that move off of one side of the screen will reappear on the
+          other.  When wrap is true they do, when false they don't.  
+
+Play around with various patterns and rules, change the patch canvas size
+and see what kinds of behaviors you can create.  A quick search on the 
+web for game of Life and patterns will give you literally thoasands of
+neat patterns to try.
+
+Some places to look for more information on cellular automata :
+
+	An introduction with pictures
+	http://www.mirwoj.opus.chelm.pl/whatis_life.html     
+	
+	A wonderfull listing of various rules and their long term 
+        tendencies.  Try a few.
+	http://www.mirwoj.opus.chelm.pl/rullex_life.html    
+
+        A place to find some patters to play with
+        www.radicaleye.com/lifepage/
+
+        There are a great many additional resources on the web!
+
+
+`interface`
+SLCanvas
+top-left 13 333
+
+SLButton
+turtle-or-observer? observer
+top-left 353 261
+width-height 40 30
+name "wrap"
+line-to-run "set pwrap not pwrap"
+forever? false
+button-number 32
+show-name? true
+whichip 14
+
+SLButton
+turtle-or-observer? observer
+top-left 229 212
+width-height 41 30
+name "go up"
+line-to-run "pup"
+forever? false
+button-number 26
+show-name? true
+whichip 16
+
+SLButton
+turtle-or-observer? observer
+top-left 259 249
+width-height 40 30
+name "right"
+line-to-run "pright"
+forever? false
+button-number 28
+show-name? true
+whichip 17
+
+SLButton
+turtle-or-observer? observer
+top-left 258 175
+width-height 40 30
+name "left"
+line-to-run "pleft"
+forever? false
+button-number 27
+show-name? true
+whichip 18
+
+SLButton
+turtle-or-observer? observer
+top-left 288 212
+width-height 40 30
+name "down"
+line-to-run "pdown"
+forever? false
+button-number 29
+show-name? true
+whichip 19
+
+SLMonitor
+top-left 25 223
+width-height 65 36
+name "generations"
+list-to-run "gen"
+digits 0
+delay 0.1
+monitor-number 4
+show-name? true
+whichip 48
+onewhichip 49
+
+SLMonitor
+top-left 388 260
+width-height 44 36
+name "wrap"
+list-to-run "pwrap"
+digits 0
+delay 1.0
+monitor-number 5
+show-name? true
+whichip 50
+onewhichip 51
+
+SLButton
+turtle-or-observer? observer
+top-left 250 39
+width-height 40 30
+name "E3"
+line-to-run "set empty3 not empty3"
+forever? false
+button-number 16
+show-name? true
+whichip 20
+
+SLButton
+turtle-or-observer? observer
+top-left 221 39
+width-height 40 30
+name "E2"
+line-to-run "set empty2 not empty2"
+forever? false
+button-number 17
+show-name? true
+whichip 21
+
+SLButton
+turtle-or-observer? observer
+top-left 162 0
+width-height 40 30
+name "L0"
+line-to-run "set live0 not live0"
+forever? false
+button-number 2
+show-name? true
+whichip 22
+
+SLButton
+turtle-or-observer? observer
+top-left 395 0
+width-height 40 30
+name "L8"
+line-to-run "set live8 not live8"
+forever? false
+button-number 10
+show-name? true
+whichip 23
+
+SLButton
+turtle-or-observer? observer
+top-left 366 0
+width-height 40 30
+name "L7"
+line-to-run "set live7 not live7"
+forever? false
+button-number 8
+show-name? true
+whichip 24
+
+SLButton
+turtle-or-observer? observer
+top-left 338 0
+width-height 40 30
+name "L6"
+line-to-run "set live6 not live6"
+forever? false
+button-number 7
+show-name? true
+whichip 25
+
+SLButton
+turtle-or-observer? observer
+top-left 309 0
+width-height 40 30
+name "L5"
+line-to-run "set live5 not live5"
+forever? false
+button-number 9
+show-name? true
+whichip 26
+
+SLButton
+turtle-or-observer? observer
+top-left 280 0
+width-height 40 30
+name "L4"
+line-to-run "set live4 not live4"
+forever? false
+button-number 6
+show-name? true
+whichip 27
+
+SLButton
+turtle-or-observer? observer
+top-left 250 0
+width-height 40 30
+name "L3"
+line-to-run "set live3 not live3"
+forever? false
+button-number 5
+show-name? true
+whichip 28
+
+SLButton
+turtle-or-observer? observer
+top-left 221 0
+width-height 40 30
+name "L2"
+line-to-run "set live2 not live2"
+forever? false
+button-number 4
+show-name? true
+whichip 29
+
+SLButton
+turtle-or-observer? observer
+top-left 192 0
+width-height 40 30
+name "L1"
+line-to-run "set live1 not live1"
+forever? false
+button-number 3
+show-name? true
+whichip 30
+
+SLButton
+turtle-or-observer? observer
+top-left 367 39
+width-height 40 30
+name "E7"
+line-to-run "set empty7 not empty7"
+forever? false
+button-number 12
+show-name? true
+whichip 31
+
+SLMonitor
+top-left 352 82
+width-height 130 36
+name "Live Rule (8 downto 0)"
+list-to-run "pplive"
+digits 0
+delay 1.0
+monitor-number 2
+show-name? true
+whichip 52
+onewhichip 53
+
+SLButton
+turtle-or-observer? observer
+top-left 395 39
+width-height 40 30
+name "E8"
+line-to-run "set empty8 not empty8"
+forever? false
+button-number 11
+show-name? true
+whichip 32
+
+SLButton
+turtle-or-observer? observer
+top-left 338 39
+width-height 40 30
+name "E6"
+line-to-run "set empty6 not empty6"
+forever? false
+button-number 13
+show-name? true
+whichip 33
+
+SLButton
+turtle-or-observer? observer
+top-left 310 39
+width-height 40 30
+name "E5"
+line-to-run "set empty5 not empty5"
+forever? false
+button-number 14
+show-name? true
+whichip 34
+
+SLMonitor
+top-left 389 82
+width-height 130 36
+name "Empty Rule (8 downto 0)"
+list-to-run "ppempty"
+digits 0
+delay 1.0
+monitor-number 1
+show-name? true
+whichip 54
+onewhichip 55
+
+SLButton
+turtle-or-observer? observer
+top-left 162 39
+width-height 40 30
+name "E0"
+line-to-run "set empty0 not empty0"
+forever? false
+button-number 19
+show-name? true
+whichip 35
+
+SLButton
+turtle-or-observer? observer
+top-left 280 39
+width-height 40 30
+name "E4"
+line-to-run "set empty4 not empty4"
+forever? false
+button-number 15
+show-name? true
+whichip 36
+
+SLButton
+turtle-or-observer? observer
+top-left 320 82
+width-height 68 30
+name "clear-rules"
+line-to-run "crules"
+forever? false
+button-number 25
+show-name? true
+whichip 37
+
+SLButton
+turtle-or-observer? observer
+top-left 191 39
+width-height 40 30
+name "E1"
+line-to-run "set empty1 not empty1"
+forever? false
+button-number 18
+show-name? true
+whichip 38
+
+SLMonitor
+top-left 143 242
+width-height 78 36
+name "pattern"
+list-to-run "patternt"
+digits 0
+delay 1.0
+monitor-number 6
+show-name? true
+whichip 56
+onewhichip 57
+
+SLButton
+turtle-or-observer? observer
+top-left 321 162
+width-height 51 30
+name "life-rule"
+line-to-run "slife"
+forever? false
+button-number 23
+show-name? true
+whichip 39
+
+SLButton
+turtle-or-observer? observer
+top-left 64 227
+width-height 62 30
+name "clear-gen"
+line-to-run "set gen 0"
+forever? false
+button-number 30
+show-name? true
+whichip 40
+
+SLSlider
+top-left 97 91
+width-height 91 25
+name "density"
+variable "density"
+min-value 0
+max-value 100
+current-value 27
+slider-number 0
+show-name? false
+
+SLTextWidget
+top-left 112 1
+width-height 40 55
+textwidth 26
+linenums 3
+words "Set\nLive\nRule"
+drawBorder false
+textwidget-number 1
+
+SLTextWidget
+top-left 112 42
+width-height 40 55
+textwidth 34
+linenums 3
+words "Set\nEmpty\nRule"
+drawBorder false
+textwidget-number 2
+
+SLTextWidget
+top-left 119 206
+width-height 88 40
+textwidth 84
+linenums 2
+words "Built in patterns\n"
+drawBorder false
+textwidget-number 4
+
+SLTextWidget
+top-left 260 213
+width-height 40 40
+textwidth 22
+linenums 2
+words "Pan\n"
+drawBorder false
+textwidget-number 3
+
+SLButton
+turtle-or-observer? observer
+top-left 61 94
+width-height 85 34
+name "random place"
+line-to-run "prand"
+forever? false
+button-number 33
+show-name? true
+whichip 41
+
+SLLineWidget
+top-left 184 87
+width-height 106 65
+id 1
+order 1
+type 1
+title "Cellular Automata"
+delay-string "1.0"
+xlabel "time"
+ylabel "cells alive"
+grid false
+connected true
+autoscaletrue
+location 0 0
+wizard-on false
+
+SLMonitor
+top-left 135 98
+width-height 51 36
+name "alive"
+list-to-run "numalive"
+digits 0
+delay 0.1
+monitor-number 3
+show-name? true
+whichip 58
+onewhichip 59
+
+SLButton
+turtle-or-observer? observer
+top-left 26 14
+width-height 40 30
+name "step"
+line-to-run "tep disp set gen gen + 1"
+forever? false
+button-number 21
+show-name? true
+whichip 42
+
+SLButton
+turtle-or-observer? observer
+top-left 20 59
+width-height 48 36
+name "go"
+line-to-run "tep disp set gen gen + 1"
+forever? true
+button-number 22
+show-name? true
+whichip 43
+
+SLButton
+turtle-or-observer? observer
+top-left 26 159
+width-height 40 30
+name "clear"
+line-to-run "set numalive 0 set gen 0 cg ct"
+forever? false
+button-number 20
+show-name? true
+whichip 44
+
+SLButton
+turtle-or-observer? observer
+top-left 26 113
+width-height 40 30
+name "setup"
+line-to-run "startup"
+forever? false
+button-number 36
+show-name? true
+whichip 45
+
+SLButton
+turtle-or-observer? observer
+top-left 62 23
+width-height 61 30
+name "clear-plot"
+line-to-run "ppreset setplot-yrange 0 (screen-height * screen-width / 2)"
+forever? false
+button-number 31
+show-name? true
+whichip 15
+
+SLButton
+turtle-or-observer? observer
+top-left 144 156
+width-height 81 30
+name "pattern place"
+line-to-run "pplace"
+forever? false
+button-number 34
+show-name? true
+whichip 47
+
+SLButton
+turtle-or-observer? observer
+top-left 183 204
+width-height 83 30
+name "pattern select"
+line-to-run "ifelse pattern = 12 [set pattern 1] [set pattern pattern + 1]"
+forever? false
+button-number 35
+show-name? true
+whichip 46
+
+
+`turtle shapes`
+H4sIAAAAAAAAAO3c2bIkR33A4UJsAgTCeDfGlPG+CEsz0kjyeq64cXDrCwcXkuyx
+RQQgLIkg7Kt+UD8Ab2FThU73TOp0V3VXZuX2fRHuX3TNqc7Kmpozi8V/ePmdj3/2
+4cc/ejp+9P67P3360Tt3Lw737ubXl37146/MPz4d+Mwv/++zv/y/F49fQs8O08v/
+/VLY8Ni5r4t1/jWf/dDnbT1/7eds3UeB+//6r74tAAD9eWF+vfbPESX02j+jpVp3
+7+vYa/1zn7t2/VuvK/XPYa7riPXzsNe61u97/a3r3nodsdeNdR1rr2/p/AI7DsPn
+BgAAAAAAAACgBb/63xEV8t8kaAdd+prc12f/++639fth//bf0v6vvd7Y+899v3rb
+f8p7uUftv6/nIfUaufeXe/+l3Y/c99z+7d/+7d/+7d/+7b/1/efeb+77kXt/e+8/
+935y34/c1597/9fej9j3b+v69q96sZ8ZXvrov3727oen8aHzmEDjQ7l3KORR1Uwd
+jA8FgI69kP3PIqqqqrp/B+NDAQAAAAAAAKAhL2b/bxFUVVVVVVVVVVVVVVVVVVV1
+e4dpINBLP3364Ucf/OQ4PvSFaU6g8aHcO0wvDz1CDzxOF7/u2vMjPuabrj/2+bde
+79r7eev1Xvhx40MBoFsvzK9b/oy09c9cude/9c9qt65f+vm99dpzYn+e9ctef+tn
+tLZ+7K8vbf2t97PC80fjQwEAAAAAAACgFS/Or1v+W42lbv2M1Ndn//bf8/5Tr597
+/9a3vvXTfg9R1Tqbeo3Sr8/+7d/+7d/+7d/+999f7ffH/u3f/tNdn/3bv/3n2//W
+z7C+9a1f9PqfHb768dMPf/zDj58e54d+tsn5oXcvH57rtT9e+/obHKaXrc/imud7
+j/OfdenHLn3ell93ude/8f6ZHwqF2vp7R8G/96xi/4cHm+o8enX9/NDeG+vParHX
+TX0dudfPff9zrP+sLefGuK4cP/8l7X/tfYi1zq17uKS2n3/r7/L8jeaHAgAAcM65
+/1/DXv8/h9zrQ89y//rLvT70bOnXX+xfj3uvBwDQvvTzQ1W13279jNzXn2vftd6H
+1Gvk3p/927/9738fcu8n133Iff327/l/6FrOybl2Cfdpj/3n/vm3/773f0nOtUu4
+Pz38/Oe4D7n3k+s+5L7+c9e01p5rxVrTz3/+fdd6H1KvkXt/9m//9m//e9+H3PvJ
+dR92uM7PDd+4nx/68w8++PfjENHPXRwieve9H1zskq3n3yr3EM/c629wmF4eekAv
+WfOAbzn/oV9k16675ppu+cVd8vo33r9VQ0SXfm2n/rXf+/r0yRDNw3Pd+/zcDBFl
+H+uGiG618S823a+/5s+It/6ZsZb1115HqnVzrP+sLefGuK4cP/8l7X/tfYi1zq17
+uKS2n3/r7/L8jTGGiG79u3Ltf9e2f/vP2dzsv+/9AwDtyz3EK/f60LPcv/5yrw89
+M0QUAKB2cYaI5pbiv7m4prnZv/3nbG72n3f/z3aPe13CPu3f/u3f/ve6D7n3k+s+
+5L7+XPsu+T5cknPtEu7THvvP/fNv/33v/5Kca5dwf3r4+c9xH3LvJ9d9yH39565p
+rT3XirVmCT/vNTwHe+y7tvtg//Zv//bf6/5T3Yfc+8l1H3a4zs8PL3347nvv/fDj
+4/jQz18eH3r/n12+863n3p9z983hwa879/7+65c+51M9c97Z88+8j33+8euubHj+
+0ued+/pz7r7/i3VfeOX40EuPcvg1595f+ry11lzHnuff6pp7denrl/az8HXrxoeG
+vybvv0cE3ytuHvN37pm/8j8VP3cd5z7/3I9vXffc97Bb1//U11/540vrn72eSPu+
+VjHrn7uOK3/c+hvXP/d79NLxK9e/9ff0a3/v33vda7//xLqupc+/9cdj7W+tT63z
+yZ+xjt34+VdfT7D+dmnGh97y16KHzt9q6fNjrXOta9Zfe6+u2Uvsn++t61nf+iWs
+n1qudZeu49yPx1rn1vVvvY5rPz/2c3Ht52+9no2fN8YYH3ov9t+ha7F6X+98+5M+
+/G8oue/D6r+7XPvzedz3mUZ6LlL9HfBTXx/734o27v/Wv4OuPT/Zv5FF/je2ZPvP
+vc+N92FJrP1/6nO3Ptc77f+43sb7cPP133p+pH0f16vt10Hk/Z9T+v5TK+452Pvf
+3nL/utjpOT9n8/4Tn5+a/a9s7P1H+vPdVva/svb/cHvZ/7n9xP56+3+usV2938J6
+q9zXnfs+5L7eXPvPfZ2578Py59wFzb2v665nydr11n992p6u4y7o5a8/59b7t9/z
+cJfk+pc+Z/nr71atn3r/t15/LKv38f3/fb6Rv4/ntnrfK+9DK5b234ty9x1nfGju
+/4Ynd1PLtY9c+10S+7+RuXa93LZef2n7Sc3+0+9/62em/DnZ4/t4ifsv7fexvaX6
+fbE0sfZp//b/UEtn//afsqWzf/tP2dLZf1/7XdLrvkP23+e+Q/YfZ/+l3K9br/vW
+/Zfy3MS+/qXPKe3XTezrr+XPC3vto7T7kHs/e92X3NeX6z7kvp5P+oXhaz96+h8f
+v/Jv7354HCD6henHzw4Q3eruX277yPvzbj2fmx2ml2cfnEsP+TW/IG79sbVrLV1v
+LT23/6X7E/HHVw0QpSy5vlfm+l4drrvX+ufW9XsV0I51A0S1rKb62jWflWP9h6S8
+Z5fW3bqnpa/Z6xlSHT5x6ceedctn33L+ktbP3/n+jzEHiALAs3r/N7Re99/rv6H2
++m/IS/tudf9r993a/q/ddyv7v3XfrewfAAAAgNrEHSCqqqr6bJ8V47Ny7yfn/mu6
+Dw/pYf+XpFgr937X7Dv1tZa+772usdR957i2kva99/5j34e9r7uU+5P7+nLtP/d1
+qaqqarrees4le1xzjvWv1cr6W1nf+tavd/1bryPWuqWsv/Y6Uq2baP0vDi9/+MP/
+fP/5CaJfnL4g2QTRc7b+L2X8L26SOUwvDz1Bl57SS0/emqf7mvMu/epYc17pvbTH
+pXsQ6cdNEG1I7u+Rub9X5/5fafpfiwL1MUG09K792mflXj/GdVx7ziUp112z/qXr
+iPlztfY6c66vZXXpx551y2ffcv6S1s/f+f6PJogCUIre/w3N/u8ebC96/zfl3icx
+9j6RsvfJnCaUAgAAABCXCaKqqhqnWz/jISXsK/W+7f/8/ku+D7E/c40W933N/nPe
+h9Rr3KKFfW/Zf8r7sNe+Y+z/lvuw9/72vI8973/tfch9fbnvQ+7rUlVVzdFbz7lk
+j2vOsf61Wll/K+tb3/r1rn/rdcRat5T1115HqnUTrf/i8OWPfv7uT47DQ+f/KODm
+4aF337n2jOfPO/bJuq9bOn728xd663mxeuv1Lwnv67n7/IzD9HLrQxrr4V76uqXj
+W7+J5HLr9V/787NwXhfDQ6/9tZRq3aXvgXuvn/o6Yt/3a783bl0/9vf2VOte+3tc
+qnVr/b24lj8DpFo/9fXcKte6n7qOhe+Tyb+PLny/3v79/IX5NfVfcHI3lGvdva9j
+rVru+7XXv3X9a8Vaf6tY9yu1XOvmXr+U+77Xc5D6+1fsdc9dx60/Hvv7XuTvc6Ph
+odRur78TlGbvvxOV4uq/G+70b197sf8r++Rya2P/l9u60vef+t/sSt1/Kf9Wm1ru
+f7O2/9vOu9Ve+127n73/fwK59x/uI9X3la2fX0uX5L6+Ur+vtNJQ7uux/316Tu7r
+sv+0XSv3debefyj3de+1zyW595Vr3+f0tt9Q7/sPbf33xOr/PdL+Lzb1+bnVv3/D
+Q7X+Lsl9fbn23er+t8p9/fafd/+13w/7b2s/re3/Wq3sP5bS978X+y9j/7ltvZ7a
+939v6/XUtt9U7L/Pfd/rdd/3et2/577P/ff++17tf+5ZK/afe2u5D6n2Xer92Hu/
+9n/d/dj7/Ny1/8tSn5+7le//S8NLT3/yP//946fH8aFfmuYEHseH3v3zx/Nl3H3v
+/VUN3Z+/ZO35W9cPv+7W82Ptf/G+rrx/Zz/3/ufvxg6fjA+91rnHfO0vh6XjW9df
++rzU61/7bWDp/K2fu2AeH/qpZ+R7P4jaJaWtv1Vr6+e+/6Wtf+31tbZ+7vtf2q//
+zd+nKl9/8/UWtn5vvR8fmtpOf6aJtn7sv0LWvv5Wra1/7fW1tv61al//2vNTX29p
+68e+3tzrd2acxocu/pkh8t/N9/67/hL7t/+LLWSfufafm/3b/6Vu/nz7v9it19f6
+9z/7t/+c3Sr1/reeb//2v+XzF9e3/4tdPN/3v6zdyv7t/1JTy33/7N/+LzW13vef
+mv3b/8Xav6p22vvxobXr/b8NsX/739LUn1/69dm//dv/7Z+fm/3b/5Zu/fzcSt9/
+6vtn//a/pamvv/f9p2b/9r+lWz8/t9z7T71+bvZv/ylbutT7L/3+5r5++7f/nPsH
+mvXl4cvvP/rg0XF46JefGx56/1V3r/z0uYZ6+fElS18XrrO47r9+98Gu/bqt5w+f
+DA8995vJ0m82rf742t90b/1Nee3Xb/3NfuX58/DQ0LXPsvOd7/x2z9+qtvWXzr+2
+W6Vef+ufMbZ+nvXzrn8/PHTrn2Wc73znt3v+0tfH/rzc6197P5fEvv7Y6+f+POtn
+XX+chocuaf3Pwta3vvWtb33rW9/61re+9a1vfetbP/3nb2X/9n+ppX/+Vrmvb+v3
+p9zf37ayf/vP2c3Xn/m/Xch9ffZv/ym7Ve7rt3/739Ktcl9/6/u/Hx6a+79Fsb71
+rW9961vf+ta3vvWtb33rW9/65a+/9fNLvz77t/+e9791/dRKv/+p2b/9b2nv15ea
+/dv/ltbO/u1/S2tX+P6/Mrz03s/ee+9HT4/jQ7/y4PjQe3ffvNxzls479zmf+vHv
+/+L5Xvm5m8/fufduPS90w3mH6eXaxzLW49zKt4Gttt6/jT9/X39ofGgo1rN+q73X
+3+vXfinrX/29de/vtdbPu7423dDe65W2fuzr2Sr9+g+PD439V5bcf2Uq7K9oxa0P
+9Cv395/S1s/9+8/O649rxocuKe3Psnuz/7zNrfX9595f7vuT+/rtf1u3yn39qfe/
+eZ2lf6ts/d8y7d/+7d/+7d/+e9y/qqqqVtclua8v9f6W5L5++9/WrXJff+79L2l9
+f0vsP29zq3//68aH5v5vN5ZsvX77t/8tza31/W1l//a/pbVrfX8AAADAstb/fcC/
+/9j/ltZu6/5Lvz+p92f/9n+puW28/peGF+e5oa+89mh+N1wYHUp3DtNL7l9iKfrQ
+L+M9z6+oq0aHAgAtWjc6VFXLanist/VVNUrHGKNDAQAAAAAAAIASxBkdqqqqqqqq
+qqoPNzyW+3rsX1VVVVVVVbXpfvU4OvTx/G4wOpSTw/RSyKMateGxvc+vqEaHAkC3
+jA5VrbHhsd7WV9UoHY0OBQAAAAAAAIBWGB2qqqqqqqqqmrLhsdzXY/+qqqqqqqqq
+Tfdrx9Ghr8/vBqNDOTlML4U8qlEbHtv7/IpqdCgAdMvoUNUaGx7rbX1VjdLR6FAA
+AAAAAAAAaIXRoaqqqqqqqqopGx7LfT32r6qqqqqqqtp0Xz6ODn1jfjcYHcrJYXop
+5FGN2vDY3udXVKNDAaBbRoeq1tjwWG/rq2qUjkaHAgAAAAAAAEArjA5VVVVVVVVV
+TdnwWO7rsX9VVVVVVVXVpvv14+jQJ/O7wehQTg7TSyGPatSGx/Y+v6IaHQoA3TI6
+VLXGhsd6W19Vo3Q0OhQAAAAAAAAAWmF0qKqqqqqqqmrKhsdyX4/9q6qqqqqqqjbd
+XzuODn1zfjcYHcrJYXop5FGN2vDY3udXVKNDAaBbRoeq1tjwWG/rq2qUjkaHAgAA
+AAAAAEArjA5VVVVVVVVVTdnwWO7rsX9VVVVVVVXVpvuN4+jQt+Z3g9GhnByml0Ie
+1agNj+19fkU1OhQAumV0qGqNDY/1tr6qRulodCgAAAAAAAAAtMLoUFVVVVVVVdWU
+DY/lvh77V1VVVVVVVW26v34cHfr2/G4wOpSTw/RSyKMateGxvc+vqEaHAkC3jA5V
+rbHhsd7WV9UoHY0OBQAAAAAAAIBWGB2qqqqqqqqqmrLhsdzXY/+qqqqqqqqqTfc3
+7keHPnp1fjcYHcrJYXop5FGN2vDY3udXVKNDAaBbRoeq1tjwWG/rq2qUjkaHAgAA
+AAAAAEArjA5VVVVVVVVVTdnwWO7rsX9VVVVVVVXVpvubx9Ghr83vBqNDOTlML4U8
+qlEbHtv7/IpqdCgAdMvoUNUaGx7rbX1VjdLR6FAAAAAAAAAAaIXRoaqqqqqqqqop
+Gx7LfT32r6qqqqqqqtp0f+s4OvTR/G4wOpSTw/RSyKMateGxvc+vqEaHAkC3jA5V
+rbHhsd7WV9UoHY0OBQAAAAAAAIBWGB2qqqqqqqqqmrLhsdzXY/+qqqqqqqqqTfe3
+j6NDH8/vBqNDOTlML4U8qlEbHtv7/IpqdCgAdMvoUNUaGx7rbX1VjdLR6FAAAAAA
+AAAAaIXRoaqqqqqqqqopGx7LfT32r6qqqqqqqtp0f+c4OvT1+d1gdCgnh+mlkEc1
+asNje59fUY0OBYBuGR2qWmPDY72tr6pROhodCgAAAAAAAACtMDpUVVVVVVVVNWXD
+Y7mvx/5VVVVVVVVVm+7vHkeHvjG/G4wO5eQwvRTyqEZteGzv8yuq0aEA0C2jQ1Vr
+bHist/VVNUpHo0MBAAAAAAAAoBVGh6qqqqqqqqqmbHgs9/XYv6qqqqqqqmrT/b3j
+6NAn87vB6FBODtNLIY9q1IbH9j6/ohodCgDdMjpUtcaGx3pbX1WjdDQ6FAAAAAAA
+AABaYXSoqqqqqqqqasqGx3Jfj/2rqqqqqqqqNt1vHkeHvjm/G4wO5eQwvRTyqEZt
+eGzv8yuq0aEA0C2jQ1VrbHist/VVNUpHo0MBAAAAAAAAoBVGh6qqqqqqqqqmbHgs
+9/XYv6qqqqqqqmrT/f3j6NC35neD0aGcHKaXQh7VqA2P7X1+RTU6FAC6ZXSoao0N
+j/W2vqpG6Wh0KAAAAAAAAAC0wuhQVVVVVVVV1ZQNj+W+HvtXVVVVVVVVbbrfOo4O
+fXt+NxgdyslheinkUY3a8Nje51dUo0MBoFtGh6rW2PBYb+urapSORocCAAAAAAAA
+QCuMDlVVVVVVVVVN2fBY7uuxf1VVVVVVVdWm+wf3o0Mfvzq/G4wO5eQwvRTyqEZt
+eGzv8yuq0aEA0C2jQ1VrbHist/VVNUpHo0MBAAAAAAAAoBVGh6qqqqqqqqqmbHgs
+9/XYv6qqqqqqqmrT/fZxdOhr87vB6FBODtNLIY9q1IbH9j6/ohodCgDdMjpUtcaG
+x3pbX1WjdDQ6FAAAAAAAAABaYXSoqqqqqqqqasqGx3Jfj/2rqqqqqqqqNt3xODr0
+0fxuMDqUk8P0UsijGrXhsb3Pr6hGhwJAt4wOVa2x4bHe1lfVKB2NDgUAAAAAAACA
+Vhgdqqqqqqqqqpqy4bHc12P/qqqqqqqqqk33D4+jQx/P7wajQzk5TC+FPKpRGx7b
++/yKanQoAHTL6FDVGhse6219VY3S0ehQAAAAAAAAAGiF0aGqqqqqqqqqKRsey309
+9q+qqqqqqqradL9zHB36+vxuMDqUk8P0UsijGrXhsb3Pr6hGhwJAt4wOVa2x4bHe
+1lfVKB2NDgUAAAAAAACAVhgdqqqqqqqqqpqy4bHc12P/qqqqqqqqqk33j46jQ9+Y
+3w1Gh3JymF4KeVSjNjy29/kV1ehQAOiW0aGqNTY81tv6qhqlo9GhAAAAAAAAANAK
+o0NVVVVVVVVVUzY8lvt67F9VVVVVVVW16f7xcXTok/ndYHQoJ4fppZBHNWrDY3uf
+X1GNDgWAbhkdqlpjw2O9ra+qUToaHQoAAAAAAAAArTA6VFVVVVVVVTVlw2O5r8f+
+VVVVVVVVVZvunxxHh745vxuMDuXkML0U8qhGbXhs7/MrqtGhANAto0NVa2x4rLf1
+VTVKR6NDAQAAAAAAAKAVRoeqqqqqqqqqpmx4LPf12L+qqqqqqqpq0/3T4+jQt+Z3
+g9GhnByml0Ie1agNj+19fkU1OhQAumV0qGqNDY/1tr6qRulodCgAAAAAAAAAtMLo
+UFVVVVVVVdWUDY/lvh77V1VVVVVVVW26f3YcHfr2/G4wOpSTw/RSyKMateGxvc+v
+qEaHAkC3jA5VrbHhsd7WV9UoHY0OBQAAAAAAAIBWGB2qqqqqqqqqmrLhsdzXY/+q
+qqqqqqqqTffP70eHvv7q/G4wOpSTw/RSyKMateGxvc+vqEaHAkC3jA5VrbHhsd7W
+V9UoHY0OBQAAAAAAAIBWGB2qqqqqqqqqmrLhsdzXY/+qqqqqqqqqTfcvjqNDX5vf
+DUaHcnKYXgp5VKM2PLb3+RXV6FAA6JbRoao1NjzW2/qqGqWj0aEAAAAAAAAA0Aqj
+Q1VVVVVVVVVTNjyW+3rsX1VVVVVVVbXp/uVxdOij+d1gdCgnh+mlkEc1asNje59f
+UY0OBYBuGR2qWmPDY72tr6pROhodCgAAAAAAAACtMDpUVVVVVVVVNWXDY7mvx/5V
+VVVVVVVVm+5fHUeHPp7fDUaHcnKYXgp5VKM2PLb3+RXV6FAA6JbRoao1NjzW2/qq
+GqWj0aEAAAAAAAAA0AqjQ1VVVVVVVVVTNjyW+3rsX1VVVVVVVbXp/vVxdOjr87vB
+6FBODtNLIY9q1IbH9j6/ohodCgDdMjpUtcaGx3pbX1WjdDQ6FAAAAAAAAABaYXSo
+qqqqqqqqasqGx3Jfj/2rqqqqqqqqNt1XjqND35jfDUaHcnKYXgp5VKM2PLb3+RXV
+6FAA6JbRoao1NjzW2/qqGqWj0aEAAAAAAAAA0AqjQ1VVVVVVVVVTNjyW+3rsX1VV
+VVVVVbXpfvc4OvTJ/G4wOpSTw/RSyKMateGxvc+vqEaHAkC3jA5VrbHhsd7WV9Uo
+HY0OBQAAAAAAAIBWGB2qqqqqqqqqmrLhsdzXY/+qqqqqqqqqTfdvjqND35zfDUaH
+cnKYXgp5VKM2PLb3+RXV6FAA6JbRoao1NjzW2/qqGqWj0aEAAAAAAAAA0AqjQ1VV
+VVVVVVVTNjyW+3rsX1VVVVVVVbXpvnocHfrW/G4wOpSTw/RSyKMateGxvc+vqEaH
+AkC3jA5VrbHhsd7WV9UoHY0OBQAAAAAAAIBWGB2qqqqqqqqqmrLhsdzXY/+qqqqq
+qqqqTfe14+jQt+d3g9GhnByml0Ie1agNj+19fkU1OhQAumV0qGqNDY/1tr6qRulo
+dCgAAAAAAAAAtMLoUFVVVVVVVdWUDY/lvh77V1VVVVVVVW26j+5Hh77x6vxuMDqU
+k8P0UsijGrXhsb3Pr6hGhwJAt4wOVa2x4bHe1lfVKB2NDgUAAAAAAACAVhgdqqqq
+qqqqqpqy4bHc12P/qqqqqqqqqk338XF06Gvzu8HoUE4O00shj2rUhsf2Pr+iGh0K
+AN0yOlS1xobHeltfVaN0NDoUAAAAAAAAAFphdKiqqqqqqqpqyobHcl+P/auqqqqq
+qqo23dePo0Mfze8Go0M5OUwvhTyqURse2/v8imp0KAB0y+hQ1RobHuttfVWN0tHo
+UAAAAAAAAABohdGhqqqqqqqqqikbHst9Pfavqqqqqqqq2nTfOI4OfTy/G4wO5eQw
+vRTyqEZteGzv8yuq0aEA0C2jQ1VrbHist/VVNUpHo0MBAAAAAAAAoBVGh6qqqqqq
+qqqmbHgs9/XYv6qqqqqqqmrTfXIcHfr6/G4wOpSTw/RSyKMateGxvc+vqEaHAkC3
+jA5VrbHhsd7WV9UoHY0OBQAAAAAAAIBWGB2qqqqqqqqqmrLhsdzXY/+qqqqqqqqq
+TffN4+jQN+Z3g9GhnByml0Ie1agNj+19fkU1OhQAumV0qGqNDY/1tr6qRulodCgA
+AAAAAAAAtMLoUFVVVVVVVdWUDY/lvh77V1VVVVVVVW26bx1Hhz6Z3w1Gh3JymF4K
+eVSjNjy29/kV1ehQAOiW0aGqNTY81tv6qhqlo9GhAAAAAAAAANAKo0NVVVVVVVVV
+UzY8lvt67F9VVVVVVVW16b59HB365vxuMDqUk8P0UsijGrXhsb3Pr6hGhwJAt4wO
+Va2x4bHe1lfVKB2NDgUAAAAAAACAVhgdqqqqqqqqqpqy4bHc12P/qqqqqqqqqk33
+b4+jQ9+a3w1Gh3JymF4KeVSjNjy29/kV1ehQAOiW0aGqNTY81tv6qhqlo9GhAAAA
+AAAAANAKo0NVVVVVVVVVUzY8lvt67F9VVVVVVVW16f7dcXTo2/O7wehQTg7TSyGP
+atSGx/Y+v6IaHQoA3TI6VLXGhsd6W19Vo3Q0OhQAAAAAAAAAWmF0qKqqqqqqqmrK
+hsdyX4/9q6qqqqqqqjbdv78fHfrk1fndYHQoJ4fppZBHNWrDY3ufX1GNDgWAbhkd
+qlpjw2O9ra+qUToaHQoAAAAAAAAArTA6VFVVVVVVVTVlw2O5r8f+VVVVVVVVVZvu
+PxxHh742vxuMDuXkML0U8qhGbXhs7/MrqtGhANAto0NVa2x4rLf1VTVKR6NDAQAA
+AAAAAKAVRoeqqqqqqqqqpmx4LPf12L+qqqqqqqpq0/3H4+jQR/O7wehQTg7TSyGP
+atSGx/Y+v6IaHQoA3TI6VLXGhsd6W19Vo3Q0OhQAAAAAAAAAWmF0qKqqqqqqqmrK
+hsdyX4/9q6qqqqqqqjbdfzqODn08vxuMDuXkML0U8qhGbXhs7/MrqtGhANAto0NV
+a2x4rLf1VTVKR6NDAQAAAAAAAKAVRoeqqqqqqqqqpmx4LPf12L+qqqqqqqpqu/1/
+XbDPdBUPFQAAFQ8V
+
+
+`settings`
+patch-size 8
+num-shapes 256
+screen-half-width 25
+screen-half-height 25
+interface-window-xcor 110
+interface-window-ycor 73
+interface-window-size 753 431
+output-window-xcor 465
+output-window-ycor 62
+output-window-width 397
+output-window-height 324
+info-window-xcor 397
+info-window-ycor 191
+info-window-width 542
+info-window-height 424
+control-center-xcor 19
+control-center-ycor 20
+control-center-width 402
+control-center-height 537
+turtle-command-center-height 150
+observer-command-center-height 150
+
+`string table`
+H4sIAAAAAAAAAB2MOw7CMBAFn1BwFNHADXwEOAKioSBVCmrHrJOVNrblD+fHoZni
+6c0AOOPyIJEqJul7LWEzxeBk25S1Ef4SusJbow+eoBbhDyV0r/c0oRv/fO4ccjSW
+8soRagwz14z+dtXCzTraFHLGITL6mWjdqypW51ppkOCXdnP0A7HhmhSNAAAAAAAA
+jQ==
+
+`symbol table`
+H4sIAAAAAAAAAGNgYGBiYCkpKk1lYE1LzClOBQBgXN0IEQAAAAAAABE=
+
+`double table`
+H4sIAAAAAAAAAGNgYJC1/8AABg4MUNq7AULrQfkcEHo/VJ3jrNr1MiB6+vUWsLwW
+VJ0OlDaA0oZQ2ghKG0NpEyhtCqUFoLQIlJaA0jJQWgFKK0FpFSitBqU1IPQBqPsP
+QN17AGqu/c6ZIDALANkFdK3sAAAAAAAA7A==
+
+`list table`
+H4sIAAAAAAAAALVWW5LTMBAc2ZLjOHac5+468EkVF9gDUJyCA+w/V+CLI1B8chyO
+wjGYsVpJo9JWEihS5e2WPJppzYy0FpFnERmc/qlEXB1RdOwUK69cH6dP5eJ8wp8K
+LdbVmHNAm/OK5u4TvXMFfh7rmpD5+QP5PbjLxsLjgj97Bppb055GcNvLBtz2sAU3
+XzvwRp89+EKfA7jl40ixPMUKFKuhWAuybSnWkmJ1FGtFsXrjgjjY8xxPKDbPpZxk
+dq4w98K11d++ilqSfYCuBraqrf4Vdb3fzPrd1x+zzfjxw6z7+7cvpln9LMjfQLXo
+UIeXWIPZ3xb+dvC3h78D/B3h710d99oCl8Aa2AFXwB44ANfAEbgBboE74B54AB6B
+D8BH4NMVTfKPmgSa5E5NJ0/n1cd62jm3etYeNfax14KPfdb42I8LH2vU+tiHSx97
+sPOxjisf69grjur+c37++K4At3cV8WRT5fyV9ZKtr6/4qol78uNpbf2f4s1xKF6a
+D+Q/kE9/hw4paLpXh6f5QPMNxW3Iv903U3pHd0viFWmVG3RXpPscT/GEpwZOxAP4
+RDYT2UxkE8gmkE1INn+Z71Iv5/3riCebheIbytmJ+JTlUgr6bu1x7rPE24IvruN5
+T1n+Qr4PaD3vO8v9hPklry/0CufZ5ZrynJOOzr3eX5J6Ncuh49jki/0KaV9xPTjX
+ee9c83XLXjmfhXPEPci9lnh/R25L+awSl0vfitD3n1zGGx104COtsTtkA256nsAt
+j4/gnfIHcOuNI3ir/ABu52MPbvfADtz0bcEPytfg9i0wgtv3xQC+U96DD8pb8K3y
+Ffha+TLts4otxWe3NE5ny9Oa9D3XpxynvLuYt3QmLc9vU76QV/5fkHI8j+VSY/s5
+2HN9HNk1NNfI5U6oKeY8/g0cLKuzAAwAAAAADAA=
+
+`bytecodes`
+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
+
+`observer world`
+H4sIAAAAAAAAAHXP2wrCMAwG4Oh0zvPZax/Bs+KVj7KJYQ7mLFud+PYmaRAELQS+
+0IS/hUF4PxeYl5jPCxtZDE/wOUdomfRun8klRkt9DfwUs9heySE0+M5gJqNtWf7c
+BlQzmoisxdxN1M0zjwyhAl4sW1UIssctSpMSqfOgzlpIjnDJW44rou+4JjYcN5Ik
+3BKbjjtiy3HPL3M8EDvg483YF2d01RzSU3NKX80xAzXnDNUcNFJz0ljNURM1Z03l
+p1RV+Zs2zhUt8L77f/Vz5g0e4ld1ugEAAAAAAbo=
+
+`patch world`
+H4sIAAAAAAAAAI3cy+preX7eYfmQRCQENNBAAQ2EEEIIIXQ+n+pcdQMZu+k0tqGx
+C6dI7JkuOZeQ6na+v+1/xXu/z4LFWkKP3rVmn5k6//Vvfv7dL7//u9H//OV3v/zh
+b16ddvz3zl//8+//8Z/+fP+ff/7jP/7yv//+f/ztH3759dOw85c///7Xa6/zH//4
+h3/421/+7tf7Wec//cn8/Id/+PXDoPPX//KvP+12/sufh5sb/Xr+t/93/mXnP/zu
+j3//v/7w50f81c+/+9NP/+L5f/718XX9N8df/On8q1/PP93Um0bXRddD10c3QDdE
+N0I3RjdBN0U3QzdHt0C3RLdCt0a3QbdFt0O3R3dAd0R3QndGd0F3RXdDd0f3QPdE
+91L3NvcV7n2Fe1/j3te49w3ufYN73+Let7j3He59h3vf4973uPcD7v2Aez/i3o+4
+9xPu/WR79f3r/2P/fvej66LroeujG6AbohuhG6OboJuim6Gbo1ugW6JboVuj26Db
+otuh26M7oDuiO6E7o7ugu6K7obuje6B7onupe5v7Cve+wr2vce9r3PsG977BvW9x
+71vc+w73vsO973Hve9z7Afd+wL0fce9H3PsJ936yvdb9btjroOui66HroxugG6Ib
+oRujm6Cbopuhm6NboFuiW6Fbo9ug26LbodujO6A7ojuhO6O7oLuiu6G7o3uge6J7
+qXubq+5Hh3vV/ehwr7ofHe5V96PDvep+dLhX3Y8O96r70eFedT863KvuR2d7rfu9
+sNdB10XXQ9dHN0A3RDdCN0Y3QTdFN0M3R7dAt0S3QrdGt0G3RbdDt0d3QHdEd0J3
+RndBd0V3Q3dH90D3RPdS9zZX3Y8O96r70eFedT863KvuR4d71f3ocK+6Hx3uVfej
+w73qfnS4V92PzvZa9/thr4Oui66Hro9ugG6IboRujG4SXedD95ObRfex+8kt0C3R
+rdCt0W3QbdHt0O3RHdAd0Z3QndFd0F3R3dDd0T3QPdG91L3NVfejw73qfnS4V92P
+Dveq+9HhXnU/Otyr7keHe9X96HCvuh8d7lX3o7O91v1B2Oug66LroeujG6Abohuh
+G6ObRPex+8nNovvY/eQW6JboVujW6Dbotuh26PboDuiO6E7ozugu6K7obuju6B7o
+nuhe6t7mqvvR4V51Pzrcq+5Hh3vV/ehwr7ofHe5V96PDvep+dLhX3Y8O96r70dle
+6/4w7HXQddH10PXRDdAN0Y3QjdFN0E3RzdDN0S3QLdGt0K3RbdBt0e3Q7dEd0B3R
+ndCd0V3QXdHd0N3RPdA90b3Uvc1V96PDvep+dLhX3Y8O96r70eFedT863KvuR4d7
+1f3ocK+6Hx3uVfejs73W/VHY66Drouuh66MboBuiG6Ebo5ugm6KboZujW6Bboluh
+W6PboNui26HbozugO6I7oTuju6C7oruhu6N7oHuie6l7m/sK96r7yVX3o8O96n50
+uFfdjw73qvvR4V51Pzrcq+5Hh3vV/ehwr7ofne217o/DXgddF10PXR/dAN0Q3Qjd
+GN0E3RTdDN0c3QLdEt0K3RrdBt0W3Q7dHt0B3RHdCd0Z3QXdFd0N3R3dA90T3Uvd
+21x1Pzrcq+5Hh3vV/ehwr7ofHe5V96PDvep+dLhX3Y8O96r70eFedT8622vdn4S9
+Drouuh66ProBuiG6Eboxugm6KboZujm6BboluhW6NboNui26Hbo9ugO6I7oTujO6
+C7oruhu6O7oHuie6l7q3uep+dLhX3Y8O96r70eFedT863KvuR4d71f3ocK+6Hx3u
+Vfejw73qfnS217o/DXsddF10PXR9dAN0Q3QjdGN0E3RTdDN0c3QLdEt0K3RrdBt0
+W3Q7dHt0B3RHdCd0Z3QXdFd0N3R3dA90T3QvdW9z1f3ocK+6Hx3uVfejw73qfnS4
+V92PDveq+9HhXnU/Otyr7keHe9X96GyvdX8W9jrouuh66ProBuiG6Eboxugm6Kbo
+Zujm6BboluhW6NboNui26Hbo9ugO6I7oTujO6C7oruhu6O7oHuie6F7q3uaq+9Hh
+XnU/Otyr7keHe9X96HCvuh8d7lX3o8O96n50uFfdjw73qvvR2V7r/jzsddB10fXQ
+9dEN0A3RjdCN0U3QTdHN0M3RLdAt0a3QrdFt0G3R7dDt0R3QHdGd0J3RXdBd0d3Q
+3dE90D3RvdS9zVX3o8O96n50uFfdjw73qvvR4V51Pzrcq+5Hh3vV/ehwr7ofHe5V
+96Ozvdb9RdjroOui66HroxugG6IboRujm6Cbopuhm6NboFuiW6Fbo9ug26Lboduj
+O6A7ojuhO6O7oLuiu6G7o3uge6J7qXubq+5Hh3vV/ehwr7ofHe5V96PDvep+dLhX
+3Y8O96r70eFedT863KvuR2d7rfvLsNdB10XXQ9dHN0A3RDdCN0Y3QTdFN0M3R7dA
+t0S3QrdGt0G3RbdDt0d3QHdEd0J3RndBd0V3Q3dH90D3RPdS9zZX3Y8O96r70eFe
+dT863KvuR4d71f3ocK+6Hx3uVfejw73qfnS4V92PzvZa91dhr4Oui66Hro9ugG6I
+boRujG6Cbopuhm6OboFuiW6Fbo1ug26Lboduj+6A7ojuhO6M7oLuiu6G7h5d50P3
+k3tG97H70b3NVfejw73qfnS4V92PDveq+9HhXnU/Otyr7keHe9X96HCvuh8d7lX3
+o7O91v112Oug66LroeujG6AbohuhG6OboJuim6Gbo1ugW0bX+dD95NboNtF97H5y
+O3R7dAd0R3QndGd0F3RXdDd09+g+dj+5Z3Qfux/d21x1Pzrcq+5Hh3vV/ehwr7of
+He5V96PDvep+dLhX3Y8O96r70eFedT8622vd34S9Drouuh66ProBuiG6Eboxugm6
+KboZujm6BboluhW6NboNui26Hbo9ugO6I7oTujO6C7oruhu6O7oHuie6l7q3uep+
+dLhX3Y8O96r70eFedT863KvuR4d71f3ocK+6Hx3uVfejw73qfnS217q/DXsddF10
+PXR9dAN0Q3QjdGN0E3RTdDN08+g6H7qf9pboVujW6DbottF1PnQ/7e3RHdAd0Z3Q
+ndFd0F3R3dDd0T3QPdG91L3NVfejw73qfnS4V92PDveq+9HhXnU/Otyr7keHe9X9
+6HCvuh8d7lX3o7O91v1d2Oug66LroeujG6AbohuhG6OboJuim6GbR/ex+2lviW6F
+bo1ug24b3cfup709ugO6I7oTujO6C7oruhu6O7oHuie6l7q3uep+dLhX3Y8O96r7
+0eFedT863KvuR4d71f3ocK+6Hx3uVfejw73qfnS217q/D3sddF10PXR9dAN0Q3Qj
+dGN0E3RTdDN08+g+dj/tLdGt0K3RbdBto/vY/bS3R3dAd0R3QndGd0F3RXdDd0f3
+QPdE91L3Nlfdjw73qvvR4V51Pzrcq+5Hh3vV/ehwr7ofHe5V96PDvep+dLhX3Y/O
+9lr3D2Gvg66Lroeuj26AbohuhG6MboJuim6Gbo5ugW6JboVujW6Dbotuh26P7oDu
+iO6E7ozugu6K7obuju6B7onupe5trrofHe5V96PDvep+dLhX3Y8O96r70eFedT86
+3KvuR4d71f3ocK+6H53tte4fw14HXRddD10f3QDdEN0I3RjdBN0U3QzdHN0C3TK6
+zofuJ7dGt4nuY/eT26HbozugO6I7oTuju6C7oruhu6N7oHuie0XX+dD95Kr76bnV
+/eSq+9HhXnU/Otyr7keHe9X96HCvuh8d7lX3o8O96n50uFfdj872WvdPYa+Drouu
+h66PboBuiG6Eboxugm6KboZujm6BboluhW6NboNui26Hbo/ugO6I7oTujO6C7vrR
+/Zv///j3u5/27uge6J7oXtF97H5y1f303Op+ctX96HCvuh8d7lX3o8O96n50uFfd
+jw73qvvR4V51Pzrcq+5HZ3ut++ew10HXRddD10c3QDdEN0I3RjdBN0U3QzdHt0C3
+RLdCt0a3QbdFt0O3R3dAd0R3QndGd/noPtvz60f32b0buju6B7onupe6t7nqfnS4
+V92PDveq+9HhXnU/Otyr7keHe9X96HCvuh8d7lX3o8O96n50tte6fwl7HXRddD10
+fXQDdEN0I3RjdBN0U3QzdHN0C3RLdCt0a3QbdFt0O3R7dAd0R3QndGd0l48udj+5
+G7r7R/fZ93uge6J7qXubq+5Hh3vV/ehwr7ofHe5V96PDvep+dLhX3Y8O96r70eFe
+dT863KvuR2d7rfvXsNdB10XXQ9dHN0A3RDdCN0Y3QTdFN0M3R7dAt0S3QrdGt0G3
+RbdDt0d3QHdEd0J3RndBd0V3Q3dH90D3RPdS9zZX3Y8O96r70eFedT863KvuR4d7
+1f3ocK+6Hx3uVfejw73qfnS4V92PzvZa929hr4Oui66Hro9ugG6IboRujG6Cbopu
+hm6OboFuiW6Fbo1ug26Lboduj+6A7ojuhO6M7oLuiu6G7o7uge6J7qXuba66Hx3u
+Vfejw73qfnS4V92PDveq+9HhXnU/Otyr7keHe9X96HCvuh+d7bXu38NeB10XXQ9d
+H90A3RDdCN0Y3QTdFN0M3RzdAt0S3QrdGt0G3RbdDt0e3QHdEd0J3RndBd0V3Q3d
+Hd0D3RPdS93bXHU/Otyr7keHe9X96HCvuh8d7lX3o8O96n50uFfdjw73qvvR4V51
+Pzrba91/hL0Oui66Hro+ugG6IboRujG6Cbopuhm6OboFuiW6Fbo1ug26Lboduj26
+A7ojuhO6M7oLuiu6G7o7uge6J7qXure56n50uFfdjw73qvvR4V51Pzrcq+5Hh3vV
+/ehwr7ofHe5V96PDvep+dLbXuv8Mex10XXQ9dH10A3RDdCN0Y3QTdFN0M3RzdAt0
+S3QrdGt0G3RbdDt0e3QHdEd0J3RndBd0V3Q3dHd0D3RPdC91b3PV/ehwr7ofHe5V
+96PDvep+dLhX3Y8O96r70eFedT863KvuR4d71f3obK91/xX2Oui66Hro+ugG6Ibo
+RujG6Cbopuhm6OboFuiW6Fbo1ug26Lboduj26A7ojuhO6M7oLuiu6G7o7uge6J7o
+Xure5qr70eFedT863KvuR4d71f3ocK+6Hx3uVfejw73qfnS4V92PDveq+9HZ3qfu
+v7+810HXRddD10c3QDdEN0I3RjdBN0U3QzdHt0C3RLdCt0a3QbdFt0O3R3dAd0R3
+QndGd0F3RXdDd0f3QPdE91L3Nte6nxzute4nh3ut+8nhXut+crjXup8c7rXuJ4d7
+rfvJ4V7rfnK417qfnO217n/1W/aZ7ifXRddD10c3QDdEN0I3RjdBN0U3QzdHt0C3
+RLdCt0a3QbdFt0O3R3dAd0R3QndGd0F3RXdDd0f3QPdE91L3NvcV7lX3k6vuR4d7
+1f3ocK+6Hx3uVfejw73qfnS4V92PDveq+9HhXnU/Otv71P33l/c66Lroeuj66Abo
+huhG6MboJuim6Gbo5ugW6JboVujW6Dbotuh26PboDuiO6E7ozugu6K7obuju6B7o
+nuhe6t7mWveTw73W/eRwr3U/Odxr3U8O91r3k8O91v3kcK91Pznca91PDvda95Oz
+vdb9r3/LPtP95Lroeuj66AbohuhG6MboJuim6Gbo5ugW6JboVujW6Dbotuh26Pbo
+DuiO6E7ozugu6K7obuju6B7onuhe6t7mqvvR4V51Pzrcq+5Hh3vV/ehwr7ofHe5V
+96PDvep+dLhX3Y8O96r70dnep+6/v7zXQddF10PXRzdAN0Q3QjdGN0E3RTdDN0e3
+QLdEt0K3RrdBt0W3Q7dHd0B3RHdCd0Z3QXdFd0N3R/dA90T3Uvc217qfHO617ieH
+e637yeFe635yuNe6nxzute4nh3ut+8nhXut+crjXup+c7bXuf/Nb9pnuJ9dF10PX
+RzdAN0Q3QjdGN0E3RTdDN0e3QLdEt0K3RrdBt0W3Q7dHd0B3RHdCd0Z3QXdFd0N3
+R/dA90T3Uvc2V92PDveq+9HhXnU/Otyr7keHe9X96HCvuh8d7lX3o8O96n50uFfd
+j872PnX//eW9Drouuh66ProBuiG6Eboxugm6KboZujm6BboluhW6NboNui26Hbo9
+ugO6I7oTujO6C7oruhu6O7oHuie6l7q3udb95HCvdT853GvdTw73WveTw73W/eRw
+r3U/Odxr3U8O91r3k8O91v3kbK91/9vfss90P7kuuh66ProBuiG6Eboxugm6KboZ
+ujm6BboluhW6NboNui26Hbo9ugO6I7oTujO6C7oruhu6O7oHuie6l7q3uep+dLhX
+3Y8O96r70eFedT863KvuR4d71f3ocK+6Hx3uVfejw73qfnS296n77y/vddB10fXQ
+9dEN0A3RjdCN0U3QTdHN0M3RLdAt0a3QrdFt0G3R7dDt0R3QHdGd0J3RXdBd0d3Q
+3dE90D3RvdS9zbXuJ4d7rfvJ4V7rfnK417qfHO617ieHe637yeFe635yuNe6nxzu
+te4nZ3ut+9/9ln2m+8l10fXQ9dEN0A3RjdCN0U3QTdHN0M3RLdAt0a3QrdFt0G3R
+7dDt0R3QHdGd0J3RXdBd0d3Q3dE90D3RvdS9zVX3o8O96n50uFfdjw73qvvR4V51
+Pzrcq+5Hh3vV/ehwr7ofHe5V96OzvU/df395r4Oui66Hro9ugG6IboRujG6Cbopu
+hm6OboFuiW6Fbo1ug26Lboduj+6A7ojuhO6M7oLuiu6G7o7uge6J7qXube4r3Gvd
+D651Pznca91PDvda95PDvdb95HCvdT+5uPfnm0/dTw7fr3U/Odxr3U/O9lr3v/8t
++0z3k+ui66HroxugG6IboRujm6Cbopuhm6NboFuiW6Fbo9ug26LbodujO6A7ojuh
+O6O7oLuiu6G7o3uge6J7qXubq+5Hh3vV/ehwr7ofHe5V96PDvep+dLhX3Y8u7n3s
+fnT4ftX96HCvuh+d7X3q/vvLex10XXQ9dH10A3RDdCN0Y3QTdFN0M3RzdAt0S3Qr
+dGt0G3RbdDt0e3QHdEd0J3RndBd0V3Q3dHd0D3RPdC91b3Ot+8nhXut+crjXup8c
+7rXuJ4d7rfvJ4V7rfnK417qfHO617ieHe637ydle6/4Pv2Wf6X5yXXQ9dH10A3RD
+dCN0Y3QTdFN0M3RzdAt0S3QrdGt0G3RbdDt0e3QHdEd0J3RndBd0V3Q3dHd0D3RP
+dC91b3PV/ehwr7ofHe5V96PDvep+dLhX3Y8O96r70eFedT863KvuR4d71f3obO9T
+999f3uug66LroeujG6AbohuhG6OboJuim6Gbo1ugW6JboVuj26Dbotuh26M7oDui
+O6E7o7ugu6K7obuje6B7onupe5tr3U8O91r3k8O91v3kcK91Pznca91PDvda95PD
+vdb95HCvdT853GvdT872Wvd//C37TPeT66LroeujG6AbohuhG6OboJuim6Gbo1ug
+W6JboVuj26Dbotuh26M7oDuiO6E7o7ugu6K7obuje6B7onupe5ur7keHe9X96HCv
+uh8d7lX3o8O96n50uFfdjw73qvvR4V51Pzrcq+5HZ3ufuv/+8l4HXRddD10f3QDd
+EN0I3RjdBN0U3QzdHN0C3RLdCt0a3QbdFt0O3R7dAd0R3QndGd0F3RXdDd0d3QPd
+E91L3dtc635yuNe6nxzute4nh3ut+8nhXut+crjXup8c7rXuJ4d7rfvJ4V7rfnK2
+17r/02/ZZ7qfXBddD10f3QDdEN0I3RjdBN0U3QzdHN0C3RLdCt0a3QbdFt0O3R7d
+Ad0R3QndGd0F3RXdDd0d3QPdE91L3dtcdT863KvuR4d71f3ocK+6Hx3uVfejw73q
+fnS4V92PDveq+9HhXnU/Otv71P33l/c66Lroeuj66AbohuhG6MboJuim6Gbo5ugW
+6JboVujW6Dbotuh26PboDuiO6E7ozugu6K7obuju6B7onuhe6t7mWveTw73W/eRw
+r3U/Odxr3U8O91r3k8O91v3kcK91Pznca91PDvda95Ozvf8LMTt1ZPmWAQAAAZb5
+
+`turtle world`
+H4sIAAAAAAAAAE2Ouw7CMAxFr0QfCBATIwMDUwcGYGDkUxoaq6kUJVFiVPgaPhXc
+8hB38TmSfWUsa75GtrRJrJjqM355oLDkWjbCJ+SXSKQFt5gF67nvdEssfkQ5eCAn
+skPeeOuj4BrZvRlpgflY/tc2lXXtexfE9siTUYEEK2S3902GSW/8+EeRzGfzgNKQ
+0p1rRVbfP5+SYb4ATYOGr8sAAAAAAADL
+

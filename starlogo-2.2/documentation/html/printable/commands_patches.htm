@@ -1,0 +1,246 @@
+<html>
+
+<head>
+
+
+
+<title>Starlogo 1.0 Documentation</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+
+
+<body bgcolor="#FFFFFF">
+
+<p><em><font size="+1">Commands Affecting Patchest (Printable)</font></em> </p>
+
+<p class=MsoNormal><span class=GramE><em>average-of-patches</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns the numerical average of the [list of commands] when evaluated <span
+class=SpellE>accross</span> all the patches. <o:p></o:p></p>
+<p><em><em>ca</em>, clearall</em> <b>[Observer]</b> </p>
+
+<p> Kills all turtles, sets all patches to black, and resets all patch variables. 
+
+<p><em>cg, cleargraphics</em> <b>[Observer]</b> 
+
+<p> Sets all patches to black 
+
+<p><em>count-patches-with</em> <code>ilist</code> <b>[Observer, Turtle]</b> 
+
+<p>Returns the number of patches whose <code>ilist</code> is true.<br>
+
+  Sample usage:<br>
+
+  <code>show count-patches-with [(distance 0 0) < 5]</code><br>
+
+  This gives the number of patches inside a circle of radius 5 centered at the 
+
+  origin. 
+
+<p><em>count-pc</em> <code>color</code> <b>[Observer, Turtle]</b> 
+
+<p>Returns the number of patches that are the color <code>color</code>. 
+
+<p><em>cp, clearpatches</em> <b>[Observer]</b>
+
+<p> Sets all patches to black and resets all patch variables. 
+
+<p><em>diffuse</em> <code>variable percentage</code> <b>[Observer]</b> 
+
+<p> Makes each patch give 1/8 of <code>percentage</code> of <code>variable</code> 
+
+  to each neighboring patch. <br>
+
+  <b>Note</b>:percentage should be expressed as a number between 0 and 1. 
+
+<p><em>diffuse4</em> <code>variable percentage</code> <b>[Observer]</b></p>
+
+<p> Makes each patch give 1/4 of <code>percentage</code> of <code>variable</code> 
+
+  to each neighboring patch to the N, S, E and W. <br>
+
+  <b>Note</b>:percentage should be expressed as a number between 0 and 1. 
+
+<p><em>max-of-patches-with</em> <code>pred-ilist ilist</code> 
+
+<p> Reports the highest value of <code>ilist</code> when run over the turtles 
+
+  that statisfy <code>pred-ilist</code>. If there are no patches in which <code>pred-ilist</code> 
+
+  is true, reports <code>minnum</code>, the smallest number possible without going 
+
+  into negative infinity. Note: This command can also be executed by patches, 
+
+  for example within an <code>ask-patches</code> statement. 
+
+<p class=MsoNormal><span class=GramE><em>median-of-patches</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Returns the median of the [list of commands] when [list of 
+  commands] is evaluated by all patches.</span> <o:p></o:p></p>
+<p><em>min-of-patches-with</em> <code>pred-ilist ilist</code> 
+<p> Reports the lowest value of <code>ilist</code> when run over the turtles that 
+
+  statisfy <code>pred-ilist</code>. If there are no patches in which <code>pred-ilist</code> 
+
+  is true, reports <code>maxnum</code>, the largest number possible without going 
+
+  into positive infinity. Note: This command can also be executed by patches, 
+
+  for example within an <code>ask-patches</code> statement. 
+
+<p class=MsoNormal><span class=GramE><em>mode-of-patches</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns the mode of the given [list of commands] when evaluated <span
+class=SpellE>accross</span> all the patches. <o:p></o:p></p>
+<p><em>nsum</em> <code>variable1 variable2</code> <b>[Observer]</b> 
+<p> For each patch, takes the sum of <code>variable1</code> from all neighboring 
+
+  patches and places it in <code>variable2</code> 
+
+<p><em>nsum4</em> <code>variable1 variable2</code> <b>[Observer]</b> 
+
+<p> For each patch, takes the sum of <code>variable1</code> from the non-diagonal 
+
+  (N,E,S,W) neighboring patches and places it in <code>variable2</code> 
+
+<p><em>pc, patchcolor</em> <b>[Turtle]</b>
+
+<p> Reports the color of the patch the turtle is on. <br>
+
+  Please see the color reference for more info on colors. 
+
+<p><em>pc-ahead</em> <b>[Turtle]</b> 
+
+<p> Reports the color of the patch one space ahead in the direction that the turtle 
+
+  is facing.<br>
+
+  Please see the color reference for more info on colors. 
+
+<p><em>pc-at</em> <code>xcor ycor</code> <b>[Observer, Turtle]</b> 
+
+<p> Reports the color of the patch <code>xcor</code> units in the x direction 
+
+  and <code>ycor</code> units in the y direction away from the caller. <br>
+
+  Please see the color reference for more info on colors. 
+
+<p><em>pc-towards</em> <code>angle distance</code> <b>[Observer, Turtle]</b> 
+
+<p> Reports the color of the patch <code>distance</code> away at a relative heading 
+
+  of <code>angle</code>. <br>
+
+  Please see the color reference for more info on colors. 
+
+<p><em>pstamp</em> <code>color</code> <b>[Observer]</b> 
+
+<p> Allows patches to set the color of the turtle that is on it to <code>color.</code> 
+
+<p> <em>pstamp-at </em> <code>xcor ycor color</code> <b>[Observer]</b> 
+
+<p> Allows patches to set the color of the turtle <code>xcor</code> patches in 
+
+  the x-direction and <code>ycor</code> patches in the y-direction away to <code>color.</code> 
+
+<p><em>pstamp-towards </em> <code>radius angle color</code> <b>[Observer]</b> 
+
+<p> Allows patches to set the color of the turtle <code>radius</code> units away 
+
+  at an angle of <code>angle</code> to <code>color.</code> 
+
+<p><em>scale-pc</em> <code>color variable limit1 limit2</code> <b>[Observer]</b>
+
+<p> Patches set their color to a shade of <code>color</code> based on their value 
+
+  of <code>variable</code>. <code>limit1</code> and <code>limit2</code> determine 
+
+  the amount of gradation. <br>
+
+  Example: <br>
+
+  <code>scale-color green density 0 20</code> <br>
+
+  Patches turn one of twenty shades of green. Patches with lower density turn 
+
+  darker green. <br>
+
+  <code>scale-color blue energy 20 0</code> <br>
+
+  Patches turn one of twenty shades of green. Patches with lower density turn 
+
+  lighter green. <br>
+
+  NOTE: This is a patch command. It must be called from within an <code>ask-patches</code> 
+
+  or <code>ask-patch-at</code> statement 
+
+<p class=MsoNormal><span class=SpellE><span class=GramE><em>sdev</em></span></span><span
+class=GramE><em>-of-patches</em></span> <code><span style='font-size:10.0pt'>[list 
+  of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p>Returns the standard deviation of the given [list of commands] when evaluated 
+  <span class=SpellE>accross</span> all the patches. <o:p></o:p></p>
+<p><em>setpc, setpatchcolor</em> <code>color</code> <b>[Observer, Turtle]</b> 
+<p>This command has two different uses. It can be run as a turtle command, in 
+
+  which case it will set the color of the patches which are underneath turtles 
+
+  to <code>color</code>. It can also be run as a patch command, inside either 
+
+  an <code>ask-patches</code> or <code>ask-patch-at</code> statement. In these 
+
+  cases, the patches being asked will set their color to <code>color</code>. 
+
+<p><em>stamp</em> <code>color</code> <b>[Observer, Turtle]</b>
+
+<p> Sets color of patch under turtle to <code>color</code> 
+
+<p><em>stamp-at </em> <code>xcor ycor color</code> <b>[Observer, Turtle]</b></p>
+
+<p> Sets the color of the patch <code>xcor</code> units in the x direction and 
+
+  <code>ycor</code> units in the y direction away from the caller to <code>color</code>. 
+
+<p><em>stamp-towards</em> <code>angle distance color</code> <b>[Turtle]</b></p>
+
+<p> Sets the color of the patch <code>distance</code> away, if the heading were 
+
+  <code>angle</code>, to <code>color</code>. 
+
+<p><em>sum-of-patches</em> <code>ilist</code> <b>[Observer, Turtle]</b> 
+
+<p> Reports the total of evaluating <code>ilist</code>in every patch and adding 
+
+  it up. <br>
+
+  Example usage: <code>show sum-of-patches [food]</code> <br>
+
+  This gives the total amount of food in the world. 
+
+<p><em>sum-of-patches-with</em> <code>pred-ilist ilist</code> <b>[Observer, Turtle]</b> 
+
+<p> Reports the total value of <code>ilist</code> when run over the turtles that 
+
+  statisfy <code>pred-ilist</code>. If there are no patches in which <code>pred-ilist</code> 
+
+  is true, reports 0. Note: This command can also be executed by patches, for 
+
+  example within an <code>ask-patches</code> statement.<br>
+
+  Example: <code>sum-of-patches-with (pc = green or pc = blue) [density]</code> 
+
+  returns the sum of the densities of all patches which are blue or green. 
+
+<p class=MsoNormal><span class=GramE><em>variance-of-patches</em></span> <code><span
+style='font-size:10.0pt'>[list of commands]</span></code> <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Returns the variance [list of commands] amongst all the patches.</span> 
+  <o:p></o:p></p>
+<p>&nbsp; </p>
+
+</body>
+
+</html>
+

@@ -44,7 +44,7 @@ grayscott: grayscott_mcgough.o
 clean_objects:
 	rm -f *.o *~ core
 clean_execs:
-	rm -f mmu_simulation
+	rm -f grayscott
 clean:
 	rm -f *.o *~ core
-	rm -f mmu_simulation
+	rm -f grayscott

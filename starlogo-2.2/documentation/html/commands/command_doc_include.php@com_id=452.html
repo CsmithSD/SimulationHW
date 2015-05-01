@@ -1,0 +1,86 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+<!-- begin sample documentation page -->
+
+
+<!-- if (!($com_id)) { $com_id = 1; } -->
+
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+
+<span class="commandname">list-of-breed-at-with</span>
+
+<span class="argument">
+xcor ycor [condition] </span>
+
+
+<!-- show arguments -->
+
+<p>
+<div class="heading">Parameters:</div>
+<table cellpadding="2" cellspacing="2" border="0"> 
+
+
+<tr>
+<td class="argname" valign="top"><nobr>xcor</nobr></td>
+<td class="argtype" valign="top">Number</td>
+<td class="argdesc" valign="top">number of steps in the x-direction from the caller</td> 
+</tr>
+
+
+<tr>
+<td class="argname" valign="top"><nobr>ycor</nobr></td>
+<td class="argtype" valign="top">Number</td>
+<td class="argdesc" valign="top">number of steps in the y-direction from the caller</td> 
+</tr>
+
+
+<tr>
+<td class="argname" valign="top"><nobr>[condition]</nobr></td>
+<td class="argtype" valign="top">List of turtle commands</td>
+<td class="argdesc" valign="top">list of commands that returns true or false</td> 
+</tr>
+
+
+</table>
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Returns a list of all of the turtles of the breed specified <span class="argument">xcor</span> units away in the x-direction and <span class="argument">ycor</span> units away in the y-direction from the caller that also satisfy <span class="argument">[condition]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+<p>
+<div class="heading">Examples:</div>
+<div class="examples">
+<nobr><code>set blue_balloons list-of-balloons-at-with 1 1 [color = blue]</code></nobr> will set the variable <nobr><code>blue_balloons</code></nobr> to a list of the who numbers of all of the blue turtles of breed balloons one unit away in the x-direction and one unit away in the y-direction from the caller.</div>
+<p>
+ 
+
+<!-- show notes if there are notes -->
+
+
+<!-- show related commands if there are related commands -->
+
+<p>
+<div class="heading">Related Commands:</div>
+<a href="command_doc_include.php@com_id=449.html" class="related">list-of-breed-here-with</a>
+<a href="command_doc_include.php@com_id=453.html" class="related">list-of-breed-towards-with</a>
+<a href="command_doc_include.php@com_id=446.html" class="related">list-of-turtles-at-with</a>
+
+</body></html>

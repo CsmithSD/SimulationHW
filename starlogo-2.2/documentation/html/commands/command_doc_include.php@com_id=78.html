@@ -1,0 +1,87 @@
+
+<html>
+<head>
+<title></title>
+<link rel="STYLESHEET" href="style.css">
+</head>
+<body>
+
+<!-- begin sample documentation page -->
+
+
+<!-- if (!($com_id)) { $com_id = 1; } -->
+
+
+<!-- show who calls it banner -->
+<table width="100%" cellpadding="3">
+<tr><td class="whotop">Turtle, Observer, Patch</td></tr>
+</table>
+<p>
+
+<!-- show command -->
+
+
+<span class="commandname">grab</span>
+
+<span class="argument">
+number [list of commands] </span>
+
+
+<!-- show arguments -->
+
+<p>
+<div class="heading">Parameters:</div>
+<table cellpadding="2" cellspacing="2" border="0"> 
+
+
+<tr>
+<td class="argname" valign="top"><nobr>number</nobr></td>
+<td class="argtype" valign="top">Number</td>
+<td class="argdesc" valign="top"></td> 
+</tr>
+
+
+<tr>
+<td class="argname" valign="top"><nobr>[list of commands]</nobr></td>
+<td class="argtype" valign="top">List</td>
+<td class="argdesc" valign="top"></td> 
+</tr>
+
+
+</table>
+
+
+<p>
+<div class="heading">Description:</div>
+<div class="description">
+Have turtles <span class="argument">number</span> execute <span class="argument">[list of commands]</span>.</div>
+
+<!-- show examples if there are examples -->
+
+<p>
+<div class="heading">Examples:</div>
+<div class="examples">
+<nobr><code>grab one-of-turtles-here [setc red setc-of partner blue]</code></nobr>  This turns the caller red and the grabbed turtle blue. If there are no other turtles on the caller's patch, the [list of commands] does not get executed and no turtles change color.</div>
+<p>
+ 
+
+<!-- show notes if there are notes -->
+
+<p>
+<div class="heading">Notes:</div>
+<div class="notes">
+Caller instructs turtles with who number(s) number(s) to execute [list of commands]. The who number of the turtles being grabbed are stored in partner, if there is one, or partners, if there are many. A turtle cannot grab itself.</div>
+<p>
+<div class="notes">
+Grab is only useful for guaranteeing that a turtle you want to talk to is not being talked to by anyone else and cannot talk to anyone else while being grabbed. Note, while one turtle is grabbing another, neither may be grabbed by a third turtle.</div>
+<p>
+
+<!-- show related commands if there are related commands -->
+
+<p>
+<div class="heading">Related Commands:</div>
+<a href="command_doc_include.php@com_id=79.html" class="related">grabbed?</a>
+<a href="command_doc_include.php@com_id=304.html" class="related">partner</a>
+<a href="command_doc_include.php@com_id=308.html" class="related">partners</a>
+
+</body></html>

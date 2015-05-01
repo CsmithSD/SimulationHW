@@ -1,0 +1,152 @@
+<html>
+
+<head>
+
+
+
+<title>Starlogo 1.0 Documentation</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+
+
+<body bgcolor="#FFFFFF">
+
+<p><em><font size="+1">Plotting (Printable)</font></em> </p>
+
+<p><em>clearplot, clear-plot</em> <b>[Observer, Turtle]</b></p>
+
+<p>Clears everything drawn by all plot pens, and resets all pens to (0, 0).
+
+<p class=MsoNormal><span class=SpellE><span class=GramE><em>clearplots</em></span></span> 
+  <b>[Observer, Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Resets the title of all of the graphs to &quot;Plot Window&quot;.</span> 
+  <span class=GramE>Resets the axis labels to each span 0 to 1000.</span> Clears 
+  everything drawn by all plot pens, and resets all pens to (0, 0) and their original 
+  colors.<o:p></o:p></p>
+<p><em>plot</em> <code>y-value</code> <b>[Observer, Turtle]</b> 
+<p> Plots a point at <code>y-value</code>, then increments the <code>x-value</code> 
+
+  of the plot pen by 1. The pen will rescale itself when it reaches <code>plot-xmax</code>. 
+
+<p><em>plot-title</em> <b>[Observer, Turtle]</b> 
+
+<p> Returns the title of the plot. 
+
+<p><em>plot-xlabel</em> <b>[Observer, Turtle]</b> 
+
+<p> Returns the value of the label of the x-axis of the graph. 
+
+<p><em>plot-xmax</em> <b>[Observer, Turtle]</b> 
+
+<p> Returns the maximum x-value of the plot. 
+
+<p><em>plot-xmin</em> <b>[Observer, Turtle]</b> 
+
+<p> Returns the minimum x-value of the plot. 
+
+<p class=MsoNormal><span class=SpellE><span class=GramE><em>plotxy</em></span></span> 
+  <code><span style='font-size:10.0pt'>x-value y-value</span></code> <b>[Observer, 
+  Turtle]</b><o:p></o:p></p>
+<p><span class=GramE>Plots a point at the location (x-value, y-value).</span> 
+  This procedure is used for X-Y plots and <span class=SpellE>scatterplots</span>. 
+</p>
+<p><em>plot-ylabel</em> <b>[Observer, Turtle]</b> 
+<p> Returns the value of the label of the y-axis of the graph. 
+
+<p><em>plot-ymax</em> <b>[Observer, Turtle]</b> 
+
+<p> Returns the maximum y-value of the plot. 
+
+<p><em>plot-ymin</em> <b>[Observer, Turtle]</b> 
+
+<p> Returns the minimum y-value of the plot. 
+
+<p><em>pp</em> <code>integer</code> <b>[Observer, Turtle]</b> 
+
+<p> Selects a plot pen (e.g. <code>pp 1</code>). Subsequent plotting commands 
+
+  are executed by the selected plot pen. There are ten plot pens, numbered 1 through 
+
+  10. 
+
+<p><em>ppc</em> <b>[Observer, Turtle]</b> 
+
+<p> Returns the current plot pen color. 
+
+<p><em>ppd</em> <b>[Observer, Turtle]</b> 
+
+<p> Puts the plot pen down, so that it draws connected graphs. 
+
+<p><em>ppreset</em> <b>[Observer, Turtle]</b> 
+
+<p> Clears everything this plot pen has drawn and resets its position to (0, 0). 
+
+<p><em>ppu</em> <b>[Observer, Turtle]</b> 
+
+<p> Lifts up the plot pen, so that it plots points individually (not connected). 
+
+<p> <em>ppxcor</em> <b>[Observer, Turtle]</b> 
+
+<p> Returns the x-value of the current plot pen. 
+
+<p><em>ppycor</em> <b>[Observer, Turtle]</b> 
+
+<p> Returns the y-value of the current plot pen. 
+
+<p><em>setplot-title</em> <code>name</code> <b>[Observer, Turtle]</b>
+
+<p> Sets the title of the plot to be <code>name</code>. 
+
+<p><em>setplot-xlabel</em> <code>label</code> <b>[Observer, Turtle]</b> 
+
+<p> Sets the label of the x-axis of the graph to <code>label</code>. 
+
+<p><em>setplot-xmax</em> <code>value</code> <b>[Observer, Turtle]</b> 
+
+<p> Sets the maximum value of the x-axis to be <code>value</code>. 
+
+<p><em>setplot-xmin</em> <code>value</code> <b>[Observer, Turtle]</b></p>
+
+<p> Sets the minimum value of the x-axis to be <code>value</code>. 
+
+<p><em>setplot-xrange</em> <code>value1 value2</code> <b>[Observer, Turtle]</b></p>
+
+<p> Sets the minimum value of the xy-axis to be <code>value1</code>, and the maximum 
+
+  value of the x-axis to be <code>value2</code>. 
+
+<p><em>setplot-ylabel</em> <code>label</code> <b>[Observer, Turtle]</b> 
+
+<p> Sets the label of the y-axis of the graph to <code>label</code>. 
+
+<p><em>setplot-ymax</em> <code>value</code> <b>[Observer, Turtle]</b> 
+
+<p> Sets the maximum value of the y-axis to be <code>value</code>. 
+
+<p><em>setplot-ymin</em> <code>value</code> <b>[Observer, Turtle]</b></p>
+
+<p> Sets the minimum value of the y-axis to be <code>value</code>. 
+
+<p><em>setplot-yrange</em> <code>value1 value2</code> <b>[Observer, Turtle]</b></p>
+
+<p> Sets the minimum value of the y-axis to be <code>value1</code>, and the maximum 
+
+  value of the y-axis to be <code>value2</code>. 
+
+<p><em>setppc </em><code>color (or number)</code> <b>[Observer, Turtle]</b></p>
+
+<p> Sets the color of the current plot pen to be <code>color</code>. 
+
+<p><em>viewplot, view-plot</em> <b>[Observer, Turtle]</b> 
+
+<p> Opens the Plot Window. 
+
+<p>&nbsp; </p>
+
+</body>
+
+</html>
+
