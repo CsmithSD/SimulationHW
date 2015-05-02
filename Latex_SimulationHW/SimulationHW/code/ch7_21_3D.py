@@ -16,9 +16,9 @@ from mpl_toolkits.mplot3d import Axes3D
 from scipy.interpolate import griddata
 
 NRC = 5			# number of recursion calls
-sigma = 1.5		# standard deviation of the Gaussian distribution
-mu = 0			# mean of Gaussian distribution
-H = 0.5			# should be 0 < H < 1
+sigma = 12		# standard deviation of the Gaussian distribution
+mu = 5			# mean of Gaussian distribution
+H = 0.75		# should be 0 < H < 1
 
 ###############################################################################
 #								Recursion

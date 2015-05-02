@@ -7,10 +7,16 @@
 
 \input{paperstyle.tex} % This sets the format.
 
+\graphicspath{ {images/} }
+
+\newcommand{\includecode}[1]{\lstinputlisting[caption={\detokenize{#1}}, label={\detokenize{#1}}]{\detokenize{code/#1}}}
+
+\lstset{language=Python, basicstyle=\ttfamily}
+
 % Add your title page contents here 
 \title{{ \rule{\linewidth}{0.5mm}}\\[2mm] {\huge \bfseries  Simulation }\\[-1mm] {\rule{\linewidth}{0.5mm}} \\  \vfill
 {\LARGE \bfseries  Natural Computing Homework }\vfill}
-\author{FullName1 \and  FullName2  }
+\author{Stephanie Athow \and  Chris Smith}
 \date{\today}
 
 
