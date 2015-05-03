@@ -10,16 +10,16 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-N = 26				# grid size (square)
+N = 100				# grid size (square)
 time_end = 1500		# time step end	
 
-t_source = 100.00
+t_source = 10
 t_grid = np.zeros( [N, N] ) 	# holds grid of temps
 t_update = np.zeros( [N, N] )	# holds update values
 
 # initialize heat source
 for i in range( 0, N ):
-	t_grid[i][N-1] = i*( N-i )
+	t_grid[i][N-1] = i*( N-1-i )
 
 # run CA on grid for time_end loops
 for i in range( 1, time_end ):
