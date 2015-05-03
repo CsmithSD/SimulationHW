@@ -12,3 +12,12 @@ Latex_SimulationHW/SimulationHW/Simulation.toc
 *.gz
 Latex_SimulationHW/SimulationHW/Simulation.out
 *.lot
+*.aux
+Latex_SimulationHW/SimulationHW/Simulation.aux
+*.lof
+Latex_SimulationHW/SimulationHW/Simulation.log
+*.lot
+Latex_SimulationHW/SimulationHW/Simulation.out
+*.pdf
+Latex_SimulationHW/SimulationHW/Simulation.synctex.gz
+*.toc

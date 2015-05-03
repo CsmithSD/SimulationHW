@@ -13,7 +13,7 @@ RIFS is an acronym for Random Iterated Function System (RIFS). An iterated funct
 The codes (functions) given in ~\ref{table:RIFS} are defined such that \textit{w} is the function number, \textit{a, b, c, d} are scaling factors, \textit{e, f} are offset values and \textit{p} is the probability the function will be selected. These values are used in the equation for affine transformation ~\ref{affine_transformation}. The Sierpinski Gasket and Square fractals must have an initial point list to perform the transformations. The Barnsley Fern and Tree need only a single point to perform the transformations. Figure ~\ref{fractals} shows the Sierpinski Gasket, Square, Bransley Fern and Tree generated using the RIFS codes. 
 
 \begin{equation}
-w(x_1 , x_2) = a*x_1 + b*x_2 + e, c*x_1 + d*x_2 + f )
+w(x_1 , x_2) = ( a x_1 + b x_2 + e, c x_1 + d x_2 + f )
 \end{equation} \label{affine_transformation}
 
 \begin{figure}[tbh]
@@ -113,11 +113,11 @@ w(x_1 , x_2) = a*x_1 + b*x_2 + e, c*x_1 + d*x_2 + f )
 In 2D, the random midpoint displacement starts with a line, determines the midpoint and randomly perturbs it using equations ~\ref{midpointDisplacement} and ~\ref{roughness}. In equation ~\ref{roughness}, $\Delta(i)$ stores the value for depth $i$, $\sigma$ is the standard deviation of the Gaussian distribution, $H$ is the `roughness factor'. $H$ is always $ 0 < H < 1$. The closer to 0, the more rough the surface will be. The closer to 1, the more smooth the surface will be.  In equation ~\ref{midpointDisplacement} $x_1$ is the new value for the midpoint, $x_0$ is the left end point, $x_2$ is the right end point, $\Delta(t)$ is  from equation ~\ref{roughness}, $t$ is the recursion depth and $rand$ is a random number. Now, there are two line segments and the midpoint of each line segment is perturbed. This method is recursively applied while decreasing the perturbation amount for each depth. 
 
 \begin{equation}
-x_1 = 0.5 * ( x_0 + x_2 ) + \Delta(t) * rand
+x_1 = 0.5 ( x_0 + x_2 ) + \Delta(t)  rand
 \end{equation} \label{midpointDisplacement}
 
 \begin{equation}
-\Delta(i) = \sigma*(H)^((i+1)/2)
+\Delta(i) = \sigma (H)^{(i+1)/2)}
 \end{equation} \label{roughness}
 
 The random midpoint displacement for 3D starts with a 2D box. The box is subdivided using the midpoints of the edges, so one box becomes four boxes, four boxes becomes sixteen, ect. The intersections of the midpoint lines becomes the perturbation points. They are perturbed in the same manner as the 2D method except the average is the average of the four surrounding points. Figure ~\ref{surfaces} shows some surfaces with varying $H$ values.
