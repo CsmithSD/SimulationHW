@@ -10,33 +10,47 @@
 \newline
 John Conway proposed a solitaire game called 'Life', currently known as 'The Game of Life'. He wanted to create a set of transition rules that were simple to write but also difficult to predict the outcome or overall behavior of the CA. The game had to meet the following criteria:
 \begin{enumerate}
-\item There should not be any inital pattern for which there is a simple proof that the population can grow without limit.
+\item There should not be any initial pattern for which there is a simple proof that the population can grow without limit.
 \item There should be initial patterns that apparently do grow without limit. Not all initial states should immediately yield trivial final states.
-\item There should be simple initial patters that grow and change for a considerable period of time before coming to an end in three posssible ways: fading away completely, settling into a stable configuration that remains unchanged thereafter, or entering an oscillating phase in which they repeat an endless cycle of two or more periods.
+\item There should be simple initial patterns that grow and change for a considerable period of time before coming to an end in three possible ways: fading away completely, settling into a stable configuration that remains unchanged thereafter, or entering an oscillating phase in which they repeat an endless cycle of two or more periods.
 \end{enumerate}
 
 The rule set that Conway came up with is simple and uses the Moore neighborhood:
-\begin{enumerate}
+\begin{itemize}
     \item Birth: a previously dead cell comes alive if three neighbors are alive.
     \item Death: isolated living cells with no more than one live neighbor die; those with more than three neighbors die of overcrowding.
     \item Survival: living cells with two or three live neighbors survive.
-\end{enumerate}
+\end{itemize}
 
-Using the above rule set and bi-directional grid, all of the criteria that Conway required appeared through running the Game of Life.
+Using the above rule set and bi-directional grid, all of the criteria that Conway required appeared through running the Game of Life. There were oscillating phases and stable configurations that remained unchanged. A lot of the patterns died out or within a few generations turned into an stable configuration.
 
 \begin{figure}[tbh]
 \begin{center}
     \begin{subfigure}[tbh]{0.475\textwidth}
     \begin{center}
     \includegraphics[width=\textwidth]{conway/game1.png}
-    \caption{ Stabalized Game of Life }
+    \caption{ Stabilized Game of Life with few oscillating phases }
     \end{center}
     \end{subfigure}
 \hfill
     \begin{subfigure}[tbh]{0.475\textwidth}
     \begin{center}
     \includegraphics[width=\textwidth]{conway/game4.png}
-    \Caption{ Game in Progress }
+    \caption{ Criteria 2 }
+    \end{center}
+    \end{subfigure}
+\hfill
+    \begin{subfigure}[tbh]{0.475\textwidth}
+    \begin{center}
+    \includegraphics[width=\textwidth]{conway/game7.png}
+    \caption{ Game in Progress }
+    \end{center}
+    \end{subfigure}
+\hfill
+    \begin{subfigure}[tbh]{0.475\textwidth}
+    \begin{center}
+    \includegraphics[width=\textwidth]{conway/game6.png}
+    \caption{ Criteria 3 }
     \end{center}
     \end{subfigure}
 \hfill
