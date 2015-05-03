@@ -1,51 +1,52 @@
-% !TEX root = Simulation.tex
+% !TX root = Simulation.tex
 
 \chapter{Fractals - Text Chapter 7}
 
 \section{Problem 10}
 \textbf{ Implement a bracketed OL-system and reproduce all plant-like structures of Figure 7.24 [of the book]. Change some derivation rules and see what happens. Make your own portfolio with, at least, ten plants. }
-
+\\
+A OL-system is defined as the ordered triplet $G = \langle V, \omega, P \rangle$, where V is the alphabet of the system, $\omega \in V^{+}$ is a nonempty word called the axiom, and $P \subset V x V^{*}$ is a finite set of productions. The first 6 figures are the ones from the book and the following 10 are our generated fractal OL-Systems.
 \begin{figure}[tbh]
 \begin{center}
 	\begin{subfigure}[tbh]{0.3\textwidth}
 	\begin{center}
 	\includegraphics[width=\textwidth]{ferns/plant1.png}
-	\caption{Plant 1}
+    \caption{(a) $t = 8$, $\delta = 22.5 ^{\circ}$ \\ $\omega: G$ \\ $G \rightarrow F+[[G]-G]-F[-FG]+G$ \\ $F \rightarrow FF$}
 	\end{center}
 	\end{subfigure}
 \hfill
 	\begin{subfigure}[tbh]{0.3\textwidth}
 	\begin{center}
 	\includegraphics[width=\textwidth]{ferns/plant2.png}
-	\caption{Plant 2}
+	\caption{(a) $t = 4$, $delta = 22.5^{\circ}$ \\ $\omega: F$ \\ $F \rightarrow FF+[+F-F-F]-[-F+F+F]$}
 	\end{center}
 	\end{subfigure}
 \hfill
 	\begin{subfigure}[tbh]{0.3\textwidth}
 	\begin{center}
 	\includegraphics[width=\textwidth]{ferns/plant3.png}
-	\caption{Plant 3}
+	\caption{(a) $t = 6$, $\delta = 22.5^{\circ}$ \\ $\omega: G$ \\ $G\rightarrow F+[+FFG][G]-FG$ \\ $F \rightarrow FF$}
 	\end{center}
 	\end{subfigure}
 \hfill
 	\begin{subfigure}[tbh]{0.3\textwidth}
 	\begin{center}
 	\includegraphics[width=\textwidth]{ferns/plant4.png}
-	\caption{Plant 4}
+	\caption{(a) $t = 9$, $\delta = 20^{\circ}$ \\ $\omega: G$ \\ $G\rightarrow F[-G]F[+G]-G$ \\ $F \rightarrow FF$}
 	\end{center}
 	\end{subfigure}
 \hfill
 	\begin{subfigure}[tbh]{0.3\textwidth}
 	\begin{center}
 	\includegraphics[width=\textwidth]{ferns/plant5.png}
-	\caption{Plant 5}
+	\caption{(a) $t = 9$, $\delta = 25.7^{\circ}$ \\ $\omega: G$ \\ $G\rightarrow F[-G][+G]FG $\\ $F \rightarrow FF$}
 	\end{center}
 	\end{subfigure}
 \hfill
 	\begin{subfigure}[tbh]{0.3\textwidth}
 	\begin{center}
 	\includegraphics[width=\textwidth]{ferns/plant6.png}
-	\caption{Plant 6}
+	\caption{(a) $t = 5$, $\delta = 22.5^{\circ}$ \\ $\omega: G$ \\ $G\rightarrow FG[-F[G]-G][G+G][+F[G]+G]$ \\ $F \rightarrow FF$}
 	\end{center}
 	\end{subfigure}
 \hfill
@@ -58,70 +59,70 @@
 	\begin{subfigure}[tbh]{0.23\textwidth}
 	\begin{center}
 	\includegraphics[width=\textwidth]{ferns/my-plant1.png}
-	\caption{My Plant 1}
+	\caption{(a) $t = 4$, $\delta = 90^{\circ}$ \\ $\omega: F+F+F+F$ \\ $F \rightarrow F+F+F-FFF-F$}
 	\end{center}
 	\end{subfigure}
 \hfill
 	\begin{subfigure}[tbh]{0.23\textwidth}
 	\begin{center}
 	\includegraphics[width=\textwidth]{ferns/my-plant2.png}
-	\caption{My Plant 2}
+	\caption{(a) $t = 4$, $\delta = 90^{\circ}$ \\ $\omega: F+F+F+F$ \\ $F \rightarrow FF+F+F+F+FF$}
 	\end{center}
 	\end{subfigure}
 \hfill
 	\begin{subfigure}[tbh]{0.23\textwidth}
 	\begin{center}
 	\includegraphics[width=\textwidth]{ferns/my-plant3.png}
-	\caption{My Plant 3}
+	\caption{(a) $t = 4$, $\delta = 90^{\circ}$ \\ $\omega: F-G$ \\ $G \rightarrow F+G $\\ $F \rightarrow F-G$}
 	\end{center}
 	\end{subfigure}
 \hfill
 	\begin{subfigure}[tbh]{0.23\textwidth}
 	\begin{center}
 	\includegraphics[width=\textwidth]{ferns/my-plant4.png}
-	\caption{My Plant 4}
+	\caption{(a) $t = 4$, $\delta = 22.5^{\circ}$ \\ $\omega: G$ \\ $G \rightarrow FG[-G+]+[G+]F$\\ $F \rightarrow F-G$}
 	\end{center}
 	\end{subfigure}
 \hfill
 	\begin{subfigure}[tbh]{0.23\textwidth}
 	\begin{center}
 	\includegraphics[width=\textwidth]{ferns/my-plant5.png}
-	\caption{My Plant 5}
+	\caption{(a) $t = 4$, $\delta = 25.7^{\circ}$ \\ $\omega: G $\\ $G \rightarrow FFG[-G]FG[+G]FG$\\ $F \rightarrow FF$}
 	\end{center}
 	\end{subfigure}
 \hfill
 	\begin{subfigure}[tbh]{0.23\textwidth}
 	\begin{center}
 	\includegraphics[width=\textwidth]{ferns/my-plant6.png}
-	\caption{My Plant 6}
+	\caption{(a) $t = 4$, $\delta = 22.5^{\circ}$ \\ $\omega: G $\\ $G \rightarrow F+G+[-G-]-[+G+]+F$\\ $F \rightarrow F-G$}
 	\end{center}
 	\end{subfigure}
 \hfill
 	\begin{subfigure}[tbh]{0.23\textwidth}
 	\begin{center}
 	\includegraphics[width=\textwidth]{ferns/my-plant7.png}
-	\caption{My Plant 7}
+	\caption{(a) $t = 4$, $\delta = 25.7^{\circ}$ \\ $\omega: G$ \\ $G \rightarrow FF+G[-G]FG[+G]F-G$\\ $F \rightarrow FF$}
 	\end{center}
 	\end{subfigure}
 \hfill
 	\begin{subfigure}[tbh]{0.23\textwidth}
 	\begin{center}
 	\includegraphics[width=\textwidth]{ferns/my-plant8.png}
-	\caption{My Plant 8}
+	\caption{(a) $t = 4$, $\delta = 22.5^{\circ}$ \\ $\omega: G$ \\ $G \rightarrow F[+G+[-G-]-[+G+]+]F$\\ $F \rightarrow F-G$}
 	\end{center}
 	\end{subfigure}
 \hfill
 	\begin{subfigure}[tbh]{0.23\textwidth}
 	\begin{center}
 	\includegraphics[width=\textwidth]{ferns/my-plant9.png}
-	\caption{My Plant 9}
+	\caption{(a) $t = 4$, $\delta = 22.5^{\circ}$ \\ $\omega: G$ \\ $G \rightarrow FG[-G+]-[G+]F$\\ $F \rightarrow F+G$}
 	\end{center}
 	\end{subfigure}
 \hfill
 	\begin{subfigure}[tbh]{0.23\textwidth}
 	\begin{center}
 	\includegraphics[width=\textwidth]{ferns/my-plant10.png}
-	\caption{My Plant 10}
+	\caption{(a) $t = 4$, $\delta = 25.7^{\circ}$ \\ $\omega: G$ \\ $G \rightarrow FGF[+G[-G]FG[+G]F-]GF+[G+]F$\\ $F \rightarrow FF$}
 	\end{center}
 	\end{subfigure}
 \hfill
